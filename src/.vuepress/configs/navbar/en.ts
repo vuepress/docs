@@ -17,6 +17,7 @@ export const enNavbar = navbar([
         children: [
           {
             text: "CLI",
+            icon: "bi:terminal-fill",
             link: "cli.html",
           },
           "config",

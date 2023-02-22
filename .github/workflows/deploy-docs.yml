@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy-gh-pages:
+  deploy-netlify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

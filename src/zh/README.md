@@ -10,6 +10,9 @@ actions:
   - text: 项目简介
     link: /zh/guide/
     type: secondary
+  - text: 市场
+    link: https://marketplace.vuejs.press/
+    type: secondary
 features:
   - title: 简洁至上
     icon: fa6-solid:star

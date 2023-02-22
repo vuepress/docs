@@ -10,6 +10,9 @@ actions:
   - text: Introduction
     link: /guide/
     type: secondary
+  - text: Marketplace
+    link: https://marketplace.vuejs.press/
+    type: secondary
 features:
   - title: Simplicity First
     icon: fa6-solid:star

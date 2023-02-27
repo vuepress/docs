@@ -1,8 +1,12 @@
+import { createRequire } from "node:module";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
-import { path } from "@vuepress/utils";
+import { getDirname, path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
+
 import { head } from "./configs/index.js";
 import theme from "./theme.js";
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   base: "/",
@@ -25,8 +29,27 @@ export default defineUserConfig({
   // configure markdown
   markdown: {
     importCode: {
-      handleImportPath: (str) =>
-        str.replace(/^@vuepress/, path.resolve(__dirname, "../../ecosystem")),
+      handleImportPath: (filePath) => {
+        if (filePath.endsWith("hotKey.ts"))
+          return path.resolve(__dirname, "./assets/hotKey.ts");
+
+        if (filePath.startsWith("@vuepress")) {
+          const pkgName = /(^@vuepress\/[^/]+)/.exec(filePath)![1]!;
+
+          return filePath
+            .replace(
+              pkgName,
+              path.dirname(
+                createRequire(import.meta.url).resolve(
+                  `${pkgName}/package.json`
+                )
+              )
+            )
+            .replace("/src/", "/lib/");
+        }
+
+        return filePath;
+      },
     },
   },
 

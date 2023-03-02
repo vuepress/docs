@@ -11,7 +11,7 @@ actions:
     link: /zh/guide/
     type: secondary
   - text: 市场
-    link: https://marketplace.vuejs.press/
+    link: https://marketplace.vuejs.press/zh/
     type: secondary
 features:
   - title: 简洁至上

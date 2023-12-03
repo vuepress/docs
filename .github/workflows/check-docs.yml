@@ -35,9 +35,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build source code
-        run: pnpm build
-
       - name: Build docs with ${{ matrix.bundler }}
         run: pnpm docs:build
         env:

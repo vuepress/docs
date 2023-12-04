@@ -119,7 +119,7 @@ export default defineClientConfig({
     // 供给一个值，可以被布局、页面和其他组件注入
     const count = ref(0)
     provide('count', count)
-  }
+  },
 })
 ```
 
@@ -139,7 +139,7 @@ export default defineClientConfig({
       // 在 mounted 之后使用 DOM API
       document.querySelector('#app')
     })
-  }
+  },
 })
 ```
 

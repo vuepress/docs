@@ -68,7 +68,6 @@ export default {
 
   是否收集页面的贡献者。
 
-
 ## Frontmatter
 
 ### gitInclude

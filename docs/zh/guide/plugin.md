@@ -14,7 +14,7 @@ import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
 export default {
   plugins: [
     googleAnalyticsPlugin({
-      id: 'G-XXXXXXXXXX'
+      id: 'G-XXXXXXXXXX',
     }),
   ],
 }

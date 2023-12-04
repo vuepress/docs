@@ -240,8 +240,8 @@ writeTemp(file: string, content: string): Promise<string>
 export default {
   // 在 onPrepared hook 中写入临时文件
   async onPrepared() {
-    await app.writeTemp('foo.js', 'export const foo = \'bar\'')
-  }
+    await app.writeTemp('foo.js', "export const foo = 'bar'")
+  },
 }
 ```
 
@@ -354,7 +354,7 @@ export default {
 
 你好，世界。
 `,
-      })
+      }),
     )
   },
 }
@@ -533,7 +533,6 @@ interface MarkdownLink {
 
   该 Page 内容中包含的链接。
 
-
 ### markdownEnv
 
 - 类型： `Record<string, unknown>`
@@ -598,7 +597,6 @@ interface MarkdownLink {
 - 参考：
   - [Frontmatter > permalink](./frontmatter.md#permalink)
   - [Frontmatter > permalinkPattern](./frontmatter.md#permalinkpattern)
-
 
 ### routeMeta
 

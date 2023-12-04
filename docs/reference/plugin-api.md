@@ -117,7 +117,7 @@ const __dirname = getDirname(import.meta.url)
 export default {
   clientConfigFile: path.resolve(
     __dirname,
-    './path/to/clientConfig.js'
+    './path/to/clientConfig.js',
   ),
 }
 ```
@@ -263,7 +263,7 @@ export default {
   Page options extension.
 
   This hook accepts a function that will receive the options of `createPage`.
-  
+
   This hook can be used for modifying page options
 
 - Example:

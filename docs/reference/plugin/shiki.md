@@ -40,7 +40,7 @@ export default {
 
   Theme of shiki.
 
-  This option will be forwarded to `getHighlighter()` method of shiki. 
+  This option will be forwarded to `getHighlighter()` method of shiki.
 
 - Also see:
   - [shiki > themes](https://github.com/shikijs/shiki/blob/master/docs/themes.md)
@@ -55,7 +55,7 @@ export default {
 
   Languages of shiki.
 
-  This option will be forwarded to `getHighlighter()` method of shiki. 
+  This option will be forwarded to `getHighlighter()` method of shiki.
 
   If no languages are provided, shiki will load all available languages automatically.
 

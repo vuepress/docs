@@ -15,13 +15,14 @@
   `type` 是必需的， `title` 和 `content` 是可选的。
 
   支持的 `type` 有：
-    - `tip`
-    - `warning`
-    - `danger`
-    - `details`
-    - [CodeGroup](./components.md#codegroup) 和 [CodeGroupItem](./components.md#codegroupitem) 的别名：
-      - `code-group`
-      - `code-group-item`
+
+  - `tip`
+  - `warning`
+  - `danger`
+  - `details`
+  - [CodeGroup](./components.md#codegroup) 和 [CodeGroupItem](./components.md#codegroupitem) 的别名：
+    - `code-group`
+    - `code-group-item`
 
 - 示例 1 （默认标题）：
 

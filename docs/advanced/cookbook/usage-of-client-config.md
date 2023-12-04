@@ -12,7 +12,7 @@ const pluginOrTheme = {
 }
 ```
 
-Inside the client config file, `@vuepress/client` package provides a helper function [defineClientConfig](../../reference/client-api.md#defineclientconfig) to help you define the client config: 
+Inside the client config file, `@vuepress/client` package provides a helper function [defineClientConfig](../../reference/client-api.md#defineclientconfig) to help you define the client config:
 
 ```ts
 import { defineClientConfig } from '@vuepress/client'
@@ -119,7 +119,7 @@ export default defineClientConfig({
     // provide a value that can be injected by layouts, pages and other components
     const count = ref(0)
     provide('count', count)
-  }
+  },
 })
 ```
 
@@ -139,7 +139,7 @@ export default defineClientConfig({
       // use DOM API after mounted
       document.querySelector('#app')
     })
-  }
+  },
 })
 ```
 

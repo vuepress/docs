@@ -95,7 +95,9 @@ export default {
 
 ```ts
 (info: string): string =>
-  `<div class="custom-container ${type}">${info ? `<p class="custom-container-title">${info}</p>` : ''}\n`
+  `<div class="custom-container ${type}">${
+    info ? `<p class="custom-container-title">${info}</p>` : ''
+  }\n`
 ```
 
 - Details:
@@ -134,7 +136,7 @@ type MarkdownItContainerRenderFunction = (
   index: number,
   options: any,
   env: MarkdownEnv,
-  self: Renderer
+  self: Renderer,
 ) => string
 ```
 

@@ -15,13 +15,14 @@
   The `type` is required, and the `title` and `content` are optional.
 
   Supported `type` :
-    - `tip`
-    - `warning`
-    - `danger`
-    - `details`
-    - Alias of [CodeGroup](./components.md#codegroup) and [CodeGroupItem](./components.md#codegroupitem):
-      - `code-group`
-      - `code-group-item`
+
+  - `tip`
+  - `warning`
+  - `danger`
+  - `details`
+  - Alias of [CodeGroup](./components.md#codegroup) and [CodeGroupItem](./components.md#codegroupitem):
+    - `code-group`
+    - `code-group-item`
 
 - Example 1 (default title):
 

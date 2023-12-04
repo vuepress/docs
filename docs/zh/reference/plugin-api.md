@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:plug
+---
+
 # 插件 API
 
 <NpmBadge package="@vuepress/core" />
@@ -115,10 +119,7 @@ import { getDirname, path } from '@vuepress/utils'
 const __dirname = getDirname(import.meta.url)
 
 export default {
-  clientConfigFile: path.resolve(
-    __dirname,
-    './path/to/clientConfig.js'
-  ),
+  clientConfigFile: path.resolve(__dirname, './path/to/clientConfig.js'),
 }
 ```
 

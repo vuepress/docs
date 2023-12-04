@@ -158,10 +158,7 @@ export default {
 - 示例：
 
 ```ts
-import {
-  usePwaEvent,
-  useSkipWaiting,
-} from '@vuepress/plugin-pwa/client'
+import { usePwaEvent, useSkipWaiting } from '@vuepress/plugin-pwa/client'
 
 export default {
   setup() {

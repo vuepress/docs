@@ -21,7 +21,6 @@ export default (options) => ({
 
 然后，在客户端代码中直接使用它们：
 
-
 ```ts
 const foo = __FOO__
 const obj = __OBJ__

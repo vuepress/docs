@@ -99,12 +99,12 @@ import { defineAsyncComponent } from 'vue'
 
 app.component(
   'FooBar',
-  defineAsyncComponent(() => import('/path/to/components/FooBar.vue'))
+  defineAsyncComponent(() => import('/path/to/components/FooBar.vue')),
 )
 
 app.component(
   'Baz',
-  defineAsyncComponent(() => import('/path/to/components/Baz.vue'))
+  defineAsyncComponent(() => import('/path/to/components/Baz.vue')),
 )
 ```
 
@@ -129,7 +129,7 @@ app.component(
 - Details:
 
   A function to get component name from the filename.
-  
+
   It will only take effect on the files in the [componentsDir](#componentsdir) which are matched with the [componentsPatterns](#componentspatterns).
 
   Notice that the `filename` is a filepath relative to [componentsDir](#componentsdir).

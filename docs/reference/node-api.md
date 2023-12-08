@@ -1,7 +1,3 @@
----
-icon: fa6-brands:node-js
----
-
 # Node API
 
 <NpmBadge package="@vuepress/core" />

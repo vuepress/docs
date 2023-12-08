@@ -115,10 +115,7 @@ import { getDirname, path } from '@vuepress/utils'
 const __dirname = getDirname(import.meta.url)
 
 export default {
-  clientConfigFile: path.resolve(
-    __dirname,
-    './path/to/clientConfig.js',
-  ),
+  clientConfigFile: path.resolve(__dirname, './path/to/clientConfig.js'),
 }
 ```
 
@@ -176,11 +173,13 @@ export default {
       bundlerOptions.vuePluginOptions ??= {}
       bundlerOptions.vuePluginOptions.template ??= {}
       bundlerOptions.vuePluginOptions.template.compilerOptions ??= {}
-      const isCustomElement = bundlerOptions.vuePluginOptions.template.compilerOptions.isCustomElement
-      bundlerOptions.vuePluginOptions.template.compilerOptions.isCustomElement = (tag) => {
-        if (isCustomElement?.(tag)) return true
-        if (tag === 'my-custom-element') return true
-      }
+      const isCustomElement =
+        bundlerOptions.vuePluginOptions.template.compilerOptions.isCustomElement
+      bundlerOptions.vuePluginOptions.template.compilerOptions.isCustomElement =
+        (tag) => {
+          if (isCustomElement?.(tag)) return true
+          if (tag === 'my-custom-element') return true
+        }
     }
 
     // extends options of @vuepress/bundler-webpack

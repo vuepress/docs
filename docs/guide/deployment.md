@@ -28,6 +28,7 @@ The following guides are based on some shared assumptions:
    Create `.github/workflows/docs.yml` to set up the workflow.
 
 ::: details Click to expand sample config
+
 ```yaml
 name: docs
 
@@ -81,6 +82,7 @@ jobs:
           # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+
 :::
 
 ::: tip
@@ -98,6 +100,7 @@ Please refer to [GitHub Pages official guide](https://pages.github.com/) for mor
 2. Create `.gitlab-ci.yml` to set up [GitLab CI](https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/) workflow.
 
 ::: details Click to expand sample config
+
 ```yaml
 # choose a docker image to use
 image: node:18-buster
@@ -129,6 +132,7 @@ pages:
     paths:
       - public
 ```
+
 :::
 
 ::: tip

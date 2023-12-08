@@ -28,6 +28,7 @@
    创建 `.github/workflows/docs.yml` 文件来配置工作流。
 
 ::: details 点击展开配置样例
+
 ```yaml
 name: docs
 
@@ -81,6 +82,7 @@ jobs:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+
 :::
 
 ::: tip
@@ -98,6 +100,7 @@ jobs:
 2. 创建 `.gitlab-ci.yml` 文件来配置 [GitLab CI](https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/) 工作流。
 
 ::: details 点击展开配置样例
+
 ```yaml
 # 选择你要使用的 docker 镜像
 image: node:18-buster
@@ -129,6 +132,7 @@ pages:
     paths:
       - public
 ```
+
 :::
 
 ::: tip

@@ -173,11 +173,13 @@ export default {
       bundlerOptions.vuePluginOptions ??= {}
       bundlerOptions.vuePluginOptions.template ??= {}
       bundlerOptions.vuePluginOptions.template.compilerOptions ??= {}
-      const isCustomElement = bundlerOptions.vuePluginOptions.template.compilerOptions.isCustomElement
-      bundlerOptions.vuePluginOptions.template.compilerOptions.isCustomElement = (tag) => {
-        if (isCustomElement?.(tag)) return true
-        if (tag === 'my-custom-element') return true
-      }
+      const isCustomElement =
+        bundlerOptions.vuePluginOptions.template.compilerOptions.isCustomElement
+      bundlerOptions.vuePluginOptions.template.compilerOptions.isCustomElement =
+        (tag) => {
+          if (isCustomElement?.(tag)) return true
+          if (tag === 'my-custom-element') return true
+        }
     }
 
     // 修改 @vuepress/bundler-webpack 的配置项

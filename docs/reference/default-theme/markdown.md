@@ -74,9 +74,11 @@ Danger zone, do not proceed
 :::
 
 ::: details Click me to view the code
+
 ```ts
 console.log('Hello, VuePress!')
 ```
+
 :::
 ````
 
@@ -87,9 +89,11 @@ Danger zone, do not proceed
 :::
 
 ::: details Click me to view the code
+
 ```ts
 console.log('Hello, VuePress!')
 ```
+
 :::
 
 - Example 3 (code group alias):
@@ -99,14 +103,18 @@ console.log('Hello, VuePress!')
 ````md
 :::: code-group
 ::: code-group-item FOO
+
 ```ts
 const foo = 'foo'
 ```
+
 :::
 ::: code-group-item BAR
+
 ```ts
 const bar = 'bar'
 ```
+
 :::
 ::::
 ````
@@ -115,13 +123,17 @@ const bar = 'bar'
 
 :::: code-group
 ::: code-group-item FOO
+
 ```ts
 const foo = 'foo'
 ```
+
 :::
 ::: code-group-item BAR
+
 ```ts
 const bar = 'bar'
 ```
+
 :::
 ::::

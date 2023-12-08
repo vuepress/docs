@@ -43,7 +43,10 @@ declare const __OBJ__: { bar: number }
 export default (options) => ({
   async onPrepared(app) {
     // 写入临时文件
-    await app.writeTemp('foo.js', `export const foo = ${JSON.stringify(options.foo)}`)
+    await app.writeTemp(
+      'foo.js',
+      `export const foo = ${JSON.stringify(options.foo)}`,
+    )
   },
 })
 ```

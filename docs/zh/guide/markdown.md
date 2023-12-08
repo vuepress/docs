@@ -49,14 +49,19 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 ```md
 <!-- 相对路径 -->
+
 [首页](../README.md)  
 [配置参考](../reference/config.md)  
-[快速上手](./getting-started.md)  
+[快速上手](./getting-started.md)
+
 <!-- 绝对路径 -->
+
 [指南](/zh/guide/README.md)  
-[配置参考 > markdown.links](/zh/reference/config.md#links)  
+[配置参考 > markdown.links](/zh/reference/config.md#links)
+
 <!-- URL -->
-[GitHub](https://github.com) 
+
+[GitHub](https://github.com)
 ```
 
 **转换为**
@@ -67,8 +72,12 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
   <RouterLink to="/zh/reference/config.html">配置参考</RouterLink>
   <RouterLink to="/zh/guide/getting-started.html">快速上手</RouterLink>
   <RouterLink to="/zh/guide/">指南</RouterLink>
-  <RouterLink to="/zh/reference/config.html#links">配置参考 &gt; markdown.links</RouterLink>
-  <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+  <RouterLink to="/zh/reference/config.html#links"
+    >配置参考 &gt; markdown.links</RouterLink
+  >
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+    >GitHub</a
+  >
 </template>
 ```
 
@@ -79,7 +88,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 [快速上手](./getting-started.md)  
 [指南](/zh/guide/README.md)  
 [配置参考 > markdown.links](/zh/reference/config.md#links)  
-[GitHub](https://github.com) 
+[GitHub](https://github.com)
 
 **解释**
 
@@ -141,7 +150,6 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 ::: tip
 目录扩展由 [@mdit-vue/plugin-toc](https://github.com/mdit-vue/mdit-vue/tree/main/packages/plugin-toc) 支持。
 
-
 配置参考： [markdown.toc](../reference/config.md#markdown-toc)
 :::
 
@@ -190,7 +198,7 @@ export default defineUserConfig({
 - 组合： `{4,7-13,16,23-27,40}`
 
 ::: tip
-行高亮扩展是由我们的内置插件支持的，该扩展 Fork 并修改自  [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines)。
+行高亮扩展是由我们的内置插件支持的，该扩展 Fork 并修改自 [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines)。
 
 配置参考： [markdown.code.highlightLines](../reference/config.md#markdown-code-highlightlines)
 :::
@@ -256,6 +264,7 @@ const line3 = 'This is line 3'
 ````md
 ```md
 <!-- 默认情况下，这里会被保持原样 -->
+
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
@@ -274,6 +283,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 
 ```md
 <!-- 默认情况下，这里会被保持原样 -->
+
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
@@ -304,6 +314,7 @@ v-pre 扩展是由我们的内置插件支持的。
 
 ```md
 <!-- 最简单的语法 -->
+
 @[code](../foo.js)
 ```
 
@@ -311,6 +322,7 @@ v-pre 扩展是由我们的内置插件支持的。
 
 ```md
 <!-- 仅导入第 1 行至第 10 行 -->
+
 @[code{1-10}](../foo.js)
 ```
 
@@ -318,6 +330,7 @@ v-pre 扩展是由我们的内置插件支持的。
 
 ```md
 <!-- 指定代码语言 -->
+
 @[code js](../foo.js)
 ```
 
@@ -325,6 +338,7 @@ v-pre 扩展是由我们的内置插件支持的。
 
 ```md
 <!-- 行高亮 -->
+
 @[code js{2,4-5}](../foo.js)
 ```
 
@@ -358,6 +372,7 @@ export default {
 
 ```md
 <!-- 会被解析至 'path/to/src/foo.js' -->
+
 @[code](@src/foo.js)
 ```
 

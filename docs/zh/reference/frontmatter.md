@@ -45,11 +45,11 @@ head:
   - - meta
     - name: foo
       content: yaml 数组语法
-  - [meta, { name: bar , content: 方括号语法 }]
+  - [meta, { name: bar, content: 方括号语法 }]
 ---
 ```
 
-  渲染为：
+渲染为：
 
 ```html
 <head>
@@ -139,13 +139,13 @@ layout: CustomLayout
 
 - 使用：
 
-  |  Pattern  |       描述        |
-  |-----------|-------------------|
-  | `:year`   | 创建日期的 年 部分 |
-  | `:month`  | 创建日期的 月 部分 |
-  | `:day`    | 创建日期的 日 部分 |
-  | `:slug`   | 页面文件名的 Slug  |
-  | `:raw`    | 原始路由路径       |
+  | Pattern  | 描述               |
+  | -------- | ------------------ |
+  | `:year`  | 创建日期的 年 部分 |
+  | `:month` | 创建日期的 月 部分 |
+  | `:day`   | 创建日期的 日 部分 |
+  | `:slug`  | 页面文件名的 Slug  |
+  | `:raw`   | 原始路由路径       |
 
   `:year`, `:month` 和 `:day` Pattern 根据如下优先级进行解析：
 
@@ -167,7 +167,7 @@ permalinkPattern: :year/:month/:day/:slug.html
 ---
 ```
 
-  那么页面的永久链接将会是 `2021/01/03/foo-bar.html` 。
+那么页面的永久链接将会是 `2021/01/03/foo-bar.html` 。
 
 - 示例 2 ：
 
@@ -181,7 +181,7 @@ permalinkPattern: :year/:month/:day/:slug.html
 ---
 ```
 
-  那么页面的永久链接将会是 `2021/01/03/bar-baz.html` 。
+那么页面的永久链接将会是 `2021/01/03/bar-baz.html` 。
 
 - 参考：
   - [配置 > permalinkPattern](./config.md#permalinkpattern)

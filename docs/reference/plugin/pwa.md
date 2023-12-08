@@ -147,7 +147,7 @@ export default {
 
 - Parameters:
 
-|  Parameter   | Type                        | Description                                              |
+| Parameter    | Type                        | Description                                              |
 | ------------ | --------------------------- | -------------------------------------------------------- |
 | registration | `ServiceWorkerRegistration` | The registration of the service worker you want activate |
 

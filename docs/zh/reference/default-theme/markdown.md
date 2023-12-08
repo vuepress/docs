@@ -74,9 +74,11 @@
 :::
 
 ::: details 点击查看代码
+
 ```ts
 console.log('你好，VuePress！')
 ```
+
 :::
 ````
 
@@ -87,9 +89,11 @@ console.log('你好，VuePress！')
 :::
 
 ::: details 点击查看代码
+
 ```ts
 console.log('你好，VuePress！')
 ```
+
 :::
 
 - 示例 3 （Code Group 别名）：
@@ -99,14 +103,18 @@ console.log('你好，VuePress！')
 ````md
 :::: code-group
 ::: code-group-item FOO
+
 ```ts
 const foo = 'foo'
 ```
+
 :::
 ::: code-group-item BAR
+
 ```ts
 const bar = 'bar'
 ```
+
 :::
 ::::
 ````
@@ -115,13 +123,17 @@ const bar = 'bar'
 
 :::: code-group
 ::: code-group-item FOO
+
 ```ts
 const foo = 'foo'
 ```
+
 :::
 ::: code-group-item BAR
+
 ```ts
 const bar = 'bar'
 ```
+
 :::
 ::::

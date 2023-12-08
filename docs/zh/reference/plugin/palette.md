@@ -41,9 +41,7 @@ export default {
 ```ts
 export default {
   // ...
-  plugins: [
-    palettePlugin({ preset: 'sass' }),
-  ],
+  plugins: [palettePlugin({ preset: 'sass' })],
 }
 ```
 
@@ -114,6 +112,7 @@ h1 {
 - 类型： `string`
 
 - 默认值：
+
   - css: `'.vuepress/styles/palette.css'`
   - sass: `'.vuepress/styles/palette.scss'`
   - less: `'.vuepress/styles/palette.less'`
@@ -132,6 +131,7 @@ h1 {
 - 类型： `string`
 
 - 默认值：
+
   - css: `'styles/palette.css'`
   - sass: `'styles/palette.scss'`
   - less: `'styles/palette.less'`
@@ -150,6 +150,7 @@ h1 {
 - 类型： `string`
 
 - 默认值：
+
   - css: `'.vuepress/styles/index.css'`
   - sass: `'.vuepress/styles/index.scss'`
   - less: `'.vuepress/styles/index.less'`
@@ -168,6 +169,7 @@ h1 {
 - 类型： `string`
 
 - 默认值：
+
   - css: `'styles/index.css'`
   - sass: `'styles/index.scss'`
   - less: `'styles/index.less'`
@@ -186,6 +188,7 @@ h1 {
 - 类型： `(filePath: string) => string`
 
 - 默认值：
+
   - css: `` (filePath) => `@import '${filePath}';\n` ``
   - sass: `` (filePath) => `@forward 'file:///${filePath}';\n` ``
   - less: `` (filePath) => `@import '${filePath}';\n` ``

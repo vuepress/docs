@@ -60,6 +60,7 @@
 
 ```md
 <!-- 你不需要给 `/images/hero.png` 手动添加 `/bar/` 前缀 -->
+
 ![VuePress Logo](/images/hero.png)
 ```
 
@@ -67,7 +68,7 @@
 
 ```vue
 <template>
-  <img :src="withBase(logoPath)">
+  <img :src="withBase(logoPath)" />
 </template>
 
 <script setup>

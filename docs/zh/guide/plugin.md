@@ -38,9 +38,7 @@ export default {
 import myPlugin from './path/to/my-plugin.js'
 
 export default {
-  plugins: [
-    myPlugin(),
-  ],
+  plugins: [myPlugin()],
 }
 ```
 

@@ -147,9 +147,9 @@ export default {
 
 - 参数：
 
-|  参数         | 类型                        | 描述                                       |
-| ------------ | --------------------------- | ----------------------------------------- |
-| registration | `ServiceWorkerRegistration` | 你想要激活的 Service Worker 的 Registration  |
+| 参数         | 类型                        | 描述                                        |
+| ------------ | --------------------------- | ------------------------------------------- |
+| registration | `ServiceWorkerRegistration` | 你想要激活的 Service Worker 的 Registration |
 
 - 详情：
 

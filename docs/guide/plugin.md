@@ -38,9 +38,7 @@ But if you have too many things to do in your config file, you can consider to e
 import myPlugin from './path/to/my-plugin.js'
 
 export default {
-  plugins: [
-    myPlugin(),
-  ],
+  plugins: [myPlugin()],
 }
 ```
 

@@ -94,7 +94,7 @@ export default {
 - Default:
 
 ```ts
-(info: string): string =>
+;(info: string): string =>
   `<div class="custom-container ${type}">${
     info ? `<p class="custom-container-title">${info}</p>` : ''
   }\n`
@@ -115,7 +115,7 @@ export default {
 - Default:
 
 ```ts
-(): string => '</div>\n'
+;(): string => '</div>\n'
 ```
 
 - Details:

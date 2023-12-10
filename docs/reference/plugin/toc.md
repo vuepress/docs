@@ -160,9 +160,9 @@ const defaultOptions = {
           <!-- item -->
           <li class="vuepress-toc-item">
             <!-- link (active) -->
-            <RouterLink class="vuepress-toc-link active" to="#bar-child"
-              >Bar Child</RouterLink
-            >
+            <RouterLink class="vuepress-toc-link active" to="#bar-child">
+              Bar Child
+            </RouterLink>
           </li>
         </ul>
       </li>

@@ -357,7 +357,7 @@ export default {
 
 Hello, world.
 `,
-      })
+      }),
     )
   },
 }

@@ -99,12 +99,12 @@ import { defineAsyncComponent } from 'vue'
 
 app.component(
   'FooBar',
-  defineAsyncComponent(() => import('/path/to/components/FooBar.vue'))
+  defineAsyncComponent(() => import('/path/to/components/FooBar.vue')),
 )
 
 app.component(
   'Baz',
-  defineAsyncComponent(() => import('/path/to/components/Baz.vue'))
+  defineAsyncComponent(() => import('/path/to/components/Baz.vue')),
 )
 ```
 
@@ -129,7 +129,7 @@ app.component(
 - 详情：
 
   用于从文件名获取对应组件名称的函数。
-  
+
   它只会对 [componentsDir](#componentsdir) 目录下匹配了 [componentsPatterns](#componentspatterns) 的文件生效。
 
   注意，这里的 `filename` 是相对于 [componentsPatterns](#componentspatterns) 目录的文件路径。

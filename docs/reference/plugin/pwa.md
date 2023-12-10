@@ -125,7 +125,7 @@ But if you omit `skipWaiting` or set it to `false`, you have to activate the new
 - Details:
 
   Returns the event emitter of this plugin.
-  
+
   You can add listener function to events that provided by [register-service-worker](https://github.com/yyx990803/register-service-worker).
 
 - Example:
@@ -147,7 +147,7 @@ export default {
 
 - Parameters:
 
-|  Parameter   | Type                        | Description                                              |
+| Parameter    | Type                        | Description                                              |
 | ------------ | --------------------------- | -------------------------------------------------------- |
 | registration | `ServiceWorkerRegistration` | The registration of the service worker you want activate |
 
@@ -158,10 +158,7 @@ export default {
 - Example:
 
 ```ts
-import {
-  usePwaEvent,
-  useSkipWaiting,
-} from '@vuepress/plugin-pwa/client'
+import { usePwaEvent, useSkipWaiting } from '@vuepress/plugin-pwa/client'
 
 export default {
   setup() {

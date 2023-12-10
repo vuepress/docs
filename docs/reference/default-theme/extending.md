@@ -78,7 +78,10 @@ const __dirname = getDirname(import.meta.url)
 export default defineUserConfig({
   theme: defaultTheme(),
   alias: {
-    '@theme/HomeFooter.vue': path.resolve(__dirname, './components/MyHomeFooter.vue'),
+    '@theme/HomeFooter.vue': path.resolve(
+      __dirname,
+      './components/MyHomeFooter.vue',
+    ),
   },
 })
 ```
@@ -106,7 +109,10 @@ export const childTheme = (options: DefaultThemeOptions): Theme => {
 
     // override component alias
     alias: {
-      '@theme/HomeFooter.vue': path.resolve(__dirname, './components/MyHomeFooter.vue'),
+      '@theme/HomeFooter.vue': path.resolve(
+        __dirname,
+        './components/MyHomeFooter.vue',
+      ),
     },
   }
 }

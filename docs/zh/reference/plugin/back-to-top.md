@@ -16,9 +16,7 @@ npm i -D @vuepress/plugin-back-to-top@next
 import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
 
 export default {
-  plugins: [
-    backToTopPlugin(),
-  ],
+  plugins: [backToTopPlugin()],
 }
 ```
 

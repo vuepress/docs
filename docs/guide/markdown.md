@@ -48,14 +48,19 @@ Take our documentation source files as an example:
 
 ```md
 <!-- relative path -->
+
 [Home](../README.md)  
 [Config Reference](../reference/config.md)  
-[Getting Started](./getting-started.md)  
+[Getting Started](./getting-started.md)
+
 <!-- absolute path -->
+
 [Guide](/guide/README.md)  
-[Config Reference > markdown.links](/reference/config.md#links)  
+[Config Reference > markdown.links](/reference/config.md#links)
+
 <!-- URL -->
-[GitHub](https://github.com)  
+
+[GitHub](https://github.com)
 ```
 
 **Converted to**
@@ -66,8 +71,12 @@ Take our documentation source files as an example:
   <RouterLink to="/reference/config.html">Config Reference</RouterLink>
   <RouterLink to="/guide/getting-started.html">Getting Started</RouterLink>
   <RouterLink to="/guide/">Guide</RouterLink>
-  <RouterLink to="/reference/config.html#links">Config Reference &gt; markdown.links</RouterLink>
-  <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+  <RouterLink to="/reference/config.html#links">
+    Config Reference &gt; markdown.links
+  </RouterLink>
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+    GitHub
+  </a>
 </template>
 ```
 
@@ -78,7 +87,7 @@ Take our documentation source files as an example:
 [Getting Started](./getting-started.md)  
 [Guide](/guide/README.md)  
 [Config Reference > markdown.links](/reference/config.md#links)  
-[GitHub](https://github.com)  
+[GitHub](https://github.com)
 
 **Explanation**
 
@@ -254,11 +263,13 @@ If you want to make Vue syntax work in those languages anyway, try to disable th
 ````md
 ```md
 <!-- This will be kept as is by default -->
+
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
 ```md:no-v-pre
 <!-- This will be compiled by Vue -->
+
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
@@ -272,11 +283,13 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 
 ```md
 <!-- This will be kept as is -->
+
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
 ```md:no-v-pre
 <!-- This will be compiled by Vue -->
+
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
@@ -302,6 +315,7 @@ You can import code blocks from files with following syntax:
 
 ```md
 <!-- minimal syntax -->
+
 @[code](../foo.js)
 ```
 
@@ -309,6 +323,7 @@ If you want to partially import the file:
 
 ```md
 <!-- partial import, from line 1 to line 10 -->
+
 @[code{1-10}](../foo.js)
 ```
 
@@ -316,6 +331,7 @@ The code language is inferred from the file extension, while it is recommended t
 
 ```md
 <!-- specify the code language -->
+
 @[code js](../foo.js)
 ```
 
@@ -323,6 +339,7 @@ In fact, the second part inside the `[]` will be treated as the mark of the code
 
 ```md
 <!-- line highlighting -->
+
 @[code js{2,4-5}](../foo.js)
 ```
 
@@ -356,6 +373,7 @@ export default {
 
 ```md
 <!-- it will be resolved to 'path/to/src/foo.js' -->
+
 @[code](@src/foo.js)
 ```
 

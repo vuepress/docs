@@ -147,9 +147,9 @@ export default {
 
 - 参数：
 
-|  参数         | 类型                        | 描述                                       |
-| ------------ | --------------------------- | ----------------------------------------- |
-| registration | `ServiceWorkerRegistration` | 你想要激活的 Service Worker 的 Registration  |
+| 参数         | 类型                        | 描述                                        |
+| ------------ | --------------------------- | ------------------------------------------- |
+| registration | `ServiceWorkerRegistration` | 你想要激活的 Service Worker 的 Registration |
 
 - 详情：
 
@@ -158,10 +158,7 @@ export default {
 - 示例：
 
 ```ts
-import {
-  usePwaEvent,
-  useSkipWaiting,
-} from '@vuepress/plugin-pwa/client'
+import { usePwaEvent, useSkipWaiting } from '@vuepress/plugin-pwa/client'
 
 export default {
   setup() {

@@ -28,6 +28,7 @@ Similar to the [Table of Contents Markdown Syntax](../../guide/markdown.md#table
 
 ```md
 <!-- markdown toc syntax -->
+
 [[toc]]
 
 <!-- vue toc component -->
@@ -159,7 +160,9 @@ const defaultOptions = {
           <!-- item -->
           <li class="vuepress-toc-item">
             <!-- link (active) -->
-            <RouterLink class="vuepress-toc-link active" to="#bar-child">Bar Child</RouterLink>
+            <RouterLink class="vuepress-toc-link active" to="#bar-child">
+              Bar Child
+            </RouterLink>
           </li>
         </ul>
       </li>

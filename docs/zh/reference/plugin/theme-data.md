@@ -70,7 +70,7 @@ export default {
 - 详情：
 
   返回主题数据的 Ref 对象。
-  
+
   数据是通过 [themeData](#themeData) 配置项提供的。
 
 - 示例：

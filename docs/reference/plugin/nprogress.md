@@ -24,9 +24,7 @@ npm i -D @vuepress/plugin-nprogress@next
 import { nprogressPlugin } from '@vuepress/plugin-nprogress'
 
 export default {
-  plugins: [
-    nprogressPlugin(),
-  ],
+  plugins: [nprogressPlugin()],
 }
 ```
 

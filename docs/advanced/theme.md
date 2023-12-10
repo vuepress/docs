@@ -6,7 +6,7 @@ Before reading this guide, you'd better learn the guide of [Writing a Plugin](./
 
 ## Create a Theme
 
-A VuePress theme is a special plugin, which should satisfy the [Theme API](../reference/theme-api.md). Like plugins, a theme should also be a *Theme Object* or a *Theme Function*, and could be wrapped with a function to receive options:
+A VuePress theme is a special plugin, which should satisfy the [Theme API](../reference/theme-api.md). Like plugins, a theme should also be a _Theme Object_ or a _Theme Function_, and could be wrapped with a function to receive options:
 
 ```ts
 import { getDirname, path } from '@vuepress/utils'
@@ -90,11 +90,9 @@ Also, there are some conventions for theme in [package.json](https://docs.npmjs.
 ```json
 {
   "name": "vuepress-theme-foo",
-  "keywords": [
-    "vuepress-theme"
-  ]
+  "keywords": ["vuepress-theme"]
 }
 ```
 
-- Set `name` to follow the naming convention: `vuepress-theme-xxx` or `@org/vuepress-theme-xxx`, which should be consistent with the [name](../reference/theme-api.md#name) field of the *Theme Object*.
+- Set `name` to follow the naming convention: `vuepress-theme-xxx` or `@org/vuepress-theme-xxx`, which should be consistent with the [name](../reference/theme-api.md#name) field of the _Theme Object_.
 - Set `keywords` to include `vuepress-theme`, so that users can search your theme on NPM.

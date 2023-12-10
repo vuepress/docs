@@ -6,7 +6,7 @@
 
 ## 创建一个主题
 
-VuePress 主题是一个特殊的插件，它应该符合 [主题 API](../reference/theme-api.md) 。和插件一样，主题可以是一个 *主题对象* 或一个 *主题函数* ，并且通常通过一个函数来接收配置项：
+VuePress 主题是一个特殊的插件，它应该符合 [主题 API](../reference/theme-api.md) 。和插件一样，主题可以是一个 _主题对象_ 或一个 _主题函数_ ，并且通常通过一个函数来接收配置项：
 
 ```ts
 import { getDirname, path } from '@vuepress/utils'
@@ -90,11 +90,9 @@ export default defineClientConfig({
 ```json
 {
   "name": "vuepress-theme-foo",
-  "keywords": [
-    "vuepress-theme"
-  ]
+  "keywords": ["vuepress-theme"]
 }
 ```
 
-- 将 `name` 按照约定命名： `vuepress-theme-xxx` 或 `@org/vuepress-theme-xxx` ，它应该和 *主题对象* 的 [name](../reference/theme-api.md#name) 字段保持一致。
+- 将 `name` 按照约定命名： `vuepress-theme-xxx` 或 `@org/vuepress-theme-xxx` ，它应该和 _主题对象_ 的 [name](../reference/theme-api.md#name) 字段保持一致。
 - 在 `keywords` 中包含 `vuepress-theme` ，这样用户可以在 NPM 上搜索到你的主题。

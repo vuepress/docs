@@ -60,6 +60,7 @@ In most cases, you don't need to worry about the reference path of those public 
 
 ```md
 <!-- you don't need to prepend `/bar/` to `/images/hero.png` manually -->
+
 ![VuePress Logo](/images/hero.png)
 ```
 
@@ -67,7 +68,7 @@ However, sometimes you may have some dynamical links referencing public files, e
 
 ```vue
 <template>
-  <img :src="withBase(logoPath)">
+  <img :src="withBase(logoPath)" />
 </template>
 
 <script setup>

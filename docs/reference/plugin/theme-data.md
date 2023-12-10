@@ -70,7 +70,7 @@ The theme data object will be processed by `JSON.stringify()` before forwarding 
 - Details:
 
   Returns the theme data ref object.
-  
+
   The value is provided by [themeData](#themeData) option.
 
 - Example:

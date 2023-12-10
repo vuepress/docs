@@ -93,12 +93,12 @@ export default {
 
 - 默认值：
 
+<!-- prettier-ignore-start -->
 ```ts
-;(info: string): string =>
-  `<div class="custom-container ${type}">${
-    info ? `<p class="custom-container-title">${info}</p>` : ''
-  }\n`
+(info: string): string =>
+  `<div class="custom-container ${type}">${info ? `<p class="custom-container-title">${info}</p>` : ''}\n`
 ```
+<!-- prettier-ignore-end -->
 
 - 详情：
 
@@ -114,9 +114,11 @@ export default {
 
 - 默认值：
 
+<!-- prettier-ignore-start -->
 ```ts
-;(): string => '</div>\n'
+(): string => '</div>\n'
 ```
+<!-- prettier-ignore-end -->
 
 - 详情：
 

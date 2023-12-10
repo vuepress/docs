@@ -71,12 +71,12 @@ Take our documentation source files as an example:
   <RouterLink to="/reference/config.html">Config Reference</RouterLink>
   <RouterLink to="/guide/getting-started.html">Getting Started</RouterLink>
   <RouterLink to="/guide/">Guide</RouterLink>
-  <RouterLink to="/reference/config.html#links"
-    >Config Reference &gt; markdown.links</RouterLink
-  >
-  <a href="https://github.com" target="_blank" rel="noopener noreferrer"
-    >GitHub</a
-  >
+  <RouterLink to="/reference/config.html#links">
+    Config Reference &gt; markdown.links
+  </RouterLink>
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+    GitHub
+  </a>
 </template>
 ```
 
@@ -269,6 +269,7 @@ If you want to make Vue syntax work in those languages anyway, try to disable th
 
 ```md:no-v-pre
 <!-- This will be compiled by Vue -->
+
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
@@ -288,6 +289,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 
 ```md:no-v-pre
 <!-- This will be compiled by Vue -->
+
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 

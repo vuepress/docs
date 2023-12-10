@@ -72,12 +72,12 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
   <RouterLink to="/zh/reference/config.html">配置参考</RouterLink>
   <RouterLink to="/zh/guide/getting-started.html">快速上手</RouterLink>
   <RouterLink to="/zh/guide/">指南</RouterLink>
-  <RouterLink to="/zh/reference/config.html#links"
-    >配置参考 &gt; markdown.links</RouterLink
-  >
-  <a href="https://github.com" target="_blank" rel="noopener noreferrer"
-    >GitHub</a
-  >
+  <RouterLink to="/zh/reference/config.html#links">
+    配置参考 &gt; markdown.links
+  </RouterLink>
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+    GitHub
+  </a>
 </template>
 ```
 
@@ -270,6 +270,7 @@ const line3 = 'This is line 3'
 
 ```md:no-v-pre
 <!-- 这里会被 Vue 编译 -->
+
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 
@@ -289,6 +290,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 
 ```md:no-v-pre
 <!-- 这里会被 Vue 编译 -->
+
 1 + 2 + 3 = {{ 1 + 2 + 3 }}
 ```
 

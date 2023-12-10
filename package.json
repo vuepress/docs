@@ -9,8 +9,9 @@
     "docs:clean": "rimraf docs/.vuepress/.temp docs/.vuepress/.cache docs/.vuepress/dist",
     "docs:dev": "vuepress-cli dev docs --clean-cache --clean-temp",
     "docs:dev-webpack": "DOCS_BUNDLER=webpack pnpm docs:dev",
-    "docs:lint": "prettier --check --write .",
-    "docs:serve": "anywhere -s -h localhost -d docs/.vuepress/dist"
+    "docs:serve": "anywhere -s -h localhost -d docs/.vuepress/dist",
+    "format": "prettier --write .",
+    "lint": "eslint --ext .cjs,.js,.ts,.vue . && prettier --check ."
   },
   "commitlint": {
     "extends": [

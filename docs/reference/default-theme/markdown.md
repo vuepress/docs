@@ -109,6 +109,7 @@ const foo = 'foo'
 ```
 
 :::
+
 ::: code-group-item BAR
 
 ```ts
@@ -129,6 +130,7 @@ const foo = 'foo'
 ```
 
 :::
+
 ::: code-group-item BAR
 
 ```ts

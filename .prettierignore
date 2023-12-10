@@ -1,10 +1,2 @@
-# VuePress files
-docs/.vuepress/.temp/
-docs/.vuepress/.cache/
-docs/.vuepress/dist/
-
-# Node modules
-node_modules/
-
 # pnpm lockfile
 pnpm-lock.yaml

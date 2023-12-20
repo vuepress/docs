@@ -188,7 +188,7 @@ actions:
     link: /guide/getting-started.html
     type: primary
   - text: Introduction
-    link: /guide/
+    link: /guide/introduction.html
     type: secondary
 ---
 ```

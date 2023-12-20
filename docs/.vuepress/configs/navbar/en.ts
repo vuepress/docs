@@ -4,7 +4,20 @@ import { version } from '../meta.js'
 export const navbarEn: NavbarConfig = [
   {
     text: 'Guide',
-    link: '/guide/',
+    children: [
+      '/guide/introduction.md',
+      '/guide/getting-started.md',
+      '/guide/configuration.md',
+      '/guide/page.md',
+      '/guide/markdown.md',
+      '/guide/assets.md',
+      '/guide/i18n.md',
+      '/guide/deployment.md',
+      '/guide/theme.md',
+      '/guide/plugin.md',
+      '/guide/bundler.md',
+      '/guide/migration.md',
+    ],
   },
   {
     text: 'Reference',

@@ -55,7 +55,7 @@ Take our documentation source files as an example:
 
 <!-- absolute path -->
 
-[Guide](/guide/README.md)  
+[Guide > Introduction](/guide/introduction.md)  
 [Config Reference > markdown.links](/reference/config.md#links)
 
 <!-- URL -->
@@ -70,7 +70,7 @@ Take our documentation source files as an example:
   <RouterLink to="/">Home</RouterLink>
   <RouterLink to="/reference/config.html">Config Reference</RouterLink>
   <RouterLink to="/guide/getting-started.html">Getting Started</RouterLink>
-  <RouterLink to="/guide/">Guide</RouterLink>
+  <RouterLink to="/guide/introduction.html">Guide &gt; Introduction</RouterLink>
   <RouterLink to="/reference/config.html#links">
     Config Reference &gt; markdown.links
   </RouterLink>
@@ -85,7 +85,7 @@ Take our documentation source files as an example:
 [Home](../README.md)  
 [Config Reference](../reference/config.md)  
 [Getting Started](./getting-started.md)  
-[Guide](/guide/README.md)  
+[Guide > Introduction](/guide/introduction.md)  
 [Config Reference > markdown.links](/reference/config.md#links)  
 [GitHub](https://github.com)
 

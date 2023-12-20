@@ -362,7 +362,7 @@ export default {
       '/guide/': [
         {
           text: 'Guide',
-          children: ['/guide/README.md', '/guide/getting-started.md'],
+          children: ['/guide/introduction.md', '/guide/getting-started.md'],
         },
       ],
       '/reference/': [

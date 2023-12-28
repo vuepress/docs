@@ -47,7 +47,7 @@ Using a theme via string is not supported. Import the theme directly.
 -   },
 - }
 
-+ import { defaultTheme } from 'vuepress'
++ import { defaultTheme } from '@vuepress/theme-default'
 + export default {
 +   theme: defaultTheme({
 +     // default theme config

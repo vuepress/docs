@@ -70,8 +70,9 @@ import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
 接下来，如果你想要替换 `HomeFooter.vue` 组件，只需要在配置文件 `.vuepress/config.ts` 中覆盖这个别名即可：
 
 ```ts
+import { defaultTheme } from '@vuepress/theme-default'
 import { getDirname, path } from '@vuepress/utils'
-import { defaultTheme, defineUserConfig } from 'vuepress'
+import { defineUserConfig } from 'vuepress'
 
 const __dirname = getDirname(import.meta.url)
 

@@ -163,8 +163,9 @@ You can highlight specified lines of your code blocks by adding line ranges mark
 **Input**
 
 ````md
-```ts{1,6-8}
-import { defaultTheme, defineUserConfig } from 'vuepress'
+```ts{1,7-9}
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   title: 'Hello, VuePress',
@@ -178,8 +179,9 @@ export default defineUserConfig({
 
 **Output**
 
-```ts{1,6-8}
-import { defaultTheme, defineUserConfig } from 'vuepress'
+```ts{1,7-9}
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   title: 'Hello, VuePress',

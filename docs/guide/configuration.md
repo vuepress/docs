@@ -2,17 +2,6 @@
 
 ## Config File
 
-Without any configuration, the VuePress site is pretty minimal. To customize your site, let’s first create a `.vuepress` directory inside your docs directory. This is where all VuePress-specific files will be placed. Your project structure is probably like this:
-
-```
-├─ docs
-│  ├─ .vuepress
-│  │  └─ config.js
-│  └─ README.md
-├─ .gitignore
-└─ package.json
-```
-
 The essential file for configuring a VuePress site is `.vuepress/config.js`, while TypeScript config file is also supported. You can use `.vuepress/config.ts` instead to get better types hint for VuePress config.
 
 To be more specific, we have a convention for config file paths (in order of precedence):
@@ -29,15 +18,20 @@ To be more specific, we have a convention for config file paths (in order of pre
 You can also specify the config file via `--config` option of [CLI](../reference/cli.md):
 
 ```sh
-vuepress dev docs --config my-config.js
+vuepress dev docs --config my-config.ts
 ```
 
 A basic config file looks like this:
 
 ```ts
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
+  bundler: viteBundler(),
+  theme: defaultTheme(),
+
   lang: 'en-US',
   title: 'Hello VuePress',
   description: 'Just playing around',

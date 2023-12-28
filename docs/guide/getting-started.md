@@ -4,7 +4,13 @@
 VuePress v2 is currently in RC (Release Candidate) stage. It's ready to be used for building your site, but the config and API are not stable enough, which is possibly to have minor breaking changes. So make sure to read the [changelog](https://github.com/vuepress/vuepress-next/blob/main/CHANGELOG.md) carefully each time you upgrade a RC version.
 :::
 
-## Prerequisites
+## Try It Online
+
+You can try VuePress directly in your browser on [StackBlitz](https://stackblitz.com/fork/vuepress).
+
+## Installation
+
+### Prerequisites
 
 - [Node.js v18.16.0+](https://nodejs.org/)
 - Package manager like [pnpm](https://pnpm.io), [yarn](https://classic.yarnpkg.com/en/), [npm](https://www.npmjs.com), etc.
@@ -16,21 +22,27 @@ VuePress v2 is currently in RC (Release Candidate) stage. It's ready to be used 
 
 :::
 
-## Manual Installation
+### Project Setup
 
-This section will help you build a basic VuePress documentation site from ground up. If you already have an existing project and would like to keep documentation inside the project, start from Step 3.
+#### Setup via CLI
 
-- **Step 1**: Create and change into a new directory
+TODO
+
+#### Setup Manually
+
+This section will help you build a basic VuePress documentation site from ground up.
+
+- Create and change into a new directory
 
 ```bash
 mkdir vuepress-starter
 cd vuepress-starter
 ```
 
-- **Step 2**: Initialize your project
+- Initialize your project
 
 <CodeGroup>
-  <CodeGroupItem title="PNPM" active>
+  <CodeGroupItem title="pnpm" active>
 
 ```bash
 git init
@@ -39,7 +51,7 @@ pnpm init
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="YARN">
+  <CodeGroupItem title="yarn">
 
 ```bash
 git init
@@ -48,7 +60,7 @@ yarn init
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="NPM">
+  <CodeGroupItem title="npm">
 
 ```bash
 git init
@@ -58,35 +70,103 @@ npm init
   </CodeGroupItem>
 </CodeGroup>
 
-- **Step 3**: Install VuePress locally
+- Install VuePress
 
 <CodeGroup>
-  <CodeGroupItem title="PNPM" active>
+  <CodeGroupItem title="pnpm" active>
 
 ```bash
+# install vuepress and required peer dependencies
 pnpm add -D vuepress@next @vuepress/client@next vue
+# install bundler and theme
+pnpm add -D @vuepress/bundler-vite@next @vuepress/theme-default@next
 ```
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="YARN">
+  <CodeGroupItem title="yarn">
 
 ```bash
+# install vuepress
 yarn add -D vuepress@next
+# install bundler and theme
+yarn add -D @vuepress/bundler-vite@next @vuepress/theme-default@next
 ```
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="NPM">
+  <CodeGroupItem title="npm">
 
 ```bash
+# install vuepress
 npm install -D vuepress@next
+# install bundler and theme
+npm install -D @vuepress/bundler-vite@next @vuepress/theme-default@next
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
-- **Step 4**: Add some [scripts](https://classic.yarnpkg.com/en/docs/package-json#toc-scripts) to `package.json`
+- Create `docs` directory and `docs/.vuepress` directory
+
+```bash
+mkdir docs
+mkdir docs/.vuepress
+```
+
+- Create the VuePress config file `docs/.vuepress/config.js`
+
+```ts
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  bundler: viteBundler(),
+  theme: defaultTheme(),
+})
+```
+
+- Create your first document
+
+```bash
+echo '# Hello VuePress' > docs/README.md
+```
+
+## Directory Structure
+
+After the setup, the minimal structure of your project should look like this:
+
+```
+├─ docs
+│  ├─ .vuepress
+│  │  └─ config.js
+│  └─ README.md
+└─ package.json
+```
+
+The `docs` directory is where you put your markdown files, and it will be used as the source directory of VuePress.
+
+The `docs/.vuepress` directory, i.e. the `.vuepress` directory in the source directory, is where all VuePress-specific files will be placed. Currently there is only one config file in it. By default, the temp, cache and output directory will also be generated inside this directory. It is suggested to add them to your `.gitignore` file.
+
+::: details Example `.gitignore` file
+
+```
+# VuePress default temp directory
+.vuepress/.temp
+# VuePress default cache directory
+.vuepress/.cache
+# VuePress default build output directory
+.vuepress/dist
+```
+
+:::
+
+## Work with VuePress
+
+### Start Dev Server
+
+You can add some [scripts](https://classic.yarnpkg.com/en/docs/package-json#toc-scripts) to `package.json`:
 
 ```json
 {
@@ -97,25 +177,10 @@ npm install -D vuepress@next
 }
 ```
 
-- **Step 5**: Add the default temp and cache directory to `.gitignore` file
-
-```bash
-echo 'node_modules' >> .gitignore
-echo '.temp' >> .gitignore
-echo '.cache' >> .gitignore
-```
-
-- **Step 6**: Create your first document
-
-```bash
-mkdir docs
-echo '# Hello VuePress' > docs/README.md
-```
-
-- **Step 7**: Serve the documentation site in the local server
+Then, run `docs:dev` script to start the dev server:
 
 <CodeGroup>
-  <CodeGroupItem title="PNPM" active>
+  <CodeGroupItem title="pnpm" active>
 
 ```bash
 pnpm docs:dev
@@ -123,7 +188,7 @@ pnpm docs:dev
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="YARN">
+  <CodeGroupItem title="yarn">
 
 ```bash
 yarn docs:dev
@@ -131,7 +196,7 @@ yarn docs:dev
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="NPM">
+  <CodeGroupItem title="npm">
 
 ```bash
 npm run docs:dev
@@ -142,4 +207,40 @@ npm run docs:dev
 
 VuePress will start a hot-reloading development server at [http://localhost:8080](http://localhost:8080). When you modify your markdown files, the content in the browser will be auto updated.
 
-By now, you should have a basic but functional VuePress documentation site. Next, learn about the basics of [configuration](./configuration.md) in VuePress.
+### Build Your Site
+
+To build your site, run `docs:build` script:
+
+<CodeGroup>
+  <CodeGroupItem title="pnpm" active>
+
+```bash
+pnpm docs:build
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="yarn">
+
+```bash
+yarn docs:build
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="npm">
+
+```bash
+npm run docs:build
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+You will see the generated static files in the `docs/.vuepress/dist` directory. You can check out [deployment](./deployment.md) for how to deploy them.
+
+## Learn More about VuePress
+
+By now, you should have a basic but functional VuePress site. But you may still need to read the subsequent guide to learn more about VuePress.
+
+Next step, learn more about the [configuration](./configuration.md).

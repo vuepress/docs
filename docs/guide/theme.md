@@ -4,16 +4,15 @@ VuePress theme can provide layouts, styles and many other features for you, help
 
 ## Default Theme
 
-VuePress has a default theme out of the box, which is applied to our documentation site you are currently browsing.
+VuePress provides a default theme, which is applied to our documentation site you are currently browsing.
 
-If you don't specify the theme to use, the default theme will be used automatically.
-
-To configure the default theme, you need to import and use it in your config file via the [theme](../reference/config.md#theme) option:
+You need to import and use it in your config file via the [theme](../reference/config.md#theme) option:
 
 ```ts
-import { defaultTheme } from 'vuepress'
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
 
-export default {
+export default defineUserConfig({
   theme: defaultTheme({
     // default theme config
     navbar: [
@@ -23,7 +22,7 @@ export default {
       },
     ],
   }),
-}
+})
 ```
 
 The default theme provides basic but useful features for documentation site, you can check out [Default Theme Config Reference](../reference/default-theme/config.md) for a full list of config.

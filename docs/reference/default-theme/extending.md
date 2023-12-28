@@ -70,8 +70,9 @@ Default theme has registered [alias](../plugin-api.md#alias) for every [non-glob
 Then, if you want to replace the `HomeFooter.vue` component, just override the alias in your config file `.vuepress/config.ts`:
 
 ```ts
+import { defaultTheme } from '@vuepress/theme-default'
 import { getDirname, path } from '@vuepress/utils'
-import { defaultTheme, defineUserConfig } from 'vuepress'
+import { defineUserConfig } from 'vuepress'
 
 const __dirname = getDirname(import.meta.url)
 

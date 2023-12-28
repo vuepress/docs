@@ -61,7 +61,7 @@
 
 ````md
 <CodeGroup>
-  <CodeGroupItem title="PNPM">
+  <CodeGroupItem title="pnpm">
 
 ```bash:no-line-numbers
 pnpm install
@@ -69,7 +69,7 @@ pnpm install
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="YARN">
+  <CodeGroupItem title="yarn">
 
 ```bash:no-line-numbers
 yarn install
@@ -77,7 +77,7 @@ yarn install
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="NPM" active>
+  <CodeGroupItem title="npm" active>
 
 ```bash:no-line-numbers
 npm install
@@ -90,7 +90,7 @@ npm install
 **输出**
 
 <CodeGroup>
-  <CodeGroupItem title="PNPM">
+  <CodeGroupItem title="pnpm">
 
 ```bash:no-line-numbers
 pnpm install
@@ -98,7 +98,7 @@ pnpm install
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="YARN">
+  <CodeGroupItem title="yarn">
 
 ```bash:no-line-numbers
 yarn install
@@ -106,7 +106,7 @@ yarn install
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="NPM" active>
+  <CodeGroupItem title="npm" active>
 
 ```bash:no-line-numbers
 npm install

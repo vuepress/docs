@@ -1,67 +1,63 @@
 # Bundler
 
-VuePress has been using [Webpack](https://webpack.js.org/) as the bundler to dev and build sites. Since VuePress v2, other bundlers are also supported, and now we are using [Vite](https://vitejs.dev/) as the default bundler. Of course, you can still choose to use Webpack.
+VuePress supports using [Webpack](https://webpack.js.org/) or [Vite](https://vitejs.dev/) to dev and build sites. You can choose which bundler to use according to your preference, and no extra configuration is required.
 
-## Choose a Bundler
+## Install a Bundler
 
-When using the [vuepress](https://www.npmjs.com/package/vuepress) package, Vite bundler is installed and used automatically.
-
-If you want to use Webpack bundler instead, you can remove it and install the [vuepress-webpack](https://www.npmjs.com/package/vuepress-webpack) package instead:
+When installing the [vuepress](https://www.npmjs.com/package/vuepress) package, no bundlers will be installed. You need to choose a bundler to install.
 
 <CodeGroup>
-  <CodeGroupItem title="PNPM" active>
+  <CodeGroupItem title="pnpm" active>
 
 ```bash
-pnpm remove vuepress
-pnpm add -D vuepress-webpack@next
+# install vite bundler
+pnpm add -D vuepress@next @vuepress/bundler-vite@next
+# install webpack bundler
+pnpm add -D vuepress@next @vuepress/bundler-webpack@next
 ```
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="YARN">
+  <CodeGroupItem title="yarn">
 
 ```bash
-yarn remove vuepress
-yarn add -D vuepress-webpack@next
+# install vite bundler
+yarn add -D vuepress@next @vuepress/bundler-vite@next
+# install webpack bundler
+yarn add -D vuepress@next @vuepress/bundler-webpack@next
 ```
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="NPM">
+  <CodeGroupItem title="npm">
 
 ```bash
-npm uninstall vuepress
-npm install -D vuepress-webpack@next
+# install vite bundler
+npm install -D vuepress@next @vuepress/bundler-vite@next
+# install webpack bundler
+npm install -D vuepress@next @vuepress/bundler-webpack@next
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
-::: tip
-In fact, the [vuepress](https://www.npmjs.com/package/vuepress) package is just a wrapper of the [vuepress-vite](https://www.npmjs.com/package/vuepress-vite) package.
-:::
-
-## Configure Bundler
+## Use a Bundler
 
 Generally, you could use a bundler without extra configuration, because we have already configured them properly to work with VuePress.
 
-You can configure bundler for advanced usage via the [bundler](../reference/config.md#bundler) option:
+You can use a bundler via the [bundler](../reference/config.md#bundler) option:
 
 ```ts
-import { viteBundler } from 'vuepress'
-// import { webpackBundler } from 'vuepress-webpack'
+import { viteBundler } from '@vuepress/bundler-vite'
+// import { webpackBundler } from '@vuepress/bundler-webpack'
 
 export default {
-  bundler: viteBundler({
-    vuePluginOptions: {
-      template: {
-        compilerOptions: {
-          isCustomElement: (tag) => tag === 'center',
-        },
-      },
-    },
-  }),
+  bundler: viteBundler(),
+  // bundler: webpackBundler(),
 }
 ```
 
-You can refer to [Bundlers > Vite](../reference/bundler/vite.md) and [Bundlers > Webpack](../reference/bundler/webpack.md) to check out all options of the corresponding bundler.
+When you need to customize the bundler, you can set the corresponding options:
+
+- [Bundlers > Vite](../reference/bundler/vite.md)
+- [Bundlers > Webpack](../reference/bundler/webpack.md)

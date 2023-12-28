@@ -164,8 +164,9 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 **输入**
 
 ````md
-```ts{1,6-8}
-import { defaultTheme, defineUserConfig } from 'vuepress'
+```ts{1,7-9}
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   title: '你好， VuePress',
@@ -179,8 +180,9 @@ export default defineUserConfig({
 
 **输出**
 
-```ts{1,6-8}
-import { defaultTheme, defineUserConfig } from 'vuepress'
+```ts{1,7-9}
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   title: '你好， VuePress',

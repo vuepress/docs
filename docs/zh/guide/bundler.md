@@ -1,67 +1,63 @@
 # 打包工具
 
-VuePress 一直以来都在使用 [Webpack](https://webpack.js.org/) 作为打包工具来进行网站的开发和构建。从 VuePress v2 开始，我们还支持使用其他的打包工具，并且现在使用 [Vite](https://vitejs.dev/) 作为默认的打包工具。当然，你仍然可以选择使用 Webpack 。
+VuePress 支持使用 [Vite](https://vitejs.dev/) 或 [Webpack](https://webpack.js.org/) 作为打包工具来进行网站的开发和构建。你可以根据自己的喜好来选择使用哪个打包工具，并且不需要进行额外的配置。
 
-## 选择一个打包工具
+## 安装打包工具
 
-在使用 [vuepress](https://www.npmjs.com/package/vuepress) 包时，会自动安装和使用 Vite 打包工具。
-
-如果你想改为使用 Webpack 打包工具，那么你可以移除它，改为安装 [vuepress-webpack](https://www.npmjs.com/package/vuepress-webpack) 包：
+在安装 [vuepress](https://www.npmjs.com/package/vuepress) 包时，并不会自动安装打包工具，你需要选择并安装一个打包工具。
 
 <CodeGroup>
-  <CodeGroupItem title="PNPM" active>
+  <CodeGroupItem title="pnpm" active>
 
 ```bash
-pnpm uninstall vuepress
-pnpm add -D vuepress-webpack@next
+# 安装 vite 打包工具
+pnpm add -D vuepress@next @vuepress/bundler-vite@next
+# 安装 webpack 打包工具
+pnpm add -D vuepress@next @vuepress/bundler-webpack@next
 ```
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="YARN">
+  <CodeGroupItem title="yarn">
 
 ```bash
-yarn remove vuepress
-yarn add -D vuepress-webpack@next
+# 安装 vite 打包工具
+yarn add -D vuepress@next @vuepress/bundler-vite@next
+# 安装 webpack 打包工具
+yarn add -D vuepress@next @vuepress/bundler-webpack@next
 ```
 
   </CodeGroupItem>
 
-  <CodeGroupItem title="NPM">
+  <CodeGroupItem title="npm">
 
 ```bash
-npm uninstall vuepress
-npm install -D vuepress-webpack@next
+# 安装 vite 打包工具
+npm install -D vuepress@next @vuepress/bundler-vite@next
+# 安装 webpack 打包工具
+npm install -D vuepress@next @vuepress/bundler-webpack@next
 ```
 
   </CodeGroupItem>
 </CodeGroup>
 
-::: tip
-实际上， [vuepress](https://www.npmjs.com/package/vuepress) 包只是 [vuepress-vite](https://www.npmjs.com/package/vuepress-vite) 包的一个封装而已。
-:::
-
-## 配置打包工具
+## 使用打包工具
 
 一般情况下，你不要任何额外配置就可以使用打包工具，因为我们已经帮你配置好了它们。
 
-通过 [bundler](../reference/config.md#bundler) 配置项，你可以对打包工具进行进阶配置：
+你只需要通过 [bundler](../reference/config.md#bundler) 配置项指定打包工具即可：
 
 ```ts
-import { viteBundler } from 'vuepress'
-// import { webpackBundler } from 'vuepress-webpack'
+import { viteBundler } from '@vuepress/bundler-vite'
+// import { webpackBundler } from '@vuepress/bundler-webpack'
 
 export default {
-  bundler: viteBundler({
-    vuePluginOptions: {
-      template: {
-        compilerOptions: {
-          isCustomElement: (tag) => tag === 'center',
-        },
-      },
-    },
-  }),
+  bundler: viteBundler(),
+  // bundler: webpackBundler(),
 }
 ```
 
-你可以参考 [打包工具 > Vite](../reference/bundler/vite.md) 和 [打包工具 > Webpack](../reference/bundler/webpack.md) 来查看对应打包工具的所有配置项。
+当你需要对打包工具进行进阶配置时，只需要传入对应的配置项即可：
+
+- [打包工具 > Vite](../reference/bundler/vite.md)
+- [打包工具 > Webpack](../reference/bundler/webpack.md)

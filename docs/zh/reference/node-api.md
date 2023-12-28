@@ -2,7 +2,7 @@
 
 <NpmBadge package="@vuepress/core" />
 
-Node API 是由 [@vuepress/core](https://www.npmjs.com/package/@vuepress/core) 包提供的。它是 [vuepress](https://www.npmjs.com/package/vuepress) 包的依赖之一，当然你也可以单独安装它：
+Node API 是由 [@vuepress/core](https://www.npmjs.com/package/@vuepress/core) 包提供的，同时也可以通过 `vuepress/core` 来引入。
 
 ```bash
 npm i -D @vuepress/core@next
@@ -339,7 +339,7 @@ const createPage: (app: App, options: PageOptions) => Promise<Page>
 - 示例：
 
 ```ts
-import { createPage } from '@vuepress/core'
+import { createPage } from 'vuepress/core'
 
 export default {
   // 在 onInitialized hook 中创建一个额外页面

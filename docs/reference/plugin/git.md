@@ -95,8 +95,8 @@ This plugin will add a `git` field to page data.
 After using this plugin, you can get the collected git information in page data:
 
 ```ts
-import { usePageData } from '@vuepress/client'
 import type { GitPluginPageData } from '@vuepress/plugin-git'
+import { usePageData } from 'vuepress/client'
 
 export default {
   setup() {

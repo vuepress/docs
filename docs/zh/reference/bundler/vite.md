@@ -14,7 +14,7 @@ Vite 打包工具的配置项：
 
 ```ts
 import { viteBundler } from '@vuepress/bundler-vite'
-import { defineUserConfig } from '@vuepress/cli'
+import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   bundler: viteBundler({

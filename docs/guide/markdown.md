@@ -359,7 +359,7 @@ Here is a complex example:
 Notice that path aliases are not available in import code syntax. You can use following config to handle path alias yourself:
 
 ```ts
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 

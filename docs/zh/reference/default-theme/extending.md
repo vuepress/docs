@@ -25,7 +25,7 @@ VuePress 提供了继承主题的基础能力，但不同的主题可能会提�
 首先，创建一个客户端配置文件 `.vuepress/client.ts` ：
 
 ```ts
-import { defineClientConfig } from '@vuepress/client'
+import { defineClientConfig } from 'vuepress/client'
 import Layout from './layouts/Layout.vue'
 
 export default defineClientConfig({
@@ -71,7 +71,7 @@ import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
 
 ```ts
 import { defaultTheme } from '@vuepress/theme-default'
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 import { defineUserConfig } from 'vuepress'
 
 const __dirname = getDirname(import.meta.url)
@@ -92,9 +92,9 @@ export default defineUserConfig({
 除了在 `.vuepress/config.ts` 和 `.vuepress/client.ts` 中直接扩展默认主题以外，你可以通过继承默认主题来开发一个你自己的主题：
 
 ```ts
-import type { Theme } from '@vuepress/core'
 import { defaultTheme, type DefaultThemeOptions } from '@vuepress/theme-default'
-import { getDirname, path } from '@vuepress/utils'
+import type { Theme } from 'vuepress/core'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 

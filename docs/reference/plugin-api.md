@@ -86,7 +86,7 @@ The following hooks will be processed in dev / build:
 - Example:
 
 ```ts
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
@@ -110,7 +110,7 @@ export default {
 - Example:
 
 ```ts
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
@@ -311,7 +311,7 @@ export default {
 In client component:
 
 ```ts
-import { usePageData } from '@vuepress/client'
+import { usePageData } from 'vuepress/client'
 
 export default {
   setup() {

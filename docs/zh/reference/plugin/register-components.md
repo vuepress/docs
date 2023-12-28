@@ -41,7 +41,7 @@ export default {
 - 示例：
 
 ```ts
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
@@ -71,7 +71,7 @@ export default {
 - 示例：
 
 ```ts
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 

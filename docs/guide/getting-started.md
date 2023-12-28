@@ -17,7 +17,7 @@ You can try VuePress directly in your browser on [StackBlitz](https://stackblitz
 
 ::: tip
 
-- When using [pnpm](https://pnpm.io/), you need to install `vue` and `@vuepress/client` as peer-dependencies.
+- When using [pnpm](https://pnpm.io/), you need to install `vue` as peer-dependencies.
 - When using [yarn 2+](https://yarnpkg.com/), you need to set `nodeLinker: 'node-modules'` in your [`.yarnrc.yml`](https://yarnpkg.com/configuration/yarnrc#nodeLinker) file.
 
 :::
@@ -76,8 +76,8 @@ npm init
   <CodeGroupItem title="pnpm" active>
 
 ```bash
-# install vuepress and required peer dependencies
-pnpm add -D vuepress@next @vuepress/client@next vue
+# install vuepress and vue
+pnpm add -D vuepress@next vue
 # install bundler and theme
 pnpm add -D @vuepress/bundler-vite@next @vuepress/theme-default@next
 ```

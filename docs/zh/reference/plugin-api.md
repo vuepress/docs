@@ -86,7 +86,7 @@
 - 示例：
 
 ```ts
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
@@ -110,7 +110,7 @@ export default {
 - 示例：
 
 ```ts
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
@@ -311,7 +311,7 @@ export default {
 在客户端组件中：
 
 ```ts
-import { usePageData } from '@vuepress/client'
+import { usePageData } from 'vuepress/client'
 
 export default {
   setup() {

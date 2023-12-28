@@ -25,7 +25,7 @@ With the help of them, you can add or replace content easily. Here comes an exam
 Firstly, create a client config file `.vuepress/client.ts`:
 
 ```ts
-import { defineClientConfig } from '@vuepress/client'
+import { defineClientConfig } from 'vuepress/client'
 import Layout from './layouts/Layout.vue'
 
 export default defineClientConfig({
@@ -71,7 +71,7 @@ Then, if you want to replace the `HomeFooter.vue` component, just override the a
 
 ```ts
 import { defaultTheme } from '@vuepress/theme-default'
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 import { defineUserConfig } from 'vuepress'
 
 const __dirname = getDirname(import.meta.url)
@@ -92,9 +92,9 @@ export default defineUserConfig({
 Instead of extending the default theme directly in `.vuepress/config.ts` and `.vuepress/client.ts`, you can also develop your own theme extending the default theme:
 
 ```ts
-import type { Theme } from '@vuepress/core'
 import { defaultTheme, type DefaultThemeOptions } from '@vuepress/theme-default'
-import { getDirname, path } from '@vuepress/utils'
+import type { Theme } from 'vuepress/core'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 

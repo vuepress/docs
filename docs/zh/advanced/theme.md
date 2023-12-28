@@ -9,7 +9,7 @@
 VuePress 主题是一个特殊的插件，它应该符合 [主题 API](../reference/theme-api.md) 。和插件一样，主题可以是一个 _主题对象_ 或一个 _主题函数_ ，并且通常通过一个函数来接收配置项：
 
 ```ts
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
@@ -22,7 +22,7 @@ const fooTheme = (options) => {
     clientConfigFile: path.resolve(__dirname, 'client.js'),
 
     // 设置自定义 dev / build 模板
-    // 如果没有指定模板，将会使用 `@vuepress/client` 提供的默认模板
+    // 如果没有指定模板，将会使用默认模板
     templateBuild: path.resolve(__dirname, 'templates/build.html'),
     templateDev: path.resolve(__dirname, 'templates/dev.html'),
 
@@ -49,7 +49,7 @@ const barTheme = (options) => {
 然后，创建主题的客户端配置文件 `client.js` :
 
 ```ts
-import { defineClientConfig } from '@vuepress/client'
+import { defineClientConfig } from 'vuepress/client'
 import Layout from './layouts/Layout.vue'
 import NotFound from './layouts/NotFound.vue'
 

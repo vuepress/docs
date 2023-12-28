@@ -95,8 +95,8 @@ gitInclude:
 在使用该插件后，可以在页面数据中获取该插件收集到的 Git 信息：
 
 ```ts
-import { usePageData } from '@vuepress/client'
 import type { GitPluginPageData } from '@vuepress/plugin-git'
+import { usePageData } from 'vuepress/client'
 
 export default {
   setup() {

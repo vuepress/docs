@@ -46,7 +46,7 @@ VuePress 主题同样是一个插件，因此主题 API 可以接收 [插件 API
 
 ```ts
 import { defaultTheme } from '@vuepress/theme-default'
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
@@ -82,7 +82,7 @@ export default {
 
 ### templateBuildRenderer
 
-- 类型： `TemplateRenderer` from `@vuepress/utils`
+- 类型： `TemplateRenderer`
 
 - 详情：
 

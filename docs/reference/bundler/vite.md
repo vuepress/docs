@@ -14,7 +14,7 @@ Reference of vite bundler options:
 
 ```ts
 import { viteBundler } from '@vuepress/bundler-vite'
-import { defineUserConfig } from '@vuepress/cli'
+import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   bundler: viteBundler({

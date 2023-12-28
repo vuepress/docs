@@ -2,7 +2,7 @@
 
 <NpmBadge package="@vuepress/client" />
 
-客户端 API 是由 [@vuepress/client](https://www.npmjs.com/package/@vuepress/client) Package 提供的，用于开发客户端文件。
+客户端 API 是由 [@vuepress/client](https://www.npmjs.com/package/@vuepress/client) Package 提供的，同时也可以通过 `vuepress/client` 来引入。
 
 ## Composition API
 
@@ -151,7 +151,7 @@
 在客户端配置文件中自定义 `<title>` 的格式：
 
 ```ts
-import { defineClientConfig, resolvers } from '@vuepress/client'
+import { defineClientConfig, resolvers } from 'vuepress/client'
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {

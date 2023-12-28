@@ -77,7 +77,7 @@ However, sometimes you may have some dynamical links referencing public files, e
 
 <script setup>
 import { ref } from 'vue'
-import { withBase } from '@vuepress/client'
+import { withBase } from 'vuepress/client'
 
 const logoPath = ref('/images/hero.png')
 </script>
@@ -106,7 +106,7 @@ Since markdown image syntax regards image links as relative paths by default, yo
 The path aliases that set in config file are also supported:
 
 ```ts
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 

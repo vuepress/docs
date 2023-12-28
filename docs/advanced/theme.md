@@ -9,7 +9,7 @@ Before reading this guide, you'd better learn the guide of [Writing a Plugin](./
 A VuePress theme is a special plugin, which should satisfy the [Theme API](../reference/theme-api.md). Like plugins, a theme should also be a _Theme Object_ or a _Theme Function_, and could be wrapped with a function to receive options:
 
 ```ts
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
@@ -22,7 +22,7 @@ const fooTheme = (options) => {
     clientConfigFile: path.resolve(__dirname, 'client.js'),
 
     // set custom dev / build template
-    // if the template is not specified, the default template from `@vuepress/client` will be used
+    // if the template is not specified, the default template
     templateBuild: path.resolve(__dirname, 'templates/build.html'),
     templateDev: path.resolve(__dirname, 'templates/dev.html'),
 
@@ -49,7 +49,7 @@ const barTheme = (options) => {
 Then, create theme's client config file `client.js` :
 
 ```ts
-import { defineClientConfig } from '@vuepress/client'
+import { defineClientConfig } from 'vuepress/client'
 import Layout from './layouts/Layout.vue'
 import NotFound from './layouts/NotFound.vue'
 

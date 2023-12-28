@@ -70,7 +70,7 @@ Similarly, we also have a convention for client config file paths (in order of p
 A basic client config file looks like this:
 
 ```ts
-import { defineClientConfig } from '@vuepress/client'
+import { defineClientConfig } from 'vuepress/client'
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {},

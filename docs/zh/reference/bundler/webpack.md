@@ -14,7 +14,7 @@ Webpack 打包工具的配置项：
 
 ```ts
 import { webpackBundler } from '@vuepress/bundler-webpack'
-import { defineUserConfig } from '@vuepress/cli'
+import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   bundler: webpackBundler({

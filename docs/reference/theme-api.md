@@ -46,7 +46,7 @@ VuePress theme also works as a plugin, so Theme API can accept all the options o
 
 ```ts
 import { defaultTheme } from '@vuepress/theme-default'
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 

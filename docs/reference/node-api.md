@@ -2,7 +2,7 @@
 
 <NpmBadge package="@vuepress/core" />
 
-Node API is provided by [@vuepress/core](https://www.npmjs.com/package/@vuepress/core) package. It is a dependency of the [vuepress](https://www.npmjs.com/package/vuepress) package, and you can also install it separately:
+Node API is provided by [@vuepress/core](https://www.npmjs.com/package/@vuepress/core) package, which is also available as `vuepress/core`.
 
 ```bash
 npm i -D @vuepress/core@next
@@ -341,7 +341,7 @@ const createPage: (app: App, options: PageOptions) => Promise<Page>
 - Example:
 
 ```ts
-import { createPage } from '@vuepress/core'
+import { createPage } from 'vuepress/core'
 
 export default {
   // create an extra page in onInitialized hook

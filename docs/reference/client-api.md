@@ -2,7 +2,7 @@
 
 <NpmBadge package="@vuepress/client" />
 
-Client API is provided by [@vuepress/client](https://www.npmjs.com/package/@vuepress/client) package, which is used for developing client files.
+Client API is provided by [@vuepress/client](https://www.npmjs.com/package/@vuepress/client) package, which is also available as `vuepress/client`.
 
 ## Composition API
 
@@ -151,7 +151,7 @@ To shim the types of these constants in client side code, add `@vuepress/client/
 Customizing the format of `<title>` in client config file:
 
 ```ts
-import { defineClientConfig, resolvers } from '@vuepress/client'
+import { defineClientConfig, resolvers } from 'vuepress/client'
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {

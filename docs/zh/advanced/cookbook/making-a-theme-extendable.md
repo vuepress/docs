@@ -29,8 +29,8 @@
 首先，为你主题的可替换组件设置 `alias` 别名：
 
 ```ts
-import type { Theme } from '@vuepress/core'
-import { getDirname, path } from '@vuepress/utils'
+import type { Theme } from 'vuepress/core'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 

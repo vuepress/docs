@@ -77,7 +77,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { withBase } from '@vuepress/client'
+import { withBase } from 'vuepress/client'
 
 const logoPath = ref('/images/hero.png')
 </script>
@@ -106,7 +106,7 @@ npm install -D package-name
 在配置文件中设置的路径别名也同样支持：
 
 ```ts
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 

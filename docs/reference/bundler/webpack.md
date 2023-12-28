@@ -14,7 +14,7 @@ Reference of webpack bundler options:
 
 ```ts
 import { webpackBundler } from '@vuepress/bundler-webpack'
-import { defineUserConfig } from '@vuepress/cli'
+import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   bundler: webpackBundler({

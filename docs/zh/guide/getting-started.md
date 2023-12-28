@@ -17,7 +17,7 @@ VuePress v2 目前仍处于 RC (Release Candidate) 阶段。你已经可以用�
 
 ::: tip
 
-- 使用 [pnpm](https://pnpm.io/zh/) 时，你需要安装 `vue` 和 `@vuepress/client` 作为 peer-dependencies 。
+- 使用 [pnpm](https://pnpm.io/zh/) 时，你需要安装 `vue` 作为 peer-dependencies 。
 - 使用 [yarn 2+](https://yarnpkg.com/) 时，你需要在 [`.yarnrc.yml`](https://yarnpkg.com/configuration/yarnrc#nodeLinker) 文件中设置 `nodeLinker: 'node-modules'` 。
 
 :::
@@ -76,8 +76,8 @@ npm init
   <CodeGroupItem title="pnpm" active>
 
 ```bash
-# 安装 vuepress 和必需的 peer dependencies
-pnpm add -D vuepress@next @vuepress/client@next vue
+# 安装 vuepress 和 vue
+pnpm add -D vuepress@next vue
 # 安装打包工具和主题
 pnpm add -D @vuepress/bundler-vite@next @vuepress/theme-default@next
 ```

@@ -2,10 +2,10 @@
 
 <NpmBadge package="@vuepress/plugin-shiki" />
 
-This plugin will enable syntax highlighting for markdown code fence with [Shiki](https://shiki.matsu.io/).
+This plugin will enable syntax highlighting for markdown code fence with [Shiki](https://shiki.matsu.io/) ([Shikiji](https://shikiji.netlify.app/)).
 
 ::: tip
-[Shiki](https://shiki.matsu.io/) is the syntax highlighter being used by VSCode. It has higher fidelity, but it is slower than [Prism.js](https://prismjs.com/).
+[Shiki](https://shiki.matsu.io/) is the syntax highlighter being used by VSCode. It has higher fidelity, but it could be slower than [Prism.js](https://prismjs.com/), especially when you have a lot of code blocks.
 
 You could consider disabling this plugin in `dev` mode to get better development experience.
 :::
@@ -23,6 +23,7 @@ export default {
   plugins: [
     shikiPlugin({
       // options
+      langs: ['ts', 'json', 'vue', 'md', 'bash', 'diff'],
     }),
   ],
 }
@@ -30,34 +31,45 @@ export default {
 
 ## Options
 
+### langs
+
+- Type: `ShikiLang[]`
+
+- Details:
+
+  Languages of code blocks to be parsed by shikiji.
+
+  This option will be forwarded to `getHighlighter()` method of shikiji.
+
+  You need to provide the languages list you are using explicitly, otherwise shikiji won't load any languages.
+
+- Also see:
+  - [shikiji > Languages](https://shikiji.netlify.app/languages)
+
 ### theme
 
-- Type: `IThemeRegistration`
+- Type: `ShikiTheme`
 
 - Default: `'nord'`
 
 - Details:
 
-  Theme of shiki.
+  Theme of shikiji.
 
-  This option will be forwarded to `getHighlighter()` method of shiki.
+  This option will be forwarded to `codeToHtml()` method of shikiji.
 
 - Also see:
-  - [shiki > themes](https://github.com/shikijs/shiki/blob/master/docs/themes.md)
+  - [shikiji > Themes](https://shikiji.netlify.app/themes)
 
-### langs
+### themes
 
-- Type: `(Lang | ILanguageRegistration)[]`
-
-- Default: `[]`
+- Type: `Record<'dark' | 'light', ShikiTheme>`
 
 - Details:
 
-  Languages of shiki.
+  Dark / Light Dual themes of shikiji.
 
-  This option will be forwarded to `getHighlighter()` method of shiki.
-
-  If no languages are provided, shiki will load all available languages automatically.
+  This option will be forwarded to `codeToHtml()` method of shikiji.
 
 - Also see:
-  - [shiki > languages](https://github.com/shikijs/shiki/blob/master/docs/languages.md)
+  - [shikiji > Dual Themes](https://shikiji.netlify.app/guide/dual-themes)

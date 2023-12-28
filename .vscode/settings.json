@@ -33,6 +33,7 @@
     "preload",
     "prismjs",
     "shiki",
+    "shikiji",
     "slugify",
     "unmount",
     "vuejs",

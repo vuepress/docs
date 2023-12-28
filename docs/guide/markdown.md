@@ -37,8 +37,8 @@ Take our documentation source files as an example:
 └─ docs
    ├─ guide
    │  ├─ getting-started.md
-   │  ├─ markdown.md    # <- Here we are
-   │  └─ README.md
+   │  ├─ introduction.md
+   │  └─ markdown.md    # <- Here we are
    ├─ reference
    │  └─ config.md
    └─ README.md

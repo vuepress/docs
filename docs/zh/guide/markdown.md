@@ -38,8 +38,8 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
    └─ zh
       ├─ guide
       │  ├─ getting-started.md
-      │  ├─ markdown.md    # <- 我们在这里
-      │  └─ README.md
+      │  ├─ introduction.md
+      │  └─ markdown.md    # <- 我们在这里
       ├─ reference
       │  └─ config.md
       └─ README.md

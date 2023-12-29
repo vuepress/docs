@@ -123,7 +123,7 @@ export const navbarZh: NavbarConfig = [
         children: [
           {
             text: '贡献指南',
-            link: 'https://github.com/vuepress/vuepress-next/blob/main/CONTRIBUTING_zh.md',
+            link: 'https://github.com/vuepress/core/blob/main/CONTRIBUTING_zh.md',
           },
           {
             text: 'Awesome VuePress',
@@ -138,7 +138,7 @@ export const navbarZh: NavbarConfig = [
     children: [
       {
         text: '更新日志',
-        link: 'https://github.com/vuepress/vuepress-next/blob/main/CHANGELOG.md',
+        link: 'https://github.com/vuepress/core/blob/main/CHANGELOG.md',
       },
       {
         text: 'v1.x',

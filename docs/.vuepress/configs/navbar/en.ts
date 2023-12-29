@@ -126,7 +126,7 @@ export const navbarEn: NavbarConfig = [
         children: [
           {
             text: 'Contributing Guide',
-            link: 'https://github.com/vuepress/vuepress-next/blob/main/CONTRIBUTING.md',
+            link: 'https://github.com/vuepress/core/blob/main/CONTRIBUTING.md',
           },
           {
             text: 'Awesome VuePress',
@@ -141,7 +141,7 @@ export const navbarEn: NavbarConfig = [
     children: [
       {
         text: 'Changelog',
-        link: 'https://github.com/vuepress/vuepress-next/blob/main/CHANGELOG.md',
+        link: 'https://github.com/vuepress/core/blob/main/CHANGELOG.md',
       },
       {
         text: 'v1.x',

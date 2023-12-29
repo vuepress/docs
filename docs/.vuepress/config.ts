@@ -49,7 +49,7 @@ export default defineUserConfig({
   // configure default theme
   theme: defaultTheme({
     logo: '/images/hero.png',
-    repo: 'vuepress/vuepress-next',
+    repo: 'vuepress/docs',
     docsDir: 'docs',
 
     // theme-level locales config

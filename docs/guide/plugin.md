@@ -2,11 +2,11 @@
 
 With the help of [Plugin API](../reference/plugin-api.md), VuePress plugin can provide different features for you.
 
-## Community Plugin
+## Official Plugin
 
-Community users have created lots of plugins and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-plugin). VuePress team also maintains some official plugins under the [@vuepress](https://www.npmjs.com/search?q=%40vuepress%20keywords%3Aplugin) scope. You should check the plugin's own documentation for detailed guide.
+VuePress team provides some official plugins.
 
-In general, you need to import the plugin and use it in your config file via the [plugins](../reference/config.md#plugins) option. For example, use the [@vuepress/plugin-google-analytics](../reference/plugin/google-analytics.md) to integrate Google Analytics:
+You need to import and use them in your config file via the [plugins](../reference/config.md#plugins) option. For example, use the [@vuepress/plugin-google-analytics](../reference/plugin/google-analytics.md) to integrate Google Analytics:
 
 ```ts
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
@@ -25,6 +25,12 @@ Most plugins can only be used once. If the same plugin is used multiple times, o
 
 However, some plugins can be used multiple times (e.g. [@vuepress/plugin-container](../reference/plugin/container.md)), and you should check the documentation of the plugin itself for detailed guide.
 :::
+
+## Community Plugin
+
+Community users have created lots of plugins and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-plugin). You should check the plugin's own documentation for detailed guide.
+
+You can explore more plugins in [Awesome VuePress](https://github.com/vuepress/awesome-vuepress) or [VuePress Marketplace](https://marketplace.vuejs.press/).
 
 ## Local Plugin
 

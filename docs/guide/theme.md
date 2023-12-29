@@ -33,6 +33,8 @@ However, you might think it is not good enough. Or, you want to build a differen
 
 Community users have created lots of theme and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme). You should check the theme's own documentation for detailed guide.
 
+You can explore more themes in [Awesome VuePress](https://github.com/vuepress/awesome-vuepress) or [VuePress Marketplace](https://marketplace.vuejs.press/).
+
 ## Local Theme
 
 If you want to use your own custom theme but don't want to publish it, you can create a local theme. Refer to [Advanced > Writing a Theme](../advanced/theme.md) for how to write your own theme.

@@ -33,6 +33,8 @@ export default defineUserConfig({
 
 社区用户创建了很多主题，并将它们发布到了 [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme) 上。查看主题本身的文档可以获取更详细的指引。
 
+你可以在 [Awesome VuePress](https://github.com/vuepress/awesome-vuepress) 或者 [VuePress Marketplace](https://marketplace.vuejs.press/) 中探索更多主题。
+
 ## 本地主题
 
 如果你想要使用自己的自定义主题，但是又不想发布它，你可以创建一个本地主题。前往 [深入 > 开发主题](../advanced/theme.md) 学习如何开发你自己的主题。

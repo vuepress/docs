@@ -94,12 +94,12 @@ Client API is provided by [@vuepress/client](https://www.npmjs.com/package/@vuep
 
 There are some constants that available in the client side code.
 
-To shim the types of these constants in client side code, add `@vuepress/client/types` to your `tsconfig.json`:
+To shim the types of these constants in client side code, add `vuepress/client-types` to your `tsconfig.json`:
 
 ```json
 {
   "compilerOptions": {
-    "types": ["@vuepress/client/types"]
+    "types": ["vuepress/client-types"]
   }
 }
 ```

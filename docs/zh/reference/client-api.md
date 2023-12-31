@@ -94,12 +94,12 @@
 
 在客户端代码中有一些常量可以使用。
 
-如果想要把这些常量的类型定义补充到你的代码环境中，请将 `@vuepress/client/types` 添加到你的 `tsconfig.json` 里：
+如果想要把这些常量的类型定义补充到你的代码环境中，请将 `vuepress/client-types` 添加到你的 `tsconfig.json` 里：
 
 ```json
 {
   "compilerOptions": {
-    "types": ["@vuepress/client/types"]
+    "types": ["vuepress/client-types"]
   }
 }
 ```

@@ -156,6 +156,44 @@ Config reference: [markdown.toc](../reference/config.md#markdown-toc)
 
 Following code blocks extensions are implemented during markdown parsing in Node side. That means, the code blocks won't be processed in client side.
 
+#### Code Title
+
+You can specify the title of the code block by adding a `title` key-value mark in your fenced code blocks.
+
+**Input**
+
+````md
+```ts title=".vuepress/config.ts"
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  title: 'Hello, VuePress',
+
+  theme: defaultTheme({
+    logo: 'https://vuejs.org/images/logo.png',
+  }),
+})
+```
+````
+
+**Output**
+
+```ts title=".vuepress/config.ts"
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  title: 'Hello, VuePress',
+
+  theme: defaultTheme({
+    logo: 'https://vuejs.org/images/logo.png',
+  }),
+})
+```
+
+It can be used in combination with the other marks below. Please leave a space between them.
+
 #### Line Highlighting
 
 You can highlight specified lines of your code blocks by adding line ranges mark in your fenced code blocks:

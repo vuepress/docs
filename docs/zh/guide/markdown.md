@@ -157,6 +157,44 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 
 下列代码块扩展是在 Node 端进行 Markdown 解析的时候实现的。这意味着代码块并不会在客户端被处理。
 
+#### 代码标题
+
+你可以在代码块添加一个 `title` 键值对来为代码块设置标题。
+
+**Input**
+
+````md
+```ts title=".vuepress/config.ts"
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  title: '你好， VuePress',
+
+  theme: defaultTheme({
+    logo: 'https://vuejs.org/images/logo.png',
+  }),
+})
+```
+````
+
+**Output**
+
+```ts title=".vuepress/config.ts"
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  title: '你好， VuePress',
+
+  theme: defaultTheme({
+    logo: 'https://vuejs.org/images/logo.png',
+  }),
+})
+```
+
+它可以和下列的其他标记一起使用。请在它们之间使用空格分隔。
+
 #### 行高亮
 
 你可以在代码块添加行数范围标记，来为对应代码行进行高亮：

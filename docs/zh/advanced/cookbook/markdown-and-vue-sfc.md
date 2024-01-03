@@ -13,7 +13,7 @@
 
 **输入**
 
-```vue
+```vue title="markdown-and-vue-sfc.md"
 _你好， {{ msg }}_
 
 <RedDiv>

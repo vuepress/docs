@@ -13,7 +13,7 @@ Here comes an example:
 
 **Input**
 
-```vue
+```vue title="markdown-and-vue-sfc.md"
 _Hello, {{ msg }}_
 
 <RedDiv>

@@ -8,7 +8,7 @@ VuePress v2 的一些主要改动和优化：
 
 - VuePress v2 现在使用 Vue 3 ，因此你要保证你的组件和其他客户端文件是适用于 Vue 3 的。
 - VuePress v2 是使用 TypeScript 开发的，因此它现在提供了更好的类型支持。我们强烈推荐你使用 TypeScript 来开发插件和主题。 VuePress 配置文件也同样支持 TypeScript ，你可以直接使用 `.vuepress/config.ts` 。
-- VuePress v2 支持使用 Webpack 和 Vite 作为打包工具。现在默认的打包工具是 Vite ，但你仍然可以选择使用 Webpack 。你甚至可以在开发模式使用 Vite 来获取更好的开发体验，而在构建模式使用 Webpack 来获取更好的浏览器兼容性。
+- VuePress v2 支持使用 Webpack 和 Vite 作为打包工具。你可以在配置文件中选择你喜欢的打包工具来使用。
 - VuePress v2 现在是纯 ESM 包， CommonJS 格式的配置文件不再被支持。
 
 VuePress v2 的核心思想和流程是和 v1 一致的，但 v2 API 经过了重新设计，更加标准化。因此在将现有的 v1 项目迁移至 v2 时，你很可能会遇到一些 Breaking Changes 。本指南将帮助你将 v1 的站点 / 插件 / 主题迁移至 v2 。
@@ -23,23 +23,63 @@ VuePress v2 的核心思想和流程是和 v1 一致的，但 v2 API 经过了�
 
 配置文件应该使用 ESM 格式， CommonJS 格式的配置文件已不再支持。
 
-```diff
-// .vuepress/config.js
-
+```diff title=".vuepress/config.ts"
 - module.exports = {
 -   // 用户配置
 - }
 
-+ export default {
++ import { defineUserConfig } from 'vuepress'
++
++ export default defineUserConfig({
 +   // 用户配置
-+ }
++ })
+```
+
+#### bundler
+
+现在我们支持使用不同的打包工具。
+
+你需要安装并在配置文件中使用 Vite 打包工具：
+
+```bash
+npm i -D @vuepress/bundler-vite@next
+```
+
+```ts title=".vuepress/config.ts"
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  bundler: viteBundler(),
+})
+```
+
+或者使用 Webpack 打包工具：
+
+```bash
+npm i -D @vuepress/bundler-webpack@next
+```
+
+```ts title=".vuepress/config.ts"
+import { webpackBundler } from '@vuepress/bundler-webpack'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  bundler: webpackBundler(),
+})
 ```
 
 #### theme
 
-不再支持通过字符串使用主题。需要直接引入主题。
+不再支持通过字符串使用主题，默认主题也不再集成到 vuepress 包中。
 
-```diff
+你需要安装并在配置文件中使用默认主题：
+
+```bash
+npm i -D @vuepress/theme-default@next
+```
+
+```diff title=".vuepress/config.ts"
 - module.exports = {
 -   theme: '@vuepress/theme-default',
 -   themeConfig: {
@@ -48,11 +88,13 @@ VuePress v2 的核心思想和流程是和 v1 一致的，但 v2 API 经过了�
 - }
 
 + import { defaultTheme } from '@vuepress/theme-default'
-+ export default {
++ import { defineUserConfig } from 'vuepress'
++
++ export default defineUserConfig({
 +   theme: defaultTheme({
 +     // 默认主题配置
 +   })
-+ }
++ })
 ```
 
 #### themeConfig
@@ -63,7 +105,7 @@ VuePress v2 的核心思想和流程是和 v1 一致的，但 v2 API 经过了�
 
 不再支持通过字符串使用插件。需要直接引入插件。
 
-```diff
+```diff title=".vuepress/config.ts"
 - module.exports = {
 -   plugins: [
 -     [
@@ -76,13 +118,15 @@ VuePress v2 的核心思想和流程是和 v1 一致的，但 v2 API 经过了�
 - }
 
 + import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
-+ export default {
++ import { defineUserConfig } from 'vuepress'
++
++ export default defineUserConfig({
 +   plugins: [
 +     googleAnalyticsPlugin({
 +         id: 'G-XXXXXXXXXX',
 +     }),
 +   ],
-+ }
++ })
 ```
 
 #### shouldPrefetch
@@ -148,17 +192,19 @@ VuePress v2 的核心思想和流程是和 v1 一致的，但 v2 API 经过了�
 - `configureWebpack`
 - `evergreen`：默认值从 `false` 更改为 `true`
 
-```diff
+```diff title=".vuepress/config.ts"
 - module.exports = {
 -   sass: { /* ... */ },
 - }
 
 + import { webpackBundler } from '@vuepress/bundler-webpack'
-+ export default {
++ import { defineUserConfig } from 'vuepress'
++
++ export default defineUserConfig({
 +   bundler: webpackBundler({
 +     sass: { /* ... */ },
 +   }),
-+ }
++ })
 ```
 
 请参考 [指南 > Bundler](./bundler.md) 。
@@ -186,9 +232,10 @@ head:
 
 和以下结构相同：
 
-```ts
-// .vuepress/config.ts
-export default {
+```ts title=".vuepress/config.ts"
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
   // ...
   head: [
     ['meta', { name: 'foo', content: 'bar' }],
@@ -196,7 +243,7 @@ export default {
     ['script', {}, `console.log('hello from frontmatter');`],
   ],
   // ...
-}
+})
 ```
 
 ### 永久链接 Patterns 变更

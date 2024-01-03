@@ -8,7 +8,7 @@ Some major changes and enhancements of VuePress v2:
 
 - VuePress v2 is now using Vue 3, so make sure your components and other client files are compatible with Vue 3.
 - VuePress v2 is developed with TypeScript, so it provides better TS support now. It's highly recommended to use TypeScript to develop plugins and themes. VuePress config file also supports TypeScript, and you can use `.vuepress/config.ts` directly.
-- VuePress v2 supports both Webpack and Vite as bundler. Now Vite is the default bundler, while you can still choose to use Webpack. You can even use Vite in dev mode to get better development experience, and use Webpack in build mode to get better browser compatibility.
+- VuePress v2 supports both Webpack and Vite as bundler. You can choose the bundler you like in your config file.
 - VuePress v2 is now released as pure ESM packages, and CommonJS config files are no longer supported.
 
 Core ideas and processes of VuePress v2 are the same with v1, while v2 API has been re-designed and becomes more normalized. So you might encounter breaking changes when migrating an existing v1 project to v2. This guide is here to help you migrating v1 sites / plugins / themes to v2.
@@ -23,23 +23,63 @@ Core ideas and processes of VuePress v2 are the same with v1, while v2 API has b
 
 Config file should be in ESM format, and CommonJS format config file is no longer supported.
 
-```diff
-// .vuepress/config.js
-
+```diff title=".vuepress/config.ts"
 - module.exports = {
 -   // user config
 - }
 
-+ export default {
++ import { defineUserConfig } from 'vuepress'
++
++ export default defineUserConfig({
 +   // user config
-+ }
++ })
+```
+
+#### bundler
+
+Now we support using different bundlers.
+
+Install and use the vite bundler in your config file:
+
+```bash
+npm i -D @vuepress/bundler-vite@next
+```
+
+```ts title=".vuepress/config.ts"
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  bundler: viteBundler(),
+})
+```
+
+Or using the webpack bundler:
+
+```bash
+npm i -D @vuepress/bundler-webpack@next
+```
+
+```ts title=".vuepress/config.ts"
+import { webpackBundler } from '@vuepress/bundler-webpack'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  bundler: webpackBundler(),
+})
 ```
 
 #### theme
 
-Using a theme via string is not supported. Import the theme directly.
+Using a theme via string is not supported, and the default theme is not integrated into vuepress package by default.
 
-```diff
+Install and use the default theme in your config file:
+
+```bash
+npm i -D @vuepress/theme-default@next
+```
+
+```diff title=".vuepress/config.ts"
 - module.exports = {
 -   theme: '@vuepress/theme-default',
 -   themeConfig: {
@@ -48,11 +88,13 @@ Using a theme via string is not supported. Import the theme directly.
 - }
 
 + import { defaultTheme } from '@vuepress/theme-default'
-+ export default {
++ import { defineUserConfig } from 'vuepress'
++
++ export default defineUserConfig({
 +   theme: defaultTheme({
 +     // default theme config
-+   })
-+ }
++   }),
++ })
 ```
 
 #### themeConfig
@@ -63,7 +105,7 @@ Removed. Set config to the theme directly.
 
 Using a plugin via string is not supported. Import the plugin directly.
 
-```diff
+```diff title=".vuepress/config.ts"
 - module.exports = {
 -   plugins: [
 -     [
@@ -76,13 +118,15 @@ Using a plugin via string is not supported. Import the plugin directly.
 - }
 
 + import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
-+ export default {
++ import { defineUserConfig } from 'vuepress'
++
++ export default defineUserConfig({
 +   plugins: [
 +     googleAnalyticsPlugin({
 +         id: 'G-XXXXXXXXXX',
 +     }),
 +   ],
-+ }
++ })
 ```
 
 #### shouldPrefetch
@@ -148,17 +192,19 @@ All webpack related configs are moved to options of `@vuepress/bundler-webpack`,
 - `configureWebpack`
 - `evergreen`: default value is changed from `false` to `true`
 
-```diff
+```diff title=".vuepress/config.ts"
 - module.exports = {
 -   sass: { /* ... */ },
 - }
 
 + import { webpackBundler } from '@vuepress/bundler-webpack'
-+ export default {
++ import { defineUserConfig } from 'vuepress'
++
++ export default defineUserConfig({
 +   bundler: webpackBundler({
 +     sass: { /* ... */ },
 +   }),
-+ }
++ })
 ```
 
 Please refer to [Guide > Bundler](./bundler.md).
@@ -186,9 +232,10 @@ head:
 
 Has the same structure with:
 
-```ts
-// .vuepress/config.ts
-export default {
+```ts title=".vuepress/config.ts"
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
   // ...
   head: [
     ['meta', { name: 'foo', content: 'bar' }],
@@ -196,7 +243,7 @@ export default {
     ['script', {}, `console.log('hello from frontmatter');`],
   ],
   // ...
-}
+})
 ```
 
 ### Permalink Patterns Change

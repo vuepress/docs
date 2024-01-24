@@ -90,6 +90,26 @@ Client API is provided by [@vuepress/client](https://www.npmjs.com/package/@vuep
 - Also see:
   - [Guide > Assets > Base Helper](../guide/assets.md#base-helper)
 
+## Router
+
+### getPagesPath
+
+- Details:
+
+  Returns the path of all pages.
+
+### isPageExists
+
+- Details:
+
+  Check whether a related page exists for the given path.
+
+### resolve
+
+- Details:
+
+  Return the resolved path and page meta of the given path.
+
 ## Constants
 
 There are some constants that available in the client side code.

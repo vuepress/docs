@@ -90,6 +90,26 @@
 - 参考：
   - [指南 > 静态资源 > Base Helper](../guide/assets.md#base-helper)
 
+## 路由
+
+### getPagesPath
+
+- 详情：
+
+  返回所有页面的路径
+
+### isPageExists
+
+- 详情：
+
+  检查给定的路径是否有对应页面
+
+### resolve
+
+- 详情：
+
+  返回给定路径对应的页面实际路径与页面 meta。
+
 ## 常量
 
 在客户端代码中有一些常量可以使用。

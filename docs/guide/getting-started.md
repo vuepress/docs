@@ -26,7 +26,33 @@ You can try VuePress directly in your browser on [StackBlitz](https://stackblitz
 
 #### Setup via CLI
 
-TODO
+You can use `create-vuepress` to generate a template directly.
+
+<CodeGroup>
+  <CodeGroupItem title="pnpm" active>
+
+```bash
+pnpm create vuepress vuepress-starter
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="yarn">
+
+```bash
+yarn create vuepress vuepress-starter
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="npm">
+
+```bash
+npm init vuepress vuepress-starter
+```
+
+  </CodeGroupItem>
+</CodeGroup>
 
 #### Setup Manually
 

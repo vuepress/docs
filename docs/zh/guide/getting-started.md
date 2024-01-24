@@ -26,7 +26,33 @@ VuePress v2 目前仍处于 RC (Release Candidate) 阶段。你已经可以用�
 
 #### 通过命令行创建
 
-TODO
+你可以通过 `create-vuepress` 直接创建模板。
+
+<CodeGroup>
+  <CodeGroupItem title="pnpm" active>
+
+```bash
+pnpm create vuepress vuepress-starter
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="yarn">
+
+```bash
+yarn create vuepress vuepress-starter
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="npm">
+
+```bash
+npm init vuepress vuepress-starter
+```
+
+  </CodeGroupItem>
+</CodeGroup>
 
 #### 手动创建
 

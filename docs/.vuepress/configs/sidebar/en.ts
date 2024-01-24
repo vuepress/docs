@@ -35,6 +35,7 @@ export const sidebarEn: SidebarConfig = {
         '/advanced/cookbook/README.md',
         '/advanced/cookbook/usage-of-client-config.md',
         '/advanced/cookbook/adding-extra-pages.md',
+        '/advanced/cookbook/page-data-and-meta.md',
         '/advanced/cookbook/making-a-theme-extendable.md',
         '/advanced/cookbook/passing-data-to-client-code.md',
         '/advanced/cookbook/markdown-and-vue-sfc.md',

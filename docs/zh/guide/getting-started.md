@@ -26,7 +26,7 @@ VuePress v2 目前仍处于 RC (Release Candidate) 阶段。你已经可以用�
 
 #### 通过命令行创建
 
-你可以通过 `create-vuepress` 直接创建模板。
+你可以通过 [create-vuepress](https://www.npmjs.com/package/create-vuepress) 直接创建项目模板。
 
 <CodeGroup>
   <CodeGroupItem title="pnpm" active>

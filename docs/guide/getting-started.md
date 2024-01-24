@@ -26,7 +26,7 @@ You can try VuePress directly in your browser on [StackBlitz](https://stackblitz
 
 #### Setup via CLI
 
-You can use `create-vuepress` to generate a template directly.
+You can use [create-vuepress](https://www.npmjs.com/package/create-vuepress) to generate a template directly.
 
 <CodeGroup>
   <CodeGroupItem title="pnpm" active>

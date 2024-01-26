@@ -7,8 +7,8 @@ import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig  } from 'vuepress'
-import type {UserConfig} from 'vuepress';
+import { defineUserConfig } from 'vuepress'
+import type { UserConfig } from 'vuepress'
 import { getDirname, path } from 'vuepress/utils'
 import {
   head,

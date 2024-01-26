@@ -2,13 +2,14 @@ import { createRequire } from 'node:module'
 import process from 'node:process'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
-import { defineUserConfig } from '@vuepress/cli'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { defaultTheme } from '@vuepress/theme-default'
-import { getDirname, path } from '@vuepress/utils'
+import { defineUserConfig  } from 'vuepress'
+import type {UserConfig} from 'vuepress';
+import { getDirname, path } from 'vuepress/utils'
 import {
   head,
   navbarEn,
@@ -199,4 +200,4 @@ export default defineUserConfig({
         })
       : [],
   ],
-})
+}) as UserConfig

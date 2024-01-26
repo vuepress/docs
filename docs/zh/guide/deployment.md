@@ -61,7 +61,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           # 选择要使用的 node 版本
-          node-version: 18
+          node-version: 20
           # 缓存 pnpm 依赖
           cache: pnpm
 

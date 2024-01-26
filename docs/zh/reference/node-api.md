@@ -4,10 +4,6 @@
 
 Node API 是由 [@vuepress/core](https://www.npmjs.com/package/@vuepress/core) 包提供的，同时也可以通过 `vuepress/core` 来引入。
 
-```bash
-npm i -D @vuepress/core@next
-```
-
 ## App
 
 [插件 API](./plugin-api.md) 的所有 Hooks 中都可以获取到 App 实例。

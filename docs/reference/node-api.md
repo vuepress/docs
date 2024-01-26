@@ -4,10 +4,6 @@
 
 Node API is provided by [@vuepress/core](https://www.npmjs.com/package/@vuepress/core) package, which is also available as `vuepress/core`.
 
-```bash
-npm i -D @vuepress/core@next
-```
-
 ## App
 
 The app instance is available in all hooks of [Plugin API](./plugin-api.md).

@@ -6,7 +6,7 @@ VuePress CLI is provided by [@vuepress/cli](https://www.npmjs.com/package/@vuepr
 
 Run `vuepress --help` to get following help messages:
 
-```bash
+```
 Usage:
   $ vuepress <command> [options]
 
@@ -35,7 +35,7 @@ Set environment variable `DEBUG=vuepress*` to enable debug logs.
 
 Start a development server to develop your VuePress site locally.
 
-```bash
+```
 Usage:
   $ vuepress dev [sourceDir]
 
@@ -62,7 +62,7 @@ Options set by CLI will override those options with the same name in your config
 
 Build your VuePress site to static files, which are ready for [deployment](../guide/deployment.md).
 
-```bash
+```
 Usage:
   $ vuepress build [sourceDir]
 

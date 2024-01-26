@@ -17,6 +17,7 @@ export const navbarZh: NavbarConfig = [
       '/zh/guide/plugin.md',
       '/zh/guide/bundler.md',
       '/zh/guide/migration.md',
+      '/zh/guide/troubleshooting.md',
     ],
   },
   {

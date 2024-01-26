@@ -2,12 +2,24 @@
 
 <NpmBadge package="@vuepress/theme-default" />
 
-```ts
+Default theme is provided by [@vuepress/theme-default](https://www.npmjs.com/package/@vuepress/theme-default) package.
+
+## Usage
+
+Install the default theme package:
+
+```bash
+npm i -D @vuepress/theme-default@next
+```
+
+Specify the theme option in your config file:
+
+```ts title=".vuepress/config.ts"
 import { defaultTheme } from '@vuepress/theme-default'
 
 export default {
   theme: defaultTheme({
-    // set config here
+    // set theme config here
   }),
 }
 ```

@@ -17,6 +17,7 @@ export const sidebarZh: SidebarConfig = {
         '/zh/guide/plugin.md',
         '/zh/guide/bundler.md',
         '/zh/guide/migration.md',
+        '/zh/guide/troubleshooting.md',
       ],
     },
   ],

@@ -17,7 +17,7 @@ To be more specific, we have a convention for config file paths (in order of pre
 
 You can also specify the config file via `--config` option of [CLI](../reference/cli.md):
 
-```sh
+```bash
 vuepress dev docs --config my-config.ts
 ```
 

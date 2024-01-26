@@ -2,17 +2,19 @@
 
 <NpmBadge package="@vuepress/bundler-webpack" />
 
-Webpack bundler is provided by [@vuepress/bundler-webpack](https://www.npmjs.com/package/@vuepress/bundler-webpack) package. It is a dependency of the [vuepress-webpack](https://www.npmjs.com/package/vuepress-webpack) package, and you can also install it separately.
+Webpack bundler is provided by [@vuepress/bundler-webpack](https://www.npmjs.com/package/@vuepress/bundler-webpack) package.
+
+## Usage
+
+Install the bundler package:
 
 ```bash
 npm i -D @vuepress/bundler-webpack@next
 ```
 
-## Options
+Specify the bundler option in your config file:
 
-Reference of webpack bundler options:
-
-```ts
+```ts title=".vuepress/config.ts"
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { defineUserConfig } from 'vuepress'
 
@@ -23,6 +25,8 @@ export default defineUserConfig({
   }),
 })
 ```
+
+## Options
 
 ### configureWebpack
 

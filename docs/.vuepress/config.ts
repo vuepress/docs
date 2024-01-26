@@ -8,7 +8,6 @@ import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
-import type { UserConfig } from 'vuepress'
 import { getDirname, path } from 'vuepress/utils'
 import {
   head,
@@ -200,4 +199,4 @@ export default defineUserConfig({
         })
       : [],
   ],
-}) as UserConfig
+})

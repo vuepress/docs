@@ -17,6 +17,7 @@ export const navbarEn: NavbarConfig = [
       '/guide/plugin.md',
       '/guide/bundler.md',
       '/guide/migration.md',
+      '/guide/troubleshooting.md',
     ],
   },
   {

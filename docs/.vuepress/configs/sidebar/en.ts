@@ -17,6 +17,7 @@ export const sidebarEn: SidebarConfig = {
         '/guide/plugin.md',
         '/guide/bundler.md',
         '/guide/migration.md',
+        '/guide/troubleshooting.md',
       ],
     },
   ],

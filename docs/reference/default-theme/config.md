@@ -174,6 +174,22 @@ export default {
 }
 ```
 
+### navbarLabel
+
+- Type: `null | string`
+
+- Details:
+
+  Specify the navbar label that will be rendered as the `aria-label` value and used by screen readers to give the site's main navigation a unique landmark name.
+
+### pageNavbarLabel
+
+- Type: `null | string`
+
+- Details:
+
+  Specify the navbar label that will be rendered as the `aria-label` value and used by screen readers to give the next/previous page navigation a unique landmark name.
+
 ### logo
 
 - Type: `null | string`
@@ -217,6 +233,16 @@ export default {
 - Also see:
   - [Default Theme > Config > logo](#logo)
   - [Default Theme > Config > colorMode](#colormode)
+
+### logoAlt
+
+- Type: `null | string`
+
+- Details:
+
+  Specify the alt text of the logo image.
+
+  If not specified, defaults to be the same as the site title. When the alt text is the same as the site title, the site title rendered in the navbar will hidden from screen readers with `aria-hidden` to avoid duplication.
 
 ### repo
 

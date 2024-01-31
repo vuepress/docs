@@ -46,67 +46,9 @@ export const navbarEn: NavbarConfig = [
           '/reference/bundler/webpack.md',
         ],
       },
-      {
-        text: 'Default Theme',
-        children: [
-          '/reference/default-theme/config.md',
-          '/reference/default-theme/frontmatter.md',
-          '/reference/default-theme/components.md',
-          '/reference/default-theme/markdown.md',
-          '/reference/default-theme/styles.md',
-          '/reference/default-theme/extending.md',
-        ],
-      },
     ],
   },
-  {
-    text: 'Plugins',
-    children: [
-      {
-        text: 'Common Features',
-        children: [
-          '/reference/plugin/back-to-top.md',
-          '/reference/plugin/container.md',
-          '/reference/plugin/external-link-icon.md',
-          '/reference/plugin/google-analytics.md',
-          '/reference/plugin/medium-zoom.md',
-          '/reference/plugin/nprogress.md',
-          '/reference/plugin/register-components.md',
-        ],
-      },
-      {
-        text: 'Content Search',
-        children: [
-          '/reference/plugin/docsearch.md',
-          '/reference/plugin/search.md',
-        ],
-      },
-      {
-        text: 'PWA',
-        children: [
-          '/reference/plugin/pwa.md',
-          '/reference/plugin/pwa-popup.md',
-        ],
-      },
-      {
-        text: 'Syntax Highlighting',
-        children: [
-          '/reference/plugin/prismjs.md',
-          '/reference/plugin/shiki.md',
-        ],
-      },
-      {
-        text: 'Theme Development',
-        children: [
-          '/reference/plugin/active-header-links.md',
-          '/reference/plugin/git.md',
-          '/reference/plugin/palette.md',
-          '/reference/plugin/theme-data.md',
-          '/reference/plugin/toc.md',
-        ],
-      },
-    ],
-  },
+
   {
     text: 'Learn More',
     children: [
@@ -126,12 +68,16 @@ export const navbarEn: NavbarConfig = [
         text: 'Resources',
         children: [
           {
-            text: 'Contributing Guide',
-            link: 'https://github.com/vuepress/core/blob/main/CONTRIBUTING.md',
+            text: 'Official Ecosystem',
+            link: 'https://ecosystem.vuejs.press/',
           },
           {
-            text: 'Awesome VuePress',
-            link: 'https://github.com/vuepress/awesome-vuepress',
+            text: 'VuePress MarketPlace',
+            link: 'https://marketplace.vuejs.press',
+          },
+          {
+            text: 'Contributing Guide',
+            link: 'https://github.com/vuepress/core/blob/main/CONTRIBUTING.md',
           },
         ],
       },

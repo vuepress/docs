@@ -6,7 +6,7 @@ With the help of [Plugin API](../reference/plugin-api.md), VuePress plugin can p
 
 VuePress team provides some official plugins.
 
-You need to import and use them in your config file via the [plugins](../reference/config.md#plugins) option. For example, use the [@vuepress/plugin-google-analytics](../reference/plugin/google-analytics.md) to integrate Google Analytics:
+You need to import and use them in your config file via the [plugins](../reference/config.md#plugins) option. For example, use the [@vuepress/plugin-google-analytics](https://ecosystem.vuejs.press/plugins/google-analytics.html) to integrate Google Analytics:
 
 ```ts
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
@@ -23,14 +23,14 @@ export default {
 ::: tip
 Most plugins can only be used once. If the same plugin is used multiple times, only the last one will take effect.
 
-However, some plugins can be used multiple times (e.g. [@vuepress/plugin-container](../reference/plugin/container.md)), and you should check the documentation of the plugin itself for detailed guide.
+However, some plugins can be used multiple times (e.g. [@vuepress/plugin-container](https://ecosystem.vuejs.press/plugins/container.html)), and you should check the documentation of the plugin itself for detailed guide.
 :::
 
 ## Community Plugin
 
 Community users have created lots of plugins and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-plugin). You should check the plugin's own documentation for detailed guide.
 
-You can explore more plugins in [Awesome VuePress](https://github.com/vuepress/awesome-vuepress) or [VuePress Marketplace](https://marketplace.vuejs.press/).
+You can explore more plugins in [VuePress Marketplace](https://marketplace.vuejs.press/).
 
 ## Local Plugin
 

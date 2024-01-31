@@ -11,4 +11,4 @@ See the bundler reference for how to configure bundlers properly:
 
 See the default theme reference for how to configure the default theme properly:
 
-- [Default Theme > Config](../reference/default-theme/config.md)
+- [Default Theme > Config](https://ecosystem.vuejs.press/themes/default/config.html)

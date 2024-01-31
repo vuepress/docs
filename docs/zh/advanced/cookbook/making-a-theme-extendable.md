@@ -4,7 +4,7 @@
 
 借助于 [主题 API](../../reference/theme-api.md) ，你可以让用户继承你的主题，允许用户对你的主题进行改动。
 
-你肯定已经知道了如何 [继承默认主题](../../reference/default-theme/extending.md) 。接下来我们将介绍如何让你的主题像默认主题一样被用户继承。
+你肯定已经知道了如何 [继承默认主题](https://ecosystem.vuejs.press/zh/themes/default/extending.html) 。接下来我们将介绍如何让你的主题像默认主题一样被用户继承。
 
 ## 布局插槽
 

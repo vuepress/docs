@@ -25,7 +25,7 @@ export default defineUserConfig({
 })
 ```
 
-默认主题为文档网站提供了基础且实用的功能，你可以前往 [默认主题配置参考](../reference/default-theme/config.md) 获取全部的配置列表。
+默认主题为文档网站提供了基础且实用的功能，你可以前往 [默认主题配置参考](https://ecosystem.vuejs.press/zh/themes/default/config.html) 获取全部的配置列表。
 
 然而，你可能觉得默认主题不够出色，又或者你不想搭建一个文档网站，而是一个其他类型的网站，比如博客。此时，你可以尝试使用社区主题或者创建本地主题。
 
@@ -33,7 +33,7 @@ export default defineUserConfig({
 
 社区用户创建了很多主题，并将它们发布到了 [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme) 上。查看主题本身的文档可以获取更详细的指引。
 
-你可以在 [Awesome VuePress](https://github.com/vuepress/awesome-vuepress) 或者 [VuePress Marketplace](https://marketplace.vuejs.press/) 中探索更多主题。
+你可以在 [VuePress 市场](https://marketplace.vuejs.press/) 中探索更多主题。
 
 ## 本地主题
 

@@ -54,7 +54,7 @@ description: 页面的描述
 ::: tip
 前往 [Frontmatter 参考](../reference/frontmatter.md) 查看 VuePress 支持的 Frontmatter 配置。
 
-前往 [默认主题 > Frontmatter 参考](../reference/default-theme/frontmatter.md) 查看默认主题的 Frontmatter 配置。
+前往 [默认主题 > Frontmatter 参考](https://ecosystem.vuejs.press/zh/themes/default/frontmatter.html) 查看默认主题的 Frontmatter 配置。
 :::
 
 ## 内容

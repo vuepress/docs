@@ -260,11 +260,11 @@ export default defineUserConfig({
 
 VuePress v1 的 Stylus 调色板系统 （即 `styles/palette.styl` 和 `styles/index.styl`） 不再由 VuePress Core 默认提供支持。
 
-调色板系统提取到了 [@vuepress/plugin-palette](../reference/plugin/palette.md) 当中。
+调色板系统提取到了 [@vuepress/plugin-palette](https://ecosystem.vuejs.press/zh/plugins/palette.html) 当中。
 
 主题作者可以使用自己的方式来为用户提供自定义样式的能力，而不必被限制在 Stylus 当中。
 
-如果你使用的是默认主题，那么调色板系统仍然存在，但改为使用 SASS ，并且大部分变量都迁移为 CSS 变量。参考 [默认主题 > 样式](../reference/default-theme/styles.md) 。
+如果你使用的是默认主题，那么调色板系统仍然存在，但改为使用 SASS ，并且大部分变量都迁移为 CSS 变量。参考 [默认主题 > 样式](https://ecosystem.vuejs.press/zh/themes/default/styles.html) 。
 
 ### 约定文件变更
 
@@ -278,7 +278,7 @@ VuePress v1 的 Stylus 调色板系统 （即 `styles/palette.styl` 和 `styles/
 
 在该目录下的文件不会被自动注册为 Vue 组件。
 
-你需要使用 [@vuepress/plugin-register-components](../reference/plugin/register-components.md) ，或者在 `.vuepress/client.{js,ts}` 中手动注册你的组件。
+你需要使用 [@vuepress/plugin-register-components](https://ecosystem.vuejs.press/zh/plugins/register-components.html) ，或者在 `.vuepress/client.{js,ts}` 中手动注册你的组件。
 
 #### .vuepress/theme/
 
@@ -323,13 +323,13 @@ VuePress v1 的 Stylus 调色板系统 （即 `styles/palette.styl` 和 `styles/
 
 默认主题的调色板系统迁移为 SASS 和 CSS 变量。
 
-参考 [默认主题 > 样式](../reference/default-theme/styles.md) 。
+参考 [默认主题 > 样式](https://ecosystem.vuejs.press/zh/themes/default/styles.html) 。
 
 #### 主题配置
 
 默认主题的配置有大量变更，建议你阅读 v2 的默认主题配置参考文档来进行迁移。
 
-参考 [默认主题 > 配置](../reference/default-theme/config.md) 。
+参考 [默认主题 > 配置](https://ecosystem.vuejs.press/zh/themes/default/config.html) 。
 
 这里仅列出部分要注意的变更：
 
@@ -410,13 +410,13 @@ v1 的主题和插件和 v2 并不兼容。
 
 - 所谓的 **主题目录结构约定** 不再存在。
   - `theme/enhanceApp.js` 文件不会被隐式作为 Client App Enhance 文件。你需要在 `clientConfigFile` Hook 中显式指定它。
-  - `theme/global-components/` 目录下的文件不会被自动注册为 Vue 组件。你需要使用 [@vuepress/plugin-register-components](../reference/plugin/register-components.md) ，或者在 `clientConfigFile` 中手动注册组件。
+  - `theme/global-components/` 目录下的文件不会被自动注册为 Vue 组件。你需要使用 [@vuepress/plugin-register-components](https://ecosystem.vuejs.press/zh/plugins/register-components.html) ，或者在 `clientConfigFile` 中手动注册组件。
   - `theme/layouts/` 目录下的文件不会被自动注册为布局组件。你需要在 `clientConfigFile` 中通过 `layouts` 来显式指定。
   - `theme/templates/` 目录下的文件不会被自动用作 dev / ssr 的模板。你需要通过 `templateBuild` 和 `templateDev` 配置项来显式指定。
   - 你始终需要提供一个合法的 JS 入口文件，不要再使用 `"main": "layouts/Layout.vue"` 作为主题入口。
-- `themeConfig` 已经从用户配置和站点数据中移除。如果你想要像 v1 一样通过 `this.$site.themeConfig` 来访问 `themeConfig` ，我们现在建议使用 [@vuepress/plugin-theme-data](../reference/plugin/theme-data.md) 插件和它提供的 Composition API `useThemeData` 。
-- Stylus 不再是默认的 CSS 预处理器，并且 Stylus 调色板系统不再被默认支持。如果你仍然想要使用和 v1 类似的调色板系统，可以使用 [@vuepress/plugin-palette](../reference/plugin/palette.md) 。
-- 由 Prism.js 提供的 Markdown 代码块的语法高亮不再被默认支持。你可以选择使用 [@vuepress/plugin-prismjs](../reference/plugin/prismjs.md) 或 [@vuepress/plugin-shiki](../reference/plugin/shiki.md) ，或者用你自己的方式实现语法高亮。
+- `themeConfig` 已经从用户配置和站点数据中移除。如果你想要像 v1 一样通过 `this.$site.themeConfig` 来访问 `themeConfig` ，我们现在建议使用 [@vuepress/plugin-theme-data](https://ecosystem.vuejs.press/zh/plugins/theme-data.html) 插件和它提供的 Composition API `useThemeData` 。
+- Stylus 不再是默认的 CSS 预处理器，并且 Stylus 调色板系统不再被默认支持。如果你仍然想要使用和 v1 类似的调色板系统，可以使用 [@vuepress/plugin-palette](https://ecosystem.vuejs.press/zh/plugins/palette.html) 。
+- 由 Prism.js 提供的 Markdown 代码块的语法高亮不再被默认支持。你可以选择使用 [@vuepress/plugin-prismjs](https://ecosystem.vuejs.press/zh/plugins/prismjs.html) 或 [@vuepress/plugin-shiki](https://ecosystem.vuejs.press/zh/plugins/plugin/shiki.html) ，或者用你自己的方式实现语法高亮。
 - 考虑到可扩展性， `this.$site.pages` 不再可用。
 
 你可以参考 [深入 > 开发主题](../advanced/theme.md) 来了解如何开发一个 v2 主题。
@@ -437,6 +437,6 @@ v1 的主题和插件和 v2 并不兼容。
 
 你仍然可以通过 `extends: parentTheme()` 来继承一个父主题，这将会继承其插件和布局等。
 
-你可以参考 [默认主题 > 继承](../reference/default-theme/extending.md) 来了解如何继承默认主题。
+你可以参考 [默认主题 > 继承](https://ecosystem.vuejs.press/zh/themes/default/extending.html) 来了解如何继承默认主题。
 
 `@theme` 和 `@parent-theme` 别名默认被移除了，但你仍然可以使用类似的方式来开发一个可继承的主题，参考 [深入 > Cookbook > 开发一个可继承的主题](../advanced/cookbook/making-a-theme-extendable.md) 。

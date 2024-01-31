@@ -469,8 +469,12 @@ This is default theme built-in `<Badge />` component <Badge text="demo" />
 ::: tip
 Check out the [Built-in Components](../reference/components.md) for a full list of built-in components.
 
-Check out the [Default Theme > Built-in Components](../reference/default-theme/components.md) for a full list of default theme built-in components.
+Check out the [Default Theme > Built-in Components](https://ecosystem.vuejs.press/themes/default/components.html) for a full list of default theme built-in components.
 :::
+
+## Markdown Plugins
+
+You can explore more markdown plugins at [VuePress Marketplace](https://marketplace.vuejs.press).
 
 ## Cautions
 

@@ -4,7 +4,7 @@ Sometimes users might want make some minor changes to a theme, but they don't wa
 
 With the help of [Theme API](../../reference/theme-api.md), you can make your theme extendable, allowing users to make their own modifications easily.
 
-You must have known that how to [extend default theme](../../reference/default-theme/extending.md). Here we'll introduce how to make your own theme extendable like default theme.
+You must have known that how to [extend default theme](https://ecosystem.vuejs.press/themes/default/extending.html). Here we'll introduce how to make your own theme extendable like default theme.
 
 ## Layout Slots
 

@@ -25,7 +25,7 @@ export default defineUserConfig({
 })
 ```
 
-The default theme provides basic but useful features for documentation site, you can check out [Default Theme Config Reference](../reference/default-theme/config.md) for a full list of config.
+The default theme provides basic but useful features for documentation site, you can check out [Default Theme Config Reference](https://ecosystem.vuejs.press/themes/default/config.html) for a full list of config.
 
 However, you might think it is not good enough. Or, you want to build a different type of site, for example, a blog, instead of a documentation. Then, you can try to use a community theme or create a local theme.
 
@@ -33,7 +33,7 @@ However, you might think it is not good enough. Or, you want to build a differen
 
 Community users have created lots of theme and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme). You should check the theme's own documentation for detailed guide.
 
-You can explore more themes in [Awesome VuePress](https://github.com/vuepress/awesome-vuepress) or [VuePress Marketplace](https://marketplace.vuejs.press/).
+You can explore more themes in [VuePress Marketplace](https://marketplace.vuejs.press/).
 
 ## Local Theme
 

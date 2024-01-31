@@ -260,11 +260,11 @@ See [Frontmatter > permalinkPattern](../reference/frontmatter.md#permalinkpatter
 
 The stylus palette system of VuePress v1 (i.e. `styles/palette.styl` and `styles/index.styl`) is no longer provided by VuePress Core.
 
-The palette system is extracted to [@vuepress/plugin-palette](../reference/plugin/palette.md).
+The palette system is extracted to [@vuepress/plugin-palette](https://ecosystem.vuejs.press/plugins/palette.html).
 
 Theme authors can use their own way to allow users to customize styles, and not be limited with stylus.
 
-If you are using default theme, the palette system is still available but migrated to SASS, while most variables have been migrated to CSS variables. See [Default Theme > Styles](../reference/default-theme/styles.md).
+If you are using default theme, the palette system is still available but migrated to SASS, while most variables have been migrated to CSS variables. See [Default Theme > Styles](https://ecosystem.vuejs.press/themes/default/styles.html).
 
 ### Conventional Files Change
 
@@ -278,7 +278,7 @@ See [Advanced > Cookbook > Usage of Client Config](../advanced/cookbook/usage-of
 
 Files in this directory will not be registered as Vue components automatically.
 
-You need to use [@vuepress/plugin-register-components](../reference/plugin/register-components.md), or register your components manually in `.vuepress/client.{js,ts}`.
+You need to use [@vuepress/plugin-register-components](https://ecosystem.vuejs.press/plugins/register-components.html), or register your components manually in `.vuepress/client.{js,ts}`.
 
 #### .vuepress/theme/
 
@@ -323,13 +323,13 @@ Removed.
 
 The palette system of default theme has migrated to SASS and CSS variables.
 
-See [Default Theme > Styles](../reference/default-theme/styles.md).
+See [Default Theme > Styles](https://ecosystem.vuejs.press/themes/default/styles.html).
 
 #### Theme Config
 
 Default theme config has been changed a lot. You'd better check the config reference of v2 default theme to migrate it properly.
 
-See [Default Theme > Config](../reference/default-theme/config.md).
+See [Default Theme > Config](https://ecosystem.vuejs.press/themes/default/config.html).
 
 Here we list some notable changes:
 
@@ -408,13 +408,13 @@ Some major breaking changes:
 
 - There is no **conventional theme directory structure** anymore.
   - The file `theme/enhanceApp.js` will not be used as client app enhance file implicitly. You need to specify it explicitly in `clientConfigFile` hook.
-  - Files in `theme/global-components/` directory will not be registered as Vue components automatically. You need to use [@vuepress/plugin-register-components](../reference/plugin/register-components.md), or register components manually in `clientConfigFile`.
+  - Files in `theme/global-components/` directory will not be registered as Vue components automatically. You need to use [@vuepress/plugin-register-components](https://ecosystem.vuejs.press/plugins/register-components.html), or register components manually in `clientConfigFile`.
   - Files in `theme/layouts/` directory will not be registered as layout components automatically. You need to specify it explicitly in `layouts` option in `clientConfigFile`.
   - Files in `theme/templates/` directory will not be used as dev / ssr template automatically. You need to specify theme explicitly in `templateBuild` and `templateDev` option.
   - Always provide a valid js entry file, and do not use `"main": "layouts/Layout.vue"` as the theme entry anymore.
-- `themeConfig` is removed from user config and site data. To access the `themeConfig` as you would via `this.$site.themeConfig` in v1, we now recommend using the [@vuepress/plugin-theme-data](../reference/plugin/theme-data.md) plugin and its `useThemeData` composition API.
-- Stylus is no longer the default CSS pre-processor, and the stylus palette system is not embedded. If you still want to use similar palette system as v1, [@vuepress/plugin-palette](../reference/plugin/palette.md) may help.
-- Markdown code blocks syntax highlighting by Prism.js is not embedded by default. You can use either [@vuepress/plugin-prismjs](../reference/plugin/prismjs.md) or [@vuepress/plugin-shiki](../reference/plugin/shiki.md), or implement syntax highlighting in your own way.
+- `themeConfig` is removed from user config and site data. To access the `themeConfig` as you would via `this.$site.themeConfig` in v1, we now recommend using the [@vuepress/plugin-theme-data](https://ecosystem.vuejs.press/plugins/theme-data.html) plugin and its `useThemeData` composition API.
+- Stylus is no longer the default CSS pre-processor, and the stylus palette system is not embedded. If you still want to use similar palette system as v1, [@vuepress/plugin-palette](https://ecosystem.vuejs.press/plugins/palette.html) may help.
+- Markdown code blocks syntax highlighting by Prism.js is not embedded by default. You can use either [@vuepress/plugin-prismjs](https://ecosystem.vuejs.press/plugins/prismjs.html) or [@vuepress/plugin-shiki](https://ecosystem.vuejs.press/plugins/shiki.html), or implement syntax highlighting in your own way.
 - For scalability concerns, `this.$site.pages` is not available any more.
 
 For more detailed guide about how to write a theme in v2, see [Advanced > Writing a Theme](../advanced/theme.md).
@@ -435,6 +435,6 @@ Renamed to `extends`.
 
 You can still inherit a parent theme with `extends: parentTheme()`, which will extends the plugins, layouts, etc.
 
-You can refer to [Default Theme > Extending](../reference/default-theme/extending.md) for how to extend default theme.
+You can refer to [Default Theme > Extending](https://ecosystem.vuejs.press/themes/default/extending.html) for how to extend default theme.
 
 The `@theme` and `@parent-theme` aliases are removed by default, but you can still make a extendable theme with similar approach, see [Advanced > Cookbook > Making a Theme Extendable](../advanced/cookbook/making-a-theme-extendable.md).

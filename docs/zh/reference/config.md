@@ -149,7 +149,7 @@ export default {
 
 - 参考：
   - [指南 > 主题](../guide/theme.md)
-  - [默认主题 > 配置](./default-theme/config.md)
+  - [默认主题 > 配置](https://ecosystem.vuejs.press/zh/themes/default/config.md)
 
 ## 打包工具配置
 

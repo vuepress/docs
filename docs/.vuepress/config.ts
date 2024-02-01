@@ -48,6 +48,7 @@ export default defineUserConfig({
 
   // configure default theme
   theme: defaultTheme({
+    hostname: 'https://v2.vuepress.vuejs.org',
     logo: '/images/hero.png',
     repo: 'vuepress/docs',
     docsDir: 'docs',

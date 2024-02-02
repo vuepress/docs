@@ -189,16 +189,16 @@ Then the permalink of the page would be `2021/01/03/bar-baz.html`.
   - [Frontmatter > permalink](#permalink)
   - [Node API > Page Properties > permalink](./node-api.md#permalink)
 
-## meta
+## routeMeta
 
 - Type: `Record<string, unknown>`
 
 - Details:
 
-  Custom data to be attached to the page.
+  Custom data to be attached to the page route.
 
 - Also see:
-  - [Node API > Page Properties > meta](./node-api.md#meta)
+  - [Node API > Page Properties > routeMeta](./node-api.md#routeMeta)
 
 ## title
 

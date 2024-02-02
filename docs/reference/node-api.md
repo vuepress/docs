@@ -601,7 +601,7 @@ interface MarkdownLink {
   - [Frontmatter > permalink](./frontmatter.md#permalink)
   - [Frontmatter > permalinkPattern](./frontmatter.md#permalinkpattern)
 
-### meta
+### routeMeta
 
 - Type: `Record<string, unknown>`
 
@@ -610,12 +610,12 @@ interface MarkdownLink {
   Custom data to be attached to the page route.
 
 - Also see:
-  - [Frontmatter > meta](./frontmatter.md#meta)
+  - [Frontmatter > routeMeta](./frontmatter.md#routemeta)
 
-::: tip What's the difference between page meta and page data?
-Both [page meta](#meta) and [page data](#data) is available in client side. However, route meta is attached to the page routes records, so the page meta of all pages would be loaded at once when users enter your site. In the contrast, page data is saved in separated files, which would be loaded only when users enter the corresponding page.
+::: tip What's the difference between route meta and page data?
+Both [route meta](#routemeta) and [page data](#data) is available in client side. However, route meta is attached to the page route record, so the route meta of all pages would be loaded at once when users enter your site. In the contrast, page data is saved in separated files, which would be loaded only when users enter the corresponding page.
 
-Therefore, it's not recommended to store large amounts of info into page meta, otherwise the initial loading speed will be affected a lot when your site has a large number of pages.
+Therefore, it's not recommended to store large amounts of info into route meta, otherwise the initial loading speed will be affected a lot when your site has a large number of pages.
 :::
 
 ### sfcBlocks

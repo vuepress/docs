@@ -69,5 +69,9 @@ export const sidebarZh: SidebarConfig = {
       text: '官方生态系统',
       link: 'https://ecosystem.vuejs.press/zh/',
     },
+    {
+      text: 'VuePress 市场',
+      link: 'https://marketplace.vuejs.press/',
+    },
   ],
 }

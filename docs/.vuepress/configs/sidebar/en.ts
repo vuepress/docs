@@ -66,5 +66,9 @@ export const sidebarEn: SidebarConfig = {
       text: 'Official Ecosystem',
       link: 'https://ecosystem.vuejs.press/',
     },
+    {
+      text: 'VuePress Marketplace',
+      link: 'https://marketplace.vuejs.press/',
+    },
   ],
 }

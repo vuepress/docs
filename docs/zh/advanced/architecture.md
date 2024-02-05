@@ -7,7 +7,7 @@
 上图展示了 VuePress 的简要架构：
 
 - Node App 会生成临时文件，包括页面、路由等。
-- Bundler 会将 Client App 和临时文件一起进行打包，就像处理一个普通的 Vue SPA 一样。
+- Bundler 会将 Client App 和临时文件一起进行打包，就像处理一个普通的 Vue App 一样。
 
 作为开发者，你必须要意识到 VuePress 分为两个主要部分： **Node App** 和 **Client App** ，这一点对于开发插件和主题来说都十分重要。
 

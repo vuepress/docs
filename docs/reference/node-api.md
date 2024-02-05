@@ -365,19 +365,6 @@ Hello, world.
 
 ## Page Properties
 
-### key
-
-- Type: `string`
-
-- Details:
-
-  Identifier of the page.
-
-  The page key would be used as the [name](https://router.vuejs.org/api/#name-2) of the page route.
-
-- Also see:
-  - [Built-in Components > Content](./components.md#content)
-
 ### path
 
 - Type: `string`
@@ -454,7 +441,6 @@ interface PageHeader {
 
 ```ts
 interface PageData {
-  key: string
   path: string
   title: string
   lang: string

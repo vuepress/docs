@@ -599,7 +599,7 @@ const defaultOptions = {
 
   VuePress 内置的 markdown-it 链接插件的配置项。
 
-  它可以把站内链接转换为 `<RouterLink>` ，并且可以在站外链接上添加额外的属性和图标。
+  它可以把站内链接的 tag 转换为 [internalTag](#markdownlinksinternaltag) ，并且可以在站外链接上添加额外的属性和图标。
 
   设置为 `false` 可以禁用该插件。
 
@@ -610,13 +610,13 @@ const defaultOptions = {
 
 - 类型： `string`
 
-- 默认值： `'RouterLink'`
+- 默认值： `'RouteLink'`
 
 - 详情：
 
   内部链接所使用的标签。
 
-  默认情况下，该插件会把内部链接转换为 `<RouterLink>` 。你可以把该选项设置为 `'a'` 来禁用这个功能。
+  默认情况下，该插件会把内部链接转换为 [RouteLink](./components.md#routelink) 。
 
 #### markdown.links.externalAttrs
 

@@ -25,23 +25,54 @@
 
 - Props:
 
-  - pageKey
+  - path
     - Type: `string`
     - Required: `false`
 
 - Usage:
 
 ```md
-<Content page-key="v-xxxxxx" />
+<Content path="/path/to/page.md" />
 ```
 
 - Details:
 
   This component will render the Markdown content of a page.
 
-  The page key is the [name](https://router.vuejs.org/api/#name-2) of the page route. If the `pageKey` prop is not provided, it will render the page of current route.
+  If the `path` prop is not provided, it will render the page content of current route.
 
   This component is mainly for developing themes. You won't need it in most cases.
 
 - Also see:
-  - [Node API > Page Properties > key](./node-api.md#key)
+  - [Node API > Page Properties > path](./node-api.md#path)
+
+## RouteLink
+
+- Props:
+
+  - to
+    - Type: `string`
+    - Required: `true`
+  - active
+    - Type: `boolean`
+    - Required: `false`
+    - Default: `false`
+  - activeClass
+    - Type: `string`
+    - Required: `false`
+    - Default: `'route-link-active'`
+
+- Usage:
+
+```md
+<RouteLink to="/path/to/target-page.md">target page</RouteLink>
+<RouteLink active to="/path/to/current-page.md">current page</RouteLink>
+```
+
+- Details:
+
+  This component will render a link to the target page.
+
+  If the `active` prop is set to `true`, the link will have an extra `activeClass`. Notice that the active status won't be updated automatically when the route changes.
+
+  This component is mainly for developing themes. You won't need it in most cases. For theme authors, it's recommended to use this component instead of the `<RouterLink>` component from `vue-router`.

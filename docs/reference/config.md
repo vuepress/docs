@@ -586,7 +586,7 @@ const defaultOptions = {
 
   Options for VuePress built-in markdown-it links plugin.
 
-  It will convert internal links to `<RouterLink>`, and add extra attributes and icon to external links.
+  It will convert the tag of internal links to [internalTag](#markdownlinksinternaltag), and add extra attributes and icon to external links.
 
   Set to `false` to disable this plugin.
 
@@ -595,15 +595,15 @@ const defaultOptions = {
 
 #### markdown.links.internalTag
 
-- Type: `'a' | 'RouterLink'`
+- Type: `'a' | 'RouteLink' | 'RouterLink'`
 
-- Default: `'RouterLink'`
+- Default: `'RouteLink'`
 
 - Details:
 
   Tag for internal links.
 
-  By default, this plugin will transform internal links to `<RouterLink>`. You can set this option to `'a'` to disable this feature.
+  By default, this plugin will transform internal links to [RouteLink](./components.md#routelink).
 
 #### markdown.links.externalAttrs
 

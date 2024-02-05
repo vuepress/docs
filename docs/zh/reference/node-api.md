@@ -363,19 +363,6 @@ export default {
 
 ## Page 属性
 
-### key
-
-- 类型： `string`
-
-- 详情：
-
-  该 Page 的标识。
-
-  Page Key 会被用作页面路由的 [name](https://router.vuejs.org/api/#name-2)。
-
-- 参考：
-  - [Built-in Components > Content](./components.md#content)
-
 ### path
 
 - 类型： `string`
@@ -452,7 +439,6 @@ interface PageHeader {
 
 ```ts
 interface PageData {
-  key: string
   path: string
   title: string
   lang: string

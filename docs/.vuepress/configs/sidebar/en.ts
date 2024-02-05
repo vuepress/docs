@@ -44,7 +44,7 @@ export const sidebarEn: SidebarConfig = {
   ],
   '/reference/': [
     {
-      text: 'VuePress Reference',
+      text: 'Core',
       collapsible: true,
       children: [
         '/reference/cli.md',
@@ -58,17 +58,21 @@ export const sidebarEn: SidebarConfig = {
       ],
     },
     {
-      text: 'Bundlers Reference',
-      collapsible: true,
+      text: 'Bundlers',
       children: ['/reference/bundler/vite.md', '/reference/bundler/webpack.md'],
     },
     {
-      text: 'Official Ecosystem',
-      link: 'https://ecosystem.vuejs.press/',
-    },
-    {
-      text: 'VuePress Marketplace',
-      link: 'https://marketplace.vuejs.press/',
+      text: 'Ecosystem',
+      children: [
+        {
+          text: 'Default Theme',
+          link: 'https://ecosystem.vuejs.press/themes/default/',
+        },
+        {
+          text: 'Plugins',
+          link: 'https://ecosystem.vuejs.press/plugins/',
+        },
+      ],
     },
   ],
 }

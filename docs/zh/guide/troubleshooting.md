@@ -11,4 +11,4 @@
 
 请参阅默认主题参考，了解如何正确配置默认主题：
 
-- [默认主题 > 配置](https://ecosystem.vuejs.press/zh/themes/default/config.html)
+- [默认主题 > 配置](https://ecosystem.vuejs.press/zh/themes/default/)

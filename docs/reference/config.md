@@ -150,7 +150,7 @@ Rendered as：
 
 - Also see:
   - [Guide > Theme](../guide/theme.md)
-  - [Default Theme > Config](https://ecosystem.vuejs.press/themes/default/config.md)
+  - [Default Theme > Config](https://ecosystem.vuejs.press/themes/default/config.html)
 
 ## Bundler Config
 

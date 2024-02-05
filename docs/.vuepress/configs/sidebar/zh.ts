@@ -44,7 +44,7 @@ export const sidebarZh: SidebarConfig = {
   ],
   '/zh/reference/': [
     {
-      text: 'VuePress 参考',
+      text: '核心',
       collapsible: true,
       children: [
         '/zh/reference/cli.md',
@@ -58,20 +58,24 @@ export const sidebarZh: SidebarConfig = {
       ],
     },
     {
-      text: '打包工具参考',
-      collapsible: true,
+      text: '打包工具',
       children: [
         '/zh/reference/bundler/vite.md',
         '/zh/reference/bundler/webpack.md',
       ],
     },
     {
-      text: '官方生态系统',
-      link: 'https://ecosystem.vuejs.press/zh/',
-    },
-    {
-      text: 'VuePress 市场',
-      link: 'https://marketplace.vuejs.press/',
+      text: '生态系统',
+      children: [
+        {
+          text: '默认主题',
+          link: 'https://ecosystem.vuejs.press/zh/themes/default/',
+        },
+        {
+          text: '插件',
+          link: 'https://ecosystem.vuejs.press/zh/plugins/',
+        },
+      ],
     },
   ],
 }

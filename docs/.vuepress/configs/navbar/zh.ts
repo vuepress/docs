@@ -24,7 +24,7 @@ export const navbarZh: NavbarConfig = [
     text: '参考',
     children: [
       {
-        text: 'VuePress',
+        text: '核心',
         children: [
           '/zh/reference/cli.md',
           '/zh/reference/config.md',
@@ -41,6 +41,19 @@ export const navbarZh: NavbarConfig = [
         children: [
           '/zh/reference/bundler/vite.md',
           '/zh/reference/bundler/webpack.md',
+        ],
+      },
+      {
+        text: '生态系统',
+        children: [
+          {
+            text: '默认主题',
+            link: 'https://ecosystem.vuejs.press/zh/themes/default/',
+          },
+          {
+            text: '插件',
+            link: 'https://ecosystem.vuejs.press/zh/plugins/',
+          },
         ],
       },
     ],
@@ -64,12 +77,16 @@ export const navbarZh: NavbarConfig = [
         text: '其他资源',
         children: [
           {
-            text: '官方生态系统',
+            text: '生态系统',
             link: 'https://ecosystem.vuejs.press/zh/',
           },
           {
-            text: 'VuePress 市场',
+            text: '市场',
             link: 'https://marketplace.vuejs.press/zh/',
+          },
+          {
+            text: 'Awesome VuePress',
+            link: 'https://github.com/vuepress/awesome-vuepress',
           },
           {
             text: '贡献指南',

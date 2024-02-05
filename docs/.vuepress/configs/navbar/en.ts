@@ -89,10 +89,6 @@ export const navbarEn: NavbarConfig = [
             link: 'https://marketplace.vuejs.press',
           },
           {
-            text: 'Awesome VuePress',
-            link: 'https://github.com/vuepress/awesome-vuepress',
-          },
-          {
             text: 'Contributing Guide',
             link: 'https://github.com/vuepress/core/blob/main/CONTRIBUTING.md',
           },

@@ -85,10 +85,6 @@ export const navbarZh: NavbarConfig = [
             link: 'https://marketplace.vuejs.press/zh/',
           },
           {
-            text: 'Awesome VuePress',
-            link: 'https://github.com/vuepress/awesome-vuepress',
-          },
-          {
             text: '贡献指南',
             link: 'https://github.com/vuepress/core/blob/main/CONTRIBUTING_zh.md',
           },

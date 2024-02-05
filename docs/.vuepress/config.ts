@@ -50,7 +50,8 @@ export default defineUserConfig({
   theme: defaultTheme({
     hostname: 'https://v2.vuepress.vuejs.org',
     logo: '/images/hero.png',
-    repo: 'vuepress/docs',
+    repo: 'vuepress/core',
+    docsRepo: 'vuepress/docs',
     docsDir: 'docs',
 
     // theme-level locales config

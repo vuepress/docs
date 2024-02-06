@@ -1,8 +1,5 @@
 # 配置
 
-<NpmBadge package="@vuepress/cli" />
-<NpmBadge package="@vuepress/core" />
-
 ## 站点配置
 
 ### base

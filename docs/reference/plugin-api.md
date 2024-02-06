@@ -1,8 +1,6 @@
 # Plugin API
 
-<NpmBadge package="@vuepress/core" />
-
-Plugin API is supported by [@vuepress/core](https://www.npmjs.com/package/@vuepress/core) package. You could check out [Node API](./node-api.md) for how to use the VuePress app instance in plugin hooks.
+You could check out [Node API](./node-api.md) for how to use the VuePress app instance in plugin hooks.
 
 ## Overview
 

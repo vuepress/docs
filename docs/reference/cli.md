@@ -1,9 +1,5 @@
 # Command Line Interface
 
-<NpmBadge package="@vuepress/cli" />
-
-VuePress CLI is provided by [@vuepress/cli](https://www.npmjs.com/package/@vuepress/cli) package. It is included by the [vuepress](https://www.npmjs.com/package/vuepress) package, and you can also install it separately.
-
 Run `vuepress --help` to get following help messages:
 
 ```

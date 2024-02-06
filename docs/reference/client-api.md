@@ -1,8 +1,6 @@
 # Client API
 
-<NpmBadge package="@vuepress/client" />
-
-Client API is provided by [@vuepress/client](https://www.npmjs.com/package/@vuepress/client) package, which is also available as `vuepress/client`.
+Client API can be imported from `vuepress/client`.
 
 ## Composition API
 

@@ -1,10 +1,8 @@
 # 客户端 API
 
-<NpmBadge package="@vuepress/client" />
+客户端 API 可以通过 `vuepress/client` 来引入。
 
-客户端 API 是由 [@vuepress/client](https://www.npmjs.com/package/@vuepress/client) Package 提供的，同时也可以通过 `vuepress/client` 来引入。
-
-## Composition API
+## 组合式 API
 
 ### usePageData
 

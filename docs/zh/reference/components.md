@@ -1,7 +1,5 @@
 # 内置组件
 
-<NpmBadge package="@vuepress/client" />
-
 ## ClientOnly
 
 - 使用：

@@ -1,8 +1,5 @@
 # Config
 
-<NpmBadge package="@vuepress/cli" />
-<NpmBadge package="@vuepress/core" />
-
 ## Site Config
 
 ### base

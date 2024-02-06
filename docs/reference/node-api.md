@@ -1,8 +1,6 @@
 # Node API
 
-<NpmBadge package="@vuepress/core" />
-
-Node API is provided by [@vuepress/core](https://www.npmjs.com/package/@vuepress/core) package, which is also available as `vuepress/core`.
+Node API can be imported from `vuepress/core`.
 
 ## App
 

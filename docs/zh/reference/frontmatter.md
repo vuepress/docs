@@ -1,8 +1,5 @@
 # Frontmatter
 
-<NpmBadge package="@vuepress/client" />
-<NpmBadge package="@vuepress/markdown" />
-
 ## date
 
 - 类型： `string`

@@ -1,8 +1,6 @@
 # 插件 API
 
-<NpmBadge package="@vuepress/core" />
-
-插件 API 是由 [@vuepress/core](https://www.npmjs.com/package/@vuepress/core) 包支持的。你可以查看 [Node API](./node-api.md) 来了解如何使用插件 Hooks 中的 VuePress App 实例。
+你可以查看 [Node API](./node-api.md) 来了解如何使用插件 Hooks 中的 VuePress App 实例。
 
 ## 概览
 

@@ -4,6 +4,33 @@
 
 ## 组合式 API
 
+### useClientData
+
+- 详情：
+
+  返回所有客户端数据的 Ref 对象。
+
+  每个属性也可以通过下列的组合式 API 来访问。
+
+- 示例：
+
+```vue
+<script setup lang="ts">
+import { useClientData } from 'vuepress/client'
+
+const {
+  pageData,
+  pageFrontmatter,
+  pageHead,
+  pageHeadTitle,
+  pageLang,
+  routeLocale,
+  siteData,
+  siteLocaleData,
+} = useClientData()
+</script>
+```
+
 ### usePageData
 
 - 详情：

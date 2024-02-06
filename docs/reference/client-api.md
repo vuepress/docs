@@ -4,6 +4,33 @@ Client API can be imported from `vuepress/client`.
 
 ## Composition API
 
+### useClientData
+
+- Details:
+
+  Returns all the client data ref objects.
+
+  Each property can also be accessed by the following composition APIs.
+
+- Example:
+
+```vue
+<script setup lang="ts">
+import { useClientData } from 'vuepress/client'
+
+const {
+  pageData,
+  pageFrontmatter,
+  pageHead,
+  pageHeadTitle,
+  pageLang,
+  routeLocale,
+  siteData,
+  siteLocaleData,
+} = useClientData()
+</script>
+```
+
 ### usePageData
 
 - Details:

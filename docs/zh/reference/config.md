@@ -551,20 +551,6 @@ const defaultOptions = {
 - 参考：
   - [Node API > Page 属性 > headers](./node-api.md#headers)
 
-### markdown.title
-
-- 类型： `undefined | false`
-
-- 详情：
-
-  [@mdit-vue/plugin-title](https://github.com/mdit-vue/mdit-vue/tree/main/packages/plugin-title) 插件的配置项。
-
-  设置为 `false` 可以禁用该插件。
-
-::: danger
-除非你了解它的用途，否则你不应该设置该配置项。
-:::
-
 ### markdown.importCode
 
 - 类型： `ImportCodePluginOptions | false`
@@ -639,6 +625,10 @@ const defaultOptions = {
   - [Cookbook > Markdown 与 Vue SFC](../advanced/cookbook/markdown-and-vue-sfc.md)
   - [Node API > Page 属性 > sfcBlocks](./node-api.md#sfcblocks)
 
+::: danger
+除非你了解它的用途，否则你不应该设置该配置项。
+:::
+
 ### markdown.slugify
 
 - 类型： `(str: string) => string`
@@ -646,6 +636,20 @@ const defaultOptions = {
 - 详情：
 
   默认使用的 slugify 函数。
+
+### markdown.title
+
+- 类型： `undefined | false`
+
+- 详情：
+
+  [@mdit-vue/plugin-title](https://github.com/mdit-vue/mdit-vue/tree/main/packages/plugin-title) 插件的配置项。
+
+  设置为 `false` 可以禁用该插件。
+
+::: danger
+除非你了解它的用途，否则你不应该设置该配置项。
+:::
 
 ### markdown.toc
 

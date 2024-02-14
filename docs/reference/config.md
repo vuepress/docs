@@ -626,6 +626,10 @@ const defaultOptions = {
   - [Cookbook > Markdown and Vue SFC](../advanced/cookbook/markdown-and-vue-sfc.md)
   - [Node API > Page Properties > sfcBlocks](./node-api.md#sfcblocks)
 
+::: danger
+You should not configure it unless you understand what it is for.
+:::
+
 ### markdown.slugify
 
 - Type: `(str: string) => string`

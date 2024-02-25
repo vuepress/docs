@@ -11,6 +11,3 @@ node_modules/
 
 # Log files
 *.log
-
-# npm config
-.npmrc

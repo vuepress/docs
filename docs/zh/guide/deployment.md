@@ -77,7 +77,7 @@ jobs:
           # 部署到 gh-pages 分支
           target_branch: gh-pages
           # 部署目录为 VuePress 的默认输出目录
-          build_dir: docs/.vuepress/dist
+          build_dir: src/.vuepress/dist
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -150,7 +150,7 @@ pages:
 ```json
 {
   "hosting": {
-    "public": "./docs/.vuepress/dist",
+    "public": "./src/.vuepress/dist",
     "ignore": []
   }
 }
@@ -190,7 +190,7 @@ heroku login
 
 ```json
 {
-  "root": "./docs/.vuepress/dist"
+  "root": "./src/.vuepress/dist"
 }
 ```
 
@@ -209,7 +209,7 @@ heroku login
 1. 前往 [Netlify](https://netlify.com) ，从 GitHub 创建一个新项目，并进行如下配置：
 
    - **Build Command:** `pnpm docs:build`
-   - **Publish directory:** `docs/.vuepress/dist`
+   - **Publish directory:** `src/.vuepress/dist`
 
 2. 设置 [Environment variables](https://docs.netlify.com/configure-builds/environment-variables) 来选择 Node 版本：
 
@@ -223,7 +223,7 @@ heroku login
 
    - **FRAMEWORK PRESET:** `Other`
    - **BUILD COMMAND:** `pnpm docs:build`
-   - **OUTPUT DIRECTORY:** `docs/.vuepress/dist`
+   - **OUTPUT DIRECTORY:** `src/.vuepress/dist`
 
 2. 点击 deploy 按钮。
 

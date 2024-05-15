@@ -369,7 +369,10 @@ VuePress 在开发和构建时会加载临时文件，因此临时文件目录�
 ```ts
 const defaultOptions = {
   level: [1, 2, 3, 4, 5, 6],
-  permalink: anchorPlugin.permalink.headerLink(),
+  permalink: anchorPlugin.permalink.headerLink({
+    class: 'header-anchor',
+    safariReaderFix: true,
+  }),
 }
 ```
 

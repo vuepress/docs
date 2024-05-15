@@ -370,11 +370,9 @@ Since VuePress will load temp files during dev and build, the temp directory sho
 ```ts
 const defaultOptions = {
   level: [1, 2, 3, 4, 5, 6],
-  permalink: anchorPlugin.permalink.ariaHidden({
+  permalink: anchorPlugin.permalink.headerLink({
     class: 'header-anchor',
-    symbol: '#',
-    space: true,
-    placement: 'before',
+    safariReaderFix: true,
   }),
 }
 ```

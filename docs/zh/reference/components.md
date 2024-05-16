@@ -1,5 +1,66 @@
 # 内置组件
 
+## AutoLink
+
+- Props:
+
+  - config
+    - 类型：`AutoLinkConfig`
+    - 是否必须：`true`
+
+```ts
+interface AutoLinkConfig {
+  /**
+   * 判断该链接是否被激活的模式，优先级高于 `exact`
+   */
+  activeMatch?: string | RegExp
+
+  /**
+   * `aria-label` 属性
+   */
+
+  ariaLabel?: string
+
+  /**
+   * 该链接是否只有在 URL 完全匹配时才激活
+   */
+  exact?: boolean
+
+  /**
+   * 自动链接的 URL
+   */
+
+  link: string
+
+  /**
+   * `rel` 属性
+   */
+  rel?: string
+
+  /**
+   * `target` 属性
+   */
+  target?: string
+
+  /**
+   * 自动链接的文本
+   */
+  text: string
+}
+```
+
+```md
+<AutoLink :config="autoLinkConfig" />
+```
+
+- 详情：
+
+  该组件将根据您的配置自动渲染一个 `<RouteLink>` 或 `<a>`。
+
+  如果链接既可以是内部链接也可以是外部链接，建议使用这个组件而不是 `<RouteLink>` 组件。
+
+  它有一个默认插槽用于渲染链接的内容（默认为 `config.text`），您还可以添加名为 `before` 和 `after` 的插槽，在文本之前和之后渲染内容。
+
 ## ClientOnly
 
 - 使用：

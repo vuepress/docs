@@ -1,5 +1,64 @@
 # Built-in Components
 
+## AutoLink
+
+- Props:
+
+  - config
+    - Type: `AutoLinkConfig`
+    - Required: `true`
+
+```ts
+interface AutoLinkConfig {
+  /**
+   * Pattern to determine if the link should be active, which has higher priority than `exact`
+   */
+  activeMatch?: string | RegExp
+
+  /**
+   * The `aria-label` attribute
+   */
+  ariaLabel?: string
+
+  /**
+   * Whether the link should be active only if the url is an exact match
+   */
+  exact?: boolean
+
+  /**
+   * URL of the auto link
+   */
+  link: string
+
+  /**
+   * The `rel` attribute
+   */
+  rel?: string
+
+  /**
+   * The `target` attribute
+   */
+  target?: string
+
+  /**
+   * Text of the auto link
+   */
+  text: string
+}
+```
+
+```md
+<AutoLink :config="autoLinkConfig" />
+```
+
+- Details:
+
+  This component will automatically render a `<RouteLink>` or `<a>` bases on your configuration.
+
+  It's recommended to use this component instead of the `<RouteLink>` component if the link can be both internal and external.
+
+  It has a default slot to render the content of the link (default is `config.text`), and you can also add slots named `before` and `after` to render content before and after the text.
+
 ## ClientOnly
 
 - Usage:

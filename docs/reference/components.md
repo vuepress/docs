@@ -1,5 +1,83 @@
 # Built-in Components
 
+## AutoLink
+
+- Props:
+
+  - config
+    - Type: `AutoLinkConfig`
+    - Required: `true`
+
+```ts
+interface AutoLinkConfig {
+  /**
+   * Pattern to determine if the link should be active, which has higher priority than `exact`
+   */
+  activeMatch?: string | RegExp
+
+  /**
+   * The `aria-label` attribute
+   */
+  ariaLabel?: string
+
+  /**
+   * Whether the link should be active only if the url is an exact match
+   */
+  exact?: boolean
+
+  /**
+   * URL of the auto link
+   */
+  link: string
+
+  /**
+   * The `rel` attribute
+   */
+  rel?: string
+
+  /**
+   * The `target` attribute
+   */
+  target?: string
+
+  /**
+   * Text of the auto link
+   */
+  text: string
+}
+```
+
+- Usage:
+
+```md
+<AutoLink :config="autoLinkConfig" />
+
+<AutoLink :config="autoLinkConfig">
+  default slot
+</AutoLink>
+
+<AutoLink :config="autoLinkConfig">
+  <template #before>before slot</template>
+  <template #after>after slot</template>
+</AutoLink>
+
+<AutoLink :config="autoLinkConfig">
+  <template v-slot="config">{{ config.text }}</template>
+</AutoLink>
+
+<AutoLink :config="autoLinkConfig">
+  <template #before="config">{{ config.text }}</template>
+</AutoLink>
+```
+
+- Details:
+
+  This component will automatically render internal link as `<RouteLink>`, and render external link as `<a>`. It will also add necessary attributes correspondingly.
+
+  You can make use of the `before` and `after` slots to render content before and after the text. Also, you can use the `default` slot to render the text (default text is `config.text`).
+
+  This component is mainly for developing themes. Users won't need it in most cases. For theme authors, it's recommended to use this component to render links that could be either internal or external.
+
 ## ClientOnly
 
 - Usage:
@@ -73,4 +151,4 @@
 
   If the `active` prop is set to `true`, the link will have an extra `activeClass`. Notice that the active status won't be updated automatically when the route changes.
 
-  This component is mainly for developing themes. You won't need it in most cases. For theme authors, it's recommended to use this component instead of the `<RouterLink>` component from `vue-router`.
+  This component is mainly for developing themes. Users won't need it in most cases. For theme authors, it's recommended to use this component to render internal links instead of the `<RouterLink>` component from `vue-router`.

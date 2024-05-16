@@ -47,17 +47,36 @@ interface AutoLinkConfig {
 }
 ```
 
+- Usage:
+
 ```md
 <AutoLink :config="autoLinkConfig" />
+
+<AutoLink :config="autoLinkConfig">
+  default slot
+</AutoLink>
+
+<AutoLink :config="autoLinkConfig">
+  <template #before>before slot</template>
+  <template #after>after slot</template>
+</AutoLink>
+
+<AutoLink :config="autoLinkConfig">
+  <template v-slot="config">{{ config.text }}</template>
+</AutoLink>
+
+<AutoLink :config="autoLinkConfig">
+  <template #before="config">{{ config.text }}</template>
+</AutoLink>
 ```
 
 - Details:
 
-  This component will automatically render a `<RouteLink>` or `<a>` bases on your configuration.
+  This component will automatically render internal link as `<RouteLink>`, and render external link as `<a>`. It will also add necessary attributes correspondingly.
 
-  It's recommended to use this component instead of the `<RouteLink>` component if the link can be both internal and external.
+  You can make use of the `before` and `after` slots to render content before and after the text. Also, you can use the `default` slot to render the text (default text is `config.text`).
 
-  It has a default slot to render the content of the link (default is `config.text`), and you can also add slots named `before` and `after` to render content before and after the text.
+  This component is mainly for developing themes. Users won't need it in most cases. For theme authors, it's recommended to use this component to render links that could be either internal or external.
 
 ## ClientOnly
 
@@ -132,4 +151,4 @@ interface AutoLinkConfig {
 
   If the `active` prop is set to `true`, the link will have an extra `activeClass`. Notice that the active status won't be updated automatically when the route changes.
 
-  This component is mainly for developing themes. You won't need it in most cases. For theme authors, it's recommended to use this component instead of the `<RouterLink>` component from `vue-router`.
+  This component is mainly for developing themes. Users won't need it in most cases. For theme authors, it's recommended to use this component to render internal links instead of the `<RouterLink>` component from `vue-router`.

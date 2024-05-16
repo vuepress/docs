@@ -49,17 +49,36 @@ interface AutoLinkConfig {
 }
 ```
 
+- 使用：
+
 ```md
 <AutoLink :config="autoLinkConfig" />
+
+<AutoLink :config="autoLinkConfig">
+  default 插槽
+</AutoLink>
+
+<AutoLink :config="autoLinkConfig">
+  <template #before>before 插槽</template>
+  <template #after>after 插槽</template>
+</AutoLink>
+
+<AutoLink :config="autoLinkConfig">
+  <template v-slot="config">{{ config.text }}</template>
+</AutoLink>
+
+<AutoLink :config="autoLinkConfig">
+  <template #before="config">{{ config.text }}</template>
+</AutoLink>
 ```
 
 - 详情：
 
-  该组件将根据您的配置自动渲染一个 `<RouteLink>` 或 `<a>`。
+  该组件将会自动将内部链接渲染为 `<RouteLink>` ，将外部链接渲染为 `<a>` ，并添加必要的属性。
 
-  如果链接既可以是内部链接也可以是外部链接，建议使用这个组件而不是 `<RouteLink>` 组件。
+  你可以通过 `before` 和 `after` 插槽，在文本之前和之后渲染内容。也可以通过 `default` 插槽，直接渲染文本（默认文本是 `config.text`）。
 
-  它有一个默认插槽用于渲染链接的内容（默认为 `config.text`），您还可以添加名为 `before` 和 `after` 的插槽，在文本之前和之后渲染内容。
+  该组件主要是为了开发主题时使用，普通用户在绝大多数情况下并不会用到它。对于主题作者来说，我们建议你在不确定链接是内部链接还是外部链接时，尽量使用这个组件。
 
 ## ClientOnly
 
@@ -134,4 +153,4 @@ interface AutoLinkConfig {
 
   如果 `active` Prop 被设置为 `true` ，那么这个链接会被额外添加一个 `activeClass` 类名。需要注意的是，这里的 active 状态并不会根据当前路由自动更新。
 
-  该组件主要是为了开发主题时使用。在绝大多数情况下你不会用到它。对于主题作者来说，我们建议你尽可能使用这个组件，而不是使用 `vue-router` 的 `<RouterLink>` 组件。
+  该组件主要是为了开发主题时使用，普通用户在绝大多数情况下并不会用到它。对于主题作者来说，我们建议你在渲染内部链接时尽量使用这个组件，而不是使用 `vue-router` 的 `<RouterLink>` 组件。

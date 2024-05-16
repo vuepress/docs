@@ -39,6 +39,7 @@ export const sidebarEn: SidebarConfig = {
         '/advanced/cookbook/making-a-theme-extendable.md',
         '/advanced/cookbook/passing-data-to-client-code.md',
         '/advanced/cookbook/markdown-and-vue-sfc.md',
+        '/advanced/cookbook/resolving-routes.md',
       ],
     },
   ],

@@ -109,13 +109,15 @@ layout: CustomLayout
 
 ## permalink
 
-- 类型： `string`
+- 类型： `string | null`
 
 - 详情：
 
   页面的永久链接。
 
   它将会覆盖根据文件路径来决定的默认路由路径。
+
+  当被设置为 `null` 时，将会禁用页面的永久链接。
 
 - 参考：
   - [Frontmatter > permalinkPattern](#permalinkpattern)

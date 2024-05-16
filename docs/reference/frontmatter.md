@@ -109,13 +109,15 @@ layout: CustomLayout
 
 ## permalink
 
-- Type: `string`
+- Type: `string | null`
 
 - Details:
 
   Permalink for the page.
 
   This will override the default route path that determined by the file path of the page.
+
+  When it is set to `null`, the permalink of the page will be disabled.
 
 - Also see:
   - [Frontmatter > permalinkPattern](#permalinkpattern)

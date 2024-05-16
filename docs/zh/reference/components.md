@@ -29,7 +29,6 @@ interface AutoLinkConfig {
   /**
    * 自动链接的 URL
    */
-
   link: string
 
   /**

@@ -18,7 +18,6 @@ interface AutoLinkConfig {
   /**
    * `aria-label` 属性
    */
-
   ariaLabel?: string
 
   /**

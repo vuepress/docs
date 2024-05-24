@@ -415,7 +415,7 @@ Some major breaking changes:
 - `themeConfig` is removed from user config and site data. To access the `themeConfig` as you would via `this.$site.themeConfig` in v1, we now recommend using the [@vuepress/plugin-theme-data](https://ecosystem.vuejs.press/plugins/theme-data.html) plugin and its `useThemeData` composition API.
 - Stylus is no longer the default CSS pre-processor, and the stylus palette system is not embedded. If you still want to use similar palette system as v1, [@vuepress/plugin-palette](https://ecosystem.vuejs.press/plugins/palette.html) may help.
 - Markdown code blocks syntax highlighting by Prism.js is not embedded by default. You can use either [@vuepress/plugin-prismjs](https://ecosystem.vuejs.press/plugins/prismjs.html) or [@vuepress/plugin-shiki](https://ecosystem.vuejs.press/plugins/shiki.html), or implement syntax highlighting in your own way.
-- For scalability concerns, `this.$site.pages` is not available any more.
+- For scalability concerns, `this.$site.pages` is not available any more. See [Advanced > Cookbook > Resolving Routes](../advanced/cookbook/resolving-routes.md) for how to retrieve pages data in v2.
 
 For more detailed guide about how to write a theme in v2, see [Advanced > Writing a Theme](../advanced/theme.md).
 

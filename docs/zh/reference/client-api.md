@@ -73,6 +73,17 @@ const {
 
   它的值是页面数据的 `lang` 属性。
 
+### useRoutes
+
+- 详情：
+
+  返回所有路由的 Ref 对象。
+
+  它的值是站点数据的路由信息。
+
+- 参考：
+  - [深入 > Cookbook > 解析路由](../advanced/cookbook/resolving-routes.md)
+
 ### useRouteLocale
 
 - 详情：
@@ -105,6 +116,24 @@ const {
 
 - 参考：
   - [深入 > Cookbook > 客户端配置的使用方法](../advanced/cookbook/usage-of-client-config.md)
+
+### resolveRoute
+
+- 详情：
+
+  解析给定链接对应的路由
+
+- 参考：
+  - [深入 > Cookbook > 解析路由](../advanced/cookbook/resolving-routes.md)
+
+## resolveRoutePath
+
+- 详情：
+
+  解析给定链接对应的路由路径
+
+- 参考：
+  - [深入 > Cookbook > 解析路由](../advanced/cookbook/resolving-routes.md)
 
 ### withBase
 

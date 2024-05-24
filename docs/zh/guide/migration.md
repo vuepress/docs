@@ -417,7 +417,7 @@ v1 的主题和插件和 v2 并不兼容。
 - `themeConfig` 已经从用户配置和站点数据中移除。如果你想要像 v1 一样通过 `this.$site.themeConfig` 来访问 `themeConfig` ，我们现在建议使用 [@vuepress/plugin-theme-data](https://ecosystem.vuejs.press/zh/plugins/theme-data.html) 插件和它提供的 Composition API `useThemeData` 。
 - Stylus 不再是默认的 CSS 预处理器，并且 Stylus 调色板系统不再被默认支持。如果你仍然想要使用和 v1 类似的调色板系统，可以使用 [@vuepress/plugin-palette](https://ecosystem.vuejs.press/zh/plugins/palette.html) 。
 - 由 Prism.js 提供的 Markdown 代码块的语法高亮不再被默认支持。你可以选择使用 [@vuepress/plugin-prismjs](https://ecosystem.vuejs.press/zh/plugins/prismjs.html) 或 [@vuepress/plugin-shiki](https://ecosystem.vuejs.press/zh/plugins/plugin/shiki.html) ，或者用你自己的方式实现语法高亮。
-- 考虑到可扩展性， `this.$site.pages` 不再可用。
+- 考虑到可扩展性， `this.$site.pages` 不再可用。查看 [深入 > Cookbook > 解析路由](../advanced/cookbook/resolving-routes.md) 了解如何在 v2 中获取页面的数据。
 
 你可以参考 [深入 > 开发主题](../advanced/theme.md) 来了解如何开发一个 v2 主题。
 

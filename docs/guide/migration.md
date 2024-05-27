@@ -145,9 +145,9 @@ Renamed to `pagePatterns`
 
 #### markdown.lineNumbers
 
-Moved to [markdown.code.lineNumbers](../reference/config.md#markdown-code-linenumbers).
+Removed.
 
-Default value is changed from `false` to `true`.
+The same feature is implemented in [@vuepress/plugin-prismjs][prismjs] and [@vuepress/plugin-shiki][shiki].
 
 #### markdown.pageSuffix
 
@@ -414,7 +414,7 @@ Some major breaking changes:
   - Always provide a valid js entry file, and do not use `"main": "layouts/Layout.vue"` as the theme entry anymore.
 - `themeConfig` is removed from user config and site data. To access the `themeConfig` as you would via `this.$site.themeConfig` in v1, we now recommend using the [@vuepress/plugin-theme-data](https://ecosystem.vuejs.press/plugins/theme-data.html) plugin and its `useThemeData` composition API.
 - Stylus is no longer the default CSS pre-processor, and the stylus palette system is not embedded. If you still want to use similar palette system as v1, [@vuepress/plugin-palette](https://ecosystem.vuejs.press/plugins/palette.html) may help.
-- Markdown code blocks syntax highlighting by Prism.js is not embedded by default. You can use either [@vuepress/plugin-prismjs](https://ecosystem.vuejs.press/plugins/prismjs.html) or [@vuepress/plugin-shiki](https://ecosystem.vuejs.press/plugins/shiki.html), or implement syntax highlighting in your own way.
+- Markdown code blocks syntax highlighting by Prism.js is not embedded by default. You can use either [@vuepress/plugin-prismjs][prismjs] or [@vuepress/plugin-shiki][shiki], or implement syntax highlighting in your own way.
 - For scalability concerns, `this.$site.pages` is not available any more. See [Advanced > Cookbook > Resolving Routes](../advanced/cookbook/resolving-routes.md) for how to retrieve pages data in v2.
 
 For more detailed guide about how to write a theme in v2, see [Advanced > Writing a Theme](../advanced/theme.md).
@@ -438,3 +438,6 @@ You can still inherit a parent theme with `extends: parentTheme()`, which will e
 You can refer to [Default Theme > Extending](https://ecosystem.vuejs.press/themes/default/extending.html) for how to extend default theme.
 
 The `@theme` and `@parent-theme` aliases are removed by default, but you can still make a extendable theme with similar approach, see [Advanced > Cookbook > Making a Theme Extendable](../advanced/cookbook/making-a-theme-extendable.md).
+
+[prismjs]: https://ecosystem.vuejs.press/plugins/prismjs.html
+[shiki]: https://ecosystem.vuejs.press/plugins/shiki.html

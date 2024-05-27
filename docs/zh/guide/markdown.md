@@ -159,7 +159,7 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 
 #### 代码标题
 
-你可以在代码块添加一个 `title` 键值对来为代码块设置标题。
+你可以在代码块添加一个 `title` 键值对来为代码块设置标题。提示：需要主题支持。
 
 **Input**
 
@@ -192,98 +192,6 @@ export default defineUserConfig({
   }),
 })
 ```
-
-它可以和下列的其他标记一起使用。请在它们之间使用空格分隔。
-
-#### 行高亮
-
-你可以在代码块添加行数范围标记，来为对应代码行进行高亮：
-
-**输入**
-
-````md
-```ts{1,7-9}
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
-
-export default defineUserConfig({
-  title: '你好， VuePress',
-
-  theme: defaultTheme({
-    logo: 'https://vuejs.org/images/logo.png',
-  }),
-})
-```
-````
-
-**输出**
-
-```ts{1,7-9}
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
-
-export default defineUserConfig({
-  title: '你好， VuePress',
-
-  theme: defaultTheme({
-    logo: 'https://vuejs.org/images/logo.png',
-  }),
-})
-```
-
-行数范围标记的例子：
-
-- 行数范围： `{5-8}`
-- 多个单行： `{4,7,9}`
-- 组合： `{4,7-13,16,23-27,40}`
-
-::: tip
-行高亮扩展是由我们的内置插件支持的，该扩展 Fork 并修改自 [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines)。
-
-配置参考： [markdown.code.highlightLines](../reference/config.md#markdown-code-highlightlines)
-:::
-
-#### 行号
-
-你肯定已经注意到在代码块的最左侧会展示行号。这个功能是默认启用的，你可以通过配置来禁用它。
-
-你可以在代码块添加 `:line-numbers` / `:no-line-numbers` 标记来覆盖配置项中的设置。
-
-**输入**
-
-````md
-```ts
-// 行号默认是启用的
-const line2 = 'This is line 2'
-const line3 = 'This is line 3'
-```
-
-```ts:no-line-numbers
-// 行号被禁用
-const line2 = 'This is line 2'
-const line3 = 'This is line 3'
-```
-````
-
-**输出**
-
-```ts
-// 行号默认是启用的
-const line2 = 'This is line 2'
-const line3 = 'This is line 3'
-```
-
-```ts:no-line-numbers
-// 行号被禁用
-const line2 = 'This is line 2'
-const line3 = 'This is line 3'
-```
-
-::: tip
-行号扩展是由我们的内置插件支持的。
-
-配置参考： [markdown.code.lineNumbers](../reference/config.md#markdown-code-linenumbers)
-:::
 
 #### 添加 v-pre
 
@@ -347,7 +255,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ::: tip
 v-pre 扩展是由我们的内置插件支持的。
 
-配置参考： [markdown.code.vPre.block](../reference/config.md#markdown-code-vpre-block)
+配置参考： [markdown.vPre.block](../reference/config.md#markdown-vpre-block)
 :::
 
 ### 导入代码块

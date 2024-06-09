@@ -6,7 +6,7 @@
 
 VuePress 团队提供了一些官方插件。
 
-你需要在你的配置文件中通过 [plugins](../reference/config.md#plugins) 配置项来使用它们。举例来说，你可以使用 [@vuepress/plugin-google-analytics](https://ecosystem.vuejs.press/zh/plugins/google-analytics.html) 来使用 Google Analytics ：
+你需要在你的配置文件中通过 [plugins](../reference/config.md#plugins) 配置项来使用它们。举例来说，你可以使用 [@vuepress/plugin-google-analytics](https://ecosystem.vuejs.press/zh/plugins/analytics/google-analytics.html) 来使用 Google Analytics ：
 
 ```ts
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'

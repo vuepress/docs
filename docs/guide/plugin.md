@@ -6,7 +6,7 @@ With the help of [Plugin API](../reference/plugin-api.md), VuePress plugin can p
 
 VuePress team provides some official plugins.
 
-You need to import and use them in your config file via the [plugins](../reference/config.md#plugins) option. For example, use the [@vuepress/plugin-google-analytics](https://ecosystem.vuejs.press/plugins/google-analytics.html) to integrate Google Analytics:
+You need to import and use them in your config file via the [plugins](../reference/config.md#plugins) option. For example, use the [@vuepress/plugin-google-analytics](https://ecosystem.vuejs.press/plugins/analytics/google-analytics.html) to integrate Google Analytics:
 
 ```ts
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'

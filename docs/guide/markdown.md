@@ -158,7 +158,7 @@ Following code blocks extensions are implemented during markdown parsing in Node
 
 #### Code Title
 
-You can specify the title of the code block by adding a `title` key-value mark in your fenced code blocks.
+You can specify the title of the code block by adding a `title` key-value mark in your fenced code blocks. Note: This requires theme support.
 
 **Input**
 
@@ -191,98 +191,6 @@ export default defineUserConfig({
   }),
 })
 ```
-
-It can be used in combination with the other marks below. Please leave a space between them.
-
-#### Line Highlighting
-
-You can highlight specified lines of your code blocks by adding line ranges mark in your fenced code blocks:
-
-**Input**
-
-````md
-```ts{1,7-9}
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
-
-export default defineUserConfig({
-  title: 'Hello, VuePress',
-
-  theme: defaultTheme({
-    logo: 'https://vuejs.org/images/logo.png',
-  }),
-})
-```
-````
-
-**Output**
-
-```ts{1,7-9}
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
-
-export default defineUserConfig({
-  title: 'Hello, VuePress',
-
-  theme: defaultTheme({
-    logo: 'https://vuejs.org/images/logo.png',
-  }),
-})
-```
-
-Examples for line ranges mark:
-
-- Line ranges: `{5-8}`
-- Multiple single lines: `{4,7,9}`
-- Combined: `{4,7-13,16,23-27,40}`
-
-::: tip
-This line highlighting extension is supported by our built-in plugin, which is forked and modified from [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines).
-
-Config reference: [markdown.code.highlightLines](../reference/config.md#markdown-code-highlightlines)
-:::
-
-#### Line Numbers
-
-You must have noticed that the number of lines is displayed on the left side of code blocks. This is enabled by default and you can disable it in config.
-
-You can add `:line-numbers` / `:no-line-numbers` mark in your fenced code blocks to override the value set in config.
-
-**Input**
-
-````md
-```ts
-// line-numbers is enabled by default
-const line2 = 'This is line 2'
-const line3 = 'This is line 3'
-```
-
-```ts:no-line-numbers
-// line-numbers is disabled
-const line2 = 'This is line 2'
-const line3 = 'This is line 3'
-```
-````
-
-**Output**
-
-```ts
-// line-numbers is enabled by default
-const line2 = 'This is line 2'
-const line3 = 'This is line 3'
-```
-
-```ts:no-line-numbers
-// line-numbers is disabled
-const line2 = 'This is line 2'
-const line3 = 'This is line 3'
-```
-
-::: tip
-This line numbers extension is supported by our built-in plugin.
-
-Config reference: [markdown.code.lineNumbers](../reference/config.md#markdown-code-linenumbers)
-:::
 
 #### Wrap with v-pre
 
@@ -346,7 +254,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ::: tip
 This v-pre extension is supported by our built-in plugin.
 
-Config reference: [markdown.code.vPre.block](../reference/config.md#markdown-code-vpre-block)
+Config reference: [markdown.vPre.block](../reference/config.md#markdown-vpre-block)
 :::
 
 ### Import Code Blocks

@@ -400,90 +400,6 @@ const defaultOptions = {
 You should not configure it unless you understand what it is for.
 :::
 
-### markdown.code
-
-- Type: `CodePluginOptions | false`
-
-- Details:
-
-  Options for VuePress built-in markdown-it code plugin.
-
-  Set to `false` to disable this plugin.
-
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Code Blocks](../guide/markdown.md#code-blocks)
-
-#### markdown.code.highlightLines
-
-- Type: `boolean`
-
-- Default: `true`
-
-- Details:
-
-  Enable code line highlighting or not.
-
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Code Blocks > Line Highlighting](../guide/markdown.md#line-highlighting)
-
-#### markdown.code.lineNumbers
-
-- Type: `boolean | number`
-
-- Default: `true`
-
-- Details:
-
-  Configure code line numbers.
-
-  - A `boolean` value is to enable line numbers or not.
-  - A `number` value is the minimum number of lines to enable line numbers. For example, if you set it to `4`, line numbers will only be enabled when your code block has at least 4 lines of code.
-
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Code Blocks > Line Numbers](../guide/markdown.md#line-numbers)
-
-#### markdown.code.preWrapper
-
-- Type: `boolean`
-
-- Default: `true`
-
-- Details:
-
-  Enable the extra wrapper of the `<pre>` tag or not.
-
-  The wrapper is required by the `highlightLines` and `lineNumbers`. That means, if you disable `preWrapper`, the line highlighting and line numbers will also be disabled.
-
-::: tip
-You can disable it if you want to implement them in client side. For example, [Prismjs Line Highlight](https://prismjs.com/plugins/line-highlight/) or [Prismjs Line Numbers](https://prismjs.com/plugins/line-numbers/).
-:::
-
-#### markdown.code.vPre.block
-
-- Type: `boolean`
-
-- Default: `true`
-
-- Details:
-
-  Add `v-pre` directive to `<pre>` tag of code block or not.
-
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Code Blocks > Wrap with v-pre](../guide/markdown.md#wrap-with-v-pre)
-
-#### markdown.code.vPre.inline
-
-- Type: `boolean`
-
-- Default: `true`
-
-- Details:
-
-  Add `v-pre` directive to `<code>` tag of inline code or not.
-
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Code Blocks > Wrap with v-pre](../guide/markdown.md#wrap-with-v-pre)
-
 ### markdown.component
 
 - Type: `undefined | false`
@@ -670,6 +586,32 @@ const defaultOptions = {
 
 - Also see:
   - [Guide > Markdown > Syntax Extensions > Table of Contents](../guide/markdown.md#table-of-contents)
+
+#### markdown.vPre.block
+
+- Type: `boolean`
+
+- Default: `true`
+
+- Details:
+
+  Add `v-pre` directive to `<pre>` tag of code block or not.
+
+- Also see:
+  - [Guide > Markdown > Syntax Extensions > Code Blocks > Wrap with v-pre](../guide/markdown.md#wrap-with-v-pre)
+
+#### markdown.vPre.inline
+
+- Type: `boolean`
+
+- Default: `true`
+
+- Details:
+
+  Add `v-pre` directive to `<code>` tag of inline code or not.
+
+- Also see:
+  - [Guide > Markdown > Syntax Extensions > Code Blocks > Wrap with v-pre](../guide/markdown.md#wrap-with-v-pre)
 
 ## Plugin Config
 

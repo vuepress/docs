@@ -399,90 +399,6 @@ const defaultOptions = {
 除非你了解它的用途，否则你不应该设置该配置项。
 :::
 
-### markdown.code
-
-- 类型： `CodePluginOptions | false`
-
-- 详情：
-
-  VuePress 内置的 markdown-it code 插件的配置项。
-
-  设置为 `false` 可以禁用该插件。
-
-- 参考：
-  - [指南 > Markdown > 语法扩展 > 代码块](../guide/markdown.md#代码块)
-
-#### markdown.code.highlightLines
-
-- 类型： `boolean`
-
-- 默认值： `true`
-
-- 详情：
-
-  是否启用代码块行高亮。
-
-- 参考：
-  - [指南 > Markdown > 语法扩展 > 代码块 > 行高亮](../guide/markdown.md#行高亮)
-
-#### markdown.code.lineNumbers
-
-- 类型： `boolean | number`
-
-- 默认值： `true`
-
-- 详情：
-
-  配置代码块行号。
-
-  - 布尔值 `boolean` 代表是否启用代码块行号。
-  - 数字 `number` 代表显示行号所需的最少行数。例如，如果你将它设置为 `4` ，那么只有在你的代码块包含至少 4 行代码时才会启用行号。
-
-- 参考：
-  - [指南 > Markdown > 语法扩展 > 代码块 > 行号](../guide/markdown.md#行号)
-
-#### markdown.code.preWrapper
-
-- 类型： `boolean`
-
-- 默认值： `true`
-
-- 详情：
-
-  是否在 `<pre>` 标签外额外包裹一层。
-
-  `highlightLines` 和 `lineNumbers` 依赖于这个额外的包裹层。这换句话说，如果你禁用了 `preWrapper` ，那么行高亮和行号也会被同时禁用。
-
-::: tip
-如果你想要在客户端来实现这些功能时，可以禁用该配置项。比如使用 [Prismjs Line Highlight](https://prismjs.com/plugins/line-highlight/) 或者 [Prismjs Line Numbers](https://prismjs.com/plugins/line-numbers/)。
-:::
-
-#### markdown.code.vPre.block
-
-- 类型： `boolean`
-
-- 默认值： `true`
-
-- 详情：
-
-  是否在代码块的 `<pre>` 标签上添加 `v-pre` 指令。
-
-- 参考：
-  - [指南 > Markdown > 语法扩展 > 代码块 > 添加 v-pre](../guide/markdown.md#添加-v-pre)
-
-#### markdown.code.vPre.inline
-
-- 类型： `boolean`
-
-- 默认值： `true`
-
-- 详情：
-
-  是否在行内代码的 `<code>` 标签上添加 `v-pre` 指令。
-
-- 参考：
-  - [指南 > Markdown > 语法扩展 > 代码块 > 添加 v-pre](../guide/markdown.md#添加-v-pre)
-
 ### markdown.component
 
 - 类型： `undefined | false`
@@ -669,6 +585,32 @@ const defaultOptions = {
 
 - 参考：
   - [指南 > Markdown > 语法扩展 > 目录](../guide/markdown.md#目录)
+
+#### markdown.vPre.block
+
+- 类型： `boolean`
+
+- 默认值： `true`
+
+- 详情：
+
+  是否在代码块的 `<pre>` 标签上添加 `v-pre` 指令。
+
+- 参考：
+  - [指南 > Markdown > 语法扩展 > 代码块 > 添加 v-pre](../guide/markdown.md#添加-v-pre)
+
+#### markdown.vPre.inline
+
+- 类型： `boolean`
+
+- 默认值： `true`
+
+- 详情：
+
+  是否在行内代码的 `<code>` 标签上添加 `v-pre` 指令。
+
+- 参考：
+  - [指南 > Markdown > 语法扩展 > 代码块 > 添加 v-pre](../guide/markdown.md#添加-v-pre)
 
 ## 插件配置
 

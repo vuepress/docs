@@ -159,7 +159,7 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 
 #### 代码标题
 
-你可以在代码块添加一个 `title` 键值对来为代码块设置标题。
+你可以在代码块添加一个 `title` 键值对来为代码块设置标题。提示：需要主题支持。
 
 **Input**
 
@@ -197,7 +197,7 @@ export default defineUserConfig({
 
 #### 行高亮
 
-你可以在代码块添加行数范围标记，来为对应代码行进行高亮：
+你可以在代码块添加行数范围标记，来为对应代码行进行高亮。提示：它需要高亮器插件和主题支持。
 
 **输入**
 
@@ -245,7 +245,7 @@ export default defineUserConfig({
 
 #### 行号
 
-你肯定已经注意到在代码块的最左侧会展示行号。这个功能是默认启用的，你可以通过配置来禁用它。
+你肯定已经注意到在代码块的最左侧会展示行号。这个功能是默认启用的，你可以通过配置来禁用它。提示：它需要高亮器插件和主题支持。
 
 你可以在代码块添加 `:line-numbers` / `:no-line-numbers` 标记来覆盖配置项中的设置。
 
@@ -347,7 +347,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ::: tip
 v-pre 扩展是由我们的内置插件支持的。
 
-配置参考： [markdown.code.vPre.block](../reference/config.md#markdown-code-vpre-block)
+配置参考： [markdown.vPre.block](../reference/config.md#markdown-vpre-block)
 :::
 
 ### 导入代码块

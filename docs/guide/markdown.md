@@ -158,7 +158,7 @@ Following code blocks extensions are implemented during markdown parsing in Node
 
 #### Code Title
 
-You can specify the title of the code block by adding a `title` key-value mark in your fenced code blocks.
+You can specify the title of the code block by adding a `title` key-value mark in your fenced code blocks. Note: This requires theme support.
 
 **Input**
 
@@ -196,7 +196,7 @@ It can be used in combination with the other marks below. Please leave a space b
 
 #### Line Highlighting
 
-You can highlight specified lines of your code blocks by adding line ranges mark in your fenced code blocks:
+You can highlight specified lines of your code blocks by adding line ranges mark in your fenced code blocks. Note: This requires highlighter plugin and theme support.
 
 **Input**
 
@@ -244,9 +244,9 @@ Config reference: [markdown.code.highlightLines](../reference/config.md#markdown
 
 #### Line Numbers
 
-You must have noticed that the number of lines is displayed on the left side of code blocks. This is enabled by default and you can disable it in config.
+You must have noticed that the number of lines is displayed on the left side of code blocks.
 
-You can add `:line-numbers` / `:no-line-numbers` mark in your fenced code blocks to override the value set in config.
+You can add `:line-numbers` / `:no-line-numbers` mark in your fenced code blocks to override the value set in config. Note: This requires highlighter plugin and theme support.
 
 **Input**
 
@@ -346,7 +346,7 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ::: tip
 This v-pre extension is supported by our built-in plugin.
 
-Config reference: [markdown.code.vPre.block](../reference/config.md#markdown-code-vpre-block)
+Config reference: [markdown.vPre.block](../reference/config.md#markdown-vpre-block)
 :::
 
 ### Import Code Blocks

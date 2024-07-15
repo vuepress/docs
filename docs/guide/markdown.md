@@ -156,9 +156,11 @@ Config reference: [markdown.toc](../reference/config.md#markdown-toc)
 
 Following code blocks extensions are implemented during markdown parsing in Node side. That means, the code blocks won't be processed in client side.
 
+Notice that some of the code blocks features require theme support. The default theme of VuePress supports all of them, but community themes might not. You'd better check the theme documentation before using them.
+
 #### Code Title
 
-You can specify the title of the code block by adding a `title` key-value mark in your fenced code blocks. Note: This requires theme support.
+You can specify the title of the code block by adding a `title` key-value mark in your fenced code blocks.
 
 **Input**
 
@@ -196,7 +198,7 @@ It can be used in combination with the other marks below. Please leave a space b
 
 #### Line Highlighting
 
-You can highlight specified lines of your code blocks by adding line ranges mark in your fenced code blocks. Note: This requires highlighter plugin and theme support.
+You can highlight specified lines of your code blocks by adding line ranges mark in your fenced code blocks.
 
 **Input**
 
@@ -246,7 +248,7 @@ Config reference: [markdown.code.highlightLines](../reference/config.md#markdown
 
 You must have noticed that the number of lines is displayed on the left side of code blocks.
 
-You can add `:line-numbers` / `:no-line-numbers` mark in your fenced code blocks to override the value set in config. Note: This requires highlighter plugin and theme support.
+You can add `:line-numbers` / `:no-line-numbers` mark in your fenced code blocks to override the value set in config.
 
 **Input**
 

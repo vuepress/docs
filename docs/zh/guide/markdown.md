@@ -155,15 +155,15 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 
 ### 代码块
 
-下列代码块扩展是在 Node 端进行 Markdown 解析的时候实现的。这意味着代码块并不会在客户端被处理。
+下列代码块扩展都是在 Node 端进行 Markdown 解析时实现的，也就是代码块并不会在客户端被处理。
 
-需要注意的是，部分代码块功能需要主题支持。VuePress 默认主题支持所有这些功能，但社区主题有可能不支持。请查看你使用的主题文档来确认是否支持这些功能。
+通过 [@vuepress/plugin-prismjs][prismjs] 和 [@vuepress/plugin-shiki][shiki]，你可以通过 [Prism](https://prismjs.com/) 或 [Shiki](https://shiki.tmrs.site/) 来高亮代码块。
 
 #### 代码标题
 
 你可以在代码块添加一个 `title` 键值对来为代码块设置标题。
 
-**Input**
+**输入**
 
 ````md
 ```ts title=".vuepress/config.ts"
@@ -180,7 +180,7 @@ export default defineUserConfig({
 ```
 ````
 
-**Output**
+**输出**
 
 ```ts title=".vuepress/config.ts"
 import { defaultTheme } from '@vuepress/theme-default'
@@ -195,7 +195,11 @@ export default defineUserConfig({
 })
 ```
 
-它可以和下列的其他标记一起使用。请在它们之间使用空格分隔。
+::: tip
+
+代码标题是通过高亮器插件默认支持的。它可以和下列的其他标记一起使用。请在它们之间使用空格分隔。
+
+:::
 
 #### 行高亮
 
@@ -240,9 +244,11 @@ export default defineUserConfig({
 - 组合： `{4,7-13,16,23-27,40}`
 
 ::: tip
-行高亮扩展是由我们的内置插件支持的，该扩展 Fork 并修改自 [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines)。
 
-配置参考： [markdown.code.highlightLines](../reference/config.md#markdown-code-highlightlines)
+行高亮扩展是通过高亮器插件默认支持的。
+
+配置参考：[prism 行高亮](https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html#highlightlines) 和 [shiki 行高亮](https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html#highlightlines)
+
 :::
 
 #### 行号
@@ -282,9 +288,11 @@ const line3 = 'This is line 3'
 ```
 
 ::: tip
-行号扩展是由我们的内置插件支持的。
 
-配置参考： [markdown.code.lineNumbers](../reference/config.md#markdown-code-linenumbers)
+行号扩展是通过高亮器插件默认支持的。
+
+配置参考：[prism 行号](https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html#linenumbers) 和 [shiki 行号](https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html#linenumbers)
+
 :::
 
 #### 添加 v-pre
@@ -296,9 +304,11 @@ const line3 = 'This is line 3'
 你可以在代码块添加 `:v-pre` / `:no-v-pre` 标记来覆盖配置项中的设置。
 
 ::: warning
+
 模板语法的字符有可能会被语法高亮器解析，比如 "Mustache" 语法（即双花括号）。因此，就像下面的例子一样，在某些语言中 `:no-v-pre` 可能并不能生效。
 
 如果你无论如何都想在这种语言中使用 Vue 语法，你可以尝试禁用默认的语法高亮，然后在客户端实现你的自定义代码高亮。
+
 :::
 
 **输入**
@@ -347,9 +357,11 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ```
 
 ::: tip
+
 v-pre 扩展是由我们的内置插件支持的。
 
 配置参考： [markdown.vPre.block](../reference/config.md#markdown-vpre-block)
+
 :::
 
 ### 导入代码块

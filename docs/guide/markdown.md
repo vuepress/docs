@@ -156,7 +156,7 @@ Config reference: [markdown.toc](../reference/config.md#markdown-toc)
 
 Following code blocks extensions are implemented during markdown parsing in Node side. That means, the code blocks won't be processed in client side.
 
-Notice that some of the code blocks features require theme support. The default theme of VuePress supports all of them, but community themes might not. You'd better check the theme documentation before using them.
+With [@vuepress/plugin-prismjs][prismjs] and [@vuepress/plugin-shiki][shiki], you can highlight code blocks with [Prism](https://prismjs.com/) or [Shiki](https://shiki.style/).
 
 #### Code Title
 
@@ -194,7 +194,11 @@ export default defineUserConfig({
 })
 ```
 
-It can be used in combination with the other marks below. Please leave a space between them.
+::: tip
+
+Code title is supported by highlight plugins by default. It can be used in combination with the other marks below. Please leave a space between them.
+
+:::
 
 #### Line Highlighting
 
@@ -239,9 +243,11 @@ Examples for line ranges mark:
 - Combined: `{4,7-13,16,23-27,40}`
 
 ::: tip
-This line highlighting extension is supported by our built-in plugin, which is forked and modified from [markdown-it-highlight-lines](https://github.com/egoist/markdown-it-highlight-lines).
 
-Config reference: [markdown.code.highlightLines](../reference/config.md#markdown-code-highlightlines)
+Line highlighting extension is supported by highlighter plugins.
+
+Config reference: [prism line highlighting](https://ecosystem.vuejs.press/plugins/markdown/prismjs.html#highlightlines) and [shiki highlighting](https://ecosystem.vuejs.press/plugins/markdown/shiki.html#highlightlines).
+
 :::
 
 #### Line Numbers
@@ -281,9 +287,11 @@ const line3 = 'This is line 3'
 ```
 
 ::: tip
-This line numbers extension is supported by our built-in plugin.
 
-Config reference: [markdown.code.lineNumbers](../reference/config.md#markdown-code-linenumbers)
+Line numbers extension is supported by highlighter plugins.
+
+Config reference: [prism line numbers](https://ecosystem.vuejs.press/plugins/markdown/prismjs.html#linenumbers) and [shiki line numbers](https://ecosystem.vuejs.press/plugins/markdown/shiki.html#linenumbers).
+
 :::
 
 #### Wrap with v-pre
@@ -346,9 +354,11 @@ const onePlusTwoPlusThree = {{ 1 + 2 + 3 }}
 ```
 
 ::: tip
+
 This v-pre extension is supported by our built-in plugin.
 
 Config reference: [markdown.vPre.block](../reference/config.md#markdown-vpre-block)
+
 :::
 
 ### Import Code Blocks

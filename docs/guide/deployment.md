@@ -221,7 +221,7 @@ See [Edgio Documentation > Framework Guides > VuePress](https://docs.edg.io/guid
 
 1. Go to [Vercel](https://vercel.com), set up a new project from GitHub with the following settings:
 
-   - **FRAMEWORK PRESET:** `Other`
+   - **FRAMEWORK PRESET:** `VuePress`
    - **BUILD COMMAND:** `pnpm docs:build`
    - **OUTPUT DIRECTORY:** `docs/.vuepress/dist`
 

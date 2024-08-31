@@ -13,7 +13,7 @@ interface AutoLinkConfig {
   /**
    * 判断该链接是否被激活的模式，优先级高于 `exact`
    */
-  activeMatch?: string | RegExp
+  activeMatch?: RegExp | string
 
   /**
    * `aria-label` 属性

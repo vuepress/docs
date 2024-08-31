@@ -1,7 +1,7 @@
-import type { NavbarConfig } from '@vuepress/theme-default'
-import { version } from '../meta.js'
+import type { NavbarOptions } from '@vuepress/theme-default'
+import { VERSION } from '../meta.js'
 
-export const navbarZh: NavbarConfig = [
+export const navbarZh: NavbarOptions = [
   {
     text: '指南',
     children: [
@@ -93,7 +93,7 @@ export const navbarZh: NavbarConfig = [
     ],
   },
   {
-    text: `v${version}`,
+    text: `v${VERSION}`,
     children: [
       {
         text: '更新日志',
@@ -109,4 +109,5 @@ export const navbarZh: NavbarConfig = [
       },
     ],
   },
-]
+  // TODO: remove the type assertion
+] as NavbarOptions

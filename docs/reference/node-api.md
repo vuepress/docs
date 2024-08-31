@@ -213,7 +213,7 @@ const homeSourceFile = app.dir.source('README.md')
 - Signature:
 
 ```ts
-writeTemp(file: string, content: string): Promise<string>
+declare const writeTemp = (file: string, content: string) => Promise<string>
 ```
 
 - Parameters:
@@ -250,7 +250,7 @@ import { foo } from '@temp/foo'
 - Signature:
 
 ```ts
-init(): Promise<void>
+declare const init = () => Promise<void>
 ```
 
 - Details:
@@ -265,7 +265,7 @@ init(): Promise<void>
 - Signature:
 
 ```ts
-prepare(): Promise<void>
+declare const prepare = () => Promise<void>
 ```
 
 - Details:
@@ -280,7 +280,7 @@ prepare(): Promise<void>
 - Signature:
 
 ```ts
-build(): Promise<void>
+declare const build = () => Promise<void>
 ```
 
 - Details:
@@ -298,7 +298,7 @@ build(): Promise<void>
 - Signature:
 
 ```ts
-dev(): Promise<() => Promise<void>>
+declare const dev = () => Promise<() => Promise<void>>
 ```
 
 - Details:

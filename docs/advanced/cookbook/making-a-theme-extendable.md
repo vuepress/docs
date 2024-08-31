@@ -34,16 +34,14 @@ import { getDirname } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
-export const fooTheme = (options): Theme => {
-  return {
-    name: 'vuepress-theme-foo',
-    alias: {
-      // set alias for replaceable components
-      '@theme/Navbar.vue': path.resolve(__dirname, 'components/Navbar.vue'),
-      '@theme/Sidebar.vue': path.resolve(__dirname, 'components/Sidebar.vue'),
-    },
-  }
-}
+export const fooTheme = (options): Theme => ({
+  name: 'vuepress-theme-foo',
+  alias: {
+    // set alias for replaceable components
+    '@theme/Navbar.vue': path.resolve(__dirname, 'components/Navbar.vue'),
+    '@theme/Sidebar.vue': path.resolve(__dirname, 'components/Sidebar.vue'),
+  },
+})
 ```
 
 Next, use those components via aliases in your theme:

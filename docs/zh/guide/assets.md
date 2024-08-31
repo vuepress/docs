@@ -71,16 +71,16 @@
 然而，有些情况下，你可能会有一些指向 Public 文件的动态路径，尤其是在你开发一个自定义主题的时候。在这种情况下， `base` 无法被自动处理。为了解决这个问题，VuePress 提供了 [withBase](../reference/client-api.md#withbase) 工具函数，它可以帮助你添加 `base` 前缀：
 
 ```vue
-<template>
-  <img :src="withBase(logoPath)" />
-</template>
-
 <script setup>
 import { ref } from 'vue'
 import { withBase } from 'vuepress/client'
 
 const logoPath = ref('/images/hero.png')
 </script>
+
+<template>
+  <img :src="withBase(logoPath)" />
+</template>
 ```
 
 你也可以通过 `$withBase` 来直接使用这个工具函数：

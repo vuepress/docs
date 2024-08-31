@@ -18,32 +18,24 @@ const fooPlugin = {
 插件还可以是一个接收 [App 实例](../reference/node-api.md#app) 作为参数，且返回值为 _插件对象_ 的函数，称之为 _插件函数_ ：
 
 ```ts
-const barPlugin = (app) => {
-  return {
-    name: 'vuepress-plugin-bar',
-    // ...
-  }
-}
+const barPlugin = (app) => ({
+  name: 'vuepress-plugin-bar',
+  // ...
+})
 ```
 
 插件通常需要允许用户传入配置，因此我们一般都会提供给用户一个函数来接收配置，然后将 _插件对象_ 或者 _插件函数_ 作为返回值。于是，你的插件应该转换成这样的形式：
 
 ```ts
-const fooPlugin = (options) => {
-  return {
-    name: 'vuepress-plugin-foo',
-    // ...
-  }
-}
+const fooPlugin = (options) => ({
+  name: 'vuepress-plugin-foo',
+  // ...
+})
 
-const barPlugin = (options) => {
-  return (app) => {
-    return {
-      name: 'vuepress-plugin-bar',
-      // ...
-    }
-  }
-}
+const barPlugin = (options) => (app) => ({
+  name: 'vuepress-plugin-bar',
+  // ...
+})
 ```
 
 ## 发布到 NPM

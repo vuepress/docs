@@ -130,8 +130,8 @@ In the `setup` function, the [`__VUEPRESS_SSR__`](../../reference/client-api.md#
 Another way to use non-ssr-friendly features is to put them inside the [onMounted](https://vuejs.org/api/composition-api-lifecycle.html#onmounted) hook:
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
 import { onMounted } from 'vue'
+import { defineClientConfig } from 'vuepress/client'
 
 export default defineClientConfig({
   setup() {

@@ -13,9 +13,9 @@ import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
-const fooTheme = (options) => {
+const fooTheme = (options) =>
   // 返回一个主题对象
-  return {
+  ({
     name: 'vuepress-theme-foo',
 
     // 主题的客户端配置文件的路径
@@ -32,18 +32,15 @@ const fooTheme = (options) => {
     ],
 
     // 其他的插件 API 也都可用
-  }
-}
+  })
 
-const barTheme = (options) => {
+const barTheme =
+  (options) =>
   // 返回一个主题函数
-  return (app) => {
-    return {
-      name: 'vuepress-theme-bar',
-      // ...
-    }
-  }
-}
+  (app) => ({
+    name: 'vuepress-theme-bar',
+    // ...
+  })
 ```
 
 然后，创建主题的客户端配置文件 `client.js` :

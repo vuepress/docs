@@ -130,8 +130,8 @@ export default defineClientConfig({
 使用不支持 SSR 的功能的另一种方式就是将他们放在 [onMounted](https://staging-cn.vuejs.org/api/composition-api-lifecycle.html#onmounted) Hook 中：
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
 import { onMounted } from 'vue'
+import { defineClientConfig } from 'vuepress/client'
 
 export default defineClientConfig({
   setup() {

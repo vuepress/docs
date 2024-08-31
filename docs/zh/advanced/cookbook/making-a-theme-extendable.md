@@ -34,16 +34,14 @@ import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
-export const fooTheme = (options): Theme => {
-  return {
-    name: 'vuepress-theme-foo',
-    alias: {
-      // 为可替换的组件设置别名
-      '@theme/Navbar.vue': path.resolve(__dirname, 'components/Navbar.vue'),
-      '@theme/Sidebar.vue': path.resolve(__dirname, 'components/Sidebar.vue'),
-    },
-  }
-}
+export const fooTheme = (options): Theme => ({
+  name: 'vuepress-theme-foo',
+  alias: {
+    // 为可替换的组件设置别名
+    '@theme/Navbar.vue': path.resolve(__dirname, 'components/Navbar.vue'),
+    '@theme/Sidebar.vue': path.resolve(__dirname, 'components/Sidebar.vue'),
+  },
+})
 ```
 
 然后，在你的主题中通过别名来使用这些组件：

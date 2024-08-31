@@ -13,7 +13,7 @@ interface AutoLinkConfig {
   /**
    * Pattern to determine if the link should be active, which has higher priority than `exact`
    */
-  activeMatch?: string | RegExp
+  activeMatch?: RegExp | string
 
   /**
    * The `aria-label` attribute

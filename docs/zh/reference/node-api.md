@@ -213,7 +213,7 @@ const homeSourceFile = app.dir.source('README.md')
 - 函数签名：
 
 ```ts
-writeTemp(file: string, content: string): Promise<string>
+declare const writeTemp = (file: string, content: string) => Promise<string>
 ```
 
 - 参数：
@@ -250,7 +250,7 @@ import { foo } from '@temp/foo'
 - 函数签名：
 
 ```ts
-init(): Promise<void>
+declare const init = () => Promise<void>
 ```
 
 - 详情：
@@ -265,7 +265,7 @@ init(): Promise<void>
 - 函数签名：
 
 ```ts
-prepare(): Promise<void>
+declare const prepare = () => Promise<void>
 ```
 
 - 详情：
@@ -280,7 +280,7 @@ prepare(): Promise<void>
 - 函数签名：
 
 ```ts
-build(): Promise<void>
+declare const build = () => Promise<void>
 ```
 
 - 详情：
@@ -297,7 +297,7 @@ build(): Promise<void>
 - 函数签名：
 
 ```ts
-dev(): Promise<() => Promise<void>>
+declare const dev = () => Promise<() => Promise<void>>
 ```
 
 - 详情：

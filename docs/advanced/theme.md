@@ -13,9 +13,9 @@ import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
-const fooTheme = (options) => {
+const fooTheme = (options) =>
   // returns a theme object
-  return {
+  ({
     name: 'vuepress-theme-foo',
 
     // path to the client config of your theme
@@ -32,18 +32,15 @@ const fooTheme = (options) => {
     ],
 
     // other plugin APIs are also available
-  }
-}
+  })
 
-const barTheme = (options) => {
+const barTheme =
+  (options) =>
   // returns a theme function
-  return (app) => {
-    return {
-      name: 'vuepress-theme-bar',
-      // ...
-    }
-  }
-}
+  (app) => ({
+    name: 'vuepress-theme-bar',
+    // ...
+  })
 ```
 
 Then, create theme's client config file `client.js` :

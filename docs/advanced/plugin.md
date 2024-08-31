@@ -18,32 +18,24 @@ const fooPlugin = {
 A plugin could also be a function that receives the [app instance](../reference/node-api.md#app) as the param and returns a _Plugin Object_, which is called a _Plugin Function_:
 
 ```ts
-const barPlugin = (app) => {
-  return {
-    name: 'vuepress-plugin-bar',
-    // ...
-  }
-}
+const barPlugin = (app) => ({
+  name: 'vuepress-plugin-bar',
+  // ...
+})
 ```
 
 A plugin usually needs to allow user options, so we typically provide users with a function to receive options, and returns a _Plugin Object_ or a _Plugin Function_. Then your plugin should be converted like this:
 
 ```ts
-const fooPlugin = (options) => {
-  return {
-    name: 'vuepress-plugin-foo',
-    // ...
-  }
-}
+const fooPlugin = (options) => ({
+  name: 'vuepress-plugin-foo',
+  // ...
+})
 
-const barPlugin = (options) => {
-  return (app) => {
-    return {
-      name: 'vuepress-plugin-bar',
-      // ...
-    }
-  }
-}
+const barPlugin = (options) => (app) => ({
+  name: 'vuepress-plugin-bar',
+  // ...
+})
 ```
 
 ## Publish to NPM

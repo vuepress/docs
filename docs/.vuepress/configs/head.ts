@@ -1,5 +1,6 @@
 import type { HeadConfig } from 'vuepress/core'
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const head: HeadConfig[] = [
   [
     'link',

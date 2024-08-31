@@ -8,7 +8,7 @@ VuePress documentation repository.
 
 ## Deployments
 
-- Release deployment: <https://v2.vuepress.vuejs.org>
+- Release deployment: <https://vuepress.vuejs.org>
 - Developer deployment: <https://vuepress.github.io>
 
 ## License

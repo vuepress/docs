@@ -97,6 +97,10 @@ interface AutoLinkConfig {
   - Modify the component to only access Browser / DOM APIs in `onBeforeMount()` or `onMounted()` hook.
   - Wrap the component with `<ClientOnly>`.
 
+:::tip
+Since Vue 3.5, if you only want to avoid hydration mismatch, you can try the new [data-allow-mismatch](https://blog.vuejs.org/posts/vue-3-5#data-allow-mismatch) attribute instead of `<ClientOnly>` component.
+:::
+
 ## Content
 
 - Props:

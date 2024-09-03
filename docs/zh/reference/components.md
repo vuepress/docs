@@ -97,6 +97,10 @@ interface AutoLinkConfig {
   - 修改这个组件，只在 `onBeforeMount()` 或 `onMounted()` Hook 中使用 浏览器 / DOM API 。
   - 使用 `<ClientOnly>` 包裹这个组件。
 
+:::tip
+从 Vue 3.5 开始，如果你只是想避免 Hydration Mismatch ，可以尝试使用新的 [data-allow-mismatch](https://blog.vuejs.org/posts/vue-3-5#data-allow-mismatch) 属性来代替 `<ClientOnly>` 组件。
+:::
+
 ## Content
 
 - Props:

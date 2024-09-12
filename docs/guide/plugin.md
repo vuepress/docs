@@ -30,7 +30,7 @@ However, some plugins can be used multiple times (e.g. [@vuepress/plugin-contain
 
 Community users have created lots of plugins and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-plugin). You should check the plugin's own documentation for detailed guide.
 
-You can explore more plugins in [VuePress Marketplace](https://marketplace.vuejs.press/).
+You can explore more plugins in [VuePress Marketplace](https://marketplace.vuejs.press/plugins/).
 
 ## Local Plugin
 

@@ -486,7 +486,7 @@ Check out the [Default Theme > Built-in Components](https://ecosystem.vuejs.pres
 
 ## Markdown Plugins
 
-You can explore more markdown plugins at [VuePress Marketplace](https://marketplace.vuejs.press).
+You can explore more markdown plugins at [VuePress Marketplace](https://marketplace.vuejs.press/plugins/markdown.html).
 
 ## Cautions
 

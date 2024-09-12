@@ -489,7 +489,7 @@ export default {
 
 ## Markdown 插件
 
-你可以在 [VuePress 市场](https://marketplace.vuejs.press/zh/) 上探索更多的 Markdown 插件。
+你可以在 [VuePress 市场](https://marketplace.vuejs.press/zh/plugins/markdown.html) 上探索更多的 Markdown 插件。
 
 ## 注意事项
 

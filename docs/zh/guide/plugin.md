@@ -30,7 +30,7 @@ export default {
 
 社区用户创建了很多插件，并将它们发布到了 [NPM](https://www.npmjs.com/search?q=keywords:vuepress-plugin) 上。 查看插件本身的文档可以获取更详细的指引。
 
-你可以在 [VuePress 市场](https://marketplace.vuejs.press/) 中探索更多插件。
+你可以在 [VuePress 市场](https://marketplace.vuejs.press/zh/plugins/) 中探索更多插件。
 
 ## 本地插件
 

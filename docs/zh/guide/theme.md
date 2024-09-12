@@ -33,7 +33,7 @@ export default defineUserConfig({
 
 社区用户创建了很多主题，并将它们发布到了 [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme) 上。查看主题本身的文档可以获取更详细的指引。
 
-你可以在 [VuePress 市场](https://marketplace.vuejs.press/) 中探索更多主题。
+你可以在 [VuePress 市场](https://marketplace.vuejs.press/zh/themes/) 中探索更多主题。
 
 ## 本地主题
 

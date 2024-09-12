@@ -33,7 +33,7 @@ However, you might think it is not good enough. Or, you want to build a differen
 
 Community users have created lots of theme and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme). You should check the theme's own documentation for detailed guide.
 
-You can explore more themes in [VuePress Marketplace](https://marketplace.vuejs.press/).
+You can explore more themes in [VuePress Marketplace](https://marketplace.vuejs.press/themes/).
 
 ## Local Theme
 

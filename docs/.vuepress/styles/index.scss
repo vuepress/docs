@@ -7,3 +7,8 @@
     min-width: 184.66px;
   }
 }
+
+// FIXME: Workaround solution
+div[class*='language-'] pre code {
+  color: var(--code-c-text);
+}

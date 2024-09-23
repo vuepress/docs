@@ -6,8 +6,9 @@ VuePress supports using [Webpack](https://webpack.js.org/) or [Vite](https://vit
 
 When installing the [vuepress](https://www.npmjs.com/package/vuepress) package, no bundlers will be installed. You need to choose a bundler to install.
 
-<CodeGroup>
-  <CodeGroupItem title="pnpm" active>
+::: code-tabs#shell
+
+@tab pnpm
 
 ```bash
 # install vite bundler
@@ -16,9 +17,7 @@ pnpm add -D vuepress@next @vuepress/bundler-vite@next
 pnpm add -D vuepress@next @vuepress/bundler-webpack@next
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="yarn">
+@tab yarn
 
 ```bash
 # install vite bundler
@@ -27,9 +26,7 @@ yarn add -D vuepress@next @vuepress/bundler-vite@next
 yarn add -D vuepress@next @vuepress/bundler-webpack@next
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="npm">
+@tab npm
 
 ```bash
 # install vite bundler
@@ -38,8 +35,7 @@ npm install -D vuepress@next @vuepress/bundler-vite@next
 npm install -D vuepress@next @vuepress/bundler-webpack@next
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 ## Use a Bundler
 

@@ -501,5 +501,8 @@ If you want to use those tags anyway, try either of the following workarounds:
 
 - Adding a [v-pre](https://vuejs.org/api/built-in-directives.html#v-pre) directive to skip the compilation of the element and its children. Notice that the template syntax would also be invalid.
 - Using [compilerOptions.isCustomElement](https://vuejs.org/api/application.html#app-config-compileroptions) to tell Vue template compiler not try to resolve them as components.
-  - For `@bundler-webpack`, set [vue.compilerOptions](../reference/bundler/webpack.md#vue)
-  - For `@bundler-vite`, set [vuePluginOptions.template.compilerOptions](../reference/bundler/vite.md#vuepluginoptions)
+  - For `@vuepress/bundler-webpack`, set [vue.compilerOptions](../reference/bundler/webpack.md#vue)
+  - For `@vuepress/bundler-vite`, set [vuePluginOptions.template.compilerOptions](../reference/bundler/vite.md#vuepluginoptions)
+
+[prismjs]: https://ecosystem.vuejs.press/plugins/markdown/prismjs.html
+[shiki]: https://ecosystem.vuejs.press/plugins/markdown/shiki.html

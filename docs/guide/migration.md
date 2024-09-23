@@ -314,7 +314,7 @@ Removed.
 
 #### Built-in Components
 
-- `<CodeGroup />` and `<CodeBlock />` renamed to `<CodeGroup />` and `<CodeGroupItem />`
+- `<CodeGroup />` and `<CodeBlock />` are replaced by [code tab feature](https://ecosystem.vuejs.press/themes/default/markdown.html#code-tabs)
 - `<Badge />`
   - `$badgeErrorColor` palette variable renamed to `$badgeDangerColor`
   - `type` prop only accepts `tip`, `warning` and `danger` now

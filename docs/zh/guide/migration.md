@@ -314,7 +314,7 @@ VuePress v1 的 Stylus 调色板系统 （即 `styles/palette.styl` 和 `styles/
 
 #### 内置组件
 
-- `<CodeGroup />` 和 `<CodeBlock />` 重命名为 `<CodeGroup />` 和 `<CodeGroupItem />`
+- `<CodeGroup />` 和 `<CodeBlock />` 被 [代码选项卡](https://ecosystem.vuejs.press/zh/themes/default/markdown.html#code-tabs) 替代
 - `<Badge />`
   - `$badgeErrorColor` 调色板变量重命名为 `$badgeDangerColor`
   - `type` Prop 现在只接受 `tip` 、 `warning` 和 `danger`

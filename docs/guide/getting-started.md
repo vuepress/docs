@@ -28,31 +28,27 @@ You can try VuePress directly in your browser on [StackBlitz](https://stackblitz
 
 You can use [create-vuepress](https://www.npmjs.com/package/create-vuepress) to generate a template directly.
 
-<CodeGroup>
-  <CodeGroupItem title="pnpm" active>
+::: code-tabs#shell
+
+@tab pnpm
 
 ```bash
 pnpm create vuepress vuepress-starter
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="yarn">
+@tab yarn
 
 ```bash
 yarn create vuepress vuepress-starter
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="npm">
+@tab npm
 
 ```bash
 npm init vuepress vuepress-starter
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 #### Setup Manually
 
@@ -67,39 +63,36 @@ cd vuepress-starter
 
 - Initialize your project
 
-<CodeGroup>
-  <CodeGroupItem title="pnpm" active>
+::: code-tabs#shell
+
+@tab pnpm
 
 ```bash
 git init
 pnpm init
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="yarn">
+@tab yarn
 
 ```bash
 git init
 yarn init
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="npm">
+@tab npm
 
 ```bash
 git init
 npm init
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 - Install VuePress
 
-<CodeGroup>
-  <CodeGroupItem title="pnpm" active>
+::: code-tabs#shell
+
+@tab pnpm
 
 ```bash
 # install vuepress and vue
@@ -108,9 +101,7 @@ pnpm add -D vuepress@next vue
 pnpm add -D @vuepress/bundler-vite@next @vuepress/theme-default@next
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="yarn">
+@tab yarn
 
 ```bash
 # install vuepress
@@ -119,9 +110,7 @@ yarn add -D vuepress@next
 yarn add -D @vuepress/bundler-vite@next @vuepress/theme-default@next
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="npm">
+@tab npm
 
 ```bash
 # install vuepress
@@ -130,8 +119,7 @@ npm install -D vuepress@next
 npm install -D @vuepress/bundler-vite@next @vuepress/theme-default@next
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 - Create `docs` directory and `docs/.vuepress` directory
 
@@ -205,31 +193,27 @@ You can add some [scripts](https://classic.yarnpkg.com/en/docs/package-json#toc-
 
 Then, run `docs:dev` script to start the dev server:
 
-<CodeGroup>
-  <CodeGroupItem title="pnpm" active>
+::: code-tabs#shell
+
+@tab pnpm
 
 ```bash
 pnpm docs:dev
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="yarn">
+@tab yarn
 
 ```bash
 yarn docs:dev
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="npm">
+@tab npm
 
 ```bash
 npm run docs:dev
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 VuePress will start a hot-reloading development server at [http://localhost:8080](http://localhost:8080). When you modify your markdown files, the content in the browser will be auto updated.
 
@@ -237,31 +221,27 @@ VuePress will start a hot-reloading development server at [http://localhost:8080
 
 To build your site, run `docs:build` script:
 
-<CodeGroup>
-  <CodeGroupItem title="pnpm" active>
+::: code-tabs#shell
+
+@tab pnpm
 
 ```bash
 pnpm docs:build
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="yarn">
+@tab yarn
 
 ```bash
 yarn docs:build
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="npm">
+@tab npm
 
 ```bash
 npm run docs:build
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 You will see the generated static files in the `docs/.vuepress/dist` directory. You can check out [deployment](./deployment.md) for how to deploy them.
 

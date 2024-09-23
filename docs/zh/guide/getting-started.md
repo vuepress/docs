@@ -28,31 +28,27 @@ VuePress v2 目前仍处于 RC (Release Candidate) 阶段。你已经可以用�
 
 你可以通过 [create-vuepress](https://www.npmjs.com/package/create-vuepress) 直接创建项目模板。
 
-<CodeGroup>
-  <CodeGroupItem title="pnpm" active>
+::: code-tabs#shell
+
+@tab pnpm
 
 ```bash
 pnpm create vuepress vuepress-starter
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="yarn">
+@tab yarn
 
 ```bash
 yarn create vuepress vuepress-starter
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="npm">
+@tab npm
 
 ```bash
 npm init vuepress vuepress-starter
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 #### 手动创建
 
@@ -67,39 +63,36 @@ cd vuepress-starter
 
 - 初始化项目
 
-<CodeGroup>
-  <CodeGroupItem title="pnpm" active>
+::: code-tabs#shell
+
+@tab pnpm
 
 ```bash
 git init
 pnpm init
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="yarn">
+@tab yarn
 
 ```bash
 git init
 yarn init
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="npm">
+@tab npm
 
 ```bash
 git init
 npm init
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 - 安装 VuePress
 
-<CodeGroup>
-  <CodeGroupItem title="pnpm" active>
+::: code-tabs#shell
+
+@tab pnpm
 
 ```bash
 # 安装 vuepress 和 vue
@@ -108,9 +101,7 @@ pnpm add -D vuepress@next vue
 pnpm add -D @vuepress/bundler-vite@next @vuepress/theme-default@next
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="yarn">
+@tab yarn
 
 ```bash
 # 安装 vuepress
@@ -119,9 +110,7 @@ yarn add -D vuepress@next
 yarn add -D @vuepress/bundler-vite@next @vuepress/theme-default@next
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="npm">
+@tab npm
 
 ```bash
 # 安装 vuepress
@@ -130,8 +119,7 @@ npm install -D vuepress@next
 npm install -D @vuepress/bundler-vite@next @vuepress/theme-default@next
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 - 创建 `docs` 目录和 `docs/.vuepress` 目录
 
@@ -205,31 +193,27 @@ echo '# Hello VuePress' > docs/README.md
 
 运行 `docs:dev` 脚本可以启动开发服务器:
 
-<CodeGroup>
-  <CodeGroupItem title="pnpm" active>
+::: code-tabs#shell
+
+@tab pnpm
 
 ```bash
 pnpm docs:dev
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="yarn">
+@tab yarn
 
 ```bash
 yarn docs:dev
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="npm">
+@tab npm
 
 ```bash
 npm run docs:dev
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 VuePress 会在 [http://localhost:8080](http://localhost:8080) 启动一个热重载的开发服务器。当你修改你的 Markdown 文件时，浏览器中的内容也会自动更新。
 
@@ -237,31 +221,27 @@ VuePress 会在 [http://localhost:8080](http://localhost:8080) 启动一个热�
 
 运行 `docs:build` 脚本可以构建你的网站：
 
-<CodeGroup>
-  <CodeGroupItem title="pnpm" active>
+::: code-tabs#shell
+
+@tab pnpm
 
 ```bash
 pnpm docs:build
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="yarn">
+@tab yarn
 
 ```bash
 yarn docs:build
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="npm">
+@tab npm
 
 ```bash
 npm run docs:build
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 在 `docs/.vuepress/dist` 目录中可以找到构建生成的静态文件。你可以查看 [部署](./deployment.md) 来了解如何部署你的网站。
 

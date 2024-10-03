@@ -30,18 +30,18 @@
   },
   "prettier": "prettier-config-vuepress",
   "dependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.15",
-    "@vuepress/bundler-webpack": "2.0.0-rc.15",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.47",
-    "@vuepress/plugin-google-analytics": "2.0.0-rc.42",
-    "@vuepress/plugin-register-components": "2.0.0-rc.44",
-    "@vuepress/plugin-shiki": "2.0.0-rc.47",
-    "@vuepress/theme-default": "2.0.0-rc.49",
+    "@vuepress/bundler-vite": "2.0.0-rc.17",
+    "@vuepress/bundler-webpack": "2.0.0-rc.17",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.52",
+    "@vuepress/plugin-google-analytics": "2.0.0-rc.52",
+    "@vuepress/plugin-register-components": "2.0.0-rc.52",
+    "@vuepress/plugin-shiki": "2.0.0-rc.52",
+    "@vuepress/theme-default": "2.0.0-rc.52",
     "http-server": "^14.1.1",
     "sass-embedded": "^1.79.4",
     "sass-loader": "^16.0.2",
     "vue": "^3.5.10",
-    "vuepress": "2.0.0-rc.15"
+    "vuepress": "2.0.0-rc.17"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
@@ -59,7 +59,7 @@
     "tsconfig-vuepress": "^5.2.0",
     "typescript": "^5.6.2"
   },
-  "packageManager": "pnpm@9.11.0",
+  "packageManager": "pnpm@9.12.0",
   "engines": {
     "node": ">=18.19.0"
   }

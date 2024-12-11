@@ -215,6 +215,12 @@ heroku login
 
 3. 点击 deploy 按钮。
 
+::: note
+
+你应该在 "Site Configuration" → "Build & Deploy" → "Post processing" 中禁用 Pretty URLs。
+
+:::
+
 ## Vercel
 
 1. 前往 [Vercel](https://vercel.com) ，从 GitHub 创建一个新项目，并进行如下配置：

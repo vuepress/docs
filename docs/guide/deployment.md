@@ -215,6 +215,12 @@ See [Edgio Documentation > Framework Guides > VuePress](https://docs.edg.io/guid
 
 3. Hit the deploy button.
 
+::: note
+
+You should disable Pretty URLs in the "Site Configuration" → "Build & Deploy" → "Post processing".
+
+:::
+
 ## Vercel
 
 1. Go to [Vercel](https://vercel.com), set up a new project from GitHub with the following settings:

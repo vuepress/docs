@@ -39,7 +39,7 @@ export default defineUserConfig({
   Accepts all options of Vite.
 
 - Also see:
-  - [Vite > Config](https://vitejs.dev/config/)
+  - [Vite > Config](https://vite.dev/config/)
 
 ### vuePluginOptions
 
@@ -48,4 +48,4 @@ export default defineUserConfig({
   Accepts all options of [@vitejs/plugin-vue](https://www.npmjs.com/package/@vitejs/plugin-vue).
 
 - Also see:
-  - [Vite > Plugins > Official Plugins](https://vitejs.dev/plugins/#vitejs-plugin-vue)
+  - [Vite > Plugins > Official Plugins](https://vite.dev/plugins/#vitejs-plugin-vue)

@@ -10,6 +10,7 @@ VuePress documentation repository.
 
 - Release deployment: <https://vuepress.vuejs.org>
 - Developer deployment: <https://vuepress.github.io>
+- Maag EQ4  deployment: <https://vuepress.github.io](https://www.123865.com/s/XVU7Vv-GT4oH?提取码:aoEu>
 
 ## License
 

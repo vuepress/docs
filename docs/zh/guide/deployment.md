@@ -49,29 +49,27 @@ jobs:
           # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          # 选择要使用的 pnpm 版本
-          version: 8
-          # 使用 pnpm 安装依赖
-          run_install: true
+      - name: 设置 pnpm
+        uses: pnpm/action-setup@v4
 
-      - name: Setup Node.js
+      - name: 设置 Node.js
         uses: actions/setup-node@v4
         with:
           # 选择要使用的 node 版本
-          node-version: 20
+          node-version: 22
           # 缓存 pnpm 依赖
           cache: pnpm
 
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+
       # 运行构建脚本
-      - name: Build VuePress site
+      - name: 构建 VuePress 站点
         run: pnpm docs:build
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
-      - name: Deploy to GitHub Pages
+      - name: 部署到 GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
           # 部署到 gh-pages 分支
@@ -216,6 +214,12 @@ heroku login
    - `NODE_VERSION`: 20
 
 3. 点击 deploy 按钮。
+
+::: note
+
+你应该在 "Site Configuration" → "Build & Deploy" → "Post processing" 中禁用 Pretty URLs。
+
+:::
 
 ## Vercel
 

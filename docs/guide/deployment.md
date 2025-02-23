@@ -50,20 +50,18 @@ jobs:
           fetch-depth: 0
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          # choose pnpm version to use
-          version: 8
-          # install deps with pnpm
-          run_install: true
+        uses: pnpm/action-setup@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           # choose node.js version to use
-          node-version: 20
+          node-version: 22
           # cache deps for pnpm
           cache: pnpm
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
 
       # run build script
       - name: Build VuePress site
@@ -216,6 +214,12 @@ See [Edgio Documentation > Framework Guides > VuePress](https://docs.edg.io/guid
    - `NODE_VERSION`: 20
 
 3. Hit the deploy button.
+
+::: note
+
+You should disable Pretty URLs in the "Site Configuration" → "Build & Deploy" → "Post processing".
+
+:::
 
 ## Vercel
 

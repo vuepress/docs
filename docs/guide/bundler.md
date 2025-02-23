@@ -1,6 +1,6 @@
 # Bundler
 
-VuePress supports using [Webpack](https://webpack.js.org/) or [Vite](https://vitejs.dev/) to dev and build sites. You can choose which bundler to use according to your preference, and no extra configuration is required.
+VuePress supports using [Webpack](https://webpack.js.org/) or [Vite](https://vite.dev/) to dev and build sites. You can choose which bundler to use according to your preference, and no extra configuration is required.
 
 ## Install a Bundler
 

@@ -106,6 +106,24 @@ const {
 
   The properties of current locale have been merged into the root-level properties.
 
+### onContentUpdated
+
+- Details:
+
+  When the content of the markdown file changes, the callback is triggered.
+
+  This function can only be called during the `setup` phase of the component.
+
+  ```vue
+  <script setup>
+  import { onContentUpdated } from 'vuepress/client'
+
+  onContentUpdated((reason) => {
+    console.log(`content updated reason: ${reason}`)
+  })
+  </script>
+  ```
+
 ## Helpers
 
 ### defineClientConfig
@@ -126,7 +144,7 @@ const {
 - Also see:
   - [Advanced > Cookbook > Resolving Routes](../advanced/cookbook/resolving-routes.md)
 
-## resolveRoutePath
+### resolveRoutePath
 
 - Details:
 

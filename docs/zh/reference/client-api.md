@@ -106,6 +106,24 @@ const {
 
   当前 locale 中的配置已经合并到顶层配置中。
 
+### onContentUpdated
+
+- 详情：
+
+  当 markdown 文件内容发生变化时，触发回调。
+
+  该函数仅能在组件的 `setup` 阶段被调用。
+
+  ```vue
+  <script setup>
+  import { onContentUpdated } from 'vuepress/client'
+
+  onContentUpdated((reason) => {
+    console.log(`content updated reason: ${reason}`)
+  })
+  </script>
+  ```
+
 ## 工具函数
 
 ### defineClientConfig
@@ -126,7 +144,7 @@ const {
 - 参考：
   - [深入 > Cookbook > 解析路由](../advanced/cookbook/resolving-routes.md)
 
-## resolveRoutePath
+### resolveRoutePath
 
 - 详情：
 

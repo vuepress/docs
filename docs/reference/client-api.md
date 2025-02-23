@@ -118,8 +118,8 @@ const {
   <script setup>
   import { onContentUpdated } from 'vuepress/client'
 
-  onContentUpdated(() => {
-    console.log('content updated')
+  onContentUpdated((reason) => {
+    console.log(`content updated reason: ${reason}`)
   })
   </script>
   ```

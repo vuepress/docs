@@ -73,7 +73,7 @@ const {
 
   The value is the `lang` property of the page data.
 
-## useRoutes
+### useRoutes
 
 - Details:
 

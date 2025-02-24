@@ -8,7 +8,6 @@ import {
 
 export default hopeTheme({
   hostname: 'https://vuejs.press',
-  iconAssets: 'iconify',
 
   logo: '/images/hero.png',
   repo: 'vuepress/core',
@@ -69,9 +68,11 @@ export default hopeTheme({
       apiKey: '9a9058b8655746634e01071411c366b8',
       indexName: 'vuepress',
       searchParameters: {
-        indexName: 'vuepress',
         facetFilters: ['tags:v2'],
       },
     },
+    icon: {
+      assets: 'iconify',
+    }
   },
 })

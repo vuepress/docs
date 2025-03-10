@@ -225,7 +225,7 @@ You should disable Pretty URLs in the "Site Configuration" → "Build & Deploy" 
 
 1. Go to [Vercel](https://vercel.com), set up a new project from GitHub with the following settings:
 
-   - **FRAMEWORK PRESET:** `Other`
+   - **FRAMEWORK PRESET:** `VuePress`
    - **BUILD COMMAND:** `pnpm docs:build`
    - **OUTPUT DIRECTORY:** `docs/.vuepress/dist`
 

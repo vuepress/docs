@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:folder-tree
+---
+
 # 架构
 
 ## 概览

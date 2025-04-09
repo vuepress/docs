@@ -1,3 +1,7 @@
+---
+icon: fa6-brands:chrome
+---
+
 # 客户端 API
 
 客户端 API 可以通过 `vuepress/client` 来引入。

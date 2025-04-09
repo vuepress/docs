@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:network-wired
+---
+
 # 解析路由
 
 ## 获取全部路由

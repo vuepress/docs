@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:photo-film
+---
+
 # 静态资源
 
 ## 相对路径

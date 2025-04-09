@@ -1,3 +1,7 @@
+---
+icon: bi:terminal-fill
+---
+
 # Command Line Interface
 
 Run `vuepress --help` to get following help messages:

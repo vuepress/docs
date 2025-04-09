@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:gear
+---
+
 # Usage of Client Config
 
 You can make use of the [client config file](../../guide/configuration.md#client-config-file) directly in your project, or specify the file path in your plugin or theme via [clientConfigFile](../../reference/plugin-api.md#clientconfigfile) hook:

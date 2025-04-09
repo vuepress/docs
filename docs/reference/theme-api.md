@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:palette
+---
+
 # Theme API
 
 A VuePress theme also works as a plugin, so Theme API can accept all the options of [Plugin API](./plugin-api.md) with following differences.

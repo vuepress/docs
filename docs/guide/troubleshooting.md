@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:circle-question
+---
+
 # Troubleshooting
 
 ## The bundler / theme option is missing?

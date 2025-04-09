@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:circle-plus
+---
+
 # Adding Extra Pages
 
 Sometimes you might want to add some extra pages without creating a markdown file in the source directory.

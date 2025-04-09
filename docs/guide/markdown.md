@@ -1,3 +1,7 @@
+---
+icon: fa6-brands:markdown
+---
+
 # Markdown
 
 Make sure you already know Markdown well before reading this section. If not, please learn some [Markdown tutorials](https://commonmark.org/help/) first.

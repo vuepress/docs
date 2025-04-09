@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:palette
+---
+
 # 开发主题
 
 ::: tip

@@ -1,79 +1,85 @@
-import type { SidebarOptions } from '@vuepress/theme-default'
+import { sidebar } from 'vuepress-theme-hope'
 
-export const sidebarEn: SidebarOptions = {
+export const SIDEBAR_EN = sidebar({
   '/guide/': [
-    {
-      text: 'Guide',
-      children: [
-        '/guide/introduction.md',
-        '/guide/getting-started.md',
-        '/guide/configuration.md',
-        '/guide/page.md',
-        '/guide/markdown.md',
-        '/guide/assets.md',
-        '/guide/i18n.md',
-        '/guide/deployment.md',
-        '/guide/theme.md',
-        '/guide/plugin.md',
-        '/guide/bundler.md',
-        '/guide/migration.md',
-        '/guide/troubleshooting.md',
-      ],
-    },
+    'introduction',
+    'getting-started',
+    'configuration',
+    'page',
+    'markdown',
+    'assets',
+    'i18n',
+    'deployment',
+    'theme',
+    'plugin',
+    'bundler',
+    'migration',
+    'troubleshooting',
   ],
   '/advanced/': [
     {
       text: 'Advanced',
-      children: [
-        '/advanced/architecture.md',
-        '/advanced/plugin.md',
-        '/advanced/theme.md',
-      ],
+      icon: 'fa6-solid:gem',
+      children: ['architecture', 'plugin', 'theme'],
     },
     {
       text: 'Cookbook',
+      icon: 'fa6-solid:signs-post',
+      prefix: 'cookbook/',
       children: [
-        '/advanced/cookbook/README.md',
-        '/advanced/cookbook/usage-of-client-config.md',
-        '/advanced/cookbook/adding-extra-pages.md',
-        '/advanced/cookbook/making-a-theme-extendable.md',
-        '/advanced/cookbook/passing-data-to-client-code.md',
-        '/advanced/cookbook/markdown-and-vue-sfc.md',
-        '/advanced/cookbook/resolving-routes.md',
+        '',
+        'usage-of-client-config',
+        'adding-extra-pages',
+        'making-a-theme-extendable',
+        'passing-data-to-client-code',
+        'markdown-and-vue-sfc',
+        'resolving-routes',
       ],
     },
   ],
   '/reference/': [
     {
       text: 'Core',
+      icon: 'fa6-brands:vuejs',
       collapsible: true,
       children: [
-        '/reference/cli.md',
-        '/reference/config.md',
-        '/reference/frontmatter.md',
-        '/reference/components.md',
-        '/reference/plugin-api.md',
-        '/reference/theme-api.md',
-        '/reference/client-api.md',
-        '/reference/node-api.md',
+        'cli',
+        'config',
+        'frontmatter',
+        'components',
+        'plugin-api',
+        'theme-api',
+        'client-api',
+        'node-api',
       ],
     },
     {
       text: 'Bundlers',
-      children: ['/reference/bundler/vite.md', '/reference/bundler/webpack.md'],
+      icon: 'fa6-solid:boxes-packing',
+      prefix: 'bundler/',
+      collapsible: true,
+      children: ['vite', 'webpack'],
     },
     {
       text: 'Ecosystem',
+      icon: 'fa6-solid:leaf',
       children: [
         {
           text: 'Default Theme',
+          icon: 'fa6-solid:palette',
           link: 'https://ecosystem.vuejs.press/themes/default/',
         },
         {
           text: 'Plugins',
+          icon: 'fa6-solid:puzzle-piece',
           link: 'https://ecosystem.vuejs.press/plugins/',
+        },
+        {
+          text: 'MarketPlace',
+          icon: 'fa6-solid:cart-shopping',
+          link: 'https://marketplace.vuejs.press',
         },
       ],
     },
   ],
-}
+})

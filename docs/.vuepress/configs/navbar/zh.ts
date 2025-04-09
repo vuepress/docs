@@ -1,9 +1,10 @@
-import type { NavbarOptions } from '@vuepress/theme-default'
+import { navbar } from 'vuepress-theme-hope'
 import { VERSION } from '../meta.js'
 
-export const navbarZh: NavbarOptions = [
+export const NAVBAR_ZH = navbar([
   {
     text: '指南',
+    icon: 'fa6-solid:lightbulb',
     children: [
       '/zh/guide/introduction.md',
       '/zh/guide/getting-started.md',
@@ -22,36 +23,38 @@ export const navbarZh: NavbarOptions = [
   },
   {
     text: '参考',
+    icon: 'fa6-solid:book',
+    prefix: '/zh/reference/',
     children: [
       {
         text: '核心',
         children: [
-          '/zh/reference/cli.md',
-          '/zh/reference/config.md',
-          '/zh/reference/frontmatter.md',
-          '/zh/reference/components.md',
-          '/zh/reference/plugin-api.md',
-          '/zh/reference/theme-api.md',
-          '/zh/reference/client-api.md',
-          '/zh/reference/node-api.md',
+          'cli',
+          'config',
+          'frontmatter',
+          'components',
+          'plugin-api',
+          'theme-api',
+          'client-api',
+          'node-api',
         ],
       },
       {
         text: '打包工具',
-        children: [
-          '/zh/reference/bundler/vite.md',
-          '/zh/reference/bundler/webpack.md',
-        ],
+        prefix: 'bundler/',
+        children: ['vite', 'webpack'],
       },
       {
         text: '生态系统',
         children: [
           {
             text: '默认主题',
+            icon: 'fa6-solid:palette',
             link: 'https://ecosystem.vuejs.press/zh/themes/default/',
           },
           {
             text: '插件',
+            icon: 'fa6-solid:puzzle-piece',
             link: 'https://ecosystem.vuejs.press/zh/plugins/',
           },
         ],
@@ -60,16 +63,19 @@ export const navbarZh: NavbarOptions = [
   },
   {
     text: '了解更多',
+    icon: 'fa6-solid:feather',
     children: [
       {
         text: '深入',
+        prefix: '/zh/advanced/',
         children: [
-          '/zh/advanced/architecture.md',
-          '/zh/advanced/plugin.md',
-          '/zh/advanced/theme.md',
+          'architecture',
+          'plugin',
+          'theme',
           {
             text: 'Cookbook',
-            link: '/zh/advanced/cookbook/',
+            icon: 'fa6-solid:signs-post',
+            link: 'cookbook/',
           },
         ],
       },
@@ -78,14 +84,17 @@ export const navbarZh: NavbarOptions = [
         children: [
           {
             text: '生态系统',
+            icon: 'fa6-solid:leaf',
             link: 'https://ecosystem.vuejs.press/zh/',
           },
           {
             text: '市场',
+            icon: 'fa6-solid:cart-shopping',
             link: 'https://marketplace.vuejs.press/zh/',
           },
           {
             text: '贡献指南',
+            icon: 'fa6-solid:signs-post',
             link: 'https://github.com/vuepress/core/blob/main/CONTRIBUTING_zh.md',
           },
         ],
@@ -97,17 +106,19 @@ export const navbarZh: NavbarOptions = [
     children: [
       {
         text: '更新日志',
-        link: 'https://github.com/vuepress/core/blob/main/CHANGELOG.md',
+        icon: 'fa6-solid:clock',
+        link: 'https://github.com/vuepress/vuepress-next/blob/main/CHANGELOG.md',
       },
       {
         text: 'v1.x',
+        icon: 'fa6-brands:vuejs',
         link: 'https://v1.vuepress.vuejs.org/zh/',
       },
       {
         text: 'v0.x',
+        icon: 'fa6-brands:vuejs',
         link: 'https://v0.vuepress.vuejs.org/zh/',
       },
     ],
   },
-  // TODO: remove the type assertion
-] as NavbarOptions
+])

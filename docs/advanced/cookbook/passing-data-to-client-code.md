@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:right-to-bracket
+---
+
 # Passing Data to Client Code
 
 As we know, VuePress plugin entries and theme entries are processed in Node side, but sometimes you might need to pass data to client side. For example, you want to generate different data when users use different options.

@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:lightbulb
+---
+
 # 快速上手
 
 ::: warning
@@ -79,7 +83,7 @@ git init
 yarn init
 ```
 
-@tab npm
+@npm
 
 ```bash
 git init
@@ -90,7 +94,7 @@ npm init
 
 - 安装 VuePress
 
-::: code-tabs#shell
+::: tabs
 
 @tab pnpm
 
@@ -193,7 +197,7 @@ echo '# Hello VuePress' > docs/README.md
 
 运行 `docs:dev` 脚本可以启动开发服务器:
 
-::: code-tabs#shell
+::: tabs
 
 @tab pnpm
 
@@ -221,7 +225,7 @@ VuePress 会在 [http://localhost:8080](http://localhost:8080) 启动一个热�
 
 运行 `docs:build` 脚本可以构建你的网站：
 
-::: code-tabs#shell
+::: tabs
 
 @tab pnpm
 

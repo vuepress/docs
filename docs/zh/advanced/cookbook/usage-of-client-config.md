@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:gear
+---
+
 # 客户端配置的使用方法
 
 你可以直接在你的项目中使用 [客户端配置文件](../../guide/configuration.md#客户端配置文件) 。或者，在你的插件或者主题中，使用 [clientConfigFile](../../reference/plugin-api.md#clientconfigfile) Hook 来指定客户端配置文件的路径：

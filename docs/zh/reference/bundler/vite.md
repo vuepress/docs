@@ -1,3 +1,7 @@
+---
+icon: simple-icons:vite
+---
+
 # Vite
 
 <NpmBadge package="@vuepress/bundler-vite" />

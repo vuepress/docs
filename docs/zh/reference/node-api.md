@@ -1,3 +1,7 @@
+---
+icon: fa6-brands:node-js
+---
+
 # Node API
 
 Node API 可以通过 `vuepress/core` 来引入。

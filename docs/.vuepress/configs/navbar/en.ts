@@ -1,9 +1,10 @@
-import type { NavbarOptions } from '@vuepress/theme-default'
+import { navbar } from 'vuepress-theme-hope'
 import { VERSION } from '../meta.js'
 
-export const navbarEn: NavbarOptions = [
+export const NAVBAR_EN = navbar([
   {
     text: 'Guide',
+    icon: 'fa6-solid:lightbulb',
     children: [
       '/guide/introduction.md',
       '/guide/getting-started.md',
@@ -22,39 +23,42 @@ export const navbarEn: NavbarOptions = [
   },
   {
     text: 'Reference',
+    icon: 'fa6-solid:book',
+    prefix: '/reference/',
     children: [
       {
         text: 'Core',
         children: [
           {
             text: 'CLI',
-            link: '/reference/cli.html',
+            icon: 'bi:terminal-fill',
+            link: 'cli.html',
           },
-          '/reference/config.md',
-          '/reference/frontmatter.md',
-          '/reference/components.md',
-          '/reference/plugin-api.md',
-          '/reference/theme-api.md',
-          '/reference/client-api.md',
-          '/reference/node-api.md',
+          'config',
+          'frontmatter',
+          'components',
+          'plugin-api',
+          'theme-api',
+          'client-api',
+          'node-api',
         ],
       },
       {
         text: 'Bundlers',
-        children: [
-          '/reference/bundler/vite.md',
-          '/reference/bundler/webpack.md',
-        ],
+        prefix: 'bundler/',
+        children: ['vite', 'webpack'],
       },
       {
         text: 'Ecosystem',
         children: [
           {
             text: 'Default Theme',
+            icon: 'fa6-solid:palette',
             link: 'https://ecosystem.vuejs.press/themes/default/',
           },
           {
             text: 'Plugins',
+            icon: 'fa6-solid:puzzle-piece',
             link: 'https://ecosystem.vuejs.press/plugins/',
           },
         ],
@@ -64,16 +68,19 @@ export const navbarEn: NavbarOptions = [
 
   {
     text: 'Learn More',
+    icon: 'fa6-solid:feather',
     children: [
       {
         text: 'Advanced',
+        prefix: '/advanced/',
         children: [
-          '/advanced/architecture.md',
-          '/advanced/plugin.md',
-          '/advanced/theme.md',
+          'architecture',
+          'plugin',
+          'theme',
           {
             text: 'Cookbook',
-            link: '/advanced/cookbook/',
+            icon: 'fa6-solid:signs-post',
+            link: 'cookbook/',
           },
         ],
       },
@@ -82,14 +89,17 @@ export const navbarEn: NavbarOptions = [
         children: [
           {
             text: 'Ecosystem',
+            icon: 'fa6-solid:leaf',
             link: 'https://ecosystem.vuejs.press/',
           },
           {
             text: 'MarketPlace',
+            icon: 'fa6-solid:cart-shopping',
             link: 'https://marketplace.vuejs.press',
           },
           {
             text: 'Contributing Guide',
+            icon: 'fa6-solid:signs-post',
             link: 'https://github.com/vuepress/core/blob/main/CONTRIBUTING.md',
           },
         ],
@@ -101,17 +111,19 @@ export const navbarEn: NavbarOptions = [
     children: [
       {
         text: 'Changelog',
-        link: 'https://github.com/vuepress/core/blob/main/CHANGELOG.md',
+        icon: 'fa6-solid:clock',
+        link: 'https://github.com/vuepress/vuepress-next/blob/main/CHANGELOG.md',
       },
       {
         text: 'v1.x',
+        icon: 'fa6-brands:vuejs',
         link: 'https://v1.vuepress.vuejs.org',
       },
       {
         text: 'v0.x',
+        icon: 'fa6-brands:vuejs',
         link: 'https://v0.vuepress.vuejs.org',
       },
     ],
   },
-  // TODO: remove the type assertion
-] as NavbarOptions
+])

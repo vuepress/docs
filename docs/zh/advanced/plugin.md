@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:plug
+---
+
 # 开发插件
 
 ::: tip

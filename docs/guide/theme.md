@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:palette
+---
+
 # Theme
 
 VuePress theme can provide layouts, styles and many other features for you, helping you to focus on writing Markdown content.

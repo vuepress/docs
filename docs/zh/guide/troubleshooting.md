@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:circle-question
+---
+
 # 常见问题
 
 ## 缺少 bundler / theme 配置？

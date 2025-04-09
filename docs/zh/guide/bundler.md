@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:boxes-packing
+---
+
 # 打包工具
 
 VuePress 支持使用 [Vite](https://vite.dev/) 或 [Webpack](https://webpack.js.org/) 作为打包工具来进行网站的开发和构建。你可以根据自己的喜好来选择使用哪个打包工具，并且不需要进行额外的配置。

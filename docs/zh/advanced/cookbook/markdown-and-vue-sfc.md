@@ -1,3 +1,7 @@
+---
+icon: fa6-brands:vuejs
+---
+
 # Markdown 与 Vue SFC
 
 每一个 Markdown 文件，首先都会编译为 HTML ，然后转换为一个 Vue 单文件组件 (SFC) 。换句话说，你可以像写 Vue SFC 一样来写 Markdown 文件：

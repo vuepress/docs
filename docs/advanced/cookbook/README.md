@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:circle-info
+---
+
 # Introduction
 
 ## What's the Cookbook for?

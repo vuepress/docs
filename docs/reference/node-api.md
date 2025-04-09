@@ -1,3 +1,7 @@
+---
+icon: fa6-brands:node-js
+---
+
 # Node API
 
 Node API can be imported from `vuepress/core`.

@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:network-wired
+---
+
 # Resolving Routes
 
 ## Getting all routes

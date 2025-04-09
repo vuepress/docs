@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:boxes-packing
+---
+
 # Bundler
 
 VuePress supports using [Webpack](https://webpack.js.org/) or [Vite](https://vite.dev/) to dev and build sites. You can choose which bundler to use according to your preference, and no extra configuration is required.

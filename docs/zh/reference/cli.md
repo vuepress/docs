@@ -1,3 +1,7 @@
+---
+icon: bi:terminal-fill
+---
+
 # 命令行接口
 
 执行 `vuepress --help` 来获取下列帮助信息：

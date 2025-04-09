@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:plug
+---
+
 # 插件 API
 
 你可以查看 [Node API](./node-api.md) 来了解如何使用插件 Hooks 中的 VuePress App 实例。

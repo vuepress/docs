@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:code-compare
+---
+
 # 从 v1 迁移
 
 ::: warning

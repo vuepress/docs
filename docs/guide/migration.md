@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:code-compare
+---
+
 # Migrating from v1
 
 ::: warning

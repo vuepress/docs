@@ -443,7 +443,6 @@ interface PageData {
   title: string
   lang: string
   frontmatter: PageFrontmatter
-  headers: PageHeader[]
 }
 ```
 

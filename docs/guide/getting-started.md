@@ -16,7 +16,7 @@ You can try VuePress directly in your browser on [StackBlitz](https://stackblitz
 
 ### Prerequisites
 
-- [Node.js v18.19.0+](https://nodejs.org/)
+- [Node.js v20.6.0+](https://nodejs.org/)
 - Package manager like [pnpm](https://pnpm.io), [yarn](https://classic.yarnpkg.com/en/), [npm](https://www.npmjs.com), etc.
 
 ::: tip

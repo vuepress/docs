@@ -12,7 +12,7 @@ VuePress v2 目前仍处于 RC (Release Candidate) 阶段。你已经可以用�
 
 ### 依赖环境
 
-- [Node.js v18.19.0+](https://nodejs.org/)
+- [Node.js v20.6.0+](https://nodejs.org/)
 - 包管理器，如 [pnpm](https://pnpm.io/zh/)、[yarn](https://classic.yarnpkg.com/en/)、[npm](https://www.npmjs.com/) 等。
 
 ::: tip

@@ -73,7 +73,7 @@
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { withBase } from 'vuepress/client'
+import { withBase } from '@vuepress/client'
 
 const logoPath = ref('/images/hero.png')
 </script>

@@ -16,7 +16,7 @@
 
 ```vue
 <script setup lang="ts">
-import { useClientData } from 'vuepress/client'
+import { useClientData } from '@vuepress/client'
 
 const {
   pageData,
@@ -116,7 +116,7 @@ const {
 
   ```vue
   <script setup>
-  import { onContentUpdated } from 'vuepress/client'
+  import { onContentUpdated } from '@vuepress/client'
 
   onContentUpdated((reason) => {
     console.log(`content updated reason: ${reason}`)
@@ -223,7 +223,7 @@ const {
 在客户端配置文件中自定义 `<title>` 的格式：
 
 ```ts
-import { defineClientConfig, resolvers } from 'vuepress/client'
+import { defineClientConfig, resolvers } from '@vuepress/client'
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {

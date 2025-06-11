@@ -46,7 +46,7 @@ const barTheme =
 Then, create theme's client config file `client.js` :
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 import Layout from './layouts/Layout.vue'
 import NotFound from './layouts/NotFound.vue'
 

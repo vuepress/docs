@@ -16,7 +16,7 @@ Client API can be imported from `vuepress/client`.
 
 ```vue
 <script setup lang="ts">
-import { useClientData } from 'vuepress/client'
+import { useClientData } from '@vuepress/client'
 
 const {
   pageData,
@@ -116,7 +116,7 @@ const {
 
   ```vue
   <script setup>
-  import { onContentUpdated } from 'vuepress/client'
+  import { onContentUpdated } from '@vuepress/client'
 
   onContentUpdated((reason) => {
     console.log(`content updated reason: ${reason}`)
@@ -223,7 +223,7 @@ To shim the types of these constants in client side code, add `vuepress/client-t
 Customizing the format of `<title>` in client config file:
 
 ```ts
-import { defineClientConfig, resolvers } from 'vuepress/client'
+import { defineClientConfig, resolvers } from '@vuepress/client'
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {

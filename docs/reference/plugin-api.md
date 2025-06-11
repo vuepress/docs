@@ -309,7 +309,7 @@ export default {
 In client component:
 
 ```ts
-import { usePageData } from 'vuepress/client'
+import { usePageData } from '@vuepress/client'
 
 export default {
   setup() {

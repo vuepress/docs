@@ -7,7 +7,7 @@
 `useRoutes` 的返回值是一个包含了所有路由信息的 Ref 对象。其属性是每条路由的路由路径，对应的值是路径的路由信息。
 
 ```ts
-import { useRoutes } from 'vuepress/client'
+import { useRoutes } from '@vuepress/client'
 
 const routes = useRoutes()
 // {
@@ -27,7 +27,7 @@ const routePaths = computed(() => Object.keys(routes.value))
 `resolveRoutePath` 接收一个链接地址和一个可选的基础路径，返回一个解析后的路由地址:
 
 ```ts
-import { resolveRoutePath } from 'vuepress/client'
+import { resolveRoutePath } from '@vuepress/client'
 
 const routePath = resolveRoutePath('/foo/') // => '/foo/'
 const routePath = resolveRoutePath('baz.html', '/foo/bar.html') // => '/foo/baz.html'
@@ -40,7 +40,7 @@ const routePath = resolveRoutePath('baz.html', '/foo/bar.html') // => '/foo/baz.
 `resolveRoute` 接收一个链接地址和一个可选的基础路径，返回一个解析后的路由信息:
 
 ```ts
-import { resolveRoute } from 'vuepress/client'
+import { resolveRoute } from '@vuepress/client'
 
 const route = resolveRoute('/foo/') // => { notFound: false, path: '/foo/', meta: { title: 'Foo' }, loader: FooPageLoader }
 const route = resolveRoute('baz.html', '/foo/bar.html') // => { notFound: false, path: '/foo/baz.html', meta: { title: 'Baz' }, loader: BazPageLoader }

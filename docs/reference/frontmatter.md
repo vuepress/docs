@@ -89,7 +89,7 @@ Rendered as:
 Register a layout component in `.vuepress/client.ts` file:
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 import CustomLayout from './CustomLayout.vue'
 
 export default defineClientConfig({

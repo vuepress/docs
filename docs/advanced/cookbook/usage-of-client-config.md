@@ -15,7 +15,7 @@ const pluginOrTheme = {
 Inside the client config file, `vuepress/client` provides a helper function [defineClientConfig](../../reference/client-api.md#defineclientconfig) to help you define the client config:
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {},
@@ -40,7 +40,7 @@ The `enhance` function will be invoked after the client app is created. It's pos
 You can register global Vue components via the [app.component](https://vuejs.org/api/application.html#app-component) method:
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 import MyComponent from './MyComponent.vue'
 
 export default defineClientConfig({
@@ -59,7 +59,7 @@ We already provides a [ClientOnly](../../reference/components.md#clientonly) com
 In the `enhance` function, you can make use of the [`__VUEPRESS_SSR__`](../../reference/client-api.md#ssr) flag for that purpose.
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 
 export default defineClientConfig({
   async enhance() {
@@ -76,7 +76,7 @@ export default defineClientConfig({
 You can make use of the [Router Methods](https://router.vuejs.org/api/#router-methods) that provided by vue-router. For example, add navigation guard:
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 
 export default defineClientConfig({
   enhance({ router }) {
@@ -108,7 +108,7 @@ You can take the `setup` function as part of the [setup](https://vuejs.org/api/c
 ```ts
 import { provide, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 
 export default defineClientConfig({
   setup() {
@@ -131,7 +131,7 @@ Another way to use non-ssr-friendly features is to put them inside the [onMounte
 
 ```ts
 import { onMounted } from 'vue'
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 
 export default defineClientConfig({
   setup() {
@@ -148,7 +148,7 @@ export default defineClientConfig({
 The `layouts` options is to set layout components. After layout components are registered here, users can use it via [layout](../../reference/frontmatter.md#layout) frontmatter.
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 import MyLayout from './layouts/MyLayout.vue'
 
 export default defineClientConfig({
@@ -165,7 +165,7 @@ The `rootComponents` is a components array to be placed directly into the root n
 Typical usage of this option is to put some global UI components, like global popup or so:
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 import GlobalPopup from './components/GlobalPopup.vue'
 
 export default defineClientConfig({

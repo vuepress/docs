@@ -15,7 +15,7 @@ const pluginOrTheme = {
 在客户端配置文件中，`vuepress/client` 提供了一个 [defineClientConfig](../../reference/client-api.md#defineclientconfig) 函数来帮助你定义客户端配置：
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {},
@@ -40,7 +40,7 @@ export default defineClientConfig({
 你可以通过 [app.component](https://staging-cn.vuejs.org/api/application.html#app-component) 方法来注册 Vue 全局组件：
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 import MyComponent from './MyComponent.vue'
 
 export default defineClientConfig({
@@ -59,7 +59,7 @@ VuePress 会在构建过程中生成一个 SSR 应用，用以对页面进行预
 在 `enhance` 函数中，你可以使用 [`__VUEPRESS_SSR__`](../../reference/client-api.md#ssr) 标记来处理这种情况。
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 
 export default defineClientConfig({
   async enhance() {
@@ -76,7 +76,7 @@ export default defineClientConfig({
 你可以使用 vue-router 提供的 [Router 方法](https://router.vuejs.org/zh/api/index.html#router-方法) 。例如，添加导航钩子：
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 
 export default defineClientConfig({
   enhance({ router }) {
@@ -108,7 +108,7 @@ export default defineClientConfig({
 ```ts
 import { provide, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 
 export default defineClientConfig({
   setup() {
@@ -131,7 +131,7 @@ export default defineClientConfig({
 
 ```ts
 import { onMounted } from 'vue'
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 
 export default defineClientConfig({
   setup() {
@@ -148,7 +148,7 @@ export default defineClientConfig({
 `layouts` 配置项用于设置布局组件。你在此处注册布局后，用户就可以通过 [layout](../../reference/frontmatter.md#layout) frontmatter 来使用它们。
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 import MyLayout from './layouts/MyLayout.vue'
 
 export default defineClientConfig({
@@ -165,7 +165,7 @@ export default defineClientConfig({
 该选项的典型使用方式就是放置一些全局的 UI 组件，比如全局弹窗等：
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 import GlobalPopup from './components/GlobalPopup.vue'
 
 export default defineClientConfig({

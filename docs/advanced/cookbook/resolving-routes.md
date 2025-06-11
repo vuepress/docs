@@ -7,7 +7,7 @@ You can make use of [useRoutes](../../reference/client-api.md#useroutes) to get 
 The return value of `useRoutes` is a Ref object containing all routes. The keys are route paths of each route, and the values are the corresponding route information.
 
 ```ts
-import { useRoutes } from 'vuepress/client'
+import { useRoutes } from '@vuepress/client'
 
 const routes = useRoutes()
 // {
@@ -27,7 +27,7 @@ You can make use of [resolveRoutePath](../../reference/client-api.md#resolverout
 `resolveRoutePath` receives a link and an optional base path, and returns the resolved route path:
 
 ```ts
-import { resolveRoutePath } from 'vuepress/client'
+import { resolveRoutePath } from '@vuepress/client'
 
 const routePath = resolveRoutePath('/foo/') // => '/foo/'
 const routePath = resolveRoutePath('baz.html', '/foo/bar.html') // => '/foo/baz.html'
@@ -40,7 +40,7 @@ You can make use of [resolveRoute](../../reference/client-api.md#resolveroute) t
 `resolveRoute` receives a link and an optional base path, and returns the resolved route information:
 
 ```ts
-import { resolveRoute } from 'vuepress/client'
+import { resolveRoute } from '@vuepress/client'
 
 const route = resolveRoute('/foo/') // => { notFound: false, path: '/foo/', meta: { title: 'Foo' }, loader: FooPageLoader }
 const route = resolveRoute('baz.html', '/foo/bar.html') // => { notFound: false, path: '/foo/baz.html', meta: { title: 'Baz' }, loader: BazPageLoader }

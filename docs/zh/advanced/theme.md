@@ -46,7 +46,7 @@ const barTheme =
 然后，创建主题的客户端配置文件 `client.js` :
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 import Layout from './layouts/Layout.vue'
 import NotFound from './layouts/NotFound.vue'
 

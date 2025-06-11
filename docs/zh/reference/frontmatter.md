@@ -89,7 +89,7 @@ head:
 在 `.vuepress/client.ts` 文件中注册一个布局组件：
 
 ```ts
-import { defineClientConfig } from 'vuepress/client'
+import { defineClientConfig } from '@vuepress/client'
 import CustomLayout from './CustomLayout.vue'
 
 export default defineClientConfig({

@@ -309,7 +309,7 @@ export default {
 在客户端组件中：
 
 ```ts
-import { usePageData } from 'vuepress/client'
+import { usePageData } from '@vuepress/client'
 
 export default {
   setup() {

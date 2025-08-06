@@ -147,7 +147,6 @@ layout: CustomLayout
   | `:raw`   | Raw route path             |
 
   The `:year`, `:month` and `:day` patterns are resolved according to the following priority:
-
   - The `date` frontmatter.
   - The filename that matches the date pattern `yyyy-MM-dd-foobar.md` or `yyyy-MM-foobar.md`.
   - The dirname that matches the date pattern `yyyy/MM/dd/foobar.md` or `yyyy/MM/foobar.md`.

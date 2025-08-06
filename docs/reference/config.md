@@ -124,7 +124,6 @@ Rendered as：
   Specify locales for i18n support.
 
   Acceptable fields:
-
   - [lang](#lang)
   - [title](#title)
   - [description](#description)
@@ -160,7 +159,6 @@ Rendered as：
   Set the bundler of your site.
 
   If this option is not set, the default bundler will be used:
-
   - With `vuepress` or `vuepress-vite`, the default bundler is vite.
   - With `vuepress-webpack`, the default bundler is webpack.
 

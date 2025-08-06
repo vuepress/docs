@@ -45,7 +45,6 @@
   它会被用来识别插件，以避免多次使用同一个插件，因此应确保你的插件名称是独一无二的。
 
   它应遵从如下命名约定：
-
   - 非 Scoped: `vuepress-plugin-foo`
   - Scoped: `@org/vuepress-plugin-foo`
 

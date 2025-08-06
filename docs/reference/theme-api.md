@@ -13,7 +13,6 @@ A VuePress theme also works as a plugin, so Theme API can accept all the options
   Name of the theme.
 
   It should follow the naming convention, and ensure consistency with the package name when publishing to NPM:
-
   - Non-scoped: `vuepress-theme-foo`
   - Scoped: `@org/vuepress-theme-foo`
 
@@ -34,7 +33,6 @@ A VuePress theme also works as a plugin, so Theme API can accept all the options
   The theme to inherit.
 
   All of the Theme API of the parent theme will be inherited, but the child theme will not override the parent theme directly. Theme specific options will override according to following rules:
-
   - [plugins](#plugins): When a same plugin is used in both child and parent theme, if the plugin does not support to be used multiple times, only the one used in the child theme will take effect.
   - [templateBuild](#templatebuild) / [templateDev](#templatedev): Child theme templates will override parent theme templates.
 

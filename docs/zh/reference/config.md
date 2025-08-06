@@ -123,7 +123,6 @@ export default {
   多语言支持的各个语言 locales 。
 
   可以使用的字段有：
-
   - [lang](#lang)
   - [title](#title)
   - [description](#description)
@@ -159,7 +158,6 @@ export default {
   设置站点要使用的打包工具。
 
   如果不设置该选项，将会使用默认的打包工具：
-
   - 使用 `vuepress` 或 `vuepress-vite` 时，默认的打包工具是 Vite 。
   - 使用 `vuepress-webpack` 时，默认的打包工具是 Webpack 。
 

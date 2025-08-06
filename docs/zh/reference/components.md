@@ -3,7 +3,6 @@
 ## AutoLink
 
 - Props:
-
   - config
     - 类型：`AutoLinkConfig`
     - 是否必须：`true`
@@ -93,7 +92,6 @@ interface AutoLinkConfig {
   该组件和它的子元素只会在客户端被渲染。也就是说，它不会在构建 (SSR) 过程中被渲染到 HTML 内。
 
   如果一个组件在 `setup()` 中直接使用 浏览器 / DOM API ，它会导致构建过程报错，因为这些 API 在 Node.js 的环境中是无法使用的。在这种情况下，你可以选择一种方式：
-
   - 修改这个组件，只在 `onBeforeMount()` 或 `onMounted()` Hook 中使用 浏览器 / DOM API 。
   - 使用 `<ClientOnly>` 包裹这个组件。
 
@@ -104,7 +102,6 @@ interface AutoLinkConfig {
 ## Content
 
 - Props:
-
   - path
     - 类型： `string`
     - 是否必须： `false`
@@ -129,7 +126,6 @@ interface AutoLinkConfig {
 ## RouteLink
 
 - Props:
-
   - to
     - 类型： `string`
     - 是否必须： `true`

@@ -205,12 +205,10 @@ See [Edgio Documentation > Framework Guides > VuePress](https://docs.edg.io/guid
 ## Netlify
 
 1. On [Netlify](https://netlify.com), set up a new project from GitHub with the following settings:
-
    - **Build Command:** `pnpm docs:build`
    - **Publish directory:** `docs/.vuepress/dist`
 
 2. Set [Environment variables](https://docs.netlify.com/configure-builds/environment-variables) to choose node version:
-
    - `NODE_VERSION`: 20
 
 3. Hit the deploy button.
@@ -224,7 +222,6 @@ You should disable Pretty URLs in the "Site Configuration" → "Build & Deploy" 
 ## Vercel
 
 1. Go to [Vercel](https://vercel.com), set up a new project from GitHub with the following settings:
-
    - **FRAMEWORK PRESET:** `Other`
    - **BUILD COMMAND:** `pnpm docs:build`
    - **OUTPUT DIRECTORY:** `docs/.vuepress/dist`

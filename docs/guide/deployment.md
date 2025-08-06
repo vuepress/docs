@@ -227,3 +227,7 @@ You should disable Pretty URLs in the "Site Configuration" → "Build & Deploy" 
    - **OUTPUT DIRECTORY:** `docs/.vuepress/dist`
 
 2. Hit the deploy button.
+
+## CloudRay
+
+See [Deploy Your VuePress Site With CloudRay](https://cloudray.io/articles/how-to-deploy-your-vuepress-site)

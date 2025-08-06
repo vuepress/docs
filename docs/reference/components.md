@@ -3,7 +3,6 @@
 ## AutoLink
 
 - Props:
-
   - config
     - Type: `AutoLinkConfig`
     - Required: `true`
@@ -93,7 +92,6 @@ interface AutoLinkConfig {
   This component and its children will only be rendered in client-side. That means, it will not be rendered to HTML during build (SSR).
 
   If a component is trying to access Browser / DOM APIs directly in `setup()`, an error will occur during build because those APIs are unavailable in Node.js environment. In such case, you could do either:
-
   - Modify the component to only access Browser / DOM APIs in `onBeforeMount()` or `onMounted()` hook.
   - Wrap the component with `<ClientOnly>`.
 
@@ -104,7 +102,6 @@ Since Vue 3.5, if you only want to avoid hydration mismatch, you can try the new
 ## Content
 
 - Props:
-
   - path
     - Type: `string`
     - Required: `false`
@@ -129,7 +126,6 @@ Since Vue 3.5, if you only want to avoid hydration mismatch, you can try the new
 ## RouteLink
 
 - Props:
-
   - to
     - Type: `string`
     - Required: `true`

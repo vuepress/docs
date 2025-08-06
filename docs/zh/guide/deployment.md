@@ -205,12 +205,10 @@ heroku login
 ## Netlify
 
 1. 前往 [Netlify](https://netlify.com) ，从 GitHub 创建一个新项目，并进行如下配置：
-
    - **Build Command:** `pnpm docs:build`
    - **Publish directory:** `docs/.vuepress/dist`
 
 2. 设置 [Environment variables](https://docs.netlify.com/configure-builds/environment-variables) 来选择 Node 版本：
-
    - `NODE_VERSION`: 20
 
 3. 点击 deploy 按钮。
@@ -224,7 +222,6 @@ heroku login
 ## Vercel
 
 1. 前往 [Vercel](https://vercel.com) ，从 GitHub 创建一个新项目，并进行如下配置：
-
    - **FRAMEWORK PRESET:** `Other`
    - **BUILD COMMAND:** `pnpm docs:build`
    - **OUTPUT DIRECTORY:** `docs/.vuepress/dist`

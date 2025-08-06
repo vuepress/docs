@@ -147,7 +147,6 @@ layout: CustomLayout
   | `:raw`   | 原始路由路径       |
 
   `:year`, `:month` 和 `:day` Pattern 根据如下优先级进行解析：
-
   - Frontmatter 中的 `date` 字段。
   - 符合 `yyyy-MM-dd-foobar.md` 或 `yyyy-MM-foobar.md` 日期格式的文件名。
   - 符合 `yyyy/MM/dd/foobar.md` 或 `yyyy/MM/foobar.md` 日期格式的目录名。

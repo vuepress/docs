@@ -181,7 +181,6 @@ const dev = async () => {
 ### dir
 
 - Utils:
-
   - `dir.cache()`: resolve to cache directory
   - `dir.temp()`: resolve to temp directory
   - `dir.source()`: resolve to source directory
@@ -395,7 +394,6 @@ Hello, world.
   Language of the page.
 
 - Example:
-
   - `'en-US'`
   - `'zh-CN'`
 
@@ -481,7 +479,6 @@ interface PageData {
   Date of the page, in 'yyyy-MM-dd' format.
 
 - Example:
-
   - `'0000-00-00'`
   - `'2021-08-16`'
 
@@ -545,7 +542,6 @@ interface MarkdownLink {
   It would be `null` if the page does not come from a Markdown source file.
 
 - Example:
-
   - `'/'`
   - `'/foo.html'`
 
@@ -564,7 +560,6 @@ interface MarkdownLink {
   It is inferred from the relative file path of the Markdown source file and the key of `locales` option in user config.
 
 - Example:
-
   - `'/'`
   - `'/en/'`
   - `'/zh/'`

@@ -181,7 +181,6 @@ const dev = async () => {
 ### dir
 
 - 工具函数：
-
   - `dir.cache()`： 解析至缓存目录
   - `dir.temp()`： 解析至临时文件目录
   - `dir.source()`： 解析至源文件目录
@@ -393,7 +392,6 @@ export default {
   该 Page 的语言。
 
 - 示例：
-
   - `'en-US'`
   - `'zh-CN'`
 
@@ -479,7 +477,6 @@ interface PageData {
   该 Page 的日期，遵从 'yyyy-MM-dd' 格式。
 
 - 示例：
-
   - `'0000-00-00'`
   - `'2021-08-16`'
 
@@ -543,7 +540,6 @@ interface MarkdownLink {
   如果该 Page 不是来自于 Markdown 源文件，那么该属性会为 `null` 。
 
 - 示例：
-
   - `'/'`
   - `'/foo.html'`
 
@@ -562,7 +558,6 @@ interface MarkdownLink {
   它是根据页面的 Markdown 源文件相对路径、以及用户配置的 `locales` 的键推断得到的。
 
 - 示例：
-
   - `'/'`
   - `'/en/'`
   - `'/zh/'`

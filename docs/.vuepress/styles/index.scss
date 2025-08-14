@@ -12,3 +12,8 @@
 div[class*='language-'] pre code {
   color: var(--code-c-text);
 }
+
+.code-block-title-bar {
+  --code-title-c-bg: #1e1e1e;
+  --code-title-c-text: #d4d4d4;
+}

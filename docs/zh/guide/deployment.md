@@ -264,3 +264,16 @@ CloudBase CLI 首先会跳转到控制台进行登录授权，然后将会交互
 ## 21 云盒子
 
 请查看 [21 云盒子 - 部署一个 VuePress 静态网页](https://www.21yunbox.com/docs/#/deploy-vuepress)。
+
+## Cloudflare Pages
+
+[Cloudflare Pages](https://www.cloudflare.com/zh-cn/developer-platform/products/pages/) 是一个由 Cloudflare 推出的无服务器全栈开发人员平台，使用 Cloudflare Pages 可在更短的时间内构建、部署和交付可信赖的全栈应用。开发人员、设计人员和产品可以通过最少的配置进行协作和部署。
+
+1. 前往 [Cloudflare Dashboard](https://dash.cloudflare.com/)，点击左侧目录中 `计算 (Workers)` 旁的下拉箭头，选择 `Workers 和 Pages`。
+2. 点击 `创建` 进入创建流程，选择 `Pages`，推荐使用 `导入现有 Git 存储库`。
+3. 配置好 Cloudflare 对 GitHub 账户的访问权限，选择项目仓库。
+4. 在随后的 `设置构建和部署` 页面配置好 `生产分支` 和 `构建设置`，`构建设置如下`:
+   - 框架预设: 无
+   - 构建命令: npm run docs:build
+   - 构建输出目录: docs/.vuepress/dist
+5. 点击 `保存并部署`。

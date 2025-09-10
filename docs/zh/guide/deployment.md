@@ -273,7 +273,7 @@ CloudBase CLI 首先会跳转到控制台进行登录授权，然后将会交互
 2. 点击 `创建` 进入创建流程，选择 `Pages`，推荐使用 `导入现有 Git 存储库`。
 3. 配置好 Cloudflare 对 GitHub 账户的访问权限，选择项目仓库。
 4. 在随后的 `设置构建和部署` 页面配置好 `生产分支` 和 `构建设置`，`构建设置如下`:
-   - 框架预设: 无
-   - 构建命令: npm run docs:build
-   - 构建输出目录: docs/.vuepress/dist
+   - 框架预设: `无`
+   - 构建命令: `pnpm docs:build`
+   - 构建输出目录: `docs/.vuepress/dist`
 5. 点击 `保存并部署`。

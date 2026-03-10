@@ -8,7 +8,7 @@ By default, the route path of a page is determined by the relative path of your 
 
 Assuming this is the directory structure of your markdown files:
 
-```
+```text
 └─ docs
    ├─ guide
    │  ├─ getting-started.md

@@ -151,7 +151,7 @@ echo '# Hello VuePress' > docs/README.md
 
 After the setup, the minimal structure of your project should look like this:
 
-```
+```text
 ├─ docs
 │  ├─ .vuepress
 │  │  └─ config.js
@@ -165,7 +165,7 @@ The `docs/.vuepress` directory, i.e. the `.vuepress` directory in the source dir
 
 ::: details Example `.gitignore` file
 
-```
+```ignore
 # VuePress default temp directory
 .vuepress/.temp
 # VuePress default cache directory

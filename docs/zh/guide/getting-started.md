@@ -151,7 +151,7 @@ echo '# Hello VuePress' > docs/README.md
 
 创建完成后，你项目的目录结构应该是这样的：
 
-```
+```text
 ├─ docs
 │  ├─ .vuepress
 │  │  └─ config.js
@@ -165,7 +165,7 @@ echo '# Hello VuePress' > docs/README.md
 
 ::: details 示例 `.gitignore` 文件
 
-```
+```ignore
 # VuePress 默认临时文件目录
 .vuepress/.temp
 # VuePress 默认缓存目录

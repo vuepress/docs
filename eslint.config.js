@@ -13,4 +13,9 @@ export default vuepress({
       'no-useless-assignment': 'off', // TODO: false positive in vue sfc
     },
   },
+  markdown: {
+    overridesCodeBlocks: {
+      'markdown/no-missing-label-refs': 'off',
+    },
+  },
 })

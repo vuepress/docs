@@ -7,5 +7,4 @@ export default defineConfig({
     'vuepress': 'next',
   },
   recursive: true,
-  write: true,
 })

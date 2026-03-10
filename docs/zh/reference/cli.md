@@ -2,7 +2,7 @@
 
 执行 `vuepress --help` 来获取下列帮助信息：
 
-```
+```text
 Usage:
   $ vuepress <command> [options]
 
@@ -31,7 +31,7 @@ VuePress 使用了 [debug](https://www.npmjs.com/package/debug) 模块。
 
 启动一个开发服务器，在本地开发你的 VuePress 站点。
 
-```
+```text
 Usage:
   $ vuepress dev [sourceDir]
 
@@ -58,7 +58,7 @@ Options:
 
 将你的 VuePress 站点构建成静态文件，以便你进行后续[部署](../guide/deployment.md)。
 
-```
+```text
 Usage:
   $ vuepress build [sourceDir]
 

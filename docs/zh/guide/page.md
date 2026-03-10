@@ -8,7 +8,7 @@ VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件
 
 假设这是你的 Markdown 文件所处的目录结构：
 
-```
+```text
 └─ docs
    ├─ guide
    │  ├─ getting-started.md

@@ -46,7 +46,7 @@ Check out the [Config Reference](../reference/config.md) for a full list of VueP
 
 In most cases, the config file is sufficient to configure your VuePress site. However, sometimes users may want to add some client-side code directly. To help with this, VuePress also supports a client config file:
 
-```
+```text
 ├─ docs
 │  ├─ .vuepress
 │  │  ├─ client.js   <--- client config file

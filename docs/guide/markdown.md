@@ -19,7 +19,7 @@ Embedded by markdown-it:
 
 ### Header Anchors
 
-You might have noticed that, a `#` anchor is displayed when you hover the mouse on the headers of each section. By clicking the `#` anchor, you can jump to the section directly.
+You might have noticed that, a `¶` anchor is displayed when you hover the mouse on the headers of each section. This means you can click the header to jump to the corresponding section directly.
 
 ::: tip
 This header anchors extension is supported by [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor).

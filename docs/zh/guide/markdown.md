@@ -19,7 +19,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 ### 标题锚点
 
-你可能已经注意到，当你把鼠标放在各个章节的标题上时，会显示出一个 `#` 锚点。点击这个 `#` 锚点，可以直接跳转到对应章节。
+你可能已经注意到，当你把鼠标放在各个章节的标题上时，会显示出一个 `¶` 锚点。这意味着点击标题就可以直接跳转到对应章节。
 
 ::: tip
 标题锚点扩展由 [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) 支持。

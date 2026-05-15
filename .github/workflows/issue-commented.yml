@@ -5,6 +5,9 @@ on:
     types:
       - created
 
+permissions:
+  issues: write
+
 jobs:
   issue-commented:
     name: remove stale on commented

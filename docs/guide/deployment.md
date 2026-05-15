@@ -44,24 +44,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           # fetch all commits to get last updated time or other git log info
           fetch-depth: 0
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           # choose node.js version to use
-          node-version: 22
+          node-version: 24
           # cache deps for pnpm
           cache: pnpm
 
       - name: Install deps
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
 
       # run build script
       - name: Build VuePress site
@@ -101,7 +101,7 @@ Please refer to [GitHub Pages official guide](https://pages.github.com/) for mor
 
 ```yaml
 # choose a docker image to use
-image: node:18-buster
+image: node:24-buster
 
 pages:
   # trigger deployment on every push to main branch
@@ -209,7 +209,7 @@ See [Edgio Documentation > Framework Guides > VuePress](https://docs.edg.io/guid
    - **Publish directory:** `docs/.vuepress/dist`
 
 2. Set [Environment variables](https://docs.netlify.com/configure-builds/environment-variables) to choose node version:
-   - `NODE_VERSION`: 20
+   - `NODE_VERSION`: 24
 
 3. Hit the deploy button.
 

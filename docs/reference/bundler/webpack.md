@@ -1,3 +1,7 @@
+---
+icon: mdi:webpack
+---
+
 # Webpack
 
 <NpmBadge package="@vuepress/bundler-webpack" />

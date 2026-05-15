@@ -1,3 +1,7 @@
+---
+icon: fa6-brands:chrome
+---
+
 # Client API
 
 Client API can be imported from `vuepress/client`.

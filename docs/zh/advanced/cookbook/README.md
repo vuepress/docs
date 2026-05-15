@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:circle-info
+---
+
 # 介绍
 
 ## Cookbook 的目的是什么？

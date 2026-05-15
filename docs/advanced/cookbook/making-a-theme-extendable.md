@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:clone
+---
+
 # Making a Theme Extendable
 
 Sometimes users might want make some minor changes to a theme, but they don't want to fork and modify the entire project.

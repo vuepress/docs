@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:file
+---
+
 # 页面
 
 VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件都是一个单独的页面。

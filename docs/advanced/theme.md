@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:palette
+---
+
 # Writing a Theme
 
 ::: tip

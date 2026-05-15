@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:lightbulb
+---
+
 # Getting Started
 
 ::: warning

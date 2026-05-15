@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:puzzle-piece
+---
+
 # 内置组件
 
 ## AutoLink

@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:rocket
+---
+
 # Deployment
 
 The following guides are based on some shared assumptions:

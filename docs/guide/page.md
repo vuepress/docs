@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:file
+---
+
 # Page
 
 VuePress is markdown-centered. Each markdown file inside your project is a standalone page.

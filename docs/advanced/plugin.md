@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:plug
+---
+
 # Writing a Plugin
 
 ::: tip

@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:lightbulb
+---
+
 # 快速上手
 
 ::: warning

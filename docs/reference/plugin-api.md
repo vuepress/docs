@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:plug
+---
+
 # Plugin API
 
 You could check out [Node API](./node-api.md) for how to use the VuePress app instance in plugin hooks.

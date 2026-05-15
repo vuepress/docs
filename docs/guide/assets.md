@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:photo-film
+---
+
 # Assets
 
 ## Relative URLs

@@ -1,3 +1,7 @@
+---
+icon: fa6-brands:vuejs
+---
+
 # Markdown and Vue SFC
 
 Each Markdown file is first compiled into HTML, and then converted to a Vue SFC. In other words, you can write a Markdown file like a Vue SFC:

@@ -1,3 +1,7 @@
+---
+icon: fa6-solid:circle-plus
+---
+
 # 添加额外页面
 
 有时你可能希望在不创建 Markdown 文件的情况下添加一些额外的页面。

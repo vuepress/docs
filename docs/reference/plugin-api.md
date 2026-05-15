@@ -360,3 +360,15 @@ export default {
 - Details:
 
   This hook will be invoked once VuePress app has generated static files.
+
+### onPageUpdated
+
+- Type: `(type: 'create' | 'delete' | 'update', page: Page, oldPage: Page | null) => void | Promise<void>`
+
+- Details:
+
+  This hook will be invoked once a page has been created, deleted or updated.
+
+  `type` indicates the type of page change: `'create'` means the page is created, `'delete'` means the page is deleted, `'update'` means the page is updated.
+
+  `oldPage` is the old page before update or delete, it only exists when `type` is `'update'` or `'delete'`.

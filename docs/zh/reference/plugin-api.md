@@ -360,3 +360,15 @@ export default {
 - 详情：
 
   该 Hook 会在 VuePress App 完成静态文件生成后被立即调用。
+
+### onPageUpdated
+
+- 类型： `(type: 'create' | 'delete' | 'update', page: Page, oldPage: Page | null) => void | Promise<void>`
+
+- 详情：
+
+  该 Hook 会在页面被创建、删除或更新后被立即调用。
+
+  `type` 表示页面的变更类型：`'create'` 表示页面被创建，`'delete'` 表示页面被删除，`'update'` 表示页面被更新。
+
+  `oldPage` 表示更新或删除前的旧页面，仅在 `type` 为 `'update'` 或 `'delete'` 时存在。

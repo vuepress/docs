@@ -253,6 +253,18 @@ Since VuePress will load temp files during dev and build, the temp directory sho
 - Also see:
   - [Frontmatter > permalinkPattern](./frontmatter.md#permalinkpattern)
 
+### userStyle
+
+- Type: `string | null`
+
+- Default: `null`
+
+- Details:
+
+  Specify the path of a custom style file, which will be injected at the bottom of the client.
+
+  Themes can also set this option, but user config takes precedence over theme config.
+
 ## Dev Config
 
 ### host
@@ -397,6 +409,32 @@ const defaultOptions = {
 ::: danger
 You should not configure it unless you understand what it is for.
 :::
+
+#### markdown.assets.aliasSupport
+
+- Type: `boolean | '@-prefix'`
+
+- Default: `true`
+
+- Details:
+
+  Use aliases for non-strict relative paths.
+
+  This is a path that does not start with `./` or `../` or `/` or `<protocol header>`:
+  `<img src="path1/path2.png" />`
+  - If the option is `true`. `path1` is regarded as an alias.
+  - If the option is `false`. It is regarded as a relative path.
+  - If the option is `"@-prefix"`. If the path starts with `@`, `path1` is regarded as an alias; Otherwise, it is regarded as a relative path.
+
+#### markdown.assets.absolutePathPrependBase
+
+- Type: `boolean`
+
+- Default: `true`
+
+- Details:
+
+  Whether to prepend [base](#base) to absolute path.
 
 ### markdown.component
 

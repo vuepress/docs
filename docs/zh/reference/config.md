@@ -252,6 +252,18 @@ VuePress 在开发和构建时会加载临时文件，因此临时文件目录�
 - 参考：
   - [Frontmatter > permalinkPattern](./frontmatter.md#permalinkpattern)
 
+### userStyle
+
+- 类型： `string | null`
+
+- 默认值： `null`
+
+- 详情：
+
+  指定自定义样式文件的路径，该样式文件将被注入到客户端底部。
+
+  主题也可以设置该选项，但用户配置的优先级高于主题配置。
+
 ## Dev 配置项
 
 ### host
@@ -396,6 +408,32 @@ const defaultOptions = {
 ::: danger
 除非你了解它的用途，否则你不应该设置该配置项。
 :::
+
+#### markdown.assets.aliasSupport
+
+- 类型： `boolean | '@-prefix'`
+
+- 默认值： `true`
+
+- 详情：
+
+  对非严格相对路径使用别名。
+
+  非严格相对路径是指不以 `./`、`../`、`/` 或 `<protocol header>` 开头的路径：
+  `<img src="path1/path2.png" />`
+  - 如果设置为 `true`，`path1` 会被视为别名。
+  - 如果设置为 `false`，它会视为相对路径。
+  - 如果设置为 `"@-prefix"`，当路径以 `@` 开头时，`path1` 会被视为别名；否则视为相对路径。
+
+#### markdown.assets.absolutePathPrependBase
+
+- 类型： `boolean`
+
+- 默认值： `true`
+
+- 详情：
+
+  是否将绝对路径添加 [base](#base) 前缀。
 
 ### markdown.component
 

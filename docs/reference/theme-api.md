@@ -101,3 +101,18 @@ export default {
 
 - Also see:
   - [Config > templateDev](./config.md#templatedev)
+
+### userStyle
+
+- Type: `string | null`
+
+- Default: `null`
+
+- Details:
+
+  Specify the path of a custom style file, which will be injected at the bottom of the client.
+
+  It would override the default value, and could be overridden by user config.
+
+- Also see:
+  - [Config > userStyle](./config.md#userstyle)

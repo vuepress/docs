@@ -1,0 +1,1 @@
+var e=`/images/guide/vuepress-architecture-overview.png`,t=`/images/guide/vuepress-core-process.png`;export{e as n,t};

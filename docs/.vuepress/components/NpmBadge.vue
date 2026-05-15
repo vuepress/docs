@@ -17,9 +17,7 @@ const badgeLabel = computed(() => {
 })
 const badgeImg = computed(
   () =>
-    `https://badgen.net/npm/v/${pkg}/${
-      distTag
-    }?label=${encodeURIComponent(badgeLabel.value)}`,
+    `https://badgen.net/npm/v/${pkg}/${distTag}?label=${encodeURIComponent(badgeLabel.value)}`,
 )
 </script>
 

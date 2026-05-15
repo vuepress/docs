@@ -1,5 +1,6 @@
 import { createRequire } from 'node:module'
 import process from 'node:process'
+
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
@@ -9,6 +10,7 @@ import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 import { getDirname, path } from 'vuepress/utils'
+
 import {
   head,
   navbarEn,

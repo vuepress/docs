@@ -60,7 +60,11 @@ export const sidebarEn: SidebarOptions = {
     },
     {
       text: 'Bundlers',
-      children: ['/reference/bundler/vite.md', '/reference/bundler/webpack.md'],
+      children: [
+        '/reference/bundler/vite.md',
+        '/reference/bundler/webpack.md',
+        '/reference/bundler/rspack.md',
+      ],
     },
     {
       text: 'Ecosystem',

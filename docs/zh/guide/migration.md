@@ -8,7 +8,7 @@ VuePress v2 的一些主要改动和优化：
 
 - VuePress v2 现在使用 Vue 3 ，因此你要保证你的组件和其他客户端文件是适用于 Vue 3 的。
 - VuePress v2 是使用 TypeScript 开发的，因此它现在提供了更好的类型支持。我们强烈推荐你使用 TypeScript 来开发插件和主题。 VuePress 配置文件也同样支持 TypeScript ，你可以直接使用 `.vuepress/config.ts` 。
-- VuePress v2 支持使用 Webpack 和 Vite 作为打包工具。你可以在配置文件中选择你喜欢的打包工具来使用。
+- VuePress v2 支持使用 Webpack 、Vite 和 Rspack 作为打包工具。你可以在配置文件中选择你喜欢的打包工具来使用。
 - VuePress v2 现在是纯 ESM 包， CommonJS 格式的配置文件不再被支持。
 
 VuePress v2 的核心思想和流程是和 v1 一致的，但 v2 API 经过了重新设计，更加标准化。因此在将现有的 v1 项目迁移至 v2 时，你很可能会遇到一些 Breaking Changes 。本指南将帮助你将 v1 的站点 / 插件 / 主题迁移至 v2 。
@@ -66,6 +66,21 @@ import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   bundler: webpackBundler(),
+})
+```
+
+或者使用 Rspack 打包工具：
+
+```bash
+npm i -D @vuepress/bundler-rspack@next
+```
+
+```ts title=".vuepress/config.ts"
+import { rspackBundler } from '@vuepress/bundler-rspack'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  bundler: rspackBundler(),
 })
 ```
 
@@ -208,6 +223,8 @@ npm i -D @vuepress/theme-default@next
 ```
 
 请参考 [指南 > Bundler](./bundler.md) 。
+
+同样的方法也适用于 `@vuepress/bundler-rspack` ，它支持相同的配置项，对应使用 `configureRspack` 和 `chainRspack`。由于 Rspack 几乎完全兼容 Webpack 且提供了显著更好的性能，我们建议在迁移过程中优先切换到 Rspack 而非继续使用 Webpack。
 
 ### Frontmatter 变更
 

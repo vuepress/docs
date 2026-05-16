@@ -189,6 +189,17 @@ export default {
         if (tag === 'my-custom-element') return true
       }
     }
+
+    // extends options of @vuepress/bundler-rspack
+    if (app.options.bundler.name === '@vuepress/bundler-rspack') {
+      bundlerOptions.vue ??= {}
+      bundlerOptions.vue.compilerOptions ??= {}
+      const isCustomElement = bundlerOptions.vue.compilerOptions.isCustomElement
+      bundlerOptions.vue.compilerOptions.isCustomElement = (tag) => {
+        if (isCustomElement?.(tag)) return true
+        if (tag === 'my-custom-element') return true
+      }
+    }
   },
 }
 ```
@@ -196,6 +207,7 @@ export default {
 - Also see:
   - [Bundlers > Vite](./bundler/vite.md)
   - [Bundlers > Webpack](./bundler/webpack.md)
+  - [Bundlers > Rspack](./bundler/rspack.md)
 
 ### extendsMarkdownOptions
 

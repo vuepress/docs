@@ -165,6 +165,7 @@ export default {
   - [指南 > 打包工具](../guide/bundler.md)
   - [打包工具 > Vite](./bundler/vite.md)
   - [打包工具 > Webpack](./bundler/webpack.md)
+  - [打包工具 > Rspack](./bundler/rspack.md)
 
 ## 通用配置项
 

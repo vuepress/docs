@@ -234,6 +234,28 @@ heroku login
 
 <!-- 下列平台是中文文档特有的，放在最下方 -->
 
+## DeployHQ
+
+[DeployHQ](https://www.deployhq.com) 是一个基于 Git 的部署平台，可以构建你的 VuePress 站点，并通过 SSH/SFTP/FTP 将构建产物传输到你自己的服务器，也支持 S3、Azure Blob 或 Rackspace Cloud Files。它支持构建流水线、原子发布、一键回滚，以及映射到仓库不同分支的多环境（例如 staging 和 production）。
+
+1. [注册 DeployHQ 账号](https://www.deployhq.com/signup) 并创建一个新项目，关联到包含你 VuePress 站点的 GitHub、GitLab 或 Bitbucket 仓库。
+
+2. 添加构建流水线命令，让 DeployHQ 在传输前构建你的站点：
+
+   ```bash
+   pnpm install --frozen-lockfile && pnpm docs:build
+   ```
+
+3. 将构建输出目录设置为 `docs/.vuepress/dist`。DeployHQ 只会将该目录中的文件传输到你的服务器。
+
+4. 在项目设置中添加一个服务器（SSH/SFTP/FTP、S3、Azure Blob 或 Rackspace Cloud Files），映射到你希望部署的分支（例如生产环境使用 `main`），并将部署路径设置为你 Web 服务器的文档根目录。
+
+5. 手动触发一次部署，或启用自动部署，让每次推送到映射分支都会自动构建并发布。
+
+::: tip
+更多详细信息请参阅 [DeployHQ 的 VuePress 部署指南](https://www.deployhq.com/guides/vuepress)。
+:::
+
 ## 云开发 CloudBase
 
 [云开发 CloudBase](https://cloudbase.net/?site=vuepress) 是一个云原生一体化的 Serverless 云平台，支持静态网站、容器等多种托管能力，并提供简便的部署工具 [CloudBase Framework](https://cloudbase.net/framework.html?site=vuepress) 来一键部署应用。

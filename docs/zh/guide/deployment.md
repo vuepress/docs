@@ -232,8 +232,6 @@ heroku login
 
 请查看 [Deploy Your VuePress Site With CloudRay](https://cloudray.io/articles/how-to-deploy-your-vuepress-site) 。
 
-<!-- 下列平台是中文文档特有的，放在最下方 -->
-
 ## DeployHQ
 
 [DeployHQ](https://www.deployhq.com) 是一个基于 Git 的部署平台，可以构建你的 VuePress 站点，并通过 SSH/SFTP/FTP 将构建产物传输到你自己的服务器，也支持 S3、Azure Blob 或 Rackspace Cloud Files。它支持构建流水线、原子发布、一键回滚，以及映射到仓库不同分支的多环境（例如 staging 和 production）。
@@ -255,6 +253,8 @@ heroku login
 ::: tip
 更多详细信息请参阅 [DeployHQ 的 VuePress 部署指南](https://www.deployhq.com/guides/vuepress)。
 :::
+
+<!-- 下列平台是中文文档特有的，放在最下方 -->
 
 ## 云开发 CloudBase
 

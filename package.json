@@ -21,11 +21,11 @@
   "dependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.30",
     "@vuepress/bundler-webpack": "2.0.0-rc.30",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.130",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.131",
     "@vuepress/plugin-google-analytics": "2.0.0-rc.130",
     "@vuepress/plugin-register-components": "2.0.0-rc.130",
-    "@vuepress/plugin-shiki": "2.0.0-rc.130",
-    "@vuepress/theme-default": "2.0.0-rc.130",
+    "@vuepress/plugin-shiki": "2.0.0-rc.131",
+    "@vuepress/theme-default": "2.0.0-rc.131",
     "http-server": "^14.1.1",
     "sass-embedded": "^1.99.0",
     "sass-loader": "^16.0.8",
@@ -43,7 +43,6 @@
     "nano-staged": "^1.0.2",
     "oxfmt": "^0.49.0",
     "rimraf": "^6.1.3",
-    "sort-package-json": "^3.6.1",
     "taze": "^19.12.0",
     "tsconfig-vuepress": "^7.0.0",
     "typescript": "^6.0.3",
@@ -61,7 +60,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "11.1.2",
+      "version": "11.9.0",
       "onFail": "download"
     },
     "runtime": {

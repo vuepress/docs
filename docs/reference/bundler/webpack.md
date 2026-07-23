@@ -26,6 +26,24 @@ export default defineUserConfig({
 })
 ```
 
+## Exports
+
+### webpackBundler
+
+- Type: `(options?: WebpackBundlerOptions) => Bundler`
+
+- Details:
+
+  Create a webpack bundler instance.
+
+### webpackMergeConfig
+
+- Type: `(configA: WebpackConfiguration, configB: WebpackConfiguration) => WebpackConfiguration`
+
+- Details:
+
+  Merge two webpack config objects, provided by [webpack-merge](https://github.com/survivejs/webpack-merge).
+
 ## Options
 
 ### configureWebpack
@@ -36,7 +54,7 @@ export default defineUserConfig({
 
   Edit the internal webpack config.
 
-  This option accepts a function that will receive a webpack config object as the 1st argument, an `isServer` flag as the 2nd argument and an `isBuild` flag as the 3rd argument. You can either mutate the config directly, or return an object to be merged by [webpack-merge](https://github.com/survivejs/webpack-merge).
+  This option accepts a function that will receive a webpack config object as the 1st argument, an `isServer` flag as the 2nd argument and an `isBuild` flag as the 3rd argument. You can either mutate the config directly, or return an object to replace the webpack config object.
 
 ### chainWebpack
 
@@ -44,7 +62,7 @@ export default defineUserConfig({
 
 - Details:
 
-  Edit the internal webpack config with [webpack-chain](https://github.com/mozilla-neutrino/webpack-chain).
+  Edit the internal webpack config with [webpack-v5-chain](https://github.com/Mister-Hope/webpack-v5-chain).
 
   This option accepts a function that will receive a `Config` instance that provided by `webpack-chain` as the 1st argument an `isServer` flag as the 2nd argument and an `isBuild` flag as the 3rd argument.
 

@@ -1,6 +1,6 @@
 # Bundler
 
-VuePress supports using [Webpack](https://webpack.js.org/) or [Vite](https://vite.dev/) to dev and build sites. You can choose which bundler to use according to your preference, and no extra configuration is required.
+VuePress supports using [Vite](https://vite.dev/), [Webpack](https://webpack.js.org/), or [Rspack](https://rspack.dev/) to dev and build sites. You can choose which bundler to use according to your preference, and no extra configuration is required.
 
 ## Install a Bundler
 
@@ -15,6 +15,8 @@ When installing the [vuepress](https://www.npmjs.com/package/vuepress) package, 
 pnpm add -D vuepress@next @vuepress/bundler-vite@next
 # install webpack bundler
 pnpm add -D vuepress@next @vuepress/bundler-webpack@next
+# install rspack bundler
+pnpm add -D vuepress@next @vuepress/bundler-rspack@next
 ```
 
 @tab yarn
@@ -24,6 +26,8 @@ pnpm add -D vuepress@next @vuepress/bundler-webpack@next
 yarn add -D vuepress@next @vuepress/bundler-vite@next
 # install webpack bundler
 yarn add -D vuepress@next @vuepress/bundler-webpack@next
+# install rspack bundler
+yarn add -D vuepress@next @vuepress/bundler-rspack@next
 ```
 
 @tab npm
@@ -33,6 +37,8 @@ yarn add -D vuepress@next @vuepress/bundler-webpack@next
 npm install -D vuepress@next @vuepress/bundler-vite@next
 # install webpack bundler
 npm install -D vuepress@next @vuepress/bundler-webpack@next
+# install rspack bundler
+npm install -D vuepress@next @vuepress/bundler-rspack@next
 ```
 
 :::
@@ -46,10 +52,12 @@ You can use a bundler via the [bundler](../reference/config.md#bundler) option:
 ```ts
 import { viteBundler } from '@vuepress/bundler-vite'
 // import { webpackBundler } from '@vuepress/bundler-webpack'
+// import { rspackBundler } from '@vuepress/bundler-rspack'
 
 export default {
   bundler: viteBundler(),
   // bundler: webpackBundler(),
+  // bundler: rspackBundler(),
 }
 ```
 
@@ -57,3 +65,4 @@ When you need to customize the bundler, you can set the corresponding options:
 
 - [Bundlers > Vite](../reference/bundler/vite.md)
 - [Bundlers > Webpack](../reference/bundler/webpack.md)
+- [Bundlers > Rspack](../reference/bundler/rspack.md)

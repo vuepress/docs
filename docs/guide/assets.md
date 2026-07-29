@@ -65,7 +65,7 @@ In most cases, you don't need to worry about the reference path of those public 
 ```
 
 ::: tip
-When using [webpack bundler](../reference/bundler/webpack.md), you need to set [markdown.assets.absolutePathPrependBase](../reference/config.md#markdown-assets) to `true` to automatically prepend base to markdown images.
+When using [webpack bundler](../reference/bundler/webpack.md) or [rspack bundler](../reference/bundler/rspack.md), you need to set [markdown.assets.absolutePathPrependBase](../reference/config.md#markdown-assets) to `true` to automatically prepend base to markdown images.
 :::
 
 However, sometimes you may have some dynamical links referencing public files, especially when you are authoring a custom theme. In such case, the `base` could not be handled automatically. To help with that, VuePress provides a [withBase](../reference/client-api.md#withbase) helper to prepend `base` for you:

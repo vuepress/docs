@@ -503,6 +503,7 @@ If you want to use those tags anyway, try either of the following workarounds:
 - Using [compilerOptions.isCustomElement](https://vuejs.org/api/application.html#app-config-compileroptions) to tell Vue template compiler not try to resolve them as components.
   - For `@vuepress/bundler-webpack`, set [vue.compilerOptions](../reference/bundler/webpack.md#vue)
   - For `@vuepress/bundler-vite`, set [vuePluginOptions.template.compilerOptions](../reference/bundler/vite.md#vuepluginoptions)
+  - For `@vuepress/bundler-rspack`, set [vue.compilerOptions](../reference/bundler/rspack.md#vue)
 
 [prismjs]: https://ecosystem.vuejs.press/plugins/markdown/prismjs.html
 [shiki]: https://ecosystem.vuejs.press/plugins/markdown/shiki.html

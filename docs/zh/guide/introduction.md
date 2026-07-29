@@ -18,8 +18,8 @@ VuePress 诞生的初衷是为了支持 Vue.js 及其子项目的文档需求，
 
 VitePress 可以看作是 VuePress 的孪生兄弟。它们最初都是由 Vue.js 的作者 Evan You 创建。如今，VitePress 由 Vue.js 团队维护，而 VuePress 则由 VuePress 团队维护。
 
-两个项目的大致历史是这样的：VuePress v0 和 v1 是基于 Webpack 构建的。后来 Evan 创建了 Vite ，他基于 Vite 开发了一个新的静态站点生成器 —— VitePress —— 复用了 VuePress 的一些理念和代码。与此同时，社区 Fork 了 VuePress v2 分支，继续推动其发展，并为其增加了对 Webpack 和 Vite 的支持。
+两个项目的大致历史是这样的：VuePress v0 和 v1 是基于 Webpack 构建的。后来 Evan 创建了 Vite ，他基于 Vite 开发了一个新的静态站点生成器 —— VitePress —— 复用了 VuePress 的一些理念和代码。与此同时，社区 Fork 了 VuePress v2 分支，继续推动其发展，并为其增加了对 Webpack、Vite 和 Rspack 的支持。
 
 我们曾经考虑过将这两个项目合并到 VuePress 这一名称下。然而，随着时间的推移，它们的目标和技术路线逐渐分化。因此，Vue.js 团队选择专注于 VitePress，而社区 —— 也就是现在的 VuePress 团队 —— 接手了 VuePress，并持续推动其发展。
 
-作为用户，你可以根据需求自由选择使用哪个项目。VitePress 与 Vite 深度集成。而 VuePress 则更开放，可以支持不同的打包工具：目前支持 Webpack 和 Vite，并且同样可以支持其他打包工具。此外，VuePress 拥有官方的 [生态系统](https://ecosystem.vuejs.press/) 项目，提供了大量的插件，为你构建功能丰富的网站提供了便利。
+作为用户，你可以根据需求自由选择使用哪个项目。VitePress 与 Vite 深度集成。而 VuePress 则更开放，可以支持不同的打包工具：目前支持 Vite、Webpack 和 Rspack，并且同样可以支持其他打包工具。此外，VuePress 拥有官方的 [生态系统](https://ecosystem.vuejs.press/) 项目，提供了大量的插件，为你构建功能丰富的网站提供了便利。

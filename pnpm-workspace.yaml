@@ -1,0 +1,9 @@
+configDependencies:
+  pacquet: ^0.11.12
+
+enableGlobalVirtualStore: true
+
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  unrs-resolver: true

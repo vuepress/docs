@@ -12,7 +12,7 @@ You can try VuePress directly in your browser on [StackBlitz](https://stackblitz
 
 ### Prerequisites
 
-- [Node.js v20.9.0+](https://nodejs.org/)
+- [Node.js v22.18.0+](https://nodejs.org/)
 - Package manager like [pnpm](https://pnpm.io), [yarn](https://classic.yarnpkg.com/en/), [npm](https://www.npmjs.com), etc.
 
 ::: tip
@@ -151,7 +151,7 @@ echo '# Hello VuePress' > docs/README.md
 
 After the setup, the minimal structure of your project should look like this:
 
-```
+```text
 ├─ docs
 │  ├─ .vuepress
 │  │  └─ config.js
@@ -165,7 +165,7 @@ The `docs/.vuepress` directory, i.e. the `.vuepress` directory in the source dir
 
 ::: details Example `.gitignore` file
 
-```
+```ignore
 # VuePress default temp directory
 .vuepress/.temp
 # VuePress default cache directory

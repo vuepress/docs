@@ -8,7 +8,7 @@ By default, the route path of a page is determined by the relative path of your 
 
 Assuming this is the directory structure of your markdown files:
 
-```
+```text
 └─ docs
    ├─ guide
    │  ├─ getting-started.md
@@ -47,7 +47,7 @@ description: Description of this page
 ---
 ```
 
-You must have noticed that those fields are similar with the [Site Config](./configuration.md#site-config) in the [Config File](./configuration.md#config-file). You can override `lang`, `title`, `description`, etc., of current page via frontmatter. So you can take frontmatter as page scope config.
+You must have noticed that those fields are similar with the [Site Config](./configuration.md#site-config) in the [Config File](./configuration.md#config-file). You can override `lang`, `title`, `description`, etc. of current page via frontmatter. So you can take frontmatter as page scope config.
 
 Also, VuePress has built-in support for some frontmatter fields, and your theme may have its own special frontmatter, too.
 

@@ -26,6 +26,24 @@ export default defineUserConfig({
 })
 ```
 
+## Exports
+
+### viteBundler
+
+- Type: `(options?: ViteBundlerOptions) => Bundler`
+
+- Details:
+
+  Create a vite bundler instance.
+
+### viteMergeConfig
+
+- Type: `(configA: ViteUserConfig, configB: ViteUserConfig) => ViteUserConfig`
+
+- Details:
+
+  Merge two vite config objects, provided by vite's [mergeConfig](https://vite.dev/guide/api-javascript#mergeconfig) JavaScript API.
+
 ## Options
 
 ### viteOptions
@@ -45,3 +63,13 @@ export default defineUserConfig({
 
 - Also see:
   - [Vite > Plugins > Official Plugins](https://vite.dev/plugins/#vitejs-plugin-vue)
+
+### configureVite
+
+- Type: `(config: ViteUserConfig, isServer: boolean, isBuild: boolean) => ViteUserConfig | void`
+
+- Details:
+
+  Edit the internal vite config.
+
+  This option accepts a function that will receive a vite config object as the 1st argument, an `isServer` flag as the 2nd argument and an `isBuild` flag as the 3rd argument. You can either mutate the config directly, or return an object to replace the vite config object.

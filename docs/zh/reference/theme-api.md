@@ -101,3 +101,18 @@ export default {
 
 - 参考：
   - [配置 > templateDev](./config.md#templatedev)
+
+### userStyle
+
+- 类型： `string | null`
+
+- 默认值： `null`
+
+- 详情：
+
+  指定自定义样式文件的路径，该样式文件将被注入到客户端底部。
+
+  它会覆盖默认值，同时也会被用户配置覆盖。
+
+- 参考：
+  - [配置 > userStyle](./config.md#userstyle)

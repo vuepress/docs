@@ -1,5 +1,6 @@
 import { createRequire } from 'node:module'
 import process from 'node:process'
+
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
@@ -9,6 +10,7 @@ import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 import { getDirname, path } from 'vuepress/utils'
+
 import {
   head,
   navbarEn,
@@ -152,10 +154,10 @@ export default defineUserConfig({
             },
             modal: {
               searchBox: {
-                resetButtonTitle: '清除查询条件',
-                resetButtonAriaLabel: '清除查询条件',
-                cancelButtonText: '取消',
-                cancelButtonAriaLabel: '取消',
+                clearButtonTitle: '清除查询条件',
+                clearButtonAriaLabel: '清除查询条件',
+                closeButtonText: '取消',
+                closeButtonAriaLabel: '取消',
               },
               startScreen: {
                 recentSearchesTitle: '搜索历史',
@@ -173,7 +175,7 @@ export default defineUserConfig({
                 selectText: '选择',
                 navigateText: '切换',
                 closeText: '关闭',
-                searchByText: '搜索提供者',
+                poweredByText: '搜索提供者',
               },
               noResultsScreen: {
                 noResultsText: '无法找到相关结果',

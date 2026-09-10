@@ -2,7 +2,7 @@
 
 Run `vuepress --help` to get following help messages:
 
-```
+```text
 Usage:
   $ vuepress <command> [options]
 
@@ -31,7 +31,7 @@ Set environment variable `DEBUG=vuepress*` to enable debug logs.
 
 Start a development server to develop your VuePress site locally.
 
-```
+```text
 Usage:
   $ vuepress dev [sourceDir]
 
@@ -58,7 +58,7 @@ Options set by CLI will override those options with the same name in your config
 
 Build your VuePress site to static files, which are ready for [deployment](../guide/deployment.md).
 
-```
+```text
 Usage:
   $ vuepress build [sourceDir]
 

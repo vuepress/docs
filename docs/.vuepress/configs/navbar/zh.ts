@@ -1,4 +1,5 @@
 import type { NavbarOptions } from '@vuepress/theme-default'
+
 import { VERSION } from '../meta.js'
 
 export const navbarZh: NavbarOptions = [

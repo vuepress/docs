@@ -260,7 +260,7 @@ See [Frontmatter > permalinkPattern](../reference/frontmatter.md#permalinkpatter
 
 The stylus palette system of VuePress v1 (i.e. `styles/palette.styl` and `styles/index.styl`) is no longer provided by VuePress Core.
 
-The palette system is extracted to [@vuepress/plugin-palette](https://ecosystem.vuejs.press/plugins/palette.html).
+The palette system is extracted to [@vuepress/plugin-palette](https://ecosystem.vuejs.press/plugins/development/palette.html).
 
 Theme authors can use their own way to allow users to customize styles, and not be limited with stylus.
 
@@ -278,7 +278,7 @@ See [Advanced > Cookbook > Usage of Client Config](../advanced/cookbook/usage-of
 
 Files in this directory will not be registered as Vue components automatically.
 
-You need to use [@vuepress/plugin-register-components](https://ecosystem.vuejs.press/plugins/register-components.html), or register your components manually in `.vuepress/client.{js,ts}`.
+You need to use [@vuepress/plugin-register-components](https://ecosystem.vuejs.press/plugins/tools/register-components.html), or register your components manually in `.vuepress/client.{js,ts}`.
 
 #### .vuepress/theme/
 
@@ -408,12 +408,12 @@ Some major breaking changes:
 
 - There is no **conventional theme directory structure** anymore.
   - The file `theme/enhanceApp.js` will not be used as client app enhance file implicitly. You need to specify it explicitly in `clientConfigFile` hook.
-  - Files in `theme/global-components/` directory will not be registered as Vue components automatically. You need to use [@vuepress/plugin-register-components](https://ecosystem.vuejs.press/plugins/register-components.html), or register components manually in `clientConfigFile`.
+  - Files in `theme/global-components/` directory will not be registered as Vue components automatically. You need to use [@vuepress/plugin-register-components](https://ecosystem.vuejs.press/plugins/tools/register-components.html), or register components manually in `clientConfigFile`.
   - Files in `theme/layouts/` directory will not be registered as layout components automatically. You need to specify it explicitly in `layouts` option in `clientConfigFile`.
   - Files in `theme/templates/` directory will not be used as dev / ssr template automatically. You need to specify theme explicitly in `templateBuild` and `templateDev` option.
   - Always provide a valid js entry file, and do not use `"main": "layouts/Layout.vue"` as the theme entry anymore.
-- `themeConfig` is removed from user config and site data. To access the `themeConfig` as you would via `this.$site.themeConfig` in v1, we now recommend using the [@vuepress/plugin-theme-data](https://ecosystem.vuejs.press/plugins/theme-data.html) plugin and its `useThemeData` composition API.
-- Stylus is no longer the default CSS pre-processor, and the stylus palette system is not embedded. If you still want to use similar palette system as v1, [@vuepress/plugin-palette](https://ecosystem.vuejs.press/plugins/palette.html) may help.
+- `themeConfig` is removed from user config and site data. To access the `themeConfig` as you would via `this.$site.themeConfig` in v1, we now recommend using the [@vuepress/plugin-theme-data](https://ecosystem.vuejs.press/plugins/development/theme-data.html) plugin and its `useThemeData` composition API.
+- Stylus is no longer the default CSS pre-processor, and the stylus palette system is not embedded. If you still want to use similar palette system as v1, [@vuepress/plugin-palette](https://ecosystem.vuejs.press/plugins/development/palette.html) may help.
 - Markdown code blocks syntax highlighting by Prism.js is not embedded by default. You can use either [@vuepress/plugin-prismjs][prismjs] or [@vuepress/plugin-shiki][shiki], or implement syntax highlighting in your own way.
 - For scalability concerns, `this.$site.pages` is not available any more. See [Advanced > Cookbook > Resolving Routes](../advanced/cookbook/resolving-routes.md) for how to retrieve pages data in v2.
 
@@ -439,5 +439,5 @@ You can refer to [Default Theme > Extending](https://ecosystem.vuejs.press/theme
 
 The `@theme` and `@parent-theme` aliases are removed by default, but you can still make a extendable theme with similar approach, see [Advanced > Cookbook > Making a Theme Extendable](../advanced/cookbook/making-a-theme-extendable.md).
 
-[prismjs]: https://ecosystem.vuejs.press/plugins/prismjs.html
-[shiki]: https://ecosystem.vuejs.press/plugins/shiki.html
+[prismjs]: https://ecosystem.vuejs.press/plugins/markdown/prismjs.html
+[shiki]: https://ecosystem.vuejs.press/plugins/markdown/shiki.html

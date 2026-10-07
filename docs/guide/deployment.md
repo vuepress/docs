@@ -231,3 +231,25 @@ You should disable Pretty URLs in the "Site Configuration" → "Build & Deploy" 
 ## CloudRay
 
 See [Deploy Your VuePress Site With CloudRay](https://cloudray.io/articles/how-to-deploy-your-vuepress-site)
+
+## DeployHQ
+
+[DeployHQ](https://www.deployhq.com) is a Git-based deployment platform that builds your VuePress site and transfers the output to your own server over SSH/SFTP/FTP, or to S3, Azure Blob, or Rackspace Cloud Files. It supports build pipelines, atomic releases, one-click rollback, and multiple environments (e.g. staging and production) mapped to different branches of your repository.
+
+1. [Sign up for DeployHQ](https://www.deployhq.com/signup) and create a new project, connecting it to your GitHub, GitLab, or Bitbucket repository that contains your VuePress site.
+
+2. Add a build pipeline command so DeployHQ builds your site before transferring it:
+
+   ```bash
+   pnpm install --frozen-lockfile && pnpm docs:build
+   ```
+
+3. Set the build output directory to `docs/.vuepress/dist`. DeployHQ will only transfer files from this directory to your server.
+
+4. Add a server in your project settings (SSH/SFTP/FTP, S3, Azure Blob, or Rackspace Cloud Files), map it to the branch you want to deploy from (for example `main` for production), and set the deployment path to your web server's document root.
+
+5. Trigger a deployment manually, or enable automatic deployments so every push to the mapped branch is built and shipped automatically.
+
+::: tip
+Please refer to the [DeployHQ VuePress deployment guide](https://www.deployhq.com/guides/vuepress) for more details.
+:::

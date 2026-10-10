@@ -8,7 +8,7 @@ Some major changes and enhancements of VuePress v2:
 
 - VuePress v2 is now using Vue 3, so make sure your components and other client files are compatible with Vue 3.
 - VuePress v2 is developed with TypeScript, so it provides better TS support now. It's highly recommended to use TypeScript to develop plugins and themes. VuePress config file also supports TypeScript, and you can use `.vuepress/config.ts` directly.
-- VuePress v2 supports both Webpack and Vite as bundler. You can choose the bundler you like in your config file.
+- VuePress v2 supports Webpack, Vite and Rspack as bundler. You can choose the bundler you like in your config file.
 - VuePress v2 is now released as pure ESM packages, and CommonJS config files are no longer supported.
 
 Core ideas and processes of VuePress v2 are the same with v1, while v2 API has been re-designed and becomes more normalized. So you might encounter breaking changes when migrating an existing v1 project to v2. This guide is here to help you migrating v1 sites / plugins / themes to v2.
@@ -66,6 +66,21 @@ import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   bundler: webpackBundler(),
+})
+```
+
+Or using the rspack bundler:
+
+```bash
+npm i -D @vuepress/bundler-rspack@next
+```
+
+```ts title=".vuepress/config.ts"
+import { rspackBundler } from '@vuepress/bundler-rspack'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  bundler: rspackBundler(),
 })
 ```
 
@@ -208,6 +223,8 @@ All webpack related configs are moved to options of `@vuepress/bundler-webpack`,
 ```
 
 Please refer to [Guide > Bundler](./bundler.md).
+
+The same approach also applies to `@vuepress/bundler-rspack`, which supports identical options with `configureRspack` and `chainRspack`. Since Rspack is almost fully compatible with Webpack while offering significantly better performance, we recommend switching to Rspack during migration instead of staying on Webpack.
 
 ### Frontmatter Change
 

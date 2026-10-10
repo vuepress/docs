@@ -1,6 +1,7 @@
 import { createRequire } from 'node:module'
 import process from 'node:process'
 
+import { rspackBundler } from '@vuepress/bundler-rspack'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
@@ -22,6 +23,9 @@ import {
 const __dirname = getDirname(import.meta.url)
 const require = createRequire(import.meta.url)
 const isProd = process.env.NODE_ENV === 'production'
+const isWebpackOrRspack =
+  process.env.DOCS_BUNDLER === 'webpack' ||
+  process.env.DOCS_BUNDLER === 'rspack'
 
 export default defineUserConfig({
   // set site base to default value
@@ -46,7 +50,11 @@ export default defineUserConfig({
 
   // specify bundler via environment variable
   bundler:
-    process.env.DOCS_BUNDLER === 'webpack' ? webpackBundler() : viteBundler(),
+    process.env.DOCS_BUNDLER === 'webpack'
+      ? webpackBundler()
+      : process.env.DOCS_BUNDLER === 'rspack'
+        ? rspackBundler()
+        : viteBundler(),
 
   // configure default theme
   theme: defaultTheme({
@@ -117,6 +125,13 @@ export default defineUserConfig({
 
   // configure markdown
   markdown: {
+    ...(isWebpackOrRspack
+      ? {
+          assets: {
+            absolutePathPrependBase: true,
+          },
+        }
+      : {}),
     importCode: {
       handleImportPath: (importPath) => {
         // handle @vuepress packages import path

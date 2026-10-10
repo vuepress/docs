@@ -45,6 +45,7 @@ export const navbarEn: NavbarOptions = [
         children: [
           '/reference/bundler/vite.md',
           '/reference/bundler/webpack.md',
+          '/reference/bundler/rspack.md',
         ],
       },
       {

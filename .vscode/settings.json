@@ -33,6 +33,7 @@
     "prefetch",
     "preload",
     "prismjs",
+    "rspack",
     "shiki",
     "shikiji",
     "slugify",

@@ -65,7 +65,7 @@
 ```
 
 ::: tip
-在使用 [Webpack 打包工具](../reference/bundler/webpack.md) 时，你需要将 [markdown.assets.absolutePathPrependBase](../reference/config.md#markdown-assets) 设置为 `true` 来给 Markdown 图片自动添加 `base` 前缀。
+在使用 [Webpack 打包工具](../reference/bundler/webpack.md) 或 [Rspack 打包工具](../reference/bundler/rspack.md) 时，你需要将 [markdown.assets.absolutePathPrependBase](../reference/config.md#markdown-assets) 设置为 `true` 来给 Markdown 图片自动添加 `base` 前缀。
 :::
 
 然而，有些情况下，你可能会有一些指向 Public 文件的动态路径，尤其是在你开发一个自定义主题的时候。在这种情况下， `base` 无法被自动处理。为了解决这个问题，VuePress 提供了 [withBase](../reference/client-api.md#withbase) 工具函数，它可以帮助你添加 `base` 前缀：

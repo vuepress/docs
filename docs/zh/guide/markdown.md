@@ -506,6 +506,7 @@ export default {
 - 设置 [compilerOptions.isCustomElement](https://v3.vuejs.org/api/application-config.html#compileroptions) 来告诉 Vue 模板编译器不要尝试作为组件来解析它们。
   - 对于 `@vuepress/bundler-webpack` ，设置 [vue.compilerOptions](../reference/bundler/webpack.md#vue)
   - 对于 `@vuepress/bundler-vite` ，设置 [vuePluginOptions.template.compilerOptions](../reference/bundler/vite.md#vuepluginoptions)
+  - 对于 `@vuepress/bundler-rspack` ，设置 [vue.compilerOptions](../reference/bundler/rspack.md#vue)
 
 [prismjs]: https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html
 [shiki]: https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html

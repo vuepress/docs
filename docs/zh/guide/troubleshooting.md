@@ -8,6 +8,7 @@
 
 - [打包工具 > Vite](../reference/bundler/vite.md)
 - [打包工具 > Webpack](../reference/bundler/webpack.md)
+- [打包工具 > Rspack](../reference/bundler/rspack.md)
 
 请参阅默认主题参考，了解如何正确配置默认主题：
 

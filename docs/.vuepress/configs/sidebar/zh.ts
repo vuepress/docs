@@ -63,6 +63,7 @@ export const sidebarZh: SidebarOptions = {
       children: [
         '/zh/reference/bundler/vite.md',
         '/zh/reference/bundler/webpack.md',
+        '/zh/reference/bundler/rspack.md',
       ],
     },
     {

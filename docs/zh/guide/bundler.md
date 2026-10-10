@@ -1,6 +1,6 @@
 # 打包工具
 
-VuePress 支持使用 [Vite](https://vite.dev/) 或 [Webpack](https://webpack.js.org/) 作为打包工具来进行网站的开发和构建。你可以根据自己的喜好来选择使用哪个打包工具，并且不需要进行额外的配置。
+VuePress 支持使用 [Vite](https://vite.dev/)、[Webpack](https://webpack.js.org/) 或 [Rspack](https://rspack.dev/zh/) 作为打包工具来进行网站的开发和构建。你可以根据自己的喜好来选择使用哪个打包工具，并且不需要进行额外的配置。
 
 ## 安装打包工具
 
@@ -15,6 +15,8 @@ VuePress 支持使用 [Vite](https://vite.dev/) 或 [Webpack](https://webpack.js
 pnpm add -D vuepress@next @vuepress/bundler-vite@next
 # 安装 webpack 打包工具
 pnpm add -D vuepress@next @vuepress/bundler-webpack@next
+# 安装 rspack 打包工具
+pnpm add -D vuepress@next @vuepress/bundler-rspack@next
 ```
 
 @tab yarn
@@ -24,6 +26,8 @@ pnpm add -D vuepress@next @vuepress/bundler-webpack@next
 yarn add -D vuepress@next @vuepress/bundler-vite@next
 # 安装 webpack 打包工具
 yarn add -D vuepress@next @vuepress/bundler-webpack@next
+# 安装 rspack 打包工具
+yarn add -D vuepress@next @vuepress/bundler-rspack@next
 ```
 
 @tab npm
@@ -33,6 +37,8 @@ yarn add -D vuepress@next @vuepress/bundler-webpack@next
 npm install -D vuepress@next @vuepress/bundler-vite@next
 # 安装 webpack 打包工具
 npm install -D vuepress@next @vuepress/bundler-webpack@next
+# 安装 rspack 打包工具
+npm install -D vuepress@next @vuepress/bundler-rspack@next
 ```
 
 :::
@@ -46,10 +52,12 @@ npm install -D vuepress@next @vuepress/bundler-webpack@next
 ```ts
 import { viteBundler } from '@vuepress/bundler-vite'
 // import { webpackBundler } from '@vuepress/bundler-webpack'
+// import { rspackBundler } from '@vuepress/bundler-rspack'
 
 export default {
   bundler: viteBundler(),
   // bundler: webpackBundler(),
+  // bundler: rspackBundler(),
 }
 ```
 
@@ -57,3 +65,4 @@ export default {
 
 - [打包工具 > Vite](../reference/bundler/vite.md)
 - [打包工具 > Webpack](../reference/bundler/webpack.md)
+- [打包工具 > Rspack](../reference/bundler/rspack.md)

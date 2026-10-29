@@ -231,3 +231,15 @@ You should disable Pretty URLs in the "Site Configuration" → "Build & Deploy" 
 ## CloudRay
 
 See [Deploy Your VuePress Site With CloudRay](https://cloudray.io/articles/how-to-deploy-your-vuepress-site)
+
+## deed.page
+
+[deed.page](https://deed.page) hosts static sites without an account. Build the site, pack the output folder and upload it with one HTTP `PUT`:
+
+```bash
+pnpm docs:build
+tar -C docs/.vuepress/dist -czf site.tar.gz .
+curl -T site.tar.gz "https://deed.page/v1/sites?slug=my-vuepress-site"
+```
+
+The response contains the live `https://my-vuepress-site.deed.page/` URL and a token. Send the token as `Authorization: Bearer <token>` to publish updates to the same slug. See the [deed.page docs](https://deed.page/docs) for limits and larger uploads.

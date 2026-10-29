@@ -232,6 +232,18 @@ heroku login
 
 请查看 [Deploy Your VuePress Site With CloudRay](https://cloudray.io/articles/how-to-deploy-your-vuepress-site) 。
 
+## deed.page
+
+[deed.page](https://deed.page) 是一个无需注册账号的静态网站托管服务。构建站点后，将输出目录打包，并通过一次 HTTP `PUT` 上传：
+
+```bash
+pnpm docs:build
+tar -C docs/.vuepress/dist -czf site.tar.gz .
+curl -T site.tar.gz "https://deed.page/v1/sites?slug=my-vuepress-site"
+```
+
+返回结果中包含线上地址 `https://my-vuepress-site.deed.page/` 和一个 token。之后更新同一个 slug 时，请通过 `Authorization: Bearer <token>` 请求头发送该 token。限制说明和更大文件的上传方式请查看 [deed.page 文档](https://deed.page/docs) 。
+
 <!-- 下列平台是中文文档特有的，放在最下方 -->
 
 ## 云开发 CloudBase

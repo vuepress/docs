@@ -36,10 +36,12 @@
     "vuepress": "2.0.0-rc.32"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.2.3",
     "@mr-hope/verify-commit-message": "0.1.1",
     "@vuepress/oxfmt-config": "^8.3.0",
     "bumpp": "^12.3.0",
     "husky": "^9.1.7",
+    "iconify-icon": "^3.0.5",
     "nano-staged": "^1.0.2",
     "oxc-config-hope": "^0.3.15",
     "oxfmt": "^0.79.0",

@@ -143,6 +143,14 @@ export default defineUserConfig({
     themePlugins: {
       // only enable git plugin in production mode
       git: isProd,
+      // bundle the icons used by the site, so that they do not rely on
+      // cdn.jsdelivr.net or the Iconify API at runtime
+      icon: {
+        offline: true,
+        scan: {
+          frontmatter: ['icon', 'features[*].icon'],
+        },
+      },
     },
   }),
 

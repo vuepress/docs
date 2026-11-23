@@ -199,7 +199,7 @@ importers:
         version: 2.0.0-rc.138(vuepress@2.0.0-rc.32(9e92fd1de5b3fb653fdedf8f480e395d))
       '@vuepress/theme-default':
         specifier: 2.0.0-rc.141
-        version: 2.0.0-rc.141(c27fa81c998d471aafd7fd1af7e7a85d)
+        version: 2.0.0-rc.141(f9f36a73f770e8d7836fa77e2ca561f2)
       http-server:
         specifier: ^14.1.1
         version: 14.1.1(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
@@ -210,6 +210,9 @@ importers:
         specifier: 2.0.0-rc.32
         version: 2.0.0-rc.32(9e92fd1de5b3fb653fdedf8f480e395d)
     devDependencies:
+      '@iconify-json/mdi':
+        specifier: ^1.2.3
+        version: 1.2.3
       '@mr-hope/verify-commit-message':
         specifier: 0.1.1
         version: 0.1.1
@@ -222,6 +225,9 @@ importers:
       husky:
         specifier: ^9.1.7
         version: 9.1.7
+      iconify-icon:
+        specifier: ^3.0.5
+        version: 3.0.5
       nano-staged:
         specifier: ^1.0.2
         version: 1.0.2
@@ -494,6 +500,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@iconify-json/mdi@1.2.3':
+    resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -2852,6 +2861,9 @@ packages:
     resolution: {integrity: sha512-Y93lCzHYgGWdrJ66yIktxiaGULYc6oGiABxhcO5AufBeOyoIdZF7bIfLaOrbM0iGIOXQQgxxRrFEnb+Y6w1n4A==}
     engines: {node: '>=10.18'}
 
+  iconify-icon@3.0.5:
+    resolution: {integrity: sha512-tApy9Ojh7ZGAuKRiPbUHpqd+hwNwM516al7vwX0dU6f7FoLI11DWGZwl85OYknGIwo4KnWeaqPJvCEMOrnKPWw==}
+
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
@@ -4866,6 +4878,10 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
+  '@iconify-json/mdi@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify/types@2.0.0': {}
 
   '@iconify/utils@3.1.7':
@@ -6332,7 +6348,7 @@ snapshots:
     dependencies:
       vuepress: 2.0.0-rc.32(9e92fd1de5b3fb653fdedf8f480e395d)
 
-  '@vuepress/plugin-icon@2.0.0-rc.139(074ba1534ee236fde16ded6bbc5679d9)':
+  '@vuepress/plugin-icon@2.0.0-rc.139(7c1fdda24566bf0f9a07eae6c15b0413)':
     dependencies:
       '@iconify/types': 2.0.0
       '@iconify/utils': 3.1.7
@@ -6341,6 +6357,8 @@ snapshots:
       '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
       vue: 3.5.46(typescript@6.0.3)
       vuepress: 2.0.0-rc.32(9e92fd1de5b3fb653fdedf8f480e395d)
+    optionalDependencies:
+      iconify-icon: 3.0.5
     transitivePeerDependencies:
       - '@vuepress/bundler-rspack'
       - '@vuepress/bundler-vite'
@@ -6502,14 +6520,14 @@ snapshots:
     dependencies:
       '@mdit-vue/types': 4.0.0
 
-  '@vuepress/theme-default@2.0.0-rc.141(c27fa81c998d471aafd7fd1af7e7a85d)':
+  '@vuepress/theme-default@2.0.0-rc.141(f9f36a73f770e8d7836fa77e2ca561f2)':
     dependencies:
       '@vuepress/helper': 2.0.0-rc.139(c27fa81c998d471aafd7fd1af7e7a85d)
       '@vuepress/plugin-active-header-links': 2.0.0-rc.141(typescript@6.0.3)(vuepress@2.0.0-rc.32(9e92fd1de5b3fb653fdedf8f480e395d))
       '@vuepress/plugin-back-to-top': 2.0.0-rc.139(c27fa81c998d471aafd7fd1af7e7a85d)
       '@vuepress/plugin-copy-code': 2.0.0-rc.139(c27fa81c998d471aafd7fd1af7e7a85d)
       '@vuepress/plugin-git': 2.0.0-rc.139(c27fa81c998d471aafd7fd1af7e7a85d)
-      '@vuepress/plugin-icon': 2.0.0-rc.139(074ba1534ee236fde16ded6bbc5679d9)
+      '@vuepress/plugin-icon': 2.0.0-rc.139(7c1fdda24566bf0f9a07eae6c15b0413)
       '@vuepress/plugin-links-check': 2.0.0-rc.139(074ba1534ee236fde16ded6bbc5679d9)
       '@vuepress/plugin-markdown-ext': 2.0.0-rc.139(074ba1534ee236fde16ded6bbc5679d9)
       '@vuepress/plugin-markdown-hint': 2.0.0-rc.141(802758af11a718603d874be7c481742b)
@@ -7646,6 +7664,10 @@ snapshots:
   husky@9.1.7: {}
 
   hyperdyperid@1.2.0: {}
+
+  iconify-icon@3.0.5:
+    dependencies:
+      '@iconify/types': 2.0.0
 
   iconv-lite@0.6.3:
     dependencies:

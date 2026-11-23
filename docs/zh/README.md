@@ -18,27 +18,27 @@ hero:
       theme: alt
 
 features:
-  - icon: text
+  - icon: 'mdi:language-markdown'
     title: 简洁至上
     details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
 
-  - icon: vue
+  - icon: 'mdi:vuejs'
     title: Vue 驱动
     details: 享受 Vue 的开发体验，可以在 Markdown 中使用 Vue 组件，又可以使用 Vue 来开发自定义主题。
 
-  - icon: lightning
+  - icon: 'mdi:lightning-bolt'
     title: 高性能
     details: VuePress 会为每个页面预渲染生成静态的 HTML，同时，每个页面被加载的时候，将作为 SPA 运行。
 
-  - icon: palette
+  - icon: 'mdi:palette'
     title: 主题
     details: 提供了一个开箱即用的默认主题。你也可以挑选一个社区主题，或者创建一个你自己的主题。
 
-  - icon: unplug
+  - icon: 'mdi:power-plug'
     title: 插件
     details: 灵活的插件 API，使得插件可以为你的站点提供许多即插即用的功能。
 
-  - icon: package
+  - icon: 'mdi:package-variant-closed'
     title: 打包工具
     details: 推荐的打包工具是 Vite ，但也同样支持使用 Webpack 和 Rspack 。选一个你喜欢的来使用吧！
 ---

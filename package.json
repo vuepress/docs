@@ -1,6 +1,6 @@
 {
   "name": "@vuepress/docs",
-  "version": "2.0.0-rc.26",
+  "version": "2.0.0-rc.32",
   "private": true,
   "type": "module",
   "scripts": {

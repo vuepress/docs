@@ -1,0 +1,12 @@
+diff --git a/base.json b/base.json
+index df2712f028693ecdce0ec7544c107ba1abdd656a..e70e43a1cf46f6babaf980e08628a98da27af5cc 100644
+--- a/base.json
++++ b/base.json
+@@ -19,7 +19,6 @@
+     "noImplicitReturns": true,
+     "noImplicitThis": true,
+     "noPropertyAccessFromIndexSignature": false,
+-    "noStrictGenericChecks": false,
+     "noUncheckedIndexedAccess": false,
+     "noUncheckedSideEffectImports": true,
+     "noUnusedLocals": false,

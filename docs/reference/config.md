@@ -158,16 +158,27 @@ Rendered as：
 
   Set the bundler of your site.
 
-  If this option is not set, the default bundler will be used:
-  - With `vuepress` or `vuepress-vite`, the default bundler is vite.
-  - With `vuepress-webpack`, the default bundler is webpack.
+  This option is required. `vuepress-vite` and `vuepress-webpack` are CLI shorthands that inject a default bundler (Vite and Webpack respectively). When you run the plain `vuepress` command, you need to set this option yourself, for example `bundler: viteBundler()`.
+
+  There is no `vuepress-rspack` shorthand. To use Rspack, install `@vuepress/bundler-rspack` and set `bundler: rspackBundler()`.
 
 - Also see:
   - [Guide > Bundler](../guide/bundler.md)
   - [Bundlers > Vite](./bundler/vite.md)
   - [Bundlers > Webpack](./bundler/webpack.md)
+  - [Bundlers > Rspack](./bundler/rspack.md)
 
 ## Common Config
+
+### source
+
+- Type: `string`
+
+- Details:
+
+  The absolute path of the site source directory.
+
+  This option is required when using `@vuepress/core` programmatically. The CLI sets it to the directory passed to the command automatically, so you usually don't need to configure it in your config file.
 
 ### dest
 
@@ -311,7 +322,7 @@ Since VuePress will load temp files during dev and build, the temp directory sho
 
 ### shouldPreload
 
-- Type: `((file: string, type: string) => boolean)) | boolean`
+- Type: `boolean | ((file: string, type: string) => boolean)`
 
 - Default: `true`
 
@@ -323,15 +334,20 @@ Since VuePress will load temp files during dev and build, the temp directory sho
 
 ### shouldPrefetch
 
-- Type: `((file: string, type: string) => boolean)) | boolean`
+- Type: `boolean | 'as-needed' | ((file: string, type: string) => boolean)`
 
-- Default: `true`
+- Default: `'as-needed'`
 
 - Details:
 
-  A function to control what files should have `<link rel="prefetch">` resource hints generated. Set to `true` or `false` to enable or disable for all files.
+  Controls which files get `<link rel="prefetch">` resource hints.
 
-  If you set it to `true`, all files that required by other pages will be prefetched. This is good for small sites, which will speed up the navigation, but it might not be a good idea if you have lots of pages in your site.
+  - `'as-needed'` (default since v2.0.0-rc.32): only prefetch async resources of pages that are linked from the current page's Markdown content. This keeps the number of hints low on large sites.
+  - `true`: prefetch async files of all other pages. This is good for small sites, which will speed up the navigation, but it might not be a good idea if you have lots of pages in your site.
+  - `false`: disable prefetch hints entirely.
+  - A function: return whether a file should be prefetched; it receives the file path and the resource type as arguments.
+
+  The default was `true` in earlier 2.0.0-rc releases. Set it to `true` explicitly to restore the previous behavior.
 
 ### templateBuild
 
@@ -366,6 +382,8 @@ Since VuePress will load temp files during dev and build, the temp directory sho
   Configure VuePress built-in Markdown syntax extensions.
 
   It accepts all options of [markdown-it](https://github.com/markdown-it/markdown-it), and the following additional options.
+
+  Since v2.0.0-rc.32, VuePress uses markdown-it v15 and `@mdit-vue` v4. markdown-it ships its own type declarations (do not install `@types/markdown-it`), deep imports from `markdown-it/lib/*` are no longer supported, and `MarkdownItEnv` has been removed in favor of augmenting `markdown-it.Env`. See [Plugin API > extendsMarkdown](./plugin-api.md#extendsmarkdown) for migration details. The `code` option has been removed as well; see [markdown.code](#markdown-code).
 
 - Also see:
   - [markdown-it > Init with presets and options](https://github.com/markdown-it/markdown-it#init-with-presets-and-options)
@@ -430,15 +448,27 @@ You should not configure it unless you understand what it is for.
 
 - Type: `boolean`
 
-- Default: `true`
+- Default: `true` when using the Webpack or Rspack bundler, `false` when using Vite
 
 - Details:
 
-  Whether to prepend [base](#base) to absolute path.
+  Whether to prepend [base](#base) to absolute paths in Markdown.
+
+  VuePress sets the default according to `bundler.type`: the Webpack and Rspack bundlers need it because they don't handle `base` for public files themselves, while Vite handles `base` for public files automatically. You should not configure it unless you know the asset paths have already been processed.
+
+### markdown.code
+
+- Type: `never`
+
+- Details:
+
+  This option has been removed.
+
+  Code block syntax highlighting is not built in. Use [@vuepress/plugin-prismjs](https://ecosystem.vuejs.press/plugins/markdown/prismjs.html) or [@vuepress/plugin-shiki](https://ecosystem.vuejs.press/plugins/markdown/shiki.html) instead. See [Guide > Markdown > Syntax Extensions > Code Blocks](../guide/markdown.md#code-blocks) and [Migration > For Users](../guide/migration.md#for-users).
 
 ### markdown.component
 
-- Type: `undefined | false`
+- Type: `false`
 
 - Details:
 
@@ -533,7 +563,7 @@ const defaultOptions = {
 
   Options for VuePress built-in markdown-it links plugin.
 
-  It will convert the tag of internal links to [internalTag](#markdownlinksinternaltag), and add extra attributes and icon to external links.
+  It will convert the tag of internal links to [internalTag](#markdown-links-internaltag), and add extra attributes and icon to external links.
 
   Set to `false` to disable this plugin.
 
@@ -590,7 +620,7 @@ You should not configure it unless you understand what it is for.
 
 ### markdown.title
 
-- Type: `undefined | false`
+- Type: `false`
 
 - Details:
 
@@ -622,6 +652,16 @@ const defaultOptions = {
 
 - Also see:
   - [Guide > Markdown > Syntax Extensions > Table of Contents](../guide/markdown.md#table-of-contents)
+
+### markdown.vPre
+
+- Type: `VPrePluginOptions | false`
+
+- Details:
+
+  Options for VuePress built-in markdown-it v-pre plugin.
+
+  Set to `false` to disable this plugin.
 
 #### markdown.vPre.block
 

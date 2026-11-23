@@ -7,65 +7,63 @@
     "check-types": "vue-tsc --noEmit",
     "docs:build": "vuepress build docs --clean-cache --clean-temp",
     "docs:build-webpack": "DOCS_BUNDLER=webpack pnpm docs:build",
+    "docs:build-rspack": "DOCS_BUNDLER=rspack pnpm docs:build",
     "docs:clean": "rimraf docs/.vuepress/.temp docs/.vuepress/.cache docs/.vuepress/dist",
     "docs:dev": "vuepress dev docs --clean-cache --clean-temp",
     "docs:dev-webpack": "DOCS_BUNDLER=webpack pnpm docs:dev",
+    "docs:dev-rspack": "DOCS_BUNDLER=rspack pnpm docs:dev",
     "docs:serve": "http-server docs/.vuepress/dist",
     "format": "oxfmt",
-    "lint": "eslint . && oxfmt --check",
+    "lint": "oxlint && oxfmt --check",
+    "lint:fix": "oxlint --fix && oxfmt",
+    "pkg:check-update": "pnpm dlx npm-check-updates",
+    "pkg:update": "pnpm dlx npm-check-updates -u && pnpm install",
     "prepare": "husky",
     "release": "pnpm release:check && pnpm release:version",
     "release:check": "pnpm check-types && pnpm lint && pnpm docs:build",
     "release:version": "bumpp"
   },
   "dependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.30",
-    "@vuepress/bundler-webpack": "2.0.0-rc.30",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.131",
-    "@vuepress/plugin-google-analytics": "2.0.0-rc.130",
-    "@vuepress/plugin-register-components": "2.0.0-rc.130",
-    "@vuepress/plugin-shiki": "2.0.0-rc.131",
-    "@vuepress/theme-default": "2.0.0-rc.131",
+    "@vuepress/bundler-rspack": "2.0.0-rc.32",
+    "@vuepress/bundler-vite": "2.0.0-rc.32",
+    "@vuepress/bundler-webpack": "2.0.0-rc.32",
+    "@vuepress/plugin-docsearch": "2.0.0-rc.141",
+    "@vuepress/plugin-google-analytics": "2.0.0-rc.138",
+    "@vuepress/plugin-register-components": "2.0.0-rc.138",
+    "@vuepress/theme-default": "2.0.0-rc.141",
     "http-server": "^14.1.1",
-    "sass-embedded": "^1.99.0",
-    "sass-loader": "^16.0.8",
-    "vue": "^3.5.34",
-    "vuepress": "2.0.0-rc.30"
+    "vue": "^3.5.46",
+    "vuepress": "2.0.0-rc.32"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.0.1",
-    "@commitlint/config-conventional": "^21.0.1",
-    "@vuepress/oxfmt-config": "^8.2.0",
-    "bumpp": "^11.1.0",
-    "eslint": "^9.39.4",
-    "eslint-config-vuepress": "^7.1.0",
+    "@mr-hope/verify-commit-message": "0.1.1",
+    "@vuepress/oxfmt-config": "^8.3.0",
+    "bumpp": "^12.3.0",
     "husky": "^9.1.7",
     "nano-staged": "^1.0.2",
-    "oxfmt": "^0.49.0",
-    "rimraf": "^6.1.3",
-    "taze": "^19.12.0",
+    "oxc-config-hope": "^0.3.15",
+    "oxfmt": "^0.79.0",
+    "oxlint": "^1.94.0",
+    "oxlint-tsgolint": "^7.0.2008",
+    "rimraf": "^6.1.4",
     "tsconfig-vuepress": "^7.0.0",
     "typescript": "^6.0.3",
-    "vue-tsc": "^3.2.9"
+    "unrun": "^0.3.1",
+    "vue-tsc": "^3.3.14"
   },
   "nano-staged": {
     "**/*": "oxfmt --no-error-on-unmatched-pattern",
-    "*.(cjs|js|ts|vue)": "eslint --fix"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "*.{cjs,js,ts,vue}": "oxlint --fix"
   },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "11.9.0",
+      "version": "12.21.0",
       "onFail": "download"
     },
     "runtime": {
       "name": "node",
-      "version": "^22.18.0 || ^24.0.0 || ^26.0.0",
+      "version": "^22.23.4 || ^24.22.1 || ^26.13.1",
       "onFail": "error"
     }
   }

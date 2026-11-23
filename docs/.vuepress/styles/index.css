@@ -1,0 +1,10 @@
+:root {
+  scroll-behavior: smooth;
+}
+
+/* keep the docsearch button from shrinking in the Chinese navbar */
+@media (min-width: 48rem) {
+  html:lang(zh-CN) .vp-navbar-search {
+    min-width: 184.66px;
+  }
+}

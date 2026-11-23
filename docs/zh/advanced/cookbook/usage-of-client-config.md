@@ -41,6 +41,7 @@ export default defineClientConfig({
 
 ```ts
 import { defineClientConfig } from 'vuepress/client'
+
 import MyComponent from './MyComponent.vue'
 
 export default defineClientConfig({
@@ -56,7 +57,7 @@ VuePress 会在构建过程中生成一个 SSR 应用，用以对页面进行预
 
 我们已经提供了一个 [ClientOnly](../../reference/components.md#clientonly) 组件来包裹不支持 SSR 的内容。
 
-在 `enhance` 函数中，你可以使用 [`__VUEPRESS_SSR__`](../../reference/client-api.md#ssr) 标记来处理这种情况。
+在 `enhance` 函数中，你可以使用 [`__VUEPRESS_SSR__`](../../reference/client-api.md#vuepress-ssr) 标记来处理这种情况。
 
 ```ts
 import { defineClientConfig } from 'vuepress/client'
@@ -97,6 +98,17 @@ export default defineClientConfig({
 当然，如果你了解了这种用法的缺点，你还是可以这样使用。
 :::
 
+### 滚动恢复
+
+自 v2.0.0-rc.32 起，VuePress 不再在路由中设置 [scrollBehavior](https://router.vuejs.org/zh/api/interfaces/routeroptions.html#scrollbehavior) 选项。取而代之的是，它内部使用了 vue-router 的实验性 [ScrollRestoration](https://router.vuejs.org/zh/experimental/scroll-restoration.html) 插件和 [`useScrollRestoration`](https://router.vuejs.org/zh/experimental/scroll-restoration.html) ：
+
+- 插件会在路由安装前被安装，将 `history.scrollRestoration` 设为 `'manual'` ，并把滚动位置记录到 `sessionStorage` 中。
+- 在客户端应用 Mount 后以及每次路由变化后，VuePress 会恢复目标页面之前保存的滚动位置；如果 URL 中存在 hash ，则滚动到 hash 目标；否则滚动到页面顶部。
+
+由于路由不再使用 `scrollBehavior` 选项，在 `enhance` 函数中设置 `router.options.scrollBehavior` 不再有任何效果。如果你的主题或插件读取或包装了它（例如，希望等到页面过渡动画结束后再滚动），请迁移到 `useScrollRestoration` 并设置 `manual: true` ，在你的内容准备完毕后再调用返回的 `scroll()` ；或者在 [onContentUpdated](../../reference/client-api.md#oncontentupdated) Hook 中手动滚动。
+
+该实验性 API 需要 vue-router `^5.4.0` ，这也是 VuePress 2.0.0-rc.32 的依赖版本范围。使用它的主题和插件应该将 `vue-router` 声明为 peer 依赖。
+
 ## setup
 
 `setup` 函数会在客户端 Vue 应用的 [setup](https://staging-cn.vuejs.org/api/composition-api-setup.html) Hook 中被调用。
@@ -125,7 +137,7 @@ export default defineClientConfig({
 
 ### 使用不支持 SSR 的功能
 
-在 `setup` 函数中，[`__VUEPRESS_SSR__`](../../reference/client-api.md#ssr) 标记同样可用。
+在 `setup` 函数中，[`__VUEPRESS_SSR__`](../../reference/client-api.md#vuepress-ssr) 标记同样可用。
 
 使用不支持 SSR 的功能的另一种方式就是将他们放在 [onMounted](https://staging-cn.vuejs.org/api/composition-api-lifecycle.html#onmounted) Hook 中：
 
@@ -149,6 +161,7 @@ export default defineClientConfig({
 
 ```ts
 import { defineClientConfig } from 'vuepress/client'
+
 import MyLayout from './layouts/MyLayout.vue'
 
 export default defineClientConfig({
@@ -166,6 +179,7 @@ export default defineClientConfig({
 
 ```ts
 import { defineClientConfig } from 'vuepress/client'
+
 import GlobalPopup from './components/GlobalPopup.vue'
 
 export default defineClientConfig({

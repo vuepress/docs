@@ -8,6 +8,6 @@
     "declaration": false,
     "skipLibCheck": true
   },
-  "include": ["**/.vuepress/**/*", "oxfmt.config.ts"],
+  "include": ["**/.vuepress/**/*", "*.config.ts", "scripts/**/*"],
   "exclude": ["node_modules", ".cache", ".temp", "dist"]
 }

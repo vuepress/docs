@@ -33,6 +33,22 @@ const routePath = resolveRoutePath('/foo/') // => '/foo/'
 const routePath = resolveRoutePath('baz.html', '/foo/bar.html') // => '/foo/baz.html'
 ```
 
+## 解析完整路由地址
+
+你可以使用 [resolveRouteFullPath](../../reference/client-api.md#resolveroutefullpath) 来解析给定链接对应的完整路由地址。
+
+`resolveRouteFullPath` 接收一个链接地址和一个可选的基础路径，返回一个解析后的路由地址，并保留给定链接中的 hash 和 query ：
+
+```ts
+import { resolveRouteFullPath } from 'vuepress/client'
+
+const routeFullPath = resolveRouteFullPath('/foo/#bar') // => '/foo/#bar'
+const routeFullPath = resolveRouteFullPath(
+  'baz.html?foo=bar#baz',
+  '/foo/bar.html',
+) // => '/foo/baz.html?foo=bar#baz'
+```
+
 ## 解析路由信息
 
 你可以使用 [resolveRoute](../../reference/client-api.md#resolveroute) 来解析给定的链接对应的路由信息。

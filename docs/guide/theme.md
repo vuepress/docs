@@ -9,13 +9,13 @@ VuePress provides a default theme, which is applied to our documentation site yo
 You need to import and use it in your config file via the [theme](../reference/config.md#theme) option:
 
 ```ts
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
-  theme: defaultTheme({
+  theme: themeDefault({
     // default theme config
-    navbar: [
+    nav: [
       {
         text: 'Home',
         link: '/',
@@ -26,6 +26,12 @@ export default defineUserConfig({
 ```
 
 The default theme provides basic but useful features for documentation site, you can check out [Default Theme Config Reference](https://ecosystem.vuejs.press/themes/default/config.html) for a full list of config.
+
+::: tip
+
+The theme that used to be the default theme of VuePress is now published as [`@vuepress/theme-classic`](https://ecosystem.vuejs.press/themes/classic/config.html) and exported as `themeClassic`. It keeps the configuration API of the former default theme.
+
+:::
 
 However, you might think it is not good enough. Or, you want to build a different type of site, for example, a blog, instead of a documentation. Then, you can try to use a community theme or create a local theme.
 

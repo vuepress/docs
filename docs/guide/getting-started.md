@@ -12,7 +12,7 @@ You can try VuePress directly in your browser on [StackBlitz](https://stackblitz
 
 ### Prerequisites
 
-- [Node.js v22.18.0+](https://nodejs.org/)
+- [Node.js v22.22.0+](https://nodejs.org/)
 - Package manager like [pnpm](https://pnpm.io), [yarn](https://classic.yarnpkg.com/en/), [npm](https://www.npmjs.com), etc.
 
 ::: tip
@@ -132,12 +132,12 @@ mkdir docs/.vuepress
 
 ```ts
 import { viteBundler } from '@vuepress/bundler-vite'
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   bundler: viteBundler(),
-  theme: defaultTheme(),
+  theme: themeDefault(),
 })
 ```
 
@@ -165,7 +165,7 @@ The `docs/.vuepress` directory, i.e. the `.vuepress` directory in the source dir
 
 ::: details Example `.gitignore` file
 
-```ignore
+```text
 # VuePress default temp directory
 .vuepress/.temp
 # VuePress default cache directory

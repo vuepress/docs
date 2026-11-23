@@ -1,55 +1,56 @@
-import type { NavbarOptions } from '@vuepress/theme-default'
+import type { DefaultTheme } from '@vuepress/theme-default'
 
 import { VERSION } from '../meta.js'
 
-export const navbarEn: NavbarOptions = [
+export const navbarEn: DefaultTheme.NavItem[] = [
   {
     text: 'Guide',
-    children: [
-      '/guide/introduction.md',
-      '/guide/getting-started.md',
-      '/guide/configuration.md',
-      '/guide/page.md',
-      '/guide/markdown.md',
-      '/guide/assets.md',
-      '/guide/i18n.md',
-      '/guide/deployment.md',
-      '/guide/theme.md',
-      '/guide/plugin.md',
-      '/guide/bundler.md',
-      '/guide/migration.md',
-      '/guide/troubleshooting.md',
+    items: [
+      { link: '/guide/introduction.md' },
+      { link: '/guide/getting-started.md' },
+      { link: '/guide/configuration.md' },
+      { link: '/guide/page.md' },
+      { link: '/guide/markdown.md' },
+      { link: '/guide/assets.md' },
+      { link: '/guide/i18n.md' },
+      { link: '/guide/deployment.md' },
+      { link: '/guide/theme.md' },
+      { link: '/guide/plugin.md' },
+      { link: '/guide/bundler.md' },
+      { link: '/guide/migration.md' },
+      { link: '/guide/troubleshooting.md' },
     ],
   },
   {
     text: 'Reference',
-    children: [
+    items: [
       {
         text: 'Core',
-        children: [
+        items: [
           {
             text: 'CLI',
             link: '/reference/cli.html',
           },
-          '/reference/config.md',
-          '/reference/frontmatter.md',
-          '/reference/components.md',
-          '/reference/plugin-api.md',
-          '/reference/theme-api.md',
-          '/reference/client-api.md',
-          '/reference/node-api.md',
+          { link: '/reference/config.md' },
+          { link: '/reference/frontmatter.md' },
+          { link: '/reference/components.md' },
+          { link: '/reference/plugin-api.md' },
+          { link: '/reference/theme-api.md' },
+          { link: '/reference/client-api.md' },
+          { link: '/reference/node-api.md' },
         ],
       },
       {
         text: 'Bundlers',
-        children: [
-          '/reference/bundler/vite.md',
-          '/reference/bundler/webpack.md',
+        items: [
+          { link: '/reference/bundler/vite.md' },
+          { link: '/reference/bundler/webpack.md' },
+          { link: '/reference/bundler/rspack.md' },
         ],
       },
       {
         text: 'Ecosystem',
-        children: [
+        items: [
           {
             text: 'Default Theme',
             link: 'https://ecosystem.vuejs.press/themes/default/',
@@ -65,13 +66,13 @@ export const navbarEn: NavbarOptions = [
 
   {
     text: 'Learn More',
-    children: [
+    items: [
       {
         text: 'Advanced',
-        children: [
-          '/advanced/architecture.md',
-          '/advanced/plugin.md',
-          '/advanced/theme.md',
+        items: [
+          { link: '/advanced/architecture.md' },
+          { link: '/advanced/plugin.md' },
+          { link: '/advanced/theme.md' },
           {
             text: 'Cookbook',
             link: '/advanced/cookbook/',
@@ -80,7 +81,7 @@ export const navbarEn: NavbarOptions = [
       },
       {
         text: 'Resources',
-        children: [
+        items: [
           {
             text: 'Ecosystem',
             link: 'https://ecosystem.vuejs.press/',
@@ -99,7 +100,7 @@ export const navbarEn: NavbarOptions = [
   },
   {
     text: `v${VERSION}`,
-    children: [
+    items: [
       {
         text: 'Changelog',
         link: 'https://github.com/vuepress/core/blob/main/CHANGELOG.md',
@@ -115,4 +116,4 @@ export const navbarEn: NavbarOptions = [
     ],
   },
   // TODO: remove the type assertion
-] as NavbarOptions
+]

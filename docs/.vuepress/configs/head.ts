@@ -1,6 +1,5 @@
 import type { HeadConfig } from 'vuepress/core'
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 export const head: HeadConfig[] = [
   [
     'link',
@@ -33,9 +32,9 @@ export const head: HeadConfig[] = [
     {
       rel: 'mask-icon',
       href: '/images/icons/safari-pinned-tab.svg',
-      color: '#3eaf7c',
+      color: '#3451b2',
     },
   ],
-  ['meta', { name: 'msapplication-TileColor', content: '#3eaf7c' }],
-  ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+  ['meta', { name: 'msapplication-TileColor', content: '#3451b2' }],
+  ['meta', { name: 'theme-color', content: '#3451b2' }],
 ]

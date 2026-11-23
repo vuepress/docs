@@ -56,7 +56,7 @@ Take our documentation source files as an example:
 <!-- absolute path -->
 
 [Guide > Introduction](/guide/introduction.md)  
-[Config Reference > markdown.links](/reference/config.md#links)
+[Config Reference > markdown.links](/reference/config.md#markdown-links)
 
 <!-- URL -->
 
@@ -86,7 +86,7 @@ Take our documentation source files as an example:
 [Config Reference](../reference/config.md)  
 [Getting Started](./getting-started.md)  
 [Guide > Introduction](/guide/introduction.md)  
-[Config Reference > markdown.links](/reference/config.md#links)  
+[Config Reference > markdown.links](/reference/config.md#markdown-links)  
 [GitHub](https://github.com)
 
 **Explanation**
@@ -166,13 +166,13 @@ You can specify the title of the code block by adding a `title` key-value mark i
 
 ````md
 ```ts title=".vuepress/config.ts"
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   title: 'Hello, VuePress',
 
-  theme: defaultTheme({
+  theme: themeDefault({
     logo: 'https://vuejs.org/images/logo.png',
   }),
 })
@@ -182,13 +182,13 @@ export default defineUserConfig({
 **Output**
 
 ```ts title=".vuepress/config.ts"
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   title: 'Hello, VuePress',
 
-  theme: defaultTheme({
+  theme: themeDefault({
     logo: 'https://vuejs.org/images/logo.png',
   }),
 })
@@ -208,13 +208,13 @@ You can highlight specified lines of your code blocks by adding line ranges mark
 
 ````md
 ```ts{1,7-9}
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   title: 'Hello, VuePress',
 
-  theme: defaultTheme({
+  theme: themeDefault({
     logo: 'https://vuejs.org/images/logo.png',
   }),
 })
@@ -224,13 +224,13 @@ export default defineUserConfig({
 **Output**
 
 ```ts{1,7-9}
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   title: 'Hello, VuePress',
 
-  theme: defaultTheme({
+  theme: themeDefault({
     logo: 'https://vuejs.org/images/logo.png',
   }),
 })

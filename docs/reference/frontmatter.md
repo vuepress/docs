@@ -90,6 +90,7 @@ Register a layout component in `.vuepress/client.ts` file:
 
 ```ts
 import { defineClientConfig } from 'vuepress/client'
+
 import CustomLayout from './CustomLayout.vue'
 
 export default defineClientConfig({
@@ -196,7 +197,7 @@ Then the permalink of the page would be `2021/01/03/bar-baz.html`.
   Custom data to be attached to the page route.
 
 - Also see:
-  - [Node API > Page Properties > routeMeta](./node-api.md#routeMeta)
+  - [Node API > Page Properties > routeMeta](./node-api.md#routemeta)
 
 ## title
 

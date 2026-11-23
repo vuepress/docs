@@ -10,9 +10,7 @@ const { package: pkg, distTag = 'next' } = defineProps<{
 
 const badgeLink = computed(() => `https://www.npmjs.com/package/${pkg}`)
 const badgeLabel = computed(() => {
-  if (distTag) {
-    return `${pkg}@${distTag}`
-  }
+  if (distTag) return `${pkg}@${distTag}`
   return pkg
 })
 const badgeImg = computed(

@@ -22,4 +22,4 @@ VitePress 可以看作是 VuePress 的孪生兄弟。它们最初都是由 Vue.j
 
 我们曾经考虑过将这两个项目合并到 VuePress 这一名称下。然而，随着时间的推移，它们的目标和技术路线逐渐分化。因此，Vue.js 团队选择专注于 VitePress，而社区 —— 也就是现在的 VuePress 团队 —— 接手了 VuePress，并持续推动其发展。
 
-作为用户，你可以根据需求自由选择使用哪个项目。VitePress 与 Vite 深度集成。而 VuePress 则更开放，可以支持不同的打包工具：目前支持 Webpack 和 Vite，并且同样可以支持其他打包工具。此外，VuePress 拥有官方的 [生态系统](https://ecosystem.vuejs.press/) 项目，提供了大量的插件，为你构建功能丰富的网站提供了便利。
+作为用户，你可以根据需求自由选择使用哪个项目。VitePress 与 Vite 深度集成。而 VuePress 则更开放，可以支持不同的打包工具：目前支持 Webpack 、 Vite 和 Rspack，并且同样可以支持其他打包工具。此外，VuePress 拥有官方的 [生态系统](https://ecosystem.vuejs.press/) 项目，提供了大量的插件，为你构建功能丰富的网站提供了便利。

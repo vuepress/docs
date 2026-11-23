@@ -1,9 +1,16 @@
-configDependencies:
-  pacquet: ^0.11.12
-
-enableGlobalVirtualStore: true
+virtualStoreType: global
 
 allowBuilds:
   '@parcel/watcher': true
   esbuild: true
   unrs-resolver: true
+
+minimumReleaseAgeExclude:
+  - '@vuepress/*'
+  - vuepress
+minimumReleaseAgeExcludePrune: true
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 720
+trustPolicyExcludePrune: true
+patchedDependencies:
+  tsconfig-vuepress@7.0.0: patches/tsconfig-vuepress@7.0.0.patch

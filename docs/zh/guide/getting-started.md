@@ -12,7 +12,7 @@ VuePress v2 目前仍处于 RC (Release Candidate) 阶段。你已经可以用�
 
 ### 依赖环境
 
-- [Node.js v22.18.0+](https://nodejs.org/)
+- [Node.js v22.22.0+](https://nodejs.org/)
 - 包管理器，如 [pnpm](https://pnpm.io/zh/)、[yarn](https://classic.yarnpkg.com/en/)、[npm](https://www.npmjs.com/) 等。
 
 ::: tip
@@ -132,12 +132,12 @@ mkdir docs/.vuepress
 
 ```ts
 import { viteBundler } from '@vuepress/bundler-vite'
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   bundler: viteBundler(),
-  theme: defaultTheme(),
+  theme: themeDefault(),
 })
 ```
 
@@ -165,7 +165,7 @@ echo '# Hello VuePress' > docs/README.md
 
 ::: details 示例 `.gitignore` 文件
 
-```ignore
+```text
 # VuePress 默认临时文件目录
 .vuepress/.temp
 # VuePress 默认缓存目录

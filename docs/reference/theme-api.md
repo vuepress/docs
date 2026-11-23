@@ -41,14 +41,14 @@ A VuePress theme also works as a plugin, so Theme API can accept all the options
 - Example:
 
 ```ts
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
 export default {
   // inherit the default theme
-  extends: defaultTheme(),
+  extends: themeDefault(),
 }
 ```
 

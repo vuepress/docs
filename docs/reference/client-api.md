@@ -10,7 +10,11 @@ Client API can be imported from `vuepress/client`.
 
   Returns all the client data ref objects.
 
-  Each property can also be accessed by the following composition APIs.
+  Each property can also be accessed by the following composition APIs, except `pageHeadTitle`, which can only be accessed via `useClientData()`.
+
+  The client data object also provides the following aliases: `frontmatter` (`pageFrontmatter`), `head` (`pageHead`), `headTitle` (`pageHeadTitle`), `lang` (`pageLang`), `page` (`pageData`), `site` (`siteData`) and `siteLocale` (`siteLocaleData`).
+
+  The composition APIs also have the following aliases: `useData` (`useClientData`), `useFrontmatter` (`usePageFrontmatter`), `useHead` (`usePageHead`), `useLang` (`usePageLang`), `usePage` (`usePageData`), `useSite` (`useSiteData`) and `useSiteLocale` (`useSiteLocaleData`).
 
 - Example:
 
@@ -30,6 +34,25 @@ const {
 } = useClientData()
 </script>
 ```
+
+### useLayouts
+
+- Details:
+
+  Returns the layouts ref object.
+
+  The value is the layouts registered by all [client config files](./plugin-api.md#clientconfigfile), including the `Layout` and `NotFound` layouts that are required by a theme.
+
+- Also see:
+  - [Advanced > Writing a Theme](../advanced/theme.md)
+
+### usePageComponent
+
+- Details:
+
+  Returns the page component ref object of current page.
+
+  The value is the component loaded from the page chunk.
 
 ### usePageData
 
@@ -57,13 +80,25 @@ const {
 
   The value is obtained by merging and deduplicating [head](./frontmatter.md#head) frontmatter and [head](./config.md#head) config.
 
-### usePageHeadTitle
+### useClientData().pageHeadTitle
+
+- Type: `ComputedRef<string>`
 
 - Details:
 
   Returns the head title ref object of current page.
 
-  The value is obtained by joining the page title and site title.
+  The value is obtained by joining the page title and site title. It is a computed ref returned by [`useClientData`](#useclientdata) instead of being a standalone composition API, and the `<title>` element is kept in sync with it by [`useUpdateHead`](#useupdatehead).
+
+  The value can be customized via [`resolvers`](#resolvers).
+
+- Example:
+
+```ts
+import { useClientData } from 'vuepress/client'
+
+const { pageHeadTitle } = useClientData()
+```
 
 ### usePageLang
 
@@ -72,6 +107,17 @@ const {
   Returns the language ref object of current page.
 
   The value is the `lang` property of the page data.
+
+### usePageLayout
+
+- Details:
+
+  Returns the layout component ref object of current page.
+
+  The value is resolved from the [layout](./frontmatter.md#layout) frontmatter and the layouts registered by [client config files](./plugin-api.md#clientconfigfile).
+
+- Also see:
+  - [Advanced > Writing a Theme](../advanced/theme.md)
 
 ### useRoutes
 
@@ -91,6 +137,22 @@ const {
   Returns the locale path ref object of current route.
 
   The value is one of the keys of the [locales](./config.md#locales) config.
+
+### useRoutePath
+
+- Details:
+
+  Returns the route path ref object of current route.
+
+  The value is the `path` property of the current route.
+
+### useRedirects
+
+- Details:
+
+  Returns the redirects ref object.
+
+  The keys are the source route paths and the values are the target route paths. It is used internally to resolve route paths, see [`resolveRoutePath`](#resolveroutepath).
 
 ### useSiteData
 
@@ -124,6 +186,16 @@ const {
   </script>
   ```
 
+### useUpdateHead
+
+- Details:
+
+  Returns a function to update the `<head>` of current page.
+
+  It applies the current [`usePageHead`](#usepagehead) value to the document head immediately. VuePress keeps the head in sync automatically after the client app is mounted, so this function is only needed when you want to force a synchronous update.
+
+  This function can only be called during the `setup` phase of a component in the client app.
+
 ## Helpers
 
 ### defineClientConfig
@@ -134,6 +206,7 @@ const {
 
 - Also see:
   - [Advanced > Cookbook > Usage of Client Config](../advanced/cookbook/usage-of-client-config.md)
+  - [Advanced > Cookbook > Usage of Client Config > Scroll Restoration](../advanced/cookbook/usage-of-client-config.md#scroll-restoration)
 
 ### resolveRoute
 
@@ -149,6 +222,15 @@ const {
 - Details:
 
   Parses the route path of the given link.
+
+- Also see:
+  - [Advanced > Cookbook > Resolving Routes](../advanced/cookbook/resolving-routes.md)
+
+### resolveRouteFullPath
+
+- Details:
+
+  Parses the route full path of the given link, i.e. the resolved route path with the hash and query of the given link preserved.
 
 - Also see:
   - [Advanced > Cookbook > Resolving Routes](../advanced/cookbook/resolving-routes.md)

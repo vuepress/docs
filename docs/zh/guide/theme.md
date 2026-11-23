@@ -9,13 +9,13 @@ VuePress 提供了一个默认主题，你当前正在浏览的文档网站就�
 你需要在你的配置文件中通过 [theme](../reference/config.md#theme) 配置项来使用它：
 
 ```ts
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
-  theme: defaultTheme({
+  theme: themeDefault({
     // 默认主题配置
-    navbar: [
+    nav: [
       {
         text: '首页',
         link: '/',
@@ -26,6 +26,12 @@ export default defineUserConfig({
 ```
 
 默认主题为文档网站提供了基础且实用的功能，你可以前往 [默认主题配置参考](https://ecosystem.vuejs.press/zh/themes/default/config.html) 获取全部的配置列表。
+
+::: tip
+
+以前作为 VuePress 默认主题发布的主题，现在以 [`@vuepress/theme-classic`](https://ecosystem.vuejs.press/zh/themes/classic/config.html) 发布，并以 `themeClassic` 导出。它保留了原默认主题的配置 API。
+
+:::
 
 然而，你可能觉得默认主题不够出色，又或者你不想搭建一个文档网站，而是一个其他类型的网站，比如博客。此时，你可以尝试使用社区主题或者创建本地主题。
 

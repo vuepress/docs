@@ -1,70 +1,74 @@
-import type { SidebarOptions } from '@vuepress/theme-default'
+import type { DefaultTheme } from '@vuepress/theme-default'
 
-export const sidebarEn: SidebarOptions = {
+export const sidebarEn: DefaultTheme.Sidebar = {
   '/guide/': [
     {
       text: 'Guide',
-      children: [
-        '/guide/introduction.md',
-        '/guide/getting-started.md',
-        '/guide/configuration.md',
-        '/guide/page.md',
-        '/guide/markdown.md',
-        '/guide/assets.md',
-        '/guide/i18n.md',
-        '/guide/deployment.md',
-        '/guide/theme.md',
-        '/guide/plugin.md',
-        '/guide/bundler.md',
-        '/guide/migration.md',
-        '/guide/troubleshooting.md',
+      items: [
+        { link: '/guide/introduction.md' },
+        { link: '/guide/getting-started.md' },
+        { link: '/guide/configuration.md' },
+        { link: '/guide/page.md' },
+        { link: '/guide/markdown.md' },
+        { link: '/guide/assets.md' },
+        { link: '/guide/i18n.md' },
+        { link: '/guide/deployment.md' },
+        { link: '/guide/theme.md' },
+        { link: '/guide/plugin.md' },
+        { link: '/guide/bundler.md' },
+        { link: '/guide/migration.md' },
+        { link: '/guide/troubleshooting.md' },
       ],
     },
   ],
   '/advanced/': [
     {
       text: 'Advanced',
-      children: [
-        '/advanced/architecture.md',
-        '/advanced/plugin.md',
-        '/advanced/theme.md',
+      items: [
+        { link: '/advanced/architecture.md' },
+        { link: '/advanced/plugin.md' },
+        { link: '/advanced/theme.md' },
       ],
     },
     {
       text: 'Cookbook',
-      children: [
-        '/advanced/cookbook/README.md',
-        '/advanced/cookbook/usage-of-client-config.md',
-        '/advanced/cookbook/adding-extra-pages.md',
-        '/advanced/cookbook/making-a-theme-extendable.md',
-        '/advanced/cookbook/passing-data-to-client-code.md',
-        '/advanced/cookbook/markdown-and-vue-sfc.md',
-        '/advanced/cookbook/resolving-routes.md',
+      items: [
+        { link: '/advanced/cookbook/README.md' },
+        { link: '/advanced/cookbook/usage-of-client-config.md' },
+        { link: '/advanced/cookbook/adding-extra-pages.md' },
+        { link: '/advanced/cookbook/making-a-theme-extendable.md' },
+        { link: '/advanced/cookbook/passing-data-to-client-code.md' },
+        { link: '/advanced/cookbook/markdown-and-vue-sfc.md' },
+        { link: '/advanced/cookbook/resolving-routes.md' },
       ],
     },
   ],
   '/reference/': [
     {
       text: 'Core',
-      collapsible: true,
-      children: [
-        '/reference/cli.md',
-        '/reference/config.md',
-        '/reference/frontmatter.md',
-        '/reference/components.md',
-        '/reference/plugin-api.md',
-        '/reference/theme-api.md',
-        '/reference/client-api.md',
-        '/reference/node-api.md',
+      collapsed: false,
+      items: [
+        { link: '/reference/cli.md' },
+        { link: '/reference/config.md' },
+        { link: '/reference/frontmatter.md' },
+        { link: '/reference/components.md' },
+        { link: '/reference/plugin-api.md' },
+        { link: '/reference/theme-api.md' },
+        { link: '/reference/client-api.md' },
+        { link: '/reference/node-api.md' },
       ],
     },
     {
       text: 'Bundlers',
-      children: ['/reference/bundler/vite.md', '/reference/bundler/webpack.md'],
+      items: [
+        { link: '/reference/bundler/vite.md' },
+        { link: '/reference/bundler/webpack.md' },
+        { link: '/reference/bundler/rspack.md' },
+      ],
     },
     {
       text: 'Ecosystem',
-      children: [
+      items: [
         {
           text: 'Default Theme',
           link: 'https://ecosystem.vuejs.press/themes/default/',

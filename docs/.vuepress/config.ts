@@ -1,14 +1,15 @@
 import { createRequire } from 'node:module'
 import process from 'node:process'
 
+import { rspackBundler } from '@vuepress/bundler-rspack'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
-import { shikiPlugin } from '@vuepress/plugin-shiki'
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
+import type { Bundler } from 'vuepress/core'
 import { getDirname, path } from 'vuepress/utils'
 
 import {
@@ -22,6 +23,21 @@ import {
 const __dirname = getDirname(import.meta.url)
 const require = createRequire(import.meta.url)
 const isProd = process.env.NODE_ENV === 'production'
+
+// select bundler via environment variable
+const bundlerFactories: Record<string, () => Bundler> = {
+  vite: viteBundler,
+  webpack: webpackBundler,
+  rspack: rspackBundler,
+}
+
+const createBundler = (name = process.env.DOCS_BUNDLER ?? 'vite'): Bundler =>
+  (bundlerFactories[name] ?? viteBundler)()
+
+// The theme data is serialized to JSON, so the edit link pattern must be a
+// string. `:path` is replaced with the path of the page relative to `docs/`.
+const EDIT_LINK_PATTERN =
+  'https://github.com/vuepress/docs/edit/main/docs/:path'
 
 export default defineUserConfig({
   // set site base to default value
@@ -45,73 +61,88 @@ export default defineUserConfig({
   },
 
   // specify bundler via environment variable
-  bundler:
-    process.env.DOCS_BUNDLER === 'webpack' ? webpackBundler() : viteBundler(),
+  bundler: createBundler(),
 
   // configure default theme
-  theme: defaultTheme({
+  theme: themeDefault({
     hostname: 'https://vuepress.vuejs.org',
     logo: '/images/hero.png',
-    repo: 'vuepress/core',
-    docsRepo: 'vuepress/docs',
-    docsDir: 'docs',
 
     // theme-level locales config
     locales: {
       /**
        * English locale config
        *
-       * As the default locale of @vuepress/theme-default is English,
-       * we don't need to set all of the locale fields
+       * The default locale of the default theme is English, so only the fields
+       * that differ from the default need to be set
        */
       '/': {
-        // navbar
-        navbar: navbarEn,
+        label: 'English',
+        lang: 'en-US',
+        link: '/',
+        // nav
+        nav: navbarEn,
         // sidebar
         sidebar: sidebarEn,
         // page meta
-        editLinkText: 'Edit this page on GitHub',
+        editLink: {
+          pattern: EDIT_LINK_PATTERN,
+          text: 'Edit this page on GitHub',
+        },
+        footer: {
+          message: 'MIT Licensed',
+          copyright: 'Copyright © 2018-present VuePress Community',
+        },
       },
 
       /**
        * Chinese locale config
        */
       '/zh/': {
-        // navbar
-        navbar: navbarZh,
-        selectLanguageName: '简体中文',
-        selectLanguageText: '选择语言',
-        selectLanguageAriaLabel: '选择语言',
+        label: '简体中文',
+        lang: 'zh-CN',
+        link: '/zh/',
+        // nav
+        nav: navbarZh,
         // sidebar
         sidebar: sidebarZh,
         // page meta
-        editLinkText: '在 GitHub 上编辑此页',
-        lastUpdatedText: '上次更新',
+        editLink: {
+          pattern: EDIT_LINK_PATTERN,
+          text: '在 GitHub 上编辑此页',
+        },
+        lastUpdated: { text: '上次更新' },
+        footer: {
+          message: 'MIT 协议',
+          copyright: '版权所有 © 2018-至今 VuePress 社区',
+        },
         contributorsText: '贡献者',
+        docFooter: { prev: '上一页', next: '下一页' },
         // custom containers
         tip: '提示',
         warning: '注意',
         danger: '警告',
+        important: '重要',
+        note: '笔记',
         // 404 page
-        notFound: [
-          '这里什么都没有',
-          '我们怎么到这来了？',
-          '这是一个 404 页面',
-          '看起来我们进入了错误的链接',
-        ],
-        backToHome: '返回首页',
+        notFound: {
+          title: '页面不存在',
+          quote: '这里什么都没有',
+          linkText: '返回首页',
+        },
         // a11y
-        openInNewWindow: '在新窗口打开',
-        toggleColorMode: '切换颜色模式',
-        toggleSidebar: '切换侧边栏',
+        darkModeSwitchLabel: '切换颜色模式',
+        lightModeSwitchTitle: '切换到浅色模式',
+        darkModeSwitchTitle: '切换到深色模式',
+        sidebarMenuLabel: '切换侧边栏',
+        langMenuLabel: '选择语言',
+        navMenuLabel: '主导航',
       },
     },
 
     themePlugins: {
       // only enable git plugin in production mode
       git: isProd,
-      // use shiki plugin in production mode instead
-      prismjs: !isProd,
     },
   }),
 
@@ -121,14 +152,14 @@ export default defineUserConfig({
       handleImportPath: (importPath) => {
         // handle @vuepress packages import path
         if (importPath.startsWith('@vuepress/')) {
-          const packageName = importPath.match(/^(@vuepress\/[^/]*)/)![1]
+          const packageName = importPath.split('/').slice(0, 2).join('/')
           return importPath
             .replace(
               packageName,
               path.dirname(require.resolve(`${packageName}/package.json`)),
             )
             .replace('/src/', '/lib/')
-            .replace(/hotKey\.ts$/, 'hotKey.d.ts')
+            .replace(/hotKey\.ts$/u, 'hotKey.d.ts')
         }
         return importPath
       },
@@ -140,10 +171,14 @@ export default defineUserConfig({
     docsearchPlugin({
       appId: '34YFD9IUQ2',
       apiKey: '9a9058b8655746634e01071411c366b8',
-      indexName: 'vuepress',
-      searchParameters: {
-        facetFilters: ['tags:v2'],
-      },
+      indices: [
+        {
+          name: 'vuepress',
+          searchParameters: {
+            facetFilters: ['tags:v2'],
+          },
+        },
+      ],
       locales: {
         '/zh/': {
           placeholder: '搜索文档',
@@ -188,19 +223,12 @@ export default defineUserConfig({
         },
       },
     }),
-    googleAnalyticsPlugin({
-      // we have multiple deployments, which would use different id
-      id: process.env.DOCS_GA_ID ?? '',
-    }),
+    // we have multiple deployments, which would use different id
+    ...(process.env.DOCS_GA_ID
+      ? [googleAnalyticsPlugin({ id: process.env.DOCS_GA_ID })]
+      : []),
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components'),
     }),
-    // only enable shiki plugin in production mode
-    isProd
-      ? shikiPlugin({
-          langs: ['bash', 'diff', 'json', 'md', 'ts', 'vue'],
-          theme: 'dark-plus',
-        })
-      : [],
   ],
 })

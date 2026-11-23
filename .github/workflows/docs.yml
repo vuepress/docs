@@ -17,21 +17,15 @@ jobs:
       DOCS_GA_ID: G-CTB8FQ7VMW
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
+      - name: Setup pnpm
+        uses: pnpm/setup@v3
         with:
-          node-version: 24
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm ci
+          runtime: node@^26.13.1
+          require-lockfile: true
 
       - name: Build documentation site
         run: pnpm docs:build

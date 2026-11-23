@@ -44,6 +44,10 @@ export default defineUserConfig({
 
   Merge two vite config objects, provided by vite's [mergeConfig](https://vite.dev/guide/api-javascript#mergeconfig) JavaScript API.
 
+### Exported types
+
+The package re-exports the type of its options: `ViteBundlerOptions`.
+
 ## Options
 
 ### viteOptions

@@ -87,15 +87,21 @@ npm i -D @vuepress/theme-default@next
 -   },
 - }
 
-+ import { defaultTheme } from '@vuepress/theme-default'
++ import { themeDefault } from '@vuepress/theme-default'
 + import { defineUserConfig } from 'vuepress'
 +
 + export default defineUserConfig({
-+   theme: defaultTheme({
++   theme: themeDefault({
 +     // default theme config
 +   }),
 + })
 ```
+
+::: tip
+
+The theme that used to be the default theme is now published as [`@vuepress/theme-classic`](https://ecosystem.vuejs.press/themes/classic/config.html) and exported as `themeClassic`. It is the successor of the v1 default theme, and the changes listed in the [Default Theme Change](#default-theme-change) section apply to it. The new default theme is a different theme ported from VitePress, see [Migrating from Classic](https://ecosystem.vuejs.press/themes/default/migrating-from-classic.html) to migrate to it.
+
+:::
 
 #### themeConfig
 
@@ -131,7 +137,11 @@ Using a plugin via string is not supported. Import the plugin directly.
 
 #### shouldPrefetch
 
-Default value is changed from `() => true` to `true`.
+Default value is changed from `() => true` to `'as-needed'` since v2.0.0-rc.32 (it was `true` in earlier 2.0.0-rc releases).
+
+By default, only the async resources of pages linked from the current page's Markdown content are prefetched now. Set `shouldPrefetch: true` to restore the previous prefetch-all behavior. The default value of `shouldPreload` is unchanged.
+
+See [Config > shouldPrefetch](../reference/config.md#shouldprefetch).
 
 #### extraWatchFiles
 
@@ -264,7 +274,7 @@ The palette system is extracted to [@vuepress/plugin-palette](https://ecosystem.
 
 Theme authors can use their own way to allow users to customize styles, and not be limited with stylus.
 
-If you are using default theme, the palette system is still available but migrated to SASS, while most variables have been migrated to CSS variables. See [Default Theme > Styles](https://ecosystem.vuejs.press/themes/default/styles.html).
+If you are using the classic theme, the SASS palette system is still available, and most variables have been migrated to CSS variables. See [Classic Theme > Styles](https://ecosystem.vuejs.press/themes/classic/styles.html). The new default theme does not include a SASS palette; all colors are CSS variables, see [Default Theme > Styles](https://ecosystem.vuejs.press/themes/default/styles.html).
 
 ### Conventional Files Change
 
@@ -312,24 +322,26 @@ Removed.
 
 ### Default Theme Change
 
+The changes below describe the former default theme, which is now published as [`@vuepress/theme-classic`](https://ecosystem.vuejs.press/themes/classic/config.html). The examples use the config API of the classic theme.
+
 #### Built-in Components
 
-- `<CodeGroup />` and `<CodeBlock />` are replaced by [code tab feature](https://ecosystem.vuejs.press/themes/default/markdown.html#code-tabs)
+- `<CodeGroup />` and `<CodeBlock />` are replaced by [code tab feature](https://ecosystem.vuejs.press/themes/classic/markdown.html#code-tabs)
 - `<Badge />`
   - `$badgeErrorColor` palette variable renamed to `$badgeDangerColor`
   - `type` prop only accepts `tip`, `warning` and `danger` now
 
 #### Palette System
 
-The palette system of default theme has migrated to SASS and CSS variables.
+The palette system of the classic theme has migrated to SASS and CSS variables.
 
-See [Default Theme > Styles](https://ecosystem.vuejs.press/themes/default/styles.html).
+See [Classic Theme > Styles](https://ecosystem.vuejs.press/themes/classic/styles.html).
 
 #### Theme Config
 
-Default theme config has been changed a lot. You'd better check the config reference of v2 default theme to migrate it properly.
+Classic theme config has been changed a lot. You'd better check the config reference of the classic theme to migrate it properly.
 
-See [Default Theme > Config](https://ecosystem.vuejs.press/themes/default/config.html).
+See [Classic Theme > Config](https://ecosystem.vuejs.press/themes/classic/config.html).
 
 Here we list some notable changes:
 
@@ -400,6 +412,17 @@ For more detailed guide about how to write a plugin in v2, see [Advanced > Writi
 
 See [Plugin API](../reference/plugin-api.md).
 
+### Markdown-it Upgrade
+
+Since v2.0.0-rc.32, VuePress is bundled with markdown-it v15 and `@mdit-vue` v4. This brings some breaking changes for plugins and themes that use markdown-it directly:
+
+- markdown-it now ships its own type declarations. Remove `@types/markdown-it` from your dependencies.
+- Deep imports from `markdown-it/lib/*` are no longer available. Use the exports of the `markdown-it` package instead, e.g. the `MarkdownIt` constructor and its static classes.
+- The `MarkdownItEnv` type has been removed. Augment `markdown-it.Env` instead (VuePress already augments it with `base`, `filePath`, `filePathRelative`, `importedFiles` and `links`), or use the `MarkdownEnv` type exported from `vuepress/markdown`.
+- Plugins and themes of `@mdit-vue` v4 should use the bundled markdown-it types.
+
+See [Plugin API > extendsMarkdown](../reference/plugin-api.md#extendsmarkdown).
+
 ## For Theme Authors
 
 Although we do not allow using other plugins in a plugin anymore, you can still use plugins in your theme.
@@ -416,6 +439,7 @@ Some major breaking changes:
 - Stylus is no longer the default CSS pre-processor, and the stylus palette system is not embedded. If you still want to use similar palette system as v1, [@vuepress/plugin-palette](https://ecosystem.vuejs.press/plugins/development/palette.html) may help.
 - Markdown code blocks syntax highlighting by Prism.js is not embedded by default. You can use either [@vuepress/plugin-prismjs][prismjs] or [@vuepress/plugin-shiki][shiki], or implement syntax highlighting in your own way.
 - For scalability concerns, `this.$site.pages` is not available any more. See [Advanced > Cookbook > Resolving Routes](../advanced/cookbook/resolving-routes.md) for how to retrieve pages data in v2.
+- The router does not set `scrollBehavior` anymore. VuePress uses the experimental [ScrollRestoration](https://router.vuejs.org/experimental/scroll-restoration.html) plugin of vue-router and `useScrollRestoration` from `vue-router/experimental` to restore scroll positions (vue-router `^5.4.0` is required). If your theme reads or wraps `router.options.scrollBehavior`, migrate to `useScrollRestoration`, see [Advanced > Cookbook > Usage of Client Config > Scroll Restoration](../advanced/cookbook/usage-of-client-config.md#scroll-restoration).
 
 For more detailed guide about how to write a theme in v2, see [Advanced > Writing a Theme](../advanced/theme.md).
 

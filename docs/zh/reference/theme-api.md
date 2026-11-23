@@ -41,14 +41,14 @@ VuePress 主题同样是一个插件，因此主题 API 可以接收 [插件 API
 - 示例：
 
 ```ts
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
 export default {
   // 继承默认主题
-  extends: defaultTheme(),
+  extends: themeDefault(),
 }
 ```
 

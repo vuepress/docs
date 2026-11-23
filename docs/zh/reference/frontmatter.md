@@ -90,6 +90,7 @@ head:
 
 ```ts
 import { defineClientConfig } from 'vuepress/client'
+
 import CustomLayout from './CustomLayout.vue'
 
 export default defineClientConfig({
@@ -196,7 +197,7 @@ permalinkPattern: :year/:month/:day/:slug.html
   附加到页面路由的自定义数据。
 
 - 参考：
-  - [Node API > Page 属性 > routeMeta](./node-api.md#routeMeta)
+  - [Node API > Page 属性 > routeMeta](./node-api.md#routemeta)
 
 ## title
 

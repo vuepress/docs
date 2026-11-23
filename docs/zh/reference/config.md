@@ -157,16 +157,27 @@ export default {
 
   设置站点要使用的打包工具。
 
-  如果不设置该选项，将会使用默认的打包工具：
-  - 使用 `vuepress` 或 `vuepress-vite` 时，默认的打包工具是 Vite 。
-  - 使用 `vuepress-webpack` 时，默认的打包工具是 Webpack 。
+  该配置项是必需的。 `vuepress-vite` 和 `vuepress-webpack` 是命令行简写，它们会分别注入默认的打包工具（Vite 和 Webpack）。当你直接运行 `vuepress` 命令时，需要自己设置该选项，例如 `bundler: viteBundler()` 。
+
+  没有 `vuepress-rspack` 简写。如果需要使用 Rspack，请安装 `@vuepress/bundler-rspack` 并设置 `bundler: rspackBundler()` 。
 
 - 参考：
   - [指南 > 打包工具](../guide/bundler.md)
   - [打包工具 > Vite](./bundler/vite.md)
   - [打包工具 > Webpack](./bundler/webpack.md)
+  - [打包工具 > Rspack](./bundler/rspack.md)
 
 ## 通用配置项
+
+### source
+
+- 类型： `string`
+
+- 详情：
+
+  站点源目录的绝对路径。
+
+  在以编程方式使用 `@vuepress/core` 时，该配置项是必需的。 CLI 会自动将其设置为命令传入的目录，因此你通常不需要在配置文件中配置它。
 
 ### dest
 
@@ -310,7 +321,7 @@ VuePress 在开发和构建时会加载临时文件，因此临时文件目录�
 
 ### shouldPreload
 
-- 类型： `((file: string, type: string) => boolean)) | boolean`
+- 类型： `boolean | ((file: string, type: string) => boolean)`
 
 - 默认值： `true`
 
@@ -322,15 +333,20 @@ VuePress 在开发和构建时会加载临时文件，因此临时文件目录�
 
 ### shouldPrefetch
 
-- 类型： `((file: string, type: string) => boolean)) | boolean`
+- 类型： `boolean | 'as-needed' | ((file: string, type: string) => boolean)`
 
-- 默认值： `true`
+- 默认值： `'as-needed'`
 
 - 详情：
 
-  一个函数，用来控制哪些文件是需要生成对应的 `<link rel="prefetch">` 标签的。设置为 `true` 或者 `false` 来完全启用或禁用它。
+  控制哪些文件需要生成对应的 `<link rel="prefetch">` 标签。
 
-  如果你将它设置为 `true` ，所有其它页面所需的文件都会被预拉取。这对于小型站点来说是十分有帮助的，因为它会大大提升页面切换的速度。但是在你的网站有很多页面时不建议你这么做。
+  - `'as-needed'` （自 v2.0.0-rc.32 起的默认值）：仅预拉取当前页面 Markdown 内容中链接到的其他页面的异步资源。这可以在大型站点中保持较少的标签数量。
+  - `true`：预拉取所有其它页面的异步文件。这对于小型站点来说是十分有帮助的，因为它会大大提升页面切换的速度。但是在你的网站有很多页面时不建议你这么做。
+  - `false`：完全禁用预拉取标签。
+  - 函数：返回该文件是否需要被预拉取，接收文件路径和资源类型作为参数。
+
+  在更早的 2.0.0-rc 版本中，默认值为 `true` 。如果需要恢复之前的行为，请显式将其设置为 `true` 。
 
 ### templateBuild
 
@@ -365,6 +381,8 @@ VuePress 在开发和构建时会加载临时文件，因此临时文件目录�
   对 VuePress 内置的 Markdown 语法扩展进行配置。
 
   它可以接收 [markdown-it](https://github.com/markdown-it/markdown-it) 的所有配置项，以及下列额外的配置项。
+
+  自 v2.0.0-rc.32 起，VuePress 使用 markdown-it v15 和 `@mdit-vue` v4。 markdown-it 自带类型声明（请不要安装 `@types/markdown-it`），不再支持从 `markdown-it/lib/*` 深层导入，同时 `MarkdownItEnv` 已被移除，改为扩展 `markdown-it.Env` 。迁移细节请参考 [插件 API > extendsMarkdown](./plugin-api.md#extendsmarkdown)。此外， `code` 配置项也已被移除，请参考 [markdown.code](#markdown-code)。
 
 - 参考：
   - [markdown-it > Init with presets and options](https://github.com/markdown-it/markdown-it#init-with-presets-and-options)
@@ -429,15 +447,27 @@ const defaultOptions = {
 
 - 类型： `boolean`
 
-- 默认值： `true`
+- 默认值： 使用 Webpack 或 Rspack 打包工具时为 `true` ，使用 Vite 时为 `false`
 
 - 详情：
 
-  是否将绝对路径添加 [base](#base) 前缀。
+  是否将 Markdown 中的绝对路径添加 [base](#base) 前缀。
+
+  VuePress 会根据 `bundler.type` 设置默认值： Webpack 和 Rspack 打包工具需要该选项，因为它们不会自己处理 Public 文件的 `base` ；而 Vite 会自动处理 Public 文件的 `base` 。除非你确定资源路径已经被处理过，否则不要配置它。
+
+### markdown.code
+
+- 类型： `never`
+
+- 详情：
+
+  该配置项已被移除。
+
+  代码块语法高亮已不再内置。请使用 [@vuepress/plugin-prismjs](https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html) 或 [@vuepress/plugin-shiki](https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html) 。参考 [指南 > Markdown > 语法扩展 > 代码块](../guide/markdown.md#代码块) 和 [迁移 > 给用户](../guide/migration.md#给用户)。
 
 ### markdown.component
 
-- 类型： `undefined | false`
+- 类型： `false`
 
 - 详情：
 
@@ -532,7 +562,7 @@ const defaultOptions = {
 
   VuePress 内置的 markdown-it 链接插件的配置项。
 
-  它可以把站内链接的 tag 转换为 [internalTag](#markdownlinksinternaltag) ，并且可以在站外链接上添加额外的属性和图标。
+  它可以把站内链接的 tag 转换为 [internalTag](#markdown-links-internaltag) ，并且可以在站外链接上添加额外的属性和图标。
 
   设置为 `false` 可以禁用该插件。
 
@@ -589,7 +619,7 @@ const defaultOptions = {
 
 ### markdown.title
 
-- 类型： `undefined | false`
+- 类型： `false`
 
 - 详情：
 
@@ -621,6 +651,16 @@ const defaultOptions = {
 
 - 参考：
   - [指南 > Markdown > 语法扩展 > 目录](../guide/markdown.md#目录)
+
+### markdown.vPre
+
+- 类型： `VPrePluginOptions | false`
+
+- 详情：
+
+  VuePress 内置的 markdown-it v-pre 插件的配置项。
+
+  设置为 `false` 可以禁用该插件。
 
 #### markdown.vPre.block
 

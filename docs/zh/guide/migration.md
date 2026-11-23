@@ -87,15 +87,21 @@ npm i -D @vuepress/theme-default@next
 -   },
 - }
 
-+ import { defaultTheme } from '@vuepress/theme-default'
++ import { themeDefault } from '@vuepress/theme-default'
 + import { defineUserConfig } from 'vuepress'
 +
 + export default defineUserConfig({
-+   theme: defaultTheme({
++   theme: themeDefault({
 +     // 默认主题配置
 +   })
 + })
 ```
+
+::: tip
+
+以前作为默认主题发布的主题，现在以 [`@vuepress/theme-classic`](https://ecosystem.vuejs.press/zh/themes/classic/config.html) 发布，并以 `themeClassic` 导出。它是 v1 默认主题的继任者，[默认主题变更](#默认主题变更) 一节列出的变更都适用于它。新的默认主题是从 VitePress 移植而来的另一个主题，迁移到它请参考 [从经典主题迁移](https://ecosystem.vuejs.press/zh/themes/default/migrating-from-classic.html) 。
+
+:::
 
 #### themeConfig
 
@@ -131,7 +137,11 @@ npm i -D @vuepress/theme-default@next
 
 #### shouldPrefetch
 
-默认值从 `() => true` 更改为 `true` 。
+默认值从 `() => true` 更改为 `'as-needed'` （自 v2.0.0-rc.32 起；在更早的 2.0.0-rc 版本中为 `true` ）。
+
+现在默认只会预获取当前页面的 Markdown 内容中链接到的页面的异步资源。设置 `shouldPrefetch: true` 以恢复之前预获取所有资源的行为。`shouldPreload` 的默认值没有变化。
+
+参考 [配置 > shouldPrefetch](../reference/config.md#shouldprefetch) 。
 
 #### extraWatchFiles
 
@@ -264,7 +274,7 @@ VuePress v1 的 Stylus 调色板系统 （即 `styles/palette.styl` 和 `styles/
 
 主题作者可以使用自己的方式来为用户提供自定义样式的能力，而不必被限制在 Stylus 当中。
 
-如果你使用的是默认主题，那么调色板系统仍然存在，但改为使用 SASS ，并且大部分变量都迁移为 CSS 变量。参考 [默认主题 > 样式](https://ecosystem.vuejs.press/zh/themes/default/styles.html) 。
+如果你使用的是经典主题，那么 SASS 调色板系统仍然存在，并且大部分变量都迁移为 CSS 变量。参考 [经典主题 > 样式](https://ecosystem.vuejs.press/zh/themes/classic/styles.html) 。新的默认主题不再包含 SASS 调色板，所有颜色都是 CSS 变量，参考 [默认主题 > 样式](https://ecosystem.vuejs.press/zh/themes/default/styles.html) 。
 
 ### 约定文件变更
 
@@ -312,24 +322,26 @@ VuePress v1 的 Stylus 调色板系统 （即 `styles/palette.styl` 和 `styles/
 
 ### 默认主题变更
 
+以下变更是针对旧版默认主题的，它现在以 [`@vuepress/theme-classic`](https://ecosystem.vuejs.press/zh/themes/classic/config.html) 发布，示例使用经典主题的配置 API。
+
 #### 内置组件
 
-- `<CodeGroup />` 和 `<CodeBlock />` 被 [代码选项卡](https://ecosystem.vuejs.press/zh/themes/default/markdown.html#code-tabs) 替代
+- `<CodeGroup />` 和 `<CodeBlock />` 被 [代码选项卡](https://ecosystem.vuejs.press/zh/themes/classic/markdown.html#code-tabs) 替代
 - `<Badge />`
   - `$badgeErrorColor` 调色板变量重命名为 `$badgeDangerColor`
   - `type` Prop 现在只接受 `tip` 、 `warning` 和 `danger`
 
 #### 调色板系统
 
-默认主题的调色板系统迁移为 SASS 和 CSS 变量。
+经典主题的调色板系统迁移为 SASS 和 CSS 变量。
 
-参考 [默认主题 > 样式](https://ecosystem.vuejs.press/zh/themes/default/styles.html) 。
+参考 [经典主题 > 样式](https://ecosystem.vuejs.press/zh/themes/classic/styles.html) 。
 
 #### 主题配置
 
-默认主题的配置有大量变更，建议你阅读 v2 的默认主题配置参考文档来进行迁移。
+经典主题的配置有大量变更，建议你阅读经典主题的配置参考文档来进行迁移。
 
-参考 [默认主题 > 配置](https://ecosystem.vuejs.press/zh/themes/default/config.html) 。
+参考 [经典主题 > 配置](https://ecosystem.vuejs.press/zh/themes/classic/config.html) 。
 
 这里仅列出部分要注意的变更：
 
@@ -400,6 +412,17 @@ v1 的主题和插件和 v2 并不兼容。
 
 参考 [插件 API](../reference/plugin-api.md) 。
 
+### markdown-it 升级
+
+自 v2.0.0-rc.32 起，VuePress 内置的 markdown-it 升级至 v15 ，`@mdit-vue` 相关包升级至 v4 。这给直接使用 markdown-it 的插件和主题带来了一些 Breaking Changes ：
+
+- markdown-it 现在自带类型声明。请从依赖中移除 `@types/markdown-it` 。
+- 不再支持从 `markdown-it/lib/*` 中深层导入。请改为使用 `markdown-it` 包的导出，例如 `MarkdownIt` 构造函数及其静态类。
+- `MarkdownItEnv` 类型被移除了。请改为扩展 `markdown-it.Env` （VuePress 已经扩展了 `base` 、`filePath` 、`filePathRelative` 、`importedFiles` 和 `links` ），或者使用 `vuepress/markdown` 导出的 `MarkdownEnv` 类型。
+- `@mdit-vue` v4 的插件和主题应使用自带的 markdown-it 类型。
+
+参考 [插件 API > extendsMarkdown](../reference/plugin-api.md#extendsmarkdown) 。
+
 ## 给主题作者
 
 请先浏览 [插件 API 变更](#插件-api-变更) 和 [主题 API 变更](#主题-api-变更)。
@@ -418,6 +441,7 @@ v1 的主题和插件和 v2 并不兼容。
 - Stylus 不再是默认的 CSS 预处理器，并且 Stylus 调色板系统不再被默认支持。如果你仍然想要使用和 v1 类似的调色板系统，可以使用 [@vuepress/plugin-palette](https://ecosystem.vuejs.press/zh/plugins/palette.html) 。
 - 由 Prism.js 提供的 Markdown 代码块的语法高亮不再被默认支持。你可以选择使用 [@vuepress/plugin-prismjs][prismjs] 或 [@vuepress/plugin-shiki][shiki] ，或者用你自己的方式实现语法高亮。
 - 考虑到可扩展性， `this.$site.pages` 不再可用。查看 [深入 > Cookbook > 解析路由](../advanced/cookbook/resolving-routes.md) 了解如何在 v2 中获取页面的数据。
+- 路由不再设置 `scrollBehavior` 。VuePress 使用 vue-router 的实验性 [ScrollRestoration](https://router.vuejs.org/zh/experimental/scroll-restoration.html) 插件以及 `vue-router/experimental` 中的 `useScrollRestoration` 来恢复滚动位置（需要 vue-router `^5.4.0` ）。如果你的主题读取或包装了 `router.options.scrollBehavior` ，请迁移到 `useScrollRestoration` ，参考 [深入 > Cookbook > 客户端配置的使用方法 > 滚动恢复](../advanced/cookbook/usage-of-client-config.md#滚动恢复) 。
 
 你可以参考 [深入 > 开发主题](../advanced/theme.md) 来了解如何开发一个 v2 主题。
 

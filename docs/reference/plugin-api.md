@@ -156,7 +156,9 @@ export default {
 
   This hook can be used for modifying bundler options.
 
-  You could determine which bundler the user is using by `app.options.bundler.name`.
+  You could determine which bundler the user is using by `app.options.bundler.type` (e.g. `'vite'`, `'webpack'` or `'rspack'`). It is more stable than `app.options.bundler.name`, which is the package name of the bundler.
+
+  To merge a partial config into the current bundler config, use `app.options.bundler.mergeConfig(currentConfig, newConfig)`. This member is required since v2.0.0-rc.32.
 
 - Example:
 
@@ -166,7 +168,7 @@ Adding default [app.compilerOptions.isCustomElement](https://vuejs.org/api/appli
 export default {
   extendsBundlerOptions: (bundlerOptions, app) => {
     // extends options of @vuepress/bundler-vite
-    if (app.options.bundler.name === '@vuepress/bundler-vite') {
+    if (app.options.bundler.type === 'vite') {
       bundlerOptions.vuePluginOptions ??= {}
       bundlerOptions.vuePluginOptions.template ??= {}
       bundlerOptions.vuePluginOptions.template.compilerOptions ??= {}
@@ -180,13 +182,20 @@ export default {
     }
 
     // extends options of @vuepress/bundler-webpack
-    if (app.options.bundler.name === '@vuepress/bundler-webpack') {
+    if (app.options.bundler.type === 'webpack') {
       bundlerOptions.vue ??= {}
       bundlerOptions.vue.compilerOptions ??= {}
       const isCustomElement = bundlerOptions.vue.compilerOptions.isCustomElement
       bundlerOptions.vue.compilerOptions.isCustomElement = (tag) => {
         if (isCustomElement?.(tag)) return true
         if (tag === 'my-custom-element') return true
+      }
+    }
+
+    // extends options of @vuepress/bundler-rspack
+    if (app.options.bundler.type === 'rspack') {
+      bundlerOptions.configureRspack = (config) => {
+        // edit the rspack config
       }
     }
   },
@@ -196,6 +205,7 @@ export default {
 - Also see:
   - [Bundlers > Vite](./bundler/vite.md)
   - [Bundlers > Webpack](./bundler/webpack.md)
+  - [Bundlers > Rspack](./bundler/rspack.md)
 
 ### extendsMarkdownOptions
 
@@ -238,6 +248,14 @@ export default {
   This hook accepts a function that will receive an instance of `Markdown` powered by [markdown-it](https://github.com/markdown-it/markdown-it) in its arguments.
 
   This hook can be used for using extra markdown-it plugins and implementing customizations.
+
+  **Migrating from markdown-it v14 and `@mdit-vue` v3**
+
+  Since v2.0.0-rc.32, VuePress uses markdown-it v15 and `@mdit-vue` v4.
+
+  markdown-it ships with its own type declarations now, so do not install `@types/markdown-it`. Deep imports from `markdown-it/lib/*` are no longer supported — use the `Markdown()` constructor and its static members instead. `MarkdownItEnv` from `@mdit-vue/types` has been removed: augment `markdown-it.Env` (VuePress already declares `base`, `filePath`, `filePathRelative`, `importedFiles` and `links` there), or use the `MarkdownEnv` type exported by `@vuepress/markdown`. Plugins for `@mdit-vue` v4 should use the `MarkdownItPlugin<Options>` type from `@mdit-vue/types`.
+
+  markdown-it v15 also upgrades linkify-it to v6, which no longer enables fuzzy links by default. The `md.linkify.set({ fuzzyEmail: false })` call below is therefore only needed if you want to be explicit.
 
 - Example:
 

@@ -41,6 +41,7 @@ You can register global Vue components via the [app.component](https://vuejs.org
 
 ```ts
 import { defineClientConfig } from 'vuepress/client'
+
 import MyComponent from './MyComponent.vue'
 
 export default defineClientConfig({
@@ -56,7 +57,7 @@ VuePress will generate a SSR application to pre-render pages during build. Gener
 
 We already provides a [ClientOnly](../../reference/components.md#clientonly) component to wrap non-SSR-friendly content.
 
-In the `enhance` function, you can make use of the [`__VUEPRESS_SSR__`](../../reference/client-api.md#ssr) flag for that purpose.
+In the `enhance` function, you can make use of the [`__VUEPRESS_SSR__`](../../reference/client-api.md#vuepress-ssr) flag for that purpose.
 
 ```ts
 import { defineClientConfig } from 'vuepress/client'
@@ -97,6 +98,17 @@ It's not recommended to use `addRoute` method to add dynamic routes here, becaus
 But you can still do that if you understand the drawback.
 :::
 
+### Scroll Restoration
+
+Since v2.0.0-rc.32, VuePress no longer sets the [scrollBehavior](https://router.vuejs.org/api/interfaces/routeroptions.html#scrollbehavior) option on the router. Instead, it uses vue-router's experimental [ScrollRestoration](https://router.vuejs.org/experimental/scroll-restoration.html) plugin and [`useScrollRestoration`](https://router.vuejs.org/experimental/scroll-restoration.html) internally:
+
+- The plugin is installed before the router, sets `history.scrollRestoration` to `'manual'`, and captures scroll positions to `sessionStorage`.
+- After the client app is mounted and after each route change, VuePress restores the saved scroll position of the target page, scrolls to the hash target if the URL has a hash, or scrolls to the top.
+
+Because the router no longer uses a `scrollBehavior` option, setting `router.options.scrollBehavior` in the `enhance` function has no effect. If your theme or plugin read or wrapped it (for example, to delay scrolling until a page transition finishes), migrate to `useScrollRestoration` with `manual: true` and call the returned `scroll()` after your content is ready, or scroll manually in the [onContentUpdated](../../reference/client-api.md#oncontentupdated) hook.
+
+The experimental API requires vue-router `^5.4.0`, which is the dependency range of VuePress 2.0.0-rc.32. Themes and plugins that use it should declare `vue-router` as a peer dependency.
+
 ## setup
 
 The `setup` function would be invoked inside the [setup](https://vuejs.org/api/composition-api-setup.html) hook of the client vue app.
@@ -125,7 +137,7 @@ export default defineClientConfig({
 
 ### Use Non-SSR-Friendly Features
 
-In the `setup` function, the [`__VUEPRESS_SSR__`](../../reference/client-api.md#ssr) flag is also available.
+In the `setup` function, the [`__VUEPRESS_SSR__`](../../reference/client-api.md#vuepress-ssr) flag is also available.
 
 Another way to use non-ssr-friendly features is to put them inside the [onMounted](https://vuejs.org/api/composition-api-lifecycle.html#onmounted) hook:
 
@@ -149,6 +161,7 @@ The `layouts` options is to set layout components. After layout components are r
 
 ```ts
 import { defineClientConfig } from 'vuepress/client'
+
 import MyLayout from './layouts/MyLayout.vue'
 
 export default defineClientConfig({
@@ -166,6 +179,7 @@ Typical usage of this option is to put some global UI components, like global po
 
 ```ts
 import { defineClientConfig } from 'vuepress/client'
+
 import GlobalPopup from './components/GlobalPopup.vue'
 
 export default defineClientConfig({

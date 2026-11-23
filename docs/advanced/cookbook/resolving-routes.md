@@ -33,6 +33,22 @@ const routePath = resolveRoutePath('/foo/') // => '/foo/'
 const routePath = resolveRoutePath('baz.html', '/foo/bar.html') // => '/foo/baz.html'
 ```
 
+## Resolving route full path
+
+You can make use of [resolveRouteFullPath](../../reference/client-api.md#resolveroutefullpath) to resolve the route full path of the given link.
+
+`resolveRouteFullPath` receives a link and an optional base path, and returns the resolved route path with the hash and query of the given link preserved:
+
+```ts
+import { resolveRouteFullPath } from 'vuepress/client'
+
+const routeFullPath = resolveRouteFullPath('/foo/#bar') // => '/foo/#bar'
+const routeFullPath = resolveRouteFullPath(
+  'baz.html?foo=bar#baz',
+  '/foo/bar.html',
+) // => '/foo/baz.html?foo=bar#baz'
+```
+
 ## Resolving route information
 
 You can make use of [resolveRoute](../../reference/client-api.md#resolveroute) to resolve route information for a given link.

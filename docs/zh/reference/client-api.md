@@ -10,7 +10,11 @@
 
   返回所有客户端数据的 Ref 对象。
 
-  每个属性也可以通过下列的组合式 API 来访问。
+  每个属性也可以通过下列的组合式 API 来访问，但 `pageHeadTitle` 除外，它只能通过 `useClientData()` 访问。
+
+  客户端数据对象还提供了下列别名：`frontmatter` (`pageFrontmatter`) 、`head` (`pageHead`) 、`headTitle` (`pageHeadTitle`) 、`lang` (`pageLang`) 、`page` (`pageData`) 、`site` (`siteData`) 和 `siteLocale` (`siteLocaleData`) 。
+
+  这些组合式 API 还提供了下列别名：`useData` (`useClientData`) 、`useFrontmatter` (`usePageFrontmatter`) 、`useHead` (`usePageHead`) 、`useLang` (`usePageLang`) 、`usePage` (`usePageData`) 、`useSite` (`useSiteData`) 和 `useSiteLocale` (`useSiteLocaleData`) 。
 
 - 示例：
 
@@ -30,6 +34,25 @@ const {
 } = useClientData()
 </script>
 ```
+
+### useLayouts
+
+- 详情：
+
+  返回所有布局组件的 Ref 对象。
+
+  它的值是由所有 [客户端配置文件](./plugin-api.md#clientconfigfile) 注册的布局，包括主题必需的 `Layout` 和 `NotFound` 布局。
+
+- 参考：
+  - [深入 > 编写主题](../advanced/theme.md)
+
+### usePageComponent
+
+- 详情：
+
+  返回当前页面的页面组件的 Ref 对象。
+
+  它的值是从页面 chunk 中加载的组件。
 
 ### usePageData
 
@@ -57,13 +80,25 @@ const {
 
   它的值是合并 [head](./frontmatter.md#head) Frontmatter 和 [head](./config.md#head) 配置，并进行去重后得到的。
 
-### usePageHeadTitle
+### useClientData().pageHeadTitle
+
+- 类型：`ComputedRef<string>`
 
 - 详情：
 
   返回当前页面 Head 中的标题的 Ref 对象。
 
-  它的值是连接页面标题和站点标题后得到的。
+  它的值是连接页面标题和站点标题后得到的。它不是独立的组合式 API，而是由 [`useClientData`](#useclientdata) 返回的计算属性，`<title>` 元素由 [`useUpdateHead`](#useupdatehead) 与其保持同步。
+
+  它的值可以通过 [`resolvers`](#resolvers) 自定义。
+
+- 示例：
+
+```ts
+import { useClientData } from 'vuepress/client'
+
+const { pageHeadTitle } = useClientData()
+```
 
 ### usePageLang
 
@@ -72,6 +107,17 @@ const {
   返回当前页面语言的 Ref 对象。
 
   它的值是页面数据的 `lang` 属性。
+
+### usePageLayout
+
+- 详情：
+
+  返回当前页面的布局组件的 Ref 对象。
+
+  它的值是由 [layout](./frontmatter.md#layout) Frontmatter 和 [客户端配置文件](./plugin-api.md#clientconfigfile) 注册的布局解析得到的。
+
+- 参考：
+  - [深入 > 编写主题](../advanced/theme.md)
 
 ### useRoutes
 
@@ -91,6 +137,22 @@ const {
   返回当前路由对应的 locale path 的 Ref 对象。
 
   它的值是 [locales](./config.md#locales) 配置的键之一。
+
+### useRoutePath
+
+- 详情：
+
+  返回当前路由的路由路径的 Ref 对象。
+
+  它的值是当前路由的 `path` 属性。
+
+### useRedirects
+
+- 详情：
+
+  返回重定向信息的 Ref 对象。
+
+  它的键是源路由路径，值是目标路由路径。它被用于解析路由路径，参考 [`resolveRoutePath`](#resolveroutepath) 。
 
 ### useSiteData
 
@@ -124,6 +186,16 @@ const {
   </script>
   ```
 
+### useUpdateHead
+
+- 详情：
+
+  返回一个用于更新当前页面 `<head>` 的函数。
+
+  它会立即把当前 [`usePageHead`](#usepagehead) 的值应用到文档的 head 中。客户端应用 Mount 后 VuePress 会自动保持 head 同步，因此只有在你希望强制立即更新时才需要调用它。
+
+  该函数仅能在客户端应用的组件的 `setup` 阶段被调用。
+
 ## 工具函数
 
 ### defineClientConfig
@@ -134,6 +206,7 @@ const {
 
 - 参考：
   - [深入 > Cookbook > 客户端配置的使用方法](../advanced/cookbook/usage-of-client-config.md)
+  - [深入 > Cookbook > 客户端配置的使用方法 > 滚动恢复](../advanced/cookbook/usage-of-client-config.md#滚动恢复)
 
 ### resolveRoute
 
@@ -149,6 +222,15 @@ const {
 - 详情：
 
   解析给定链接对应的路由路径
+
+- 参考：
+  - [深入 > Cookbook > 解析路由](../advanced/cookbook/resolving-routes.md)
+
+### resolveRouteFullPath
+
+- 详情：
+
+  解析给定链接对应的完整路由路径，即解析后的路由路径，并保留给定链接中的 hash 和 query 。
 
 - 参考：
   - [深入 > Cookbook > 解析路由](../advanced/cookbook/resolving-routes.md)

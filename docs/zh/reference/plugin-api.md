@@ -156,7 +156,9 @@ export default {
 
   该 Hook 可以用于修改 Bundler 配置项。
 
-  你可以通过 `app.options.bundler.name` 判断用户当前使用的 Bundler。
+  你可以通过 `app.options.bundler.type` 判断用户当前使用的 Bundler（例如 `'vite'`、`'webpack'` 或 `'rspack'` ）。这比 `app.options.bundler.name` 更加稳定，后者是 Bundler 的包名。
+
+  如果需要将部分配置合并到当前的 Bundler 配置中，可以使用 `app.options.bundler.mergeConfig(currentConfig, newConfig)` 。这个成员自 v2.0.0-rc.32 起是必需的。
 
 - 示例：
 
@@ -166,7 +168,7 @@ export default {
 export default {
   extendsBundlerOptions: (bundlerOptions, app) => {
     // 修改 @vuepress/bundler-vite 的配置项
-    if (app.options.bundler.name === '@vuepress/bundler-vite') {
+    if (app.options.bundler.type === 'vite') {
       bundlerOptions.vuePluginOptions ??= {}
       bundlerOptions.vuePluginOptions.template ??= {}
       bundlerOptions.vuePluginOptions.template.compilerOptions ??= {}
@@ -180,13 +182,20 @@ export default {
     }
 
     // 修改 @vuepress/bundler-webpack 的配置项
-    if (app.options.bundler.name === '@vuepress/bundler-webpack') {
+    if (app.options.bundler.type === 'webpack') {
       bundlerOptions.vue ??= {}
       bundlerOptions.vue.compilerOptions ??= {}
       const isCustomElement = bundlerOptions.vue.compilerOptions.isCustomElement
       bundlerOptions.vue.compilerOptions.isCustomElement = (tag) => {
         if (isCustomElement?.(tag)) return true
         if (tag === 'my-custom-element') return true
+      }
+    }
+
+    // 修改 @vuepress/bundler-rspack 的配置项
+    if (app.options.bundler.type === 'rspack') {
+      bundlerOptions.configureRspack = (config) => {
+        // 修改 Rspack 配置
       }
     }
   },
@@ -196,6 +205,7 @@ export default {
 - 参考：
   - [打包工具 > Vite](./bundler/vite.md)
   - [打包工具 > Webpack](./bundler/webpack.md)
+  - [打包工具 > Rspack](./bundler/rspack.md)
 
 ### extendsMarkdownOptions
 
@@ -239,6 +249,14 @@ export default {
 
   该 Hook 可以用来添加额外的 markdown-it 插件、应用额外的自定义功能。
 
+  **从 markdown-it v14 和 `@mdit-vue` v3 迁移**
+
+  自 v2.0.0-rc.32 起，VuePress 使用 markdown-it v15 和 `@mdit-vue` v4。
+
+  markdown-it 现在自带类型声明，请不要安装 `@types/markdown-it` 。不再支持从 `markdown-it/lib/*` 深层导入，请改用 `Markdown()` 构造函数及其静态成员。 `@mdit-vue/types` 中的 `MarkdownItEnv` 已被移除：请扩展 `markdown-it.Env` （VuePress 已经在该接口中声明了 `base` 、 `filePath` 、 `filePathRelative` 、 `importedFiles` 和 `links`），或使用 `@vuepress/markdown` 导出的 `MarkdownEnv` 类型。 `@mdit-vue` v4 的插件应使用 `@mdit-vue/types` 中的 `MarkdownItPlugin<Options>` 类型。
+
+  markdown-it v15 还将 linkify-it 升级到了 v6，不再默认启用模糊链接。因此下面的 `md.linkify.set({ fuzzyEmail: false })` 只在你希望显式声明时才需要。
+
 - 示例：
 
 ```ts
@@ -278,7 +296,7 @@ export default {
 ```
 
 - 参考：
-  - [Node API > Page > createPage](./node-api.md#createPage)
+  - [Node API > Page > createPage](./node-api.md#createpage)
 
 ### extendsPage
 

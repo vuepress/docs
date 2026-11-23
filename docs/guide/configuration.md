@@ -25,12 +25,12 @@ A basic config file looks like this:
 
 ```ts
 import { viteBundler } from '@vuepress/bundler-vite'
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   bundler: viteBundler(),
-  theme: defaultTheme(),
+  theme: themeDefault(),
 
   lang: 'en-US',
   title: 'Hello VuePress',

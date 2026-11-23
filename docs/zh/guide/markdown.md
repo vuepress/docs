@@ -57,7 +57,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 <!-- 绝对路径 -->
 
 [指南 > 介绍](/zh/guide/introduction.md)  
-[配置参考 > markdown.links](/zh/reference/config.md#links)
+[配置参考 > markdown.links](/zh/reference/config.md#markdown-links)
 
 <!-- URL -->
 
@@ -87,7 +87,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 [配置参考](../reference/config.md)  
 [快速上手](./getting-started.md)  
 [指南 > 介绍](/zh/guide/introduction.md)  
-[配置参考 > markdown.links](/zh/reference/config.md#links)  
+[配置参考 > markdown.links](/zh/reference/config.md#markdown-links)  
 [GitHub](https://github.com)
 
 **解释**
@@ -167,13 +167,13 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 
 ````md
 ```ts title=".vuepress/config.ts"
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   title: '你好， VuePress',
 
-  theme: defaultTheme({
+  theme: themeDefault({
     logo: 'https://vuejs.org/images/logo.png',
   }),
 })
@@ -183,13 +183,13 @@ export default defineUserConfig({
 **输出**
 
 ```ts title=".vuepress/config.ts"
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   title: '你好， VuePress',
 
-  theme: defaultTheme({
+  theme: themeDefault({
     logo: 'https://vuejs.org/images/logo.png',
   }),
 })
@@ -209,13 +209,13 @@ export default defineUserConfig({
 
 ````md
 ```ts{1,7-9}
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   title: '你好， VuePress',
 
-  theme: defaultTheme({
+  theme: themeDefault({
     logo: 'https://vuejs.org/images/logo.png',
   }),
 })
@@ -225,13 +225,13 @@ export default defineUserConfig({
 **输出**
 
 ```ts{1,7-9}
-import { defaultTheme } from '@vuepress/theme-default'
+import { themeDefault } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   title: '你好， VuePress',
 
-  theme: defaultTheme({
+  theme: themeDefault({
     logo: 'https://vuejs.org/images/logo.png',
   }),
 })

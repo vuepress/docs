@@ -24,26 +24,22 @@ jobs:
         node:
           - 22
           - 24
+          - 26
         bundler:
           - vite
           - webpack
+          - rspack
 
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-
-      - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v6
+      - name: Setup pnpm
+        uses: pnpm/setup@v3
         with:
-          node-version: ${{ matrix.node }}
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm ci
+          runtime: node@${{ matrix.node }}
+          require-lockfile: true
 
       - name: Check types
         run: pnpm check-types

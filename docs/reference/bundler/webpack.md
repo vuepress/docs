@@ -44,6 +44,20 @@ export default defineUserConfig({
 
   Merge two webpack config objects, provided by [webpack-merge](https://github.com/survivejs/webpack-merge).
 
+### Exported types
+
+The package re-exports the types of its options and the underlying tools:
+
+- `WebpackBundlerOptions`
+- `WebpackConfiguration` (from `webpack`)
+- `WebpackChainConfig` (from `webpack-v5-chain`)
+- `WebpackDevServerConfiguration` (from `webpack-dev-server`)
+- `VueLoaderOptions`, `PostcssLoaderOptions`, `StylusLoaderOptions`, `SassLoaderOptions`, `LessLoaderOptions`
+
+::: tip
+In webpack-dev-server v6, the configuration type is no longer exposed through the `WebpackDevServer.Configuration` namespace. `@vuepress/bundler-webpack` now re-exports it as the named `WebpackDevServerConfiguration` type (the `WebpackDevServer` type is still exported as well), and `devServerSetupMiddlewares` uses `WebpackDevServerConfiguration`.
+:::
+
 ## Options
 
 ### configureWebpack
@@ -56,6 +70,8 @@ export default defineUserConfig({
 
   This option accepts a function that will receive a webpack config object as the 1st argument, an `isServer` flag as the 2nd argument and an `isBuild` flag as the 3rd argument. You can either mutate the config directly, or return an object to replace the webpack config object.
 
+  If you need to merge configs instead of replacing them, use [webpackMergeConfig](#webpackmergeconfig).
+
 ### chainWebpack
 
 - Type: `(config: WebpackChainConfig, isServer: boolean, isBuild: boolean) => void`
@@ -64,17 +80,17 @@ export default defineUserConfig({
 
   Edit the internal webpack config with [webpack-v5-chain](https://github.com/Mister-Hope/webpack-v5-chain).
 
-  This option accepts a function that will receive a `Config` instance that provided by `webpack-chain` as the 1st argument an `isServer` flag as the 2nd argument and an `isBuild` flag as the 3rd argument.
+  This option accepts a function that will receive a `Config` instance that provided by `webpack-v5-chain` as the 1st argument an `isServer` flag as the 2nd argument and an `isBuild` flag as the 3rd argument.
 
 ### devServerSetupMiddlewares
 
-- Type: `(middlewares: Middleware[], devServer: Server) => Middleware[]`
+- Type: `WebpackDevServerConfiguration['setupMiddlewares']`
 
 - Details:
 
-  A hook to be called in `devServer.setupMiddlewares` of webpack.
+  A hook to be called in `devServer.setupMiddlewares` of [webpack-dev-server](https://www.npmjs.com/package/webpack-dev-server).
 
-  The arguments of the function are those of `devServer.setupMiddlewares`.
+  The arguments of the function are those of `devServer.setupMiddlewares`. The `WebpackDevServerConfiguration` type is re-exported by `@vuepress/bundler-webpack`.
 
 - Also see:
   - [Webpack > Configuration > DevServer > devServer.setupMiddlewares](https://webpack.js.org/configuration/dev-server/#devserversetupmiddlewares)
@@ -159,8 +175,8 @@ export default defineUserConfig({
 
 ### Referencing Public Files after Changing `base`
 
-Unlike Vite, Webpack won't handle `base` for public files automatically. So if you change the `base` of your site, you'd better to use [Base Helper](../../guide/assets.md#base-helper) when referencing an public image file.
+VuePress prepends `base` to absolute asset paths in Markdown automatically when using the Webpack and Rspack bundlers, so public files referenced from Markdown keep working after you change the `base` of your site. If you create URLs at runtime (for example, in a Vue component), use [Base Helper](../../guide/assets.md#base-helper).
 
-### Using with Default Theme
+### Using with SASS-based Themes
 
-Default theme is using [SASS](https://sass-lang.com/) as CSS pre-processor, so you might need to install [sass-loader](https://www.npmjs.com/package/sass-loader) as a peer dependency to make it work with Webpack, especially when you are using [pnpm](https://pnpm.io/).
+The default theme uses plain CSS, so it does not require any SASS setup. If you use a theme that relies on [SASS](https://sass-lang.com/) as CSS pre-processor — for example, the classic theme (`@vuepress/theme-classic`) — you might need to install [sass-loader](https://www.npmjs.com/package/sass-loader) as a peer dependency to make it work with Webpack (and Rspack), especially when you are using [pnpm](https://pnpm.io/).

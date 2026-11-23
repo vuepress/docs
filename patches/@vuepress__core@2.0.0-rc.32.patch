@@ -1,0 +1,13 @@
+diff --git a/dist/index.js b/dist/index.js
+index 2bec59b9e3b0c74bc254580a5db13e9c5d39ec13..0f7d1758786b1ec1db179ab1f9220d30d33c67e3 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -11,7 +11,7 @@ import { createMarkdown } from "@vuepress/markdown";
+ const prepareClientConfigs = async (app) => {
+ 	const clientConfigFiles = await app.pluginApi.hooks.clientConfigFile.process(app);
+ 	const content = `\
+-${clientConfigFiles.map((filePath, index) => `import * as clientConfig${index} from '${filePath}'`).join("\n")}
++${clientConfigFiles.map((filePath, index) => `import * as clientConfig${index} from ${JSON.stringify(filePath.replace(/\\/g, "/"))}`).join("\n")}
+ 
+ export const clientConfigs = [
+ ${clientConfigFiles.map((_, index) => `  clientConfig${index},`).join("\n")}
